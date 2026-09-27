@@ -1,5 +1,6 @@
-import { Autocomplete, TextField } from "@mui/material";
 import type { FilterOption } from "../../../../../modules/medView/widgets/model/types/FilterOptions";
+import { Autocomplete, TextField } from "@mui/material";
+import { medViewSelectInputSx } from "../../../../sxConfigs/medViewSelectInput";
 
 interface MedViewAutocompleteInputProps {
   label: string;
@@ -34,7 +35,11 @@ export const MedViewAutocompleteInput = ({
       getOptionLabel={(option) => option.label}
       filterOptions={(options) => options}
       loading={loading}
+      loadingText="Подтягиваем данные ..."
+      noOptionsText="Нет доступных опций"
       renderInput={(params) => <TextField {...params} label={label} />}
+      isOptionEqualToValue={(option, value) => option.value === value.value}
+      sx={medViewSelectInputSx}
     />
   );
 };
