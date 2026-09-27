@@ -1,11 +1,49 @@
+import type { FiltersDraft } from "../../../model/types/FiltersDraft";
+import { countActiveFilters } from "../../../../../../shared/helpers/isFilterActive";
 import { useMedViewStore } from "../../../model/stores/useMedViewStore";
 import { AppButton } from "../../../../../../components/ui/AppButton/AppButton";
 import { Divider } from "../../../../../../components/ui/Divider/Divider";
 import AddIcon from "@mui/icons-material/Add";
 import styles from "./styles.module.scss";
 
-export const FiltersPanel = () => {
+interface FiltersPanelProps {
+  filtersDraft: FiltersDraft;
+}
+
+export const FiltersPanel = ({ filtersDraft }: FiltersPanelProps) => {
   const { selectedfilterGroupId, selectFilterGroup } = useMedViewStore();
+
+  const personalGroupActiveFiltersCount = countActiveFilters(
+    filtersDraft.person,
+  );
+
+  const medicalCaseDetailsGroupActiveFiltersCount = countActiveFilters(
+    filtersDraft.medicalCaseDetails,
+  );
+
+  const oncologyGroupActiveFiltersCount = countActiveFilters(
+    filtersDraft.oncology,
+  );
+
+  const prescriptionGroupActiveFilters = countActiveFilters(
+    filtersDraft.prescription,
+  );
+
+  const clinicalGroupActiveFiltersCount = countActiveFilters(
+    filtersDraft.clinicalGroups,
+  );
+
+  const providedServicesGroupActiveFiltersCount = countActiveFilters(
+    filtersDraft.providedServices,
+  );
+
+  const sanctionGroupActiveFiltersCount = countActiveFilters(
+    filtersDraft.sanction,
+  );
+
+  const internalGroupActiveFiltersCount = countActiveFilters(
+    filtersDraft.inrernalService,
+  );
 
   return (
     <section className={styles.filtersPanelRoot}>
@@ -26,6 +64,11 @@ export const FiltersPanel = () => {
               <AddIcon />
               <p>Персональные данные</p>
             </div>
+            {personalGroupActiveFiltersCount > 0 && (
+              <div className={styles.counter}>
+                {personalGroupActiveFiltersCount}
+              </div>
+            )}
           </li>
 
           <li
@@ -40,6 +83,11 @@ export const FiltersPanel = () => {
               <AddIcon />
               <p>Детали медицинского случая</p>
             </div>
+            {medicalCaseDetailsGroupActiveFiltersCount > 0 && (
+              <div className={styles.counter}>
+                {medicalCaseDetailsGroupActiveFiltersCount}
+              </div>
+            )}
           </li>
 
           <li
@@ -54,6 +102,11 @@ export const FiltersPanel = () => {
               <AddIcon />
               <p>Онкология</p>
             </div>
+            {oncologyGroupActiveFiltersCount > 0 && (
+              <div className={styles.counter}>
+                {oncologyGroupActiveFiltersCount}
+              </div>
+            )}
           </li>
           <li
             className={
@@ -67,6 +120,11 @@ export const FiltersPanel = () => {
               <AddIcon />
               <p>Назначения и направления</p>
             </div>
+            {prescriptionGroupActiveFilters > 0 && (
+              <div className={styles.counter}>
+                {prescriptionGroupActiveFilters}
+              </div>
+            )}
           </li>
           <li
             className={
@@ -80,6 +138,11 @@ export const FiltersPanel = () => {
               <AddIcon />
               <p>Клинические группы и ВМП</p>
             </div>
+            {clinicalGroupActiveFiltersCount > 0 && (
+              <div className={styles.counter}>
+                {clinicalGroupActiveFiltersCount}
+              </div>
+            )}
           </li>
           <li
             className={
@@ -93,6 +156,11 @@ export const FiltersPanel = () => {
               <AddIcon />
               <p>Оказанные услуги</p>
             </div>
+            {providedServicesGroupActiveFiltersCount > 0 && (
+              <div className={styles.counter}>
+                {providedServicesGroupActiveFiltersCount}
+              </div>
+            )}
           </li>
           <li
             className={
@@ -106,6 +174,11 @@ export const FiltersPanel = () => {
               <AddIcon />
               <p>Санкции</p>
             </div>
+            {sanctionGroupActiveFiltersCount > 0 && (
+              <div className={styles.counter}>
+                {sanctionGroupActiveFiltersCount}
+              </div>
+            )}
           </li>
           <li
             className={
@@ -132,6 +205,11 @@ export const FiltersPanel = () => {
               <AddIcon />
               <p>Служебная информация</p>
             </div>
+            {internalGroupActiveFiltersCount > 0 && (
+              <div className={styles.counter}>
+                {internalGroupActiveFiltersCount}
+              </div>
+            )}
           </li>
         </ul>
       </div>

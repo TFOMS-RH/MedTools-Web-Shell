@@ -69,11 +69,13 @@
         justify-content: center;
         align-items: center;
 
-        font-size: var(--fs-body2);
-        font-weight: var(--fw-semibold);
+        min-width: 1.5rem;
+        height: 1.5rem;
 
-        padding: var(--space-3) var(--space-4);
-        background-color: var(--gray-200);
+        font-size: var(--fs-body2);
+        font-weight: var(--fw-bold);
+
+        background-color: var(--gray-300);
         border-radius: var(--radius-l);
       }
     }

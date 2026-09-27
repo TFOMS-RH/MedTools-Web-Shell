@@ -15,7 +15,7 @@ export const FiltersRoot = () => {
 
   return (
     <section className={styles.filtersRoot}>
-      <FiltersPanel />
+      <FiltersPanel filtersDraft={filtersDraft} />
       <FiltersGroupRender
         filterGroupId={selectedfilterGroupId}
         filtersDraft={filtersDraft}
