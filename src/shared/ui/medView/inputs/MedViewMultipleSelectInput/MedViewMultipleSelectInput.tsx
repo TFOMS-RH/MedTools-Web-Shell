@@ -68,7 +68,7 @@ export const MedViewMultipleSelectInput = ({
               </MenuItem>
             ))
           ) : (
-            <MenuItem disabled>Данных не найдено</MenuItem>
+            <MenuItem disabled>Нет доступных опций</MenuItem>
           )}
         </Select>
       </FormControl>
