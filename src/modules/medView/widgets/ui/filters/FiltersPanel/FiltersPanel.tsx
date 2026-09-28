@@ -1,8 +1,8 @@
 import type { FiltersDraft } from "../../../model/types/FiltersDraft";
 import { countActiveFilters } from "../../../../../../shared/helpers/isFilterActive";
 import { useMedViewStore } from "../../../model/stores/useMedViewStore";
-import { AppButton } from "../../../../../../components/ui/AppButton/AppButton";
 import { Divider } from "../../../../../../components/ui/Divider/Divider";
+import { MedViewButton } from "../../../../../../shared/ui/medView/buttons/MedViewButton";
 import AddIcon from "@mui/icons-material/Add";
 import styles from "./styles.module.scss";
 
@@ -12,6 +12,7 @@ interface FiltersPanelProps {
 
 export const FiltersPanel = ({ filtersDraft }: FiltersPanelProps) => {
   const { selectedfilterGroupId, selectFilterGroup } = useMedViewStore();
+  const { applyFilters } = useMedViewStore();
 
   const personalGroupActiveFiltersCount = countActiveFilters(
     filtersDraft.person,
@@ -216,9 +217,13 @@ export const FiltersPanel = ({ filtersDraft }: FiltersPanelProps) => {
       <div className={styles.footer}>
         <Divider />
         <div className={styles.actionsField}>
-          <AppButton size="md" variant="secondary">
-            Сбросить фильтры
-          </AppButton>
+          <MedViewButton
+            text="Применить фильтры"
+            variant="outlined"
+            onClick={() => {
+              applyFilters(filtersDraft);
+            }}
+          />
         </div>
       </div>
     </section>

@@ -1,14 +1,14 @@
 import type { Dayjs } from "dayjs";
 import type { SanctionFiltersGroupDraft } from "../../../../model/types/FiltersDraft";
+import type { FilterOption } from "../../../../model/types/FilterOptions";
 import { MedViewDateInput } from "../../../../../../../shared/ui/medView/inputs/MedViewDateInput/MedViewDateInput";
 import { MedViewDefaultInput } from "../../../../../../../shared/ui/medView/inputs/MedViewDefaultInput/MedViewDefaultInput";
 import { MedViewMultipleSelectInput } from "../../../../../../../shared/ui/medView/inputs/MedViewMultipleSelectInput/MedViewMultipleSelectInput";
 import { useFilterOptionsQuery } from "../../../../model/queries/useFilterOptionsQuery";
 import { useState } from "react";
 import { useAutocompleteFilterOptionsQuery } from "../../../../model/queries/useAutocompleteFilterOptionsQuery";
-import styles from "./styles.module.scss";
 import { MedViewAutocompleteInput } from "../../../../../../../shared/ui/medView/inputs/MedViewAutocompleteInput/MedViewAutocompleteInput";
-import type { FilterOption } from "../../../../model/types/FilterOptions";
+import styles from "./styles.module.scss";
 
 interface SanctionFiltersGroupProps {
   sanctionFiltersGroupDraft: SanctionFiltersGroupDraft;
