@@ -1,6 +1,6 @@
 import { Divider } from "../../../components/ui/Divider/Divider";
-import { FiltersRoot } from "../widgets/ui/filters/FiltersRoot/FiltersRoot";
-import { MedViewWorkspace } from "../widgets/ui/workspace/ui/core/MedViewWorkspace";
+import { FiltersRoot } from "../widgets/filters/ui/FiltersRoot/FiltersRoot";
+import { MedViewWorkspace } from "../widgets/workspace/ui/MedViewWorkspace";
 
 export const MedView = () => {
   return (
@@ -8,6 +8,7 @@ export const MedView = () => {
       <FiltersRoot />
       <Divider />
       <MedViewWorkspace />
+      <Divider />
     </>
   );
 };

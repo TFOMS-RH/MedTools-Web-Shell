@@ -1,23 +1,23 @@
-import { formatCurrency } from "../../../../../../../../shared/helpers/formatCurrency";
-import { formatNullableValue } from "../../../../../../../../shared/helpers/formatNullableValue";
-import { TableSkeleton } from "../../../../../../../../shared/ui/TableSkeleton/TableSkeleton";
-import type { CompletedCaseListItemDto } from "../../../../model/types/core/results/GetCompletedCaseListItemsResult";
+import type { CompletedCaseListItemDto } from "../../../../../../rControl/widgets/workspace/model/types/core/results/GetCompletedCaseListItemsResult";
+import { formatCurrency } from "../../../../../../../shared/helpers/formatCurrency";
+import { formatNullableValue } from "../../../../../../../shared/helpers/formatNullableValue";
+import { TableSkeleton } from "../../../../../../../shared/ui/TableSkeleton/TableSkeleton";
 
-interface CompletedCasesTableBodyProps {
+interface MedViewCompletedCaseTableBodyProps {
   completedCases: CompletedCaseListItemDto[];
   isPending: boolean;
-  pageSize: number;
+  totalCount: number;
   selectedCompletedCaseUid: number | null;
   selectCompletedCase: (completedCaseUid: number | null) => void;
 }
 
-export const CompletedCasesTableBody = ({
+export const MedViewCompletedCaseTableBody = ({
   completedCases,
-  selectedCompletedCaseUid,
   isPending,
-  pageSize,
+  totalCount,
+  selectedCompletedCaseUid,
   selectCompletedCase,
-}: CompletedCasesTableBodyProps) => {
+}: MedViewCompletedCaseTableBodyProps) => {
   return (
     <div className="tableContainer">
       <table>
@@ -51,7 +51,7 @@ export const CompletedCasesTableBody = ({
         </thead>
         <tbody>
           {isPending ? (
-            <TableSkeleton columns={11} rows={pageSize} />
+            <TableSkeleton columns={11} rows={totalCount} />
           ) : (
             completedCases.map((completedCase) => (
               <tr
@@ -60,10 +60,10 @@ export const CompletedCasesTableBody = ({
                     ? "selectedRow"
                     : ""
                 }
-                key={completedCase.completedCaseUid}
                 onClick={() =>
                   selectCompletedCase(completedCase.completedCaseUid)
                 }
+                key={completedCase.completedCaseUid}
               >
                 <td>{completedCase.entryPositionNumber}</td>
                 <td>{completedCase.entryNumber}</td>

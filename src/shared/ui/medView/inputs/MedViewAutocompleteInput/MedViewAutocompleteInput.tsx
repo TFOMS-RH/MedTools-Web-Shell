@@ -1,9 +1,9 @@
-import type { FilterOption } from "../../../../../modules/medView/widgets/model/types/FilterOptions";
 import { Autocomplete, TextField } from "@mui/material";
 import { medViewSelectInputSx } from "../../../../sxConfigs/medViewSelectInput";
 import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import { medViewAutocompleteListboxSx } from "../../../../sxConfigs/medViewAutocompleteListboxSx";
+import type { FilterOption } from "../../../../../modules/medView/widgets/workspace/model/types/FilterOptions";
 
 interface MedViewAutocompleteInputProps {
   label: string;
