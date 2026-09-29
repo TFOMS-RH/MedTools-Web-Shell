@@ -1,0 +1,12 @@
+.contraindicationsListHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-10);
+  padding-bottom: var(--space-5);
+
+  h2 {
+    font-size: var(--fs-h3);
+    user-select: none;
+  }
+}

@@ -1,0 +1,11 @@
+.providedServicesRoot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+
+  .categoryLine {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+}

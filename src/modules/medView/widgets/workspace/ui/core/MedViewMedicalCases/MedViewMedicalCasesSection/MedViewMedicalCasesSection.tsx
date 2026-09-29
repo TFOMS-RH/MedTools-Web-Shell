@@ -44,6 +44,7 @@ export const MedViewMedicalCasesSection = () => {
     }
   }, [medicalCases, selectedMedicalCaseUid, selectMedicalCase]);
 
+
   return (
     <>
       {dataState === "waiting" ? (

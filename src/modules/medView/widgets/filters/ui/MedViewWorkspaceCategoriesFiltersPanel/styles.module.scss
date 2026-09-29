@@ -1,0 +1,19 @@
+.categoryPanelRoot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: var(--space-5);
+
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xxl);
+  background: var(--card-background);
+
+  .title {
+    flex-shrink: 0;
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-semibold);
+
+    padding: var(--space-3) var(--space-5);
+  }
+}
