@@ -17,7 +17,7 @@ interface FiltersGroupRenderProps {
   setFiltersDraft: React.Dispatch<SetStateAction<FiltersDraft>>;
 }
 
-export const FiltersGroupRender = ({
+export const MedViewFiltersGroupRender = ({
   filterGroupId,
   filtersDraft,
   setFiltersDraft,

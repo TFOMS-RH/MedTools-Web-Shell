@@ -10,7 +10,7 @@ interface FiltersPanelProps {
   filtersDraft: FiltersDraft;
 }
 
-export const FiltersPanel = ({ filtersDraft }: FiltersPanelProps) => {
+export const MedViewFiltersPanel = ({ filtersDraft }: FiltersPanelProps) => {
   const { applyFilters, selectFilterGroup, selectedfilterGroupId } =
     useMedViewFiltersStore();
 
