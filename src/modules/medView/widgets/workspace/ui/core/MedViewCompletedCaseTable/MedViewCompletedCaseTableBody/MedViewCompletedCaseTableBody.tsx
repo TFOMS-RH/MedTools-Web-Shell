@@ -1,7 +1,7 @@
-import type { CompletedCaseListItemDto } from "../../../../../../rControl/widgets/workspace/model/types/core/results/GetCompletedCaseListItemsResult";
-import { formatCurrency } from "../../../../../../../shared/helpers/formatCurrency";
-import { formatNullableValue } from "../../../../../../../shared/helpers/formatNullableValue";
-import { TableSkeleton } from "../../../../../../../shared/ui/TableSkeleton/TableSkeleton";
+import type { CompletedCaseListItemDto } from "../../../../../../../rControl/widgets/workspace/model/types/core/results/GetCompletedCaseListItemsResult";
+import { formatCurrency } from "../../../../../../../../shared/helpers/formatCurrency";
+import { formatNullableValue } from "../../../../../../../../shared/helpers/formatNullableValue";
+import { TableSkeleton } from "../../../../../../../../shared/ui/TableSkeleton/TableSkeleton";
 
 interface MedViewCompletedCaseTableBodyProps {
   completedCases: CompletedCaseListItemDto[];

@@ -1,5 +1,5 @@
-import type { PaginationState } from "../../../../../../../shared/types/PaginationState";
-import { AppTablePagination } from "../../../../../../../shared/ui/AppTablePagination/AppTablePagination";
+import type { PaginationState } from "../../../../../../../../shared/types/PaginationState";
+import { AppTablePagination } from "../../../../../../../../shared/ui/AppTablePagination/AppTablePagination";
 import styles from "./styles.module.scss";
 
 interface MedViewCompletedCaseTableHeaderProps {

@@ -1,9 +1,9 @@
-import { Divider } from "../../../../../../../components/ui/Divider/Divider";
-import { resolveDataState } from "../../../../../../../shared/helpers/resolveDataState";
-import { DataState } from "../../../../../../../shared/ui/DataState/DataState";
-import { useMedViewFiltersStore } from "../../../../filters/model/stores/useMedViewFiltersStore";
-import { useCompletedCasesQuery } from "../../../model/queries/useCompletedCasesQuery";
-import { useMedViewStore } from "../../../model/stores/useMedViewStore";
+import { Divider } from "../../../../../../../../components/ui/Divider/Divider";
+import { resolveDataState } from "../../../../../../../../shared/helpers/resolveDataState";
+import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
+import { useMedViewFiltersStore } from "../../../../../filters/model/stores/useMedViewFiltersStore";
+import { useCompletedCasesQuery } from "../../../../model/queries/useCompletedCasesQuery";
+import { useMedViewStore } from "../../../../model/stores/useMedViewStore";
 import { MedViewCompletedCaseTableBody } from "../MedViewCompletedCaseTableBody/MedViewCompletedCaseTableBody";
 import { MedViewCompletedCaseTableHeader } from "../MedViewCompletedCaseTableHeader/MedViewCompletedCaseTableHeader";
 import styles from "./styles.module.scss";
