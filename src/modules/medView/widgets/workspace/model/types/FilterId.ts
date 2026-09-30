@@ -1,5 +1,4 @@
 const filterGroupIds = [
-  "none",
   "persons",
   "case-details",
   "oncology",

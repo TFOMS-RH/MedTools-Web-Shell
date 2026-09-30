@@ -17,7 +17,7 @@ interface MedViewFiltersStore {
 
 export const useMedViewFiltersStore = create<MedViewFiltersStore>((set) => ({
   targetDb: null,
-  selectedfilterGroupId: "none",
+  selectedfilterGroupId: "persons",
   appliedFilters: null,
 
   selectFilterGroup: (filterGroupId) =>

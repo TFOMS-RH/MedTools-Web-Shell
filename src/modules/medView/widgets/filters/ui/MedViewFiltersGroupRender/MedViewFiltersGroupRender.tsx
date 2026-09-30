@@ -1,5 +1,4 @@
 import type { SetStateAction } from "react";
-import NoneFiltersGroup from "../groups/NoneFiltersGroup/NoneFiltersGroup";
 import PersonFiltersGroupRoot from "../groups/PersonFiltersGroup/PersonFiltersGroup";
 import MedicalCaseDetailsFiltersGroup from "../groups/MedicalCaseDetailsFiltersGroup/MedicalCaseDetailsFiltersGroup";
 import OncologyFiltersGroup from "../groups/OncologyFiltersGroup/OncologyFiltersGroup";
@@ -23,8 +22,6 @@ export const MedViewFiltersGroupRender = ({
   setFiltersDraft,
 }: FiltersGroupRenderProps) => {
   switch (filterGroupId) {
-    case "none":
-      return <NoneFiltersGroup />;
     case "persons":
       return (
         <PersonFiltersGroupRoot
