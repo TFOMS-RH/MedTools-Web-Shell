@@ -4,6 +4,7 @@ import { Divider } from "../../../../../../components/ui/Divider/Divider";
 import { MedViewButton } from "../../../../../../shared/ui/medView/buttons/MedViewButton";
 import { useMedViewFiltersStore } from "../../model/stores/useMedViewFiltersStore";
 import { useMedViewStore } from "../../../workspace/model/stores/useMedViewStore";
+import { TargetDbToggle } from "../../../../../../shared/ui/TargetDbToggle/TargetDbToggle";
 import AddIcon from "@mui/icons-material/Add";
 import styles from "./styles.module.scss";
 
@@ -13,8 +14,13 @@ interface FiltersPanelProps {
 
 export const MedViewFiltersPanel = ({ filtersDraft }: FiltersPanelProps) => {
   const { resetWorkspace } = useMedViewStore();
-  const { applyFilters, selectFilterGroup, selectedfilterGroupId, targetDb } =
-    useMedViewFiltersStore();
+  const {
+    applyFilters,
+    selectFilterGroup,
+    selectTargetDb,
+    selectedfilterGroupId,
+    targetDb,
+  } = useMedViewFiltersStore();
 
   const personalGroupActiveFiltersCount = countActiveFilters(
     filtersDraft.person,
@@ -48,11 +54,28 @@ export const MedViewFiltersPanel = ({ filtersDraft }: FiltersPanelProps) => {
     filtersDraft.inrernalService,
   );
 
+  const handleToggleChange = (
+    _event: React.MouseEvent<HTMLElement>,
+    newValue: string,
+  ) => {
+    if (newValue === "SMODB18" || newValue === "INOGOROD18") {
+      resetWorkspace();
+      selectTargetDb(newValue);
+    }
+  };
+
   return (
     <section className={styles.filtersPanelRoot}>
+      <div className={styles.sourceToggle}>
+        <header className={styles.sourceToggleHeader}>
+          <h2>Источник данных</h2>
+        </header>
+        <TargetDbToggle value={targetDb ?? ""} onChange={handleToggleChange} />
+      </div>
+      <Divider />
       <div className={styles.filtersList}>
         <header className={styles.filtersListHeader}>
-          <h2>Фильтры</h2>
+          <h2>Группы фильтров</h2>
         </header>
         <ul>
           <li
@@ -216,8 +239,8 @@ export const MedViewFiltersPanel = ({ filtersDraft }: FiltersPanelProps) => {
           </li>
         </ul>
       </div>
-      <div className={styles.footer}>
-        <Divider />
+      <Divider />
+      <div className={styles.actions}>
         <div className={styles.actionsField}>
           <MedViewButton
             text="Применить фильтры"

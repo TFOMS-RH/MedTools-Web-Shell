@@ -7,6 +7,21 @@
   border-radius: var(--radius-xxl);
   background: var(--card-background);
 
+  .sourceToggle {
+    display: flex;
+    align-items: center;
+
+    padding: var(--space-5) var(--space-10);
+
+    gap: var(--space-10);
+
+    .sourceToggleHeader {
+      h2 {
+        font-size: var(--fs-h3);
+      }
+    }
+  }
+
   .filtersList {
     padding: var(--space-5);
     padding-top: 0;
@@ -80,7 +95,7 @@
     }
   }
 
-  .actionsField {
+  .actions {
     display: flex;
     flex-direction: column;
     justify-content: center;

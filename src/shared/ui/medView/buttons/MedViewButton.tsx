@@ -6,6 +6,8 @@ interface MedViewButtonProps {
   variant: "text" | "contained" | "outlined";
   onClick: () => void;
   disabled?: boolean;
+  fullWidth?: boolean;
+  size?: "small" | "medium" | "large";
 }
 
 export const MedViewButton = ({
@@ -13,6 +15,8 @@ export const MedViewButton = ({
   variant,
   onClick,
   disabled,
+  fullWidth = true,
+  size = "large",
 }: MedViewButtonProps) => {
   return (
     <Button
@@ -20,6 +24,8 @@ export const MedViewButton = ({
       onClick={onClick}
       disabled={disabled}
       sx={medViewButtonSx}
+      fullWidth={fullWidth}
+      size={size}
     >
       {text}
     </Button>

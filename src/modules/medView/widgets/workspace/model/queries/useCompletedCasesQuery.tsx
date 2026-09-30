@@ -31,6 +31,6 @@ export const useCompletedCasesQuery = (
         targetDb: targetDb,
       });
     },
-    enabled: appliedFilters !== null,
+    enabled: appliedFilters !== null && targetDb !== null,
   });
 };
