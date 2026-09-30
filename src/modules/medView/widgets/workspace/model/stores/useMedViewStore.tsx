@@ -26,11 +26,11 @@ interface MedViewStore {
   selectOncologyService: (oncologyServicUid: number | null) => void;
   selectMedication: (medicationUid: number | null) => void;
   selectProvidedService: (providedService: number | null) => void;
+
+  resetWorkspace: () => void;
 }
 
 export const useMedViewStore = create<MedViewStore>((set) => ({
-  selectedfilterGroupId: "none",
-  appliedFilters: null,
   selectedCompletedCaseUid: null,
   selectedMedicalCaseUid: null,
   selectedOncologyServiceUid: null,
@@ -48,14 +48,43 @@ export const useMedViewStore = create<MedViewStore>((set) => ({
 
   selectCompletedCase: (completedCaseUid) =>
     set((state) => ({
+      selectedMedicalCaseUid: null,
+      selectedOncologyServiceUid: null,
+      selectedMedicationUid: null,
+      selectedProvidedServiceUid: null,
       selectedCompletedCaseUid: completedCaseUid,
-      ...state.completedCasePaginationState,
-      page: 0,
+
+      defectsTablePagination: {
+        ...state.defectsTablePagination,
+        page: 0,
+      },
     })),
 
   selectMedicalCase: (medicalCaseUid) =>
-    set({
+    set((state) => ({
+      selectedOncologyServiceUid: null,
+      selectedMedicationUid: null,
+      selectedProvidedServiceUid: null,
       selectedMedicalCaseUid: medicalCaseUid,
+
+      defectsTablePagination: {
+        ...state.defectsTablePagination,
+        page: 0,
+      },
+    })),
+
+  selectOncologyService: (oncologyService) =>
+    set({
+      selectedOncologyServiceUid: oncologyService,
+      selectedMedicationUid: null,
+    }),
+  selectMedication: (medicatonUid) =>
+    set({
+      selectedMedicationUid: medicatonUid,
+    }),
+  selectProvidedService: (providedService) =>
+    set({
+      selectedProvidedServiceUid: providedService,
     }),
 
   setCompletedCasesTablePagination: (newState) =>
@@ -64,6 +93,7 @@ export const useMedViewStore = create<MedViewStore>((set) => ({
         ...state.completedCasePaginationState,
         ...newState,
       },
+      selectedCompletedCaseUid: null,
     })),
   setDefectsTablePagination: (newState) =>
     set((state) => ({
@@ -77,16 +107,21 @@ export const useMedViewStore = create<MedViewStore>((set) => ({
       targetCategory: targetCategory,
     }),
 
-  selectOncologyService: (oncologyService) =>
-    set({
-      selectedOncologyServiceUid: oncologyService,
-    }),
-  selectMedication: (medicatonUid) =>
-    set({
-      selectedMedicationUid: medicatonUid,
-    }),
-  selectProvidedService: (providedService) =>
-    set({
-      selectedProvidedServiceUid: providedService,
-    }),
+  resetWorkspace: () =>
+    set((state) => ({
+      selectedCompletedCaseUid: null,
+      selectedMedicalCaseUid: null,
+      selectedOncologyServiceUid: null,
+      selectedProvidedServiceUid: null,
+      selectedMedicationUid: null,
+
+      completedCasePaginationState: {
+        ...state.completedCasePaginationState,
+        page: 0,
+      },
+      defectsTablePagination: {
+        ...state.defectsTablePagination,
+        page: 0,
+      },
+    })),
 }));

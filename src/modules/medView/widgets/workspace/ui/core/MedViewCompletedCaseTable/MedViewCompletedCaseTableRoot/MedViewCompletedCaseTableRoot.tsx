@@ -16,7 +16,7 @@ export const MedViewCompletedCaseTableRoot = () => {
     selectCompletedCase,
   } = useMedViewStore();
 
-  const { appliedFilters } = useMedViewFiltersStore();
+  const { appliedFilters, targetDb } = useMedViewFiltersStore();
   const {
     data: getCompletedCasesResult,
     isPending,
@@ -25,7 +25,11 @@ export const MedViewCompletedCaseTableRoot = () => {
     isSuccess,
     isFetching,
     error,
-  } = useCompletedCasesQuery(appliedFilters, completedCasePaginationState);
+  } = useCompletedCasesQuery(
+    appliedFilters,
+    completedCasePaginationState,
+    targetDb,
+  );
 
   const completedCases = getCompletedCasesResult?.completedCases ?? [];
 

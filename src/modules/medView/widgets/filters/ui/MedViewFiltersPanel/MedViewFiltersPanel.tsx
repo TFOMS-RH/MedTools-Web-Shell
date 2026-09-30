@@ -3,6 +3,7 @@ import { countActiveFilters } from "../../../../../../shared/helpers/isFilterAct
 import { Divider } from "../../../../../../components/ui/Divider/Divider";
 import { MedViewButton } from "../../../../../../shared/ui/medView/buttons/MedViewButton";
 import { useMedViewFiltersStore } from "../../model/stores/useMedViewFiltersStore";
+import { useMedViewStore } from "../../../workspace/model/stores/useMedViewStore";
 import AddIcon from "@mui/icons-material/Add";
 import styles from "./styles.module.scss";
 
@@ -11,7 +12,8 @@ interface FiltersPanelProps {
 }
 
 export const MedViewFiltersPanel = ({ filtersDraft }: FiltersPanelProps) => {
-  const { applyFilters, selectFilterGroup, selectedfilterGroupId } =
+  const { resetWorkspace } = useMedViewStore();
+  const { applyFilters, selectFilterGroup, selectedfilterGroupId, targetDb } =
     useMedViewFiltersStore();
 
   const personalGroupActiveFiltersCount = countActiveFilters(
@@ -221,8 +223,10 @@ export const MedViewFiltersPanel = ({ filtersDraft }: FiltersPanelProps) => {
             text="Применить фильтры"
             variant="outlined"
             onClick={() => {
+              resetWorkspace();
               applyFilters(filtersDraft);
             }}
+            disabled={targetDb === null}
           />
         </div>
       </div>
