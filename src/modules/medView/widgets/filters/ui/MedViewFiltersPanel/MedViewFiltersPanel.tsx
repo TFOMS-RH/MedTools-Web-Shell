@@ -66,181 +66,186 @@ export const MedViewFiltersPanel = ({ filtersDraft }: FiltersPanelProps) => {
 
   return (
     <section className={styles.filtersPanelRoot}>
-      <div className={styles.sourceToggle}>
-        <header className={styles.sourceToggleHeader}>
-          <h2>Источник данных</h2>
-        </header>
-        <TargetDbToggle value={targetDb ?? ""} onChange={handleToggleChange} />
-      </div>
-      <Divider />
-      <div className={styles.filtersList}>
-        <header className={styles.filtersListHeader}>
-          <h2>Группы фильтров</h2>
-        </header>
-        <ul>
-          <li
-            className={
-              selectedfilterGroupId === "persons"
-                ? styles.selectedRow
-                : styles.noneSelected
-            }
-            onClick={() => selectFilterGroup("persons")}
-          >
-            <div className={styles.namingGroup}>
-              <AddIcon />
-              <p>Персональные данные</p>
-            </div>
-            {personalGroupActiveFiltersCount > 0 && (
-              <div className={styles.counter}>
-                {personalGroupActiveFiltersCount}
+      <div className={styles.filtersGroup}>
+        <div className={styles.sourceToggle}>
+          <header className={styles.sourceToggleHeader}>
+            <h2>Источник данных</h2>
+          </header>
+          <TargetDbToggle
+            value={targetDb ?? ""}
+            onChange={handleToggleChange}
+          />
+        </div>
+        <Divider />
+        <div className={styles.filtersList}>
+          <header className={styles.filtersListHeader}>
+            <h2>Группы фильтров</h2>
+          </header>
+          <ul>
+            <li
+              className={
+                selectedfilterGroupId === "persons"
+                  ? styles.selectedRow
+                  : styles.noneSelected
+              }
+              onClick={() => selectFilterGroup("persons")}
+            >
+              <div className={styles.namingGroup}>
+                <AddIcon />
+                <p>Персональные данные</p>
               </div>
-            )}
-          </li>
+              {personalGroupActiveFiltersCount > 0 && (
+                <div className={styles.counter}>
+                  {personalGroupActiveFiltersCount}
+                </div>
+              )}
+            </li>
 
-          <li
-            className={
-              selectedfilterGroupId === "case-details"
-                ? styles.selectedRow
-                : styles.noneSelected
-            }
-            onClick={() => selectFilterGroup("case-details")}
-          >
-            <div className={styles.namingGroup}>
-              <AddIcon />
-              <p>Детали медицинского случая</p>
-            </div>
-            {medicalCaseDetailsGroupActiveFiltersCount > 0 && (
-              <div className={styles.counter}>
-                {medicalCaseDetailsGroupActiveFiltersCount}
+            <li
+              className={
+                selectedfilterGroupId === "case-details"
+                  ? styles.selectedRow
+                  : styles.noneSelected
+              }
+              onClick={() => selectFilterGroup("case-details")}
+            >
+              <div className={styles.namingGroup}>
+                <AddIcon />
+                <p>Детали медицинского случая</p>
               </div>
-            )}
-          </li>
+              {medicalCaseDetailsGroupActiveFiltersCount > 0 && (
+                <div className={styles.counter}>
+                  {medicalCaseDetailsGroupActiveFiltersCount}
+                </div>
+              )}
+            </li>
 
-          <li
-            className={
-              selectedfilterGroupId === "oncology"
-                ? styles.selectedRow
-                : styles.noneSelected
-            }
-            onClick={() => selectFilterGroup("oncology")}
-          >
-            <div className={styles.namingGroup}>
-              <AddIcon />
-              <p>Онкология</p>
-            </div>
-            {oncologyGroupActiveFiltersCount > 0 && (
-              <div className={styles.counter}>
-                {oncologyGroupActiveFiltersCount}
+            <li
+              className={
+                selectedfilterGroupId === "oncology"
+                  ? styles.selectedRow
+                  : styles.noneSelected
+              }
+              onClick={() => selectFilterGroup("oncology")}
+            >
+              <div className={styles.namingGroup}>
+                <AddIcon />
+                <p>Онкология</p>
               </div>
-            )}
-          </li>
-          <li
-            className={
-              selectedfilterGroupId === "prescriptions"
-                ? styles.selectedRow
-                : styles.noneSelected
-            }
-            onClick={() => selectFilterGroup("prescriptions")}
-          >
-            <div className={styles.namingGroup}>
-              <AddIcon />
-              <p>Назначения и направления</p>
-            </div>
-            {prescriptionGroupActiveFilters > 0 && (
-              <div className={styles.counter}>
-                {prescriptionGroupActiveFilters}
+              {oncologyGroupActiveFiltersCount > 0 && (
+                <div className={styles.counter}>
+                  {oncologyGroupActiveFiltersCount}
+                </div>
+              )}
+            </li>
+            <li
+              className={
+                selectedfilterGroupId === "prescriptions"
+                  ? styles.selectedRow
+                  : styles.noneSelected
+              }
+              onClick={() => selectFilterGroup("prescriptions")}
+            >
+              <div className={styles.namingGroup}>
+                <AddIcon />
+                <p>Назначения и направления</p>
               </div>
-            )}
-          </li>
-          <li
-            className={
-              selectedfilterGroupId === "clinical-groups"
-                ? styles.selectedRow
-                : styles.noneSelected
-            }
-            onClick={() => selectFilterGroup("clinical-groups")}
-          >
-            <div className={styles.namingGroup}>
-              <AddIcon />
-              <p>Клинические группы и ВМП</p>
-            </div>
-            {clinicalGroupActiveFiltersCount > 0 && (
-              <div className={styles.counter}>
-                {clinicalGroupActiveFiltersCount}
+              {prescriptionGroupActiveFilters > 0 && (
+                <div className={styles.counter}>
+                  {prescriptionGroupActiveFilters}
+                </div>
+              )}
+            </li>
+            <li
+              className={
+                selectedfilterGroupId === "clinical-groups"
+                  ? styles.selectedRow
+                  : styles.noneSelected
+              }
+              onClick={() => selectFilterGroup("clinical-groups")}
+            >
+              <div className={styles.namingGroup}>
+                <AddIcon />
+                <p>Клинические группы и ВМП</p>
               </div>
-            )}
-          </li>
-          <li
-            className={
-              selectedfilterGroupId === "provided-services"
-                ? styles.selectedRow
-                : styles.noneSelected
-            }
-            onClick={() => selectFilterGroup("provided-services")}
-          >
-            <div className={styles.namingGroup}>
-              <AddIcon />
-              <p>Оказанные услуги</p>
-            </div>
-            {providedServicesGroupActiveFiltersCount > 0 && (
-              <div className={styles.counter}>
-                {providedServicesGroupActiveFiltersCount}
+              {clinicalGroupActiveFiltersCount > 0 && (
+                <div className={styles.counter}>
+                  {clinicalGroupActiveFiltersCount}
+                </div>
+              )}
+            </li>
+            <li
+              className={
+                selectedfilterGroupId === "provided-services"
+                  ? styles.selectedRow
+                  : styles.noneSelected
+              }
+              onClick={() => selectFilterGroup("provided-services")}
+            >
+              <div className={styles.namingGroup}>
+                <AddIcon />
+                <p>Оказанные услуги</p>
               </div>
-            )}
-          </li>
-          <li
-            className={
-              selectedfilterGroupId === "sanctions"
-                ? styles.selectedRow
-                : styles.noneSelected
-            }
-            onClick={() => selectFilterGroup("sanctions")}
-          >
-            <div className={styles.namingGroup}>
-              <AddIcon />
-              <p>Санкции</p>
-            </div>
-            {sanctionGroupActiveFiltersCount > 0 && (
-              <div className={styles.counter}>
-                {sanctionGroupActiveFiltersCount}
+              {providedServicesGroupActiveFiltersCount > 0 && (
+                <div className={styles.counter}>
+                  {providedServicesGroupActiveFiltersCount}
+                </div>
+              )}
+            </li>
+            <li
+              className={
+                selectedfilterGroupId === "sanctions"
+                  ? styles.selectedRow
+                  : styles.noneSelected
+              }
+              onClick={() => selectFilterGroup("sanctions")}
+            >
+              <div className={styles.namingGroup}>
+                <AddIcon />
+                <p>Санкции</p>
               </div>
-            )}
-          </li>
-          <li
-            className={
-              selectedfilterGroupId === "ICD"
-                ? styles.selectedRow
-                : styles.noneSelected
-            }
-            onClick={() => selectFilterGroup("ICD")}
-          >
-            <div className={styles.namingGroup}>
-              <AddIcon />
-              <p>МКБ</p>
-            </div>
-          </li>
-          <li
-            className={
-              selectedfilterGroupId === "internal-service"
-                ? styles.selectedRow
-                : styles.noneSelected
-            }
-            onClick={() => selectFilterGroup("internal-service")}
-          >
-            <div className={styles.namingGroup}>
-              <AddIcon />
-              <p>Служебная информация</p>
-            </div>
-            {internalGroupActiveFiltersCount > 0 && (
-              <div className={styles.counter}>
-                {internalGroupActiveFiltersCount}
+              {sanctionGroupActiveFiltersCount > 0 && (
+                <div className={styles.counter}>
+                  {sanctionGroupActiveFiltersCount}
+                </div>
+              )}
+            </li>
+            <li
+              className={
+                selectedfilterGroupId === "ICD"
+                  ? styles.selectedRow
+                  : styles.noneSelected
+              }
+              onClick={() => selectFilterGroup("ICD")}
+            >
+              <div className={styles.namingGroup}>
+                <AddIcon />
+                <p>МКБ</p>
               </div>
-            )}
-          </li>
-        </ul>
+            </li>
+            <li
+              className={
+                selectedfilterGroupId === "internal-service"
+                  ? styles.selectedRow
+                  : styles.noneSelected
+              }
+              onClick={() => selectFilterGroup("internal-service")}
+            >
+              <div className={styles.namingGroup}>
+                <AddIcon />
+                <p>Служебная информация</p>
+              </div>
+              {internalGroupActiveFiltersCount > 0 && (
+                <div className={styles.counter}>
+                  {internalGroupActiveFiltersCount}
+                </div>
+              )}
+            </li>
+          </ul>
+        </div>
       </div>
-      <Divider />
       <div className={styles.actions}>
+        <Divider />
         <div className={styles.actionsField}>
           <MedViewButton
             text="Применить фильтры"

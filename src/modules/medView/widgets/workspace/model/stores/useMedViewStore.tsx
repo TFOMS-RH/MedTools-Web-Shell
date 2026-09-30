@@ -94,6 +94,15 @@ export const useMedViewStore = create<MedViewStore>((set) => ({
         ...newState,
       },
       selectedCompletedCaseUid: null,
+      selectedMedicalCaseUid: null,
+      selectedOncologyServiceUid: null,
+      selectedMedicationUid: null,
+      selectedProvidedServiceUid: null,
+
+      defectsTablePagination: {
+        ...state.defectsTablePagination,
+        page: 0,
+      },
     })),
   setDefectsTablePagination: (newState) =>
     set((state) => ({

@@ -1,6 +1,7 @@
 .oncologyFiltersGroup {
   display: flex;
   flex-direction: column;
+  align-self: flex-start;
 
   border: 1px solid var(--border-default);
   border-radius: var(--radius-xxl);
