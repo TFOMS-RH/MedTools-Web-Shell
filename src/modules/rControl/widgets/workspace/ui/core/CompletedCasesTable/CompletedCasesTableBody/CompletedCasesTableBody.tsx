@@ -5,9 +5,9 @@ import type { CompletedCaseListItemDto } from "../../../../model/types/core/resu
 
 interface CompletedCasesTableBodyProps {
   completedCases: CompletedCaseListItemDto[];
-  selectedCompletedCaseUid: number | null;
   isPending: boolean;
   pageSize: number;
+  selectedCompletedCaseUid: number | null;
   selectCompletedCase: (completedCaseUid: number | null) => void;
 }
 

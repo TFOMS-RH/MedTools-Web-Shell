@@ -1,0 +1,57 @@
+.providedServiceFiltersGroup {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xxl);
+  background: var(--card-background);
+
+  .providedServiceFiltersGroupHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-10);
+    padding-bottom: var(--space-5);
+
+    .titleGroup {
+      h2 {
+        font-size: var(--fs-h2);
+        user-select: none;
+      }
+
+      .description {
+        font-size: var(--fs-body2);
+        color: var(--text-secondary);
+
+        user-select: none;
+      }
+    }
+  }
+
+  .providedServiceFiltersSubgroup {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-10);
+    gap: var(--space-5);
+
+    .subgroupHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 0;
+
+      h3 {
+        font-size: var(--fs-h3);
+      }
+    }
+    .groupLineGrid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      column-gap: var(--space-5);
+    }
+  }
+  .span12 {
+    grid-column: span 12;
+  }
+}

@@ -1,11 +1,11 @@
-import { useState } from "react";
 import type { DataState } from "../../../../../../../../shared/types/DataState";
 import type { PaginationState } from "../../../../../../../../shared/types/PaginationState";
+import { useState } from "react";
 import { AppTablePagination } from "../../../../../../../../shared/ui/AppTablePagination/AppTablePagination";
 import { SearchInput } from "../../../../../../../../shared/ui/SearchInput/SearchInput";
 import { StatusBadge } from "../../../../../../../../shared/ui/StatusBadge/StatusBadge";
-import styles from "./styles.module.scss";
 import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
+import styles from "./styles.module.scss";
 
 interface CompletedCasesTableHeaderProps {
   totalCount: number;

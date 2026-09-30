@@ -1,0 +1,23 @@
+.clinicalGroupsRoot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+
+  .categoryLine {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+
+    .twoGridLine {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: var(--space-5);
+    }
+
+    .classificationCriteriaGroup {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      column-gap: var(--space-5);
+    }
+  }
+}

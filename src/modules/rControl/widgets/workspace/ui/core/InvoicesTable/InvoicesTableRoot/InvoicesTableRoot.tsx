@@ -92,7 +92,7 @@ export const InvoicesTableRoot = () => {
       {dataState === "waiting" ? (
         <DataState
           variant="waiting"
-          title="Выберите базу и период"
+          title="Выберите источник данных и период"
           description="После выбора станет доступна таблица счетов"
         />
       ) : dataState === "error" ? (

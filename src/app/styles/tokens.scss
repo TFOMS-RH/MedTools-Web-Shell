@@ -15,11 +15,14 @@
   --text-error: var(--red);
 
   --border-default: var(--gray-300);
-  --border-hover: var(--gray-400);
+  --border-hover: var(--gray-500);
   --border-focus: var(--gray-1000);
 
   --badge-background-default: var(--gray-300);
 
   --row-hover: var(--gray-100);
   --row-selected: var(--gray-200);
+
+  --list-background-hover: var(--gray-100);
+  --list-border-hover: var(--gray-300);
 }

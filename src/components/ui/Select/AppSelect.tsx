@@ -78,7 +78,19 @@ export const AppSelect = ({
         >
           {options.length > 0 ? (
             options.map((opt) => (
-              <MenuItem key={opt.value} value={opt.value}>
+              <MenuItem
+                key={opt.value}
+                value={opt.value}
+                sx={{
+                  "&.Mui-selected": {
+                    backgroundColor: "var(--gray-300)",
+                  },
+                  "&.Mui-selected:hover":{
+                    backgroundColor: "var(--gray-400)",
+
+                  }
+                }}
+              >
                 {opt.label}
               </MenuItem>
             ))

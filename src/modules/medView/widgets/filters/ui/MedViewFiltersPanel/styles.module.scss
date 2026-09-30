@@ -1,0 +1,105 @@
+.filtersPanelRoot {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xxl);
+  background: var(--card-background);
+
+  .sourceToggle {
+    display: flex;
+    align-items: center;
+
+    padding: var(--space-5) var(--space-10);
+
+    gap: var(--space-10);
+
+    .sourceToggleHeader {
+      h2 {
+        font-size: var(--fs-h3);
+      }
+    }
+  }
+
+  .filtersList {
+    padding: var(--space-5);
+    padding-top: 0;
+
+    .filtersListHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-10) var(--space-5);
+
+      h2 {
+        font-size: var(--fs-h3);
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+
+      margin: 0;
+      padding: 0;
+      gap: var(--space-1);
+    }
+
+    .selectedRow {
+      background-color: var(--gray-200);
+    }
+
+    .noneSelected:hover {
+      background-color: var(--list-background-hover);
+      cursor: pointer;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+
+      padding: var(--space-4) var(--space-5);
+      border-radius: var(--radius-l);
+
+      transition: 0.1s ease;
+
+      .namingGroup {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+
+        p {
+          font-size: var(--fs-body);
+          font-weight: var(--fw-semibold);
+
+          user-select: none;
+        }
+      }
+
+      .counter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        min-width: 1.5rem;
+        height: 1.5rem;
+
+        font-size: var(--fs-body2);
+        font-weight: var(--fw-bold);
+
+        background-color: var(--gray-300);
+        border-radius: var(--radius-l);
+      }
+    }
+  }
+
+  .actionsField {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: var(--space-5);
+  }
+}

@@ -1,5 +1,5 @@
-import { useQuery } from "@tanstack/react-query";
 import type { TargetDbType } from "../../../../../../shared/types/TargetDbType";
+import { useQuery } from "@tanstack/react-query";
 import { getMedicalOrganizations } from "../../api/getMedicalOrganizations";
 
 export const useMedicalOrganizationsQuery = (targetDb: TargetDbType | null) => {
