@@ -3,10 +3,28 @@ export interface AppliedFilters {
   medicalCaseDetails: AppliedMedicalCaseDetailsFilters;
   oncology: AppliedOncologyFilters;
   prescription: AppliedPrescriptionFilters;
-  clinicalGroups: AppliedClinicalGroupsFilters;
-  providedServices: AppliedProvidedServicesFilters;
+  clinicalGroup: AppliedClinicalGroupsFilters;
+  providedService: AppliedProvidedServicesFilters;
   sanction: AppliedSanctionFilters;
+  diseases: AppliedDiseaseFilters;
   internalService: AppliedInternalServiceFilters;
+}
+
+interface AppliedDiseaseFilters {
+  additionalDisease: AppliedAdditionalDiseaseFilters;
+  baseDisease: AppliedBaseDiseaseFilters;
+}
+
+interface AppliedAdditionalDiseaseFilters {
+  initialDiagnoses: string[];
+  concomitantDiagnoses: string[];
+  complicationDiagnoses: string[];
+}
+
+interface AppliedBaseDiseaseFilters {
+  primaryDiagnoses: string[];
+  diagnosisClasses: number[];
+  diagnosisSubClasses: number[];
 }
 
 interface AppliedInternalServiceFilters {
@@ -27,7 +45,7 @@ interface AppliedProvidedServicesFilters {
 }
 
 interface AppliedClinicalGroupsFilters {
-  baseClinicalGroups: AppliedBaseClinicalGroupsFilters;
+  baseClinicalGroup: AppliedBaseClinicalGroupsFilters;
   highTechMedicalCare: AppliedHighTechMedicalCareFilters;
 }
 
@@ -56,15 +74,15 @@ interface AppliedBasePrescriptionFilters {
   services: string[];
   referralDate: string | null;
   referredToMedicalOrganizations: string[];
-  medicalCareProfiles: string[];
+  medicalCareProfiles: number[];
   bedProfiles: string[];
 }
 
 interface AppliedReferralFilters {
   referralDate: string | null;
   referredToMedicalOrganizations: string[];
-  referralTypes: string[];
-  diagnosticMethods: string[];
+  referralTypes: number[];
+  diagnosticMethods: number[];
   referredServices: string[];
 }
 
@@ -98,31 +116,31 @@ interface AppliedMedicalCaseDetailsFilters {
 }
 
 interface AppliedBaseMedicalCaseDetailsFilters {
-  medicalProfiles: string[];
-  bedProfiles: string[];
+  medicalProfiles: number[];
+  bedProfiles: number[];
   division: string;
   encounterMedicalOrganizations: string[];
   visitPurposes: string[];
-  preventiveCarePlace: string;
+  preventiveCarePlaces: number[];
   treatmentStartDate: string | null;
   treatmentEndDate: string | null;
-  diseaseCharacters: string[];
-  physicianSpecialties: string[];
+  diseaseCharacters: number[];
+  physicianSpecialties: number[];
   medicalRecordNumber: string;
 }
 
 interface AppliedCompletedCaseDetailsFilters {
-  careConditions: string[];
-  medicalCareTypes: string[];
-  careForms: string[];
+  careConditions: number[];
+  medicalCareTypes: number[];
+  careForms: number[];
   medicalOrganizations: string[];
   referringMedicalOrganizations: string[];
   treatmentStartDate: string | null;
   treatmentEndDate: string | null;
   screeningResults: string[];
-  hospitalizationOutcomes: string[];
-  diseaseOutcomes: string[];
-  paymentMethods: string[];
+  hospitalizationOutcomes: number[];
+  diseaseOutcomes: number[];
+  paymentMethods: number[];
 }
 
 interface AppliedPersonFilters {

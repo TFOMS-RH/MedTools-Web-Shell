@@ -1,9 +1,9 @@
+import type { ProvidedServicesFiltersGroupDraft } from "../../../../workspace/model/types/FiltersDraft";
+import type { FilterOption } from "../../../../workspace/model/types/FilterOptions";
 import { useState } from "react";
 import { MedViewAutocompleteInput } from "../../../../../../../shared/ui/medView/inputs/MedViewAutocompleteInput/MedViewAutocompleteInput";
-import styles from "./styles.module.scss";
-import type { ProvidedServicesFiltersGroupDraft } from "../../../../workspace/model/types/FiltersDraft";
 import { useAutocompleteFilterOptionsQuery } from "../../../model/queries/useAutocompleteFilterOptionsQuery";
-import type { FilterOption } from "../../../../workspace/model/types/FilterOptions";
+import styles from "./styles.module.scss";
 
 interface ProvidedServiceFiltersGroupProps {
   providedServiceDraft: ProvidedServicesFiltersGroupDraft;

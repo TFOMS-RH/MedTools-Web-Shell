@@ -152,14 +152,19 @@ export const MedicalCaseDetailsFiltersSubgroup = ({
 
       <div className={styles.groupLineGrid}>
         <div className={styles.span12}>
-          <MedViewDefaultInput
+          <MedViewMultipleSelectInput
             label="Место проведения профилактического мероприятия"
-            placeholder="Место проведения профилактического мероприятия"
-            value={medicalCaseDetailsFiltersSubgroupDraft.preventiveCarePlace}
-            handleInputChange={(newValue: string) =>
+            values={medicalCaseDetailsFiltersSubgroupDraft.preventiveCarePlaces}
+            options={[
+              { label: "В медицинской организации", value: "1" },
+              { label: "По месту работы", value: "2" },
+              { label: "По месту учебы", value: "3" },
+              { label: "В стационарном учреждении", value: "4" },
+            ]}
+            onChange={(newValue: string[]) =>
               setMedicalCaseDetailsFiltersSubgroupDraft({
                 ...medicalCaseDetailsFiltersSubgroupDraft,
-                preventiveCarePlace: newValue,
+                preventiveCarePlaces: newValue,
               })
             }
           />
