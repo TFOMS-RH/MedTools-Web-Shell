@@ -1,5 +1,6 @@
 import { Box, FormControl, InputLabel, Select } from "@mui/material";
-import { medViewSelectInputSx } from "../../../../sxConfigs/medViewSelectInput";
+import { medViewSelectInputSx } from "../../../sxConfigs/medViewSelectInput";
+import { medToolsSelectMenuSx } from "../../../sxConfigs/medToolsSelectMenuSx";
 import MenuItem from "@mui/material/MenuItem";
 
 type Option<T extends string> = {
@@ -12,19 +13,20 @@ type MedViewSelectInputProps<T extends string> = {
   label: string;
   value: string;
   onChange: (value: T) => void;
+  isLoading: boolean;
 };
 
-export function MedViewSelectInput<T extends string>({
+export function MedToolsSelect<T extends string>({
   options,
   label,
   value,
+  isLoading,
   onChange,
 }: MedViewSelectInputProps<T>) {
   return (
     <Box>
       <FormControl size="small" fullWidth sx={medViewSelectInputSx}>
         <InputLabel
-          shrink
           sx={{
             fontFamily: "var(--inter)",
           }}
@@ -32,20 +34,16 @@ export function MedViewSelectInput<T extends string>({
           {label}
         </InputLabel>
         <Select
-          displayEmpty
-          renderValue={(selected) => {
-            if (!selected) {
-              return <span style={{ color: "var(--gray-500)" }}>Мужской</span>;
-            }
-
-            return options.find((x) => x.value === selected)?.label;
-          }}
-          notched
           value={value}
           onChange={(event) => onChange(event.target.value as T)}
           label={label}
+          MenuProps={{
+            sx: medToolsSelectMenuSx,
+          }}
         >
-          {options.length > 0 ? (
+          {isLoading ? (
+            <MenuItem disabled>Загружаем данные...</MenuItem>
+          ) : options.length > 0 ? (
             options.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}

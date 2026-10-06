@@ -3,10 +3,9 @@ import styles from "./styles.module.scss";
 import { useFiltersStore } from "../../model/store/useFiltersStore";
 import { TargetDbToggle } from "../../../../../../shared/ui/TargetDbToggle/TargetDbToggle";
 import { useMedicalOrganizationsQuery } from "../../model/queries/useMedicalOrganizationsQuery";
-import { AppSelect } from "../../../../../../components/ui/Select/AppSelect";
 import { useBillingPeriodsQuery } from "../../model/queries/useBillingPeriodsQuery";
 import { useWorkspaceStore } from "../../../workspace/model/store/useWorkspaceStore";
-import { Divider } from "@mui/material";
+import { MedToolsSelect } from "../../../../../../shared/ui/medTools/inputs/MedToolsSelect";
 
 export const WorkspaceFilterPanel = () => {
   const {
@@ -22,18 +21,18 @@ export const WorkspaceFilterPanel = () => {
 
   const {
     data: medicalOrganizations = [],
-    isPending: isMedicalOrganizationsFetching,
+    isFetching: isMedicalOrganizationsFetching,
   } = useMedicalOrganizationsQuery(targetDb);
 
-  const { data: billingPeriods = [], isPending: isBillingPeriodsFetching } =
+  const { data: billingPeriods = [], isFetching: isBillingPeriodsFetching } =
     useBillingPeriodsQuery(selectedMedicalOrganization, targetDb);
 
   const { setInvoicesTablePagination, selectInvoice } = useWorkspaceStore();
 
   return (
     <section className={styles.filtersPanelRoot}>
-      <p className={styles.title}>Фильтры</p>
-      <div className={styles.actions}>
+      <div className={styles.sourceGroup}>
+        <p className={styles.title}>Источник данных</p>
         <TargetDbToggle
           value={targetDb ?? ""}
           onChange={(
@@ -47,69 +46,59 @@ export const WorkspaceFilterPanel = () => {
             }
           }}
         />
-        <Divider
-          orientation="vertical"
-          sx={{
-            height: "auto",
-            minHeight: "auto",
-            borderColor: "var(--border-default)",
-          }}
-        />
-        <AppSelect
-          label="Организация"
-          value={selectedMedicalOrganization?.toString() ?? ""}
-          disabled={isMedicalOrganizationsFetching}
-          options={medicalOrganizations.map((medicalOrganization) => ({
-            label: medicalOrganization.medicalOrganizationCode,
-            value: medicalOrganization.medicalOrganizationCode,
-          }))}
-          onChange={(value: string) => {
-            if (value !== null) {
-              selectMedicalOrganization(value);
-              setInvoicesTablePagination({ page: 0 });
-              selectInvoice(null);
-            }
-          }}
-        />
+      </div>
+      <div className={styles.actions}>
+        <div className={styles.selectsGroup}>
+          <MedToolsSelect
+            label="Организация"
+            value={selectedMedicalOrganization ?? ""}
+            options={medicalOrganizations.map((entity) => ({
+              label: entity.medicalOrganizationCode,
+              value: entity.medicalOrganizationCode,
+            }))}
+            onChange={(newValue: string) => selectMedicalOrganization(newValue)}
+            isLoading={isMedicalOrganizationsFetching}
+          />
 
-        <AppSelect
-          label="Год"
-          value={selectedBillingYear?.toString() ?? ""}
-          disabled={isBillingPeriodsFetching}
-          options={billingPeriods.map((period) => ({
-            label: period.billingYear.toString(),
-            value: period.billingYear.toString(),
-          }))}
-          onChange={(value: string) => {
-            if (value !== null) {
-              selectBillingYear(parseInt(value));
-              setInvoicesTablePagination({ page: 0 });
-              selectInvoice(null);
-            }
-          }}
-        />
+          <MedToolsSelect
+            label="Год"
+            value={selectedBillingYear?.toString() ?? ""}
+            options={billingPeriods.map((period) => ({
+              label: period.billingYear.toString(),
+              value: period.billingYear.toString(),
+            }))}
+            onChange={(value: string) => {
+              if (value !== null) {
+                selectBillingYear(parseInt(value));
+                setInvoicesTablePagination({ page: 0 });
+                selectInvoice(null);
+              }
+            }}
+            isLoading={isBillingPeriodsFetching}
+          />
 
-        <AppSelect
-          label="Месяц"
-          value={selectedBillingMonth?.toString() ?? ""}
-          disabled={!selectedBillingYear}
-          options={(() => {
-            const found = billingPeriods.find(
-              (period) => period.billingYear === selectedBillingYear,
-            );
-            return (found?.billingMonths ?? []).map((month) => ({
-              label: month.toString(),
-              value: month.toString(),
-            }));
-          })()}
-          onChange={(value: string) => {
-            if (value !== null) {
-              selectBillingMonth(parseInt(value));
-              setInvoicesTablePagination({ page: 0 });
-              selectInvoice(null);
-            }
-          }}
-        />
+          <MedToolsSelect
+            label="Месяц"
+            value={selectedBillingMonth?.toString() ?? ""}
+            options={(() => {
+              const found = billingPeriods.find(
+                (period) => period.billingYear === selectedBillingYear,
+              );
+              return (found?.billingMonths ?? []).map((month) => ({
+                label: month.toString(),
+                value: month.toString(),
+              }));
+            })()}
+            onChange={(value: string) => {
+              if (value !== null) {
+                selectBillingMonth(parseInt(value));
+                setInvoicesTablePagination({ page: 0 });
+                selectInvoice(null);
+              }
+            }}
+            isLoading={isBillingPeriodsFetching}
+          />
+        </div>
       </div>
     </section>
   );

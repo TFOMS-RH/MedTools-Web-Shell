@@ -1,4 +1,4 @@
-export const muiButtonSx = {
+export const medToolsButtonSx = {
   borderRadius: "var(--radius-l)",
   fontSize: "var(--fs-body)",
   fontFamily: "var(--inter)",

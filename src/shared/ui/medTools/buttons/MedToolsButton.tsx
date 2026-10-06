@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import { muiButtonSx } from "../../../sxConfigs/muiButtonSx";
+import { medToolsButtonSx } from "../../../sxConfigs/medToolsButtonSx";
 
 interface MedToolsButtonProps {
   text: string;
@@ -23,7 +23,7 @@ export const MedToolsButton = ({
       variant={variant}
       onClick={onClick}
       disabled={disabled}
-      sx={muiButtonSx}
+      sx={medToolsButtonSx}
       fullWidth={fullWidth}
       size={size}
     >
