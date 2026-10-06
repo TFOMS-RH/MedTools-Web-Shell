@@ -1,0 +1,146 @@
+// ==========================================
+// modules/healthTrack/ui/HTFileDropzone/styles.module.scss
+// ==========================================
+
+.dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 12rem;
+  box-sizing: border-box;   // ← ДОБАВИТЬ
+
+  padding: var(--space-8);
+  border: 2px dashed var(--border-default);
+  border-radius: var(--radius-l);
+  background: var(--gray-50);
+
+  cursor: pointer;
+  user-select: none;
+
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+// ==========================================
+// Hover (мышь).
+// ==========================================
+.dropzone:hover:not(.disabled) {
+  border-color: var(--border-hover);
+  background: var(--gray-100);
+}
+
+// ==========================================
+// Focus (клавиатура).
+// ==========================================
+.dropzone:focus-visible {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.06);
+}
+
+// ==========================================
+// Drag&drop активен.
+// ==========================================
+.dragOver {
+  border-color: var(--text-default);
+  background: var(--gray-100);
+}
+
+// ==========================================
+// Файл выбран.
+// ==========================================
+.hasFile {
+  border-style: solid;
+  border-color: var(--border-default);
+  background: var(--card-background);
+  padding: var(--space-5) var(--space-7);
+}
+
+// ==========================================
+// Заблокировано.
+// ==========================================
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+// ==========================================
+// Пустое состояние (приглашение).
+// ==========================================
+.prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  text-align: center;
+
+  .promptIcon {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-2);
+  }
+
+  .promptTitle {
+    font-size: var(--fs-body1);
+    font-weight: var(--fw-semibold);
+    color: var(--text-default);
+  }
+
+  .promptHint {
+    font-size: var(--fs-body2);
+    color: var(--text-secondary);
+  }
+}
+
+// ==========================================
+// Состояние "файл выбран".
+// ==========================================
+.fileChosen {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+
+  width: 100%;
+}
+
+.fileIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 3rem;
+  height: 3rem;
+
+  border-radius: var(--radius-l);
+  background: var(--gray-100);
+  color: var(--text-default);
+
+  flex-shrink: 0;
+}
+
+.fileInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+
+  flex: 1;
+  min-width: 0;
+
+  .fileName {
+    font-size: var(--fs-body1);
+    font-weight: var(--fw-semibold);
+    color: var(--text-default);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .fileSize {
+    font-size: var(--fs-caption);
+    color: var(--text-secondary);
+  }
+}

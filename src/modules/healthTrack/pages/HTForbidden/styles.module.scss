@@ -1,0 +1,35 @@
+// ==========================================
+// modules/healthTrack/pages/HTForbidden/styles.module.scss
+// ==========================================
+
+.forbiddenRoot {
+  // Вертикальный столбик, центрирование по горизонтали.
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  // Достаточно высоты, чтобы контент визуально был по центру
+  // свободной области AppLayout. Не 100dvh — шапка/подвал Никитки на месте.
+  min-height: 60dvh;
+
+  gap: var(--space-5);
+
+  // Цифра «403»
+  h1 {
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-bold);
+    color: var(--text-default);
+    letter-spacing: 0.05em;
+    user-select: none;
+  }
+
+  // Подпись под цифрой
+  .subtitle {
+    max-width: 32rem;
+    text-align: center;
+    font-size: var(--fs-body1);
+    color: var(--text-secondary);
+    line-height: 1.4;
+  }
+}

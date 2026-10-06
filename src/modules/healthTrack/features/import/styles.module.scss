@@ -1,0 +1,9 @@
+// ==========================================
+// modules/healthTrack/features/import/styles.module.scss
+// ==========================================
+
+.tabRoot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}

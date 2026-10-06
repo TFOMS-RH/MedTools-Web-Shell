@@ -1,0 +1,26 @@
+// ==========================================
+// modules/healthTrack/ui/HTFullPageLoader/styles.module.scss
+// ==========================================
+
+.loaderRoot {
+  // Flex-центрирование по обеим осям внутри родителя.
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  // Не 100dvh — мы внутри AppLayout, шапка/подвал Никитки должны остаться на месте.
+  // 60dvh — визуально «середина» свободной области контента.
+  min-height: 60dvh;
+
+  // Расстояние между спиннером и текстом.
+  gap: var(--space-5);
+
+  // Текст "Загрузка…" под спиннером.
+  .text {
+    font-size: var(--fs-body1);
+    font-weight: var(--fw-default);
+    color: var(--text-secondary);
+    user-select: none;
+  }
+}

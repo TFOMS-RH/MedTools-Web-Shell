@@ -1,0 +1,81 @@
+// ==========================================
+// modules/healthTrack/features/statistics/components/HTStatisticsKpi/styles.module.scss
+// ==========================================
+
+.kpiRoot {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--space-5);
+
+  box-sizing: border-box;
+  width: 100%;
+}
+
+// ==========================================
+// Плитка.
+// ==========================================
+.tile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-5);
+
+  padding: var(--space-6) var(--space-7);
+
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  background: var(--card-background);
+
+  box-sizing: border-box;
+
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.tile:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+// ==========================================
+// Иконка.
+// ==========================================
+.tileIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 2.75rem;
+  height: 2.75rem;
+
+  border-radius: var(--radius-l);
+
+  flex-shrink: 0;
+}
+
+// ==========================================
+// Тело плитки.
+// ==========================================
+.tileBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+
+  min-width: 0;
+}
+
+.tileValue {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  color: var(--text-default);
+  line-height: 1.1;
+
+  font-variant-numeric: tabular-nums;
+}
+
+.tileLabel {
+  font-size: var(--fs-body2);
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,51 @@
+// ==========================================
+// modules/healthTrack/ui/HTConfirmDialog/styles.module.scss
+// ==========================================
+
+.confirmButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+
+  border: none;
+  border-radius: var(--radius-l);
+  background: var(--black);
+  color: var(--white);
+
+  font-family: var(--inter);
+  font-size: var(--fs-body1);
+  font-weight: var(--fw-semibold);
+
+  cursor: pointer;
+  user-select: none;
+
+  transition: background 0.2s ease;
+}
+
+.confirmButton:hover:not(:disabled) {
+  background: var(--gray-1400);
+}
+
+.confirmButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.confirmButton:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+// ==========================================
+// Вариант "danger" — красная кнопка.
+// ==========================================
+.danger {
+  background: #b91c1c;
+}
+
+.danger:hover:not(:disabled) {
+  background: #991b1b;
+}
