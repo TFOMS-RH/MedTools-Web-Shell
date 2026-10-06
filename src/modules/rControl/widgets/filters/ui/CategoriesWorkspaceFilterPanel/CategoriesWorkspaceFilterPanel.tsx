@@ -1,7 +1,7 @@
+import type { CategoryId } from "../../../workspace/model/types/categories/CategoryId";
 import styles from "./styles.module.scss";
 import { AppSelect } from "../../../../../../components/ui/Select/AppSelect";
 import { useWorkspaceStore } from "../../../workspace/model/store/useWorkspaceStore";
-import type { CategoryId } from "../../../workspace/model/types/categories/CategoryId";
 
 export const CategoriesWorkspaceFilterPanel = () => {
   const { setTargetCategory, targetCategory } = useWorkspaceStore();

@@ -1,7 +1,7 @@
 import { DataState } from "../../../../../../../../../shared/ui/DataState/DataState";
 import styles from "./styles.module.scss";
 
-const CategoryDefault = () => {
+const DefaultCategory = () => {
   return (
     <section className={styles.categoryDefaultRoot}>
       <DataState
@@ -13,4 +13,4 @@ const CategoryDefault = () => {
   );
 };
 
-export default CategoryDefault;
+export default DefaultCategory;

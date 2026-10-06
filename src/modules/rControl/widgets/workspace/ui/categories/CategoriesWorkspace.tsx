@@ -1,5 +1,5 @@
 import { useWorkspaceStore } from "../../model/store/useWorkspaceStore";
-import { CategoryRender } from "./render/CategoryRender/CategoryRender";
+import { CategoryRender } from "./CategoryRender";
 import styles from "./styles.module.scss";
 
 export const CategoriesWorkspace = () => {

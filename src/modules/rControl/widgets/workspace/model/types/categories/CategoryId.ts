@@ -1,9 +1,9 @@
-const сategoryIds = [
+const rControlCategoryIds = [
   "default",
   "patient",
   "case-details",
   "oncology",
-  "referrals",
+  "prescriptions",
   "clinical-groups",
   "provided-services",
   "defects",
@@ -14,11 +14,11 @@ const medViewCategoryId = [
   "patient",
   "case-details",
   "oncology",
-  "referrals",
+  "prescriptions",
   "clinical-groups",
   "provided-services",
   "defects",
 ] as const;
 
-export type CategoryId = (typeof сategoryIds)[number];
+export type RControlCategoryId = (typeof rControlCategoryIds)[number];
 export type MedViewCategoryId = (typeof medViewCategoryId)[number];

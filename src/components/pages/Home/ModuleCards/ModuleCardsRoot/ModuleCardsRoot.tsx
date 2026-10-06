@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 
 export const ModuleCardsRoot = () => {
   return (
-    <section className={styles.availableAppsRoot}>
+    <section className={styles.modulesGroup}>
       <ModuleCard
         displayName={projects.RControl.DisplayName}
         moduleDescription={projects.RControl.Description}

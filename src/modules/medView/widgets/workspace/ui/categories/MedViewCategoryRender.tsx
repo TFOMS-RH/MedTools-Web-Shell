@@ -9,7 +9,7 @@ import CategoryFallback from "../../../../../rControl/widgets/workspace/ui/categ
 
 const DefaultCategory = lazy(
   () =>
-    import("../../../../../rControl/widgets/workspace/ui/categories/components/default/CategoryDefault/CategoryDefault"),
+    import("../../../../../rControl/widgets/workspace/ui/categories/components/default/DefaultCategory/DefaultCategory"),
 );
 
 const Patient = lazy(
