@@ -6,9 +6,9 @@ import { ClinicalGroupRoot } from "./clinicalGroup/ClinicalGroupRoot/ClinicalGro
 import { useClinicalGroupQuery } from "../../../../model/queries/categories/clinicalGroups/useClinicalGroupQuery";
 import { HighTechMedicalCareRoot } from "./highTechMedicalCare/HighTechMedicalCareRoot/HighTechMedicalCareRoot";
 import { ClassificationCriteriaRoot } from "./сlassificationCriteria/ClassificationCriteriaRoot/ClassificationCriteriaRoot";
-import { TreatmentComplexityCoefficientsRoot } from "./treatmentComplexityCoefficients/TreatmentComplexityCoefficientsRoot/TreatmentComplexityCoefficientsRoot";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
 import styles from "./styles.module.scss";
+import { TreatmentComplexityCoefficientsRoot } from "./treatmentComplexityCoefficients/TreatmentComplexityCoefficientsRoot/TreatmentComplexityCoefficientsRoot";
 
 const ClinicalGroupsCategoryRoot = () => {
   const { targetDb } = useFiltersStore();
