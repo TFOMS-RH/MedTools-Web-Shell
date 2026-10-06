@@ -50,6 +50,10 @@ export const MedViewFiltersPanel = ({ filtersDraft }: FiltersPanelProps) => {
     filtersDraft.sanction,
   );
 
+  const diseaseGroupActiveFilterCount = countActiveFilters(
+    filtersDraft.diseases,
+  );
+
   const internalGroupActiveFiltersCount = countActiveFilters(
     filtersDraft.inrernalService,
   );
@@ -222,6 +226,11 @@ export const MedViewFiltersPanel = ({ filtersDraft }: FiltersPanelProps) => {
                 <AddIcon />
                 <p>МКБ</p>
               </div>
+              {diseaseGroupActiveFilterCount > 0 && (
+                <div className={styles.counter}>
+                  {diseaseGroupActiveFilterCount}
+                </div>
+              )}
             </li>
             <li
               className={

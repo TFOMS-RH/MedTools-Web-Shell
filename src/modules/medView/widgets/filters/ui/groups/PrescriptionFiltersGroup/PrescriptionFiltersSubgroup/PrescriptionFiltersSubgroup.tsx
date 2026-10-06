@@ -58,7 +58,40 @@ export const PrescriptionFiltersSubgroup = ({
         <h3>Назначения</h3>
       </header>
       <div className={styles.groupLineGrid}>
-        <div className={styles.span6}>
+        <div className={styles.span2}>
+          <MedViewDateInput
+            label="Дата направления"
+            value={prescriptionFiltersSubgroup.referralDate}
+            handleDateInputChange={(newValue: Dayjs | null) =>
+              setPrescriptionFiltersSubgroup({
+                ...prescriptionFiltersSubgroup,
+                referralDate: newValue,
+              })
+            }
+          />
+        </div>
+        <div className={styles.span10}>
+          <MedViewMultipleSelectInput
+            label="МО направления"
+            values={prescriptionFiltersSubgroup.referredToMedicalOrganizations}
+            onChange={(newValue: string[]) =>
+              setPrescriptionFiltersSubgroup({
+                ...prescriptionFiltersSubgroup,
+                referredToMedicalOrganizations: newValue,
+              })
+            }
+            options={
+              referredToMedicalOrganizationFilterOptions?.map((option) => ({
+                label: option.label,
+                value: option.value,
+              })) ?? []
+            }
+          />
+        </div>
+      </div>
+
+      <div className={styles.groupLineGrid}>
+        <div className={styles.span12}>
           <MedViewMultipleSelectInput
             label="Вид назначения"
             values={prescriptionFiltersSubgroup.prescriptionTypes}
@@ -79,10 +112,29 @@ export const PrescriptionFiltersSubgroup = ({
                   "Направлен на консультацию в иную медицинскую организацию",
                 value: "2",
               },
+              {
+                label: "Направлен на обследование",
+                value: "3",
+              },
+              {
+                label: "Направлен в дневной стационар",
+                value: "4",
+              },
+              {
+                label: "Направлен на госпитализацию",
+                value: "5",
+              },
+              {
+                label: "Направлен в реабилитационное отделение",
+                value: "6",
+              },
             ]}
           />
         </div>
-        <div className={styles.span6}>
+      </div>
+
+      <div className={styles.groupLineGrid}>
+        <div className={styles.span12}>
           <MedViewMultipleSelectInput
             label="Метод  диагностического исследования"
             values={prescriptionFiltersSubgroup.diagnosticMethods}
@@ -103,39 +155,7 @@ export const PrescriptionFiltersSubgroup = ({
       </div>
 
       <div className={styles.groupLineGrid}>
-        <div className={styles.span3}>
-          <MedViewDateInput
-            label="Дата направления"
-            value={prescriptionFiltersSubgroup.referralDate}
-            handleDateInputChange={(newValue: Dayjs | null) =>
-              setPrescriptionFiltersSubgroup({
-                ...prescriptionFiltersSubgroup,
-                referralDate: newValue,
-              })
-            }
-          />
-        </div>
-        <div className={styles.span9}>
-          <MedViewMultipleSelectInput
-            label="МО направления"
-            values={prescriptionFiltersSubgroup.referredToMedicalOrganizations}
-            onChange={(newValue: string[]) =>
-              setPrescriptionFiltersSubgroup({
-                ...prescriptionFiltersSubgroup,
-                referredToMedicalOrganizations: newValue,
-              })
-            }
-            options={
-              referredToMedicalOrganizationFilterOptions?.map((option) => ({
-                label: option.label,
-                value: option.value,
-              })) ?? []
-            }
-          />
-        </div>
-      </div>
-      <div className={styles.groupLineGrid}>
-        <div className={styles.span6}>
+        <div className={styles.span12}>
           <MedViewMultipleSelectInput
             label="Профиль медицинской помощи"
             values={prescriptionFiltersSubgroup.medicalCareProfiles}
@@ -153,7 +173,10 @@ export const PrescriptionFiltersSubgroup = ({
             }
           />
         </div>
-        <div className={styles.span6}>
+      </div>
+
+      <div className={styles.groupLineGrid}>
+        <div className={styles.span12}>
           <MedViewMultipleSelectInput
             label="Профиль койки"
             values={prescriptionFiltersSubgroup.bedProfiles}
@@ -172,6 +195,7 @@ export const PrescriptionFiltersSubgroup = ({
           />
         </div>
       </div>
+
       <div className={styles.groupLineGrid}>
         <div className={styles.span12}>
           <MedViewAutocompleteInput

@@ -10,7 +10,25 @@ export interface FiltersDraft {
   clinicalGroups: ClinicalGroupsFiltersGroupDraft;
   providedServices: ProvidedServicesFiltersGroupDraft;
   sanction: SanctionFiltersGroupDraft;
+  diseases: DiseaseFitlersGroupDraft;
   inrernalService: InternalServiceFiltersGroupDraft;
+}
+
+export interface DiseaseFitlersGroupDraft {
+  additionalDisease: AdditionalDiseaseFiltersGroupDraft;
+  baseDisease: BaseDiseaseFiltersGroupDraft;
+}
+
+export interface AdditionalDiseaseFiltersGroupDraft {
+  initialDiagnoses: FilterOption[];
+  concomitantDiagnoses: FilterOption[];
+  complicationDiagnoses: FilterOption[];
+}
+
+export interface BaseDiseaseFiltersGroupDraft {
+  primaryDiagnoses: FilterOption[];
+  diagnosisClasses: string[];
+  diagnosisSubClasses: string[];
 }
 
 export interface InternalServiceFiltersGroupDraft {
@@ -107,7 +125,7 @@ export interface MedicalCaseDetailsFiltersSubgroupDraft {
   division: string;
   encounterMedicalOrganizations: string[];
   visitPurposes: string[];
-  preventiveCarePlace: string;
+  preventiveCarePlaces: string[];
   treatmentStartDate: Dayjs | null;
   treatmentEndDate: Dayjs | null;
   diseaseCharacters: string[];
@@ -190,7 +208,7 @@ export const initialFiltersDraft: FiltersDraft = {
       division: "",
       encounterMedicalOrganizations: [],
       visitPurposes: [],
-      preventiveCarePlace: "",
+      preventiveCarePlaces: [],
       treatmentStartDate: null,
       treatmentEndDate: null,
       diseaseCharacters: [],
@@ -268,6 +286,18 @@ export const initialFiltersDraft: FiltersDraft = {
     expertiseActDate: null,
     expertiseActNumber: "",
     refusalReasons: [],
+  },
+  diseases: {
+    additionalDisease: {
+      complicationDiagnoses: [],
+      concomitantDiagnoses: [],
+      initialDiagnoses: [],
+    },
+    baseDisease: {
+      diagnosisClasses: [],
+      diagnosisSubClasses: [],
+      primaryDiagnoses: [],
+    },
   },
   inrernalService: {
     completedCaseUid: "",

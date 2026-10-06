@@ -1,6 +1,7 @@
 .generalFiltersGroup {
   display: flex;
   flex-direction: column;
+  align-self: flex-start;
 
   border: 1px solid var(--border-default);
   border-radius: var(--radius-xxl);
@@ -26,6 +27,11 @@
         user-select: none;
       }
     }
+  }
+
+  .patientGroupLine {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .insuranceSubgroup,
@@ -69,8 +75,20 @@
       grid-column: span 4;
     }
 
+    .span5 {
+      grid-column: span 5;
+    }
+
+    .span6 {
+      grid-column: span 6;
+    }
+
     .span8 {
       grid-column: span 8;
+    }
+
+    .span10 {
+      grid-column: span 10;
     }
 
     .span12 {

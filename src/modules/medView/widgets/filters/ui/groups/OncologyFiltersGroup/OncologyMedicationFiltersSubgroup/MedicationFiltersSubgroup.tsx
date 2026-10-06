@@ -37,7 +37,7 @@ export const MedicationFiltersSubgroup = ({
         <h3>Лекарственный препарат</h3>
       </header>
       <div className={styles.groupLineGrid}>
-        <div className={styles.span6}>
+        <div className={styles.span8}>
           <MedViewAutocompleteInput
             label="Идентификатор лекарственного препарата"
             values={medicationFiltersSubgroupDraft.drugIdentifiers}
@@ -54,7 +54,7 @@ export const MedicationFiltersSubgroup = ({
           />
         </div>
 
-        <div className={styles.span6}>
+        <div className={styles.span4}>
           <MedViewAutocompleteInput
             label="Cхема лекарственной терапии"
             values={medicationFiltersSubgroupDraft.therapyRegimens}

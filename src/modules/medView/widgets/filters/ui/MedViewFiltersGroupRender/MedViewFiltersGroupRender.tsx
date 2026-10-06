@@ -1,4 +1,6 @@
 import type { SetStateAction } from "react";
+import type { FilterGroupId } from "../../../workspace/model/types/FilterId";
+import type { FiltersDraft } from "../../../workspace/model/types/FiltersDraft";
 import PersonFiltersGroupRoot from "../groups/PersonFiltersGroup/PersonFiltersGroup";
 import MedicalCaseDetailsFiltersGroup from "../groups/MedicalCaseDetailsFiltersGroup/MedicalCaseDetailsFiltersGroup";
 import OncologyFiltersGroup from "../groups/OncologyFiltersGroup/OncologyFiltersGroup";
@@ -7,8 +9,7 @@ import ClinicalGroupFiltersGroup from "../groups/ClinicalGroupFiltersGroup/Clini
 import ProvidedServiceFiltersGroup from "../groups/ProvidedServiceFiltersGroup/ProvidedServiceFiltersGroup";
 import SanctionFiltersGroup from "../groups/SanctionFiltersGroup/SanctionFiltersGroup";
 import InternalServiceFiltersGroup from "../groups/InternalServiceFiltersGroup/InternalServiceFiltersGroup";
-import type { FilterGroupId } from "../../../workspace/model/types/FilterId";
-import type { FiltersDraft } from "../../../workspace/model/types/FiltersDraft";
+import { DiseaseFitlersGroup } from "../groups/DiseaseFitlersGroup/DiseaseFitlersGroup";
 
 interface FiltersGroupRenderProps {
   filterGroupId: FilterGroupId;
@@ -109,6 +110,20 @@ export const MedViewFiltersGroupRender = ({
             setFiltersDraft((prev) => ({
               ...prev,
               sanction: sanction,
+            }))
+          }
+        />
+      );
+    }
+
+    case "ICD": {
+      return (
+        <DiseaseFitlersGroup
+          diseaseFiltersGroupDraft={filtersDraft.diseases}
+          setDiseaseFiltersGroupDraft={(disease) =>
+            setFiltersDraft((prev) => ({
+              ...prev,
+              diseases: disease,
             }))
           }
         />

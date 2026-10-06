@@ -37,7 +37,7 @@ export const OncologyCaseFiltersSubgroup = ({
         <h3>Онкологический случай</h3>
       </header>
       <div className={styles.groupLineGrid}>
-        <div className={styles.span6}>
+        <div className={styles.span8}>
           <MedViewMultipleSelectInput
             label="Повод обращения"
             values={oncologyCaseFiltersSubgroupDraft.referralReasons}
@@ -56,7 +56,7 @@ export const OncologyCaseFiltersSubgroup = ({
           />
         </div>
 
-        <div className={styles.span6}>
+        <div className={styles.span4}>
           <MedViewAutocompleteInput
             label="Стадии заболевания"
             values={oncologyCaseFiltersSubgroupDraft.stages}

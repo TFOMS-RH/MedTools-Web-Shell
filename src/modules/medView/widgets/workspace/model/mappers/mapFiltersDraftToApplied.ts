@@ -31,21 +31,32 @@ export const mapFiltersDraftToApplied = (
     },
     medicalCaseDetails: {
       baseMedicalCaseDetails: {
-        bedProfiles: draft.medicalCaseDetails.medicalCaseDetails.bedProfiles,
+        bedProfiles:
+          draft.medicalCaseDetails.medicalCaseDetails.bedProfiles.map(
+            (bedProfile) => parseInt(bedProfile),
+          ),
         diseaseCharacters:
-          draft.medicalCaseDetails.medicalCaseDetails.diseaseCharacters,
+          draft.medicalCaseDetails.medicalCaseDetails.diseaseCharacters.map(
+            (diseaseCharacter) => parseInt(diseaseCharacter),
+          ),
         division: draft.medicalCaseDetails.medicalCaseDetails.division,
         encounterMedicalOrganizations:
           draft.medicalCaseDetails.medicalCaseDetails
             .encounterMedicalOrganizations,
         medicalProfiles:
-          draft.medicalCaseDetails.medicalCaseDetails.medicalProfiles,
+          draft.medicalCaseDetails.medicalCaseDetails.medicalProfiles.map(
+            (medicalProfile) => parseInt(medicalProfile),
+          ),
         medicalRecordNumber:
           draft.medicalCaseDetails.medicalCaseDetails.medicalRecordNumber,
         physicianSpecialties:
-          draft.medicalCaseDetails.medicalCaseDetails.physicianSpecialties,
-        preventiveCarePlace:
-          draft.medicalCaseDetails.medicalCaseDetails.preventiveCarePlace,
+          draft.medicalCaseDetails.medicalCaseDetails.physicianSpecialties.map(
+            (physicianSpeicality) => parseInt(physicianSpeicality),
+          ),
+        preventiveCarePlaces:
+          draft.medicalCaseDetails.medicalCaseDetails.preventiveCarePlaces.map(
+            (preventiveCarePlace) => parseInt(preventiveCarePlace),
+          ),
         treatmentEndDate: mapDate(
           draft.medicalCaseDetails.medicalCaseDetails.treatmentEndDate,
         ),
@@ -57,18 +68,30 @@ export const mapFiltersDraftToApplied = (
       },
       completedCaseDetails: {
         careConditions:
-          draft.medicalCaseDetails.completedCaseDetails.careConditions,
-        careForms: draft.medicalCaseDetails.completedCaseDetails.careForms,
+          draft.medicalCaseDetails.completedCaseDetails.careConditions.map(
+            (careCondition) => parseInt(careCondition),
+          ),
+        careForms: draft.medicalCaseDetails.completedCaseDetails.careForms.map(
+          (careForm) => parseInt(careForm),
+        ),
         diseaseOutcomes:
-          draft.medicalCaseDetails.completedCaseDetails.diseaseOutcomes,
+          draft.medicalCaseDetails.completedCaseDetails.diseaseOutcomes.map(
+            (diseaseOutcome) => parseInt(diseaseOutcome),
+          ),
         hospitalizationOutcomes:
-          draft.medicalCaseDetails.completedCaseDetails.hospitalizationOutcomes,
+          draft.medicalCaseDetails.completedCaseDetails.hospitalizationOutcomes.map(
+            (hospitalizationOutcome) => parseInt(hospitalizationOutcome),
+          ),
         medicalCareTypes:
-          draft.medicalCaseDetails.completedCaseDetails.medicalCareTypes,
+          draft.medicalCaseDetails.completedCaseDetails.medicalCareTypes.map(
+            (medicalCareType) => parseInt(medicalCareType),
+          ),
         medicalOrganizations:
           draft.medicalCaseDetails.completedCaseDetails.medicalOrganizations,
         paymentMethods:
-          draft.medicalCaseDetails.completedCaseDetails.paymentMethods,
+          draft.medicalCaseDetails.completedCaseDetails.paymentMethods.map(
+            (paymentMethod) => parseInt(paymentMethod),
+          ),
         referringMedicalOrganizations:
           draft.medicalCaseDetails.completedCaseDetails
             .referringMedicalOrganizations,
@@ -109,7 +132,9 @@ export const mapFiltersDraftToApplied = (
         bedProfiles: draft.prescription.prescription.bedProfiles,
         diagnosticMethods: draft.prescription.prescription.diagnosticMethods,
         medicalCareProfiles:
-          draft.prescription.prescription.medicalCareProfiles,
+          draft.prescription.prescription.medicalCareProfiles.map(
+            (medicalCareProfile) => parseInt(medicalCareProfile),
+          ),
         prescriptionTypes: draft.prescription.prescription.prescriptionTypes,
         referralDate: mapDate(draft.prescription.prescription.referralDate),
         referredToMedicalOrganizations:
@@ -117,9 +142,13 @@ export const mapFiltersDraftToApplied = (
         services: draft.prescription.prescription.services.map((x) => x.value),
       },
       referral: {
-        diagnosticMethods: draft.prescription.referral.diagnosticMethods,
+        diagnosticMethods: draft.prescription.referral.diagnosticMethods.map(
+          (method) => parseInt(method),
+        ),
         referralDate: mapDate(draft.prescription.referral.referralDate),
-        referralTypes: draft.prescription.referral.refferalTypes,
+        referralTypes: draft.prescription.referral.refferalTypes.map(
+          (referralType) => parseInt(referralType),
+        ),
         referredServices: draft.prescription.referral.referredServices.map(
           (x) => x.value,
         ),
@@ -127,8 +156,8 @@ export const mapFiltersDraftToApplied = (
           draft.prescription.referral.referredToMedicalOrganizations,
       },
     },
-    clinicalGroups: {
-      baseClinicalGroups: {
+    clinicalGroup: {
+      baseClinicalGroup: {
         clinicalStatisticGroupNumbers:
           draft.clinicalGroups.clinicalGroups.clinicalStatisticGroupNumbers.map(
             (x) => x.value,
@@ -156,7 +185,7 @@ export const mapFiltersDraftToApplied = (
         voucherNumber: draft.clinicalGroups.highTechMedicalCare.voucherNumber,
       },
     },
-    providedServices: {
+    providedService: {
       providedServices: draft.providedServices.serviceCodes.map((x) => x.value),
     },
     sanction: {
@@ -164,6 +193,32 @@ export const mapFiltersDraftToApplied = (
       expertiseActDate: mapDate(draft.sanction.expertiseActDate),
       expertiseActNumber: draft.sanction.expertiseActNumber,
       refusalReasons: draft.sanction.refusalReasons.map((x) => x.value),
+    },
+    diseases: {
+      additionalDisease: {
+        initialDiagnoses: draft.diseases.additionalDisease.initialDiagnoses.map(
+          (initial) => initial.value,
+        ),
+        complicationDiagnoses:
+          draft.diseases.additionalDisease.complicationDiagnoses.map(
+            (complication) => complication.value,
+          ),
+        concomitantDiagnoses:
+          draft.diseases.additionalDisease.concomitantDiagnoses.map(
+            (concomitant) => concomitant.value,
+          ),
+      },
+      baseDisease: {
+        diagnosisClasses: draft.diseases.baseDisease.diagnosisClasses.map(
+          (diagClass) => parseInt(diagClass),
+        ),
+        diagnosisSubClasses: draft.diseases.baseDisease.diagnosisSubClasses.map(
+          (diagSubClass) => parseInt(diagSubClass),
+        ),
+        primaryDiagnoses: draft.diseases.baseDisease.primaryDiagnoses.map(
+          (primary) => primary.value,
+        ),
+      },
     },
     internalService: {
       completedCaseUid: draft.inrernalService.completedCaseUid,

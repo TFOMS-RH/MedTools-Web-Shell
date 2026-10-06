@@ -45,25 +45,7 @@ export const OncologyServiceFiltersSubgroup = ({
         <h3>Онкологическая услуга</h3>
       </header>
       <div className={styles.groupLineGrid}>
-        <div className={styles.span4}>
-          <MedViewMultipleSelectInput
-            label="Тип услуги"
-            values={oncologyServiceFiltersSubgroupDraft.serviceTypes}
-            onChange={(newValue: string[]) =>
-              setOncologyServiceFiltersSubgroupDraft({
-                ...oncologyServiceFiltersSubgroupDraft,
-                serviceTypes: newValue,
-              })
-            }
-            options={
-              oncologyServiceTypeFilterOptions?.map((option) => ({
-                label: option.label,
-                value: option.value,
-              })) ?? []
-            }
-          />
-        </div>
-        <div className={styles.span4}>
+        <div className={styles.span12}>
           <MedViewMultipleSelectInput
             label="Тип хирургического лечения"
             values={oncologyServiceFiltersSubgroupDraft.surgicalTreatmentTypes}
@@ -81,7 +63,29 @@ export const OncologyServiceFiltersSubgroup = ({
             }
           />
         </div>
-        <div className={styles.span4}>
+      </div>
+
+      <div className={styles.groupLineGrid}>
+        <div className={styles.span6}>
+          <MedViewMultipleSelectInput
+            label="Тип услуги"
+            values={oncologyServiceFiltersSubgroupDraft.serviceTypes}
+            onChange={(newValue: string[]) =>
+              setOncologyServiceFiltersSubgroupDraft({
+                ...oncologyServiceFiltersSubgroupDraft,
+                serviceTypes: newValue,
+              })
+            }
+            options={
+              oncologyServiceTypeFilterOptions?.map((option) => ({
+                label: option.label,
+                value: option.value,
+              })) ?? []
+            }
+          />
+        </div>
+
+        <div className={styles.span6}>
           <MedViewMultipleSelectInput
             label="Тип лучевой терапии"
             values={oncologyServiceFiltersSubgroupDraft.radioTherapyTypes}
@@ -100,6 +104,7 @@ export const OncologyServiceFiltersSubgroup = ({
           />
         </div>
       </div>
+
       <div className={styles.groupLineGrid}>
         <div className={styles.span6}>
           <MedViewMultipleSelectInput

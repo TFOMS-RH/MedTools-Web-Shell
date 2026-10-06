@@ -1,4 +1,4 @@
-.clinicalGroupFiltersGroup {
+.diseaseFiltersGroup {
   display: flex;
   flex-direction: column;
   align-self: flex-start;
@@ -7,7 +7,7 @@
   border-radius: var(--radius-xxl);
   background: var(--card-background);
 
-  .clinicalGroupFiltersGroupHeader {
+  .diseaseFiltersGroupHeader {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -29,8 +29,8 @@
     }
   }
 
-  .highTechMedicalCareFiltersSubgroup,
-  .clinicalGroupFiltersSubgroup {
+  .baseDiseaseFiltersSubgroup,
+  .additionalDiseaseFiltersSubgroup {
     display: flex;
     flex-direction: column;
     padding: var(--space-10);
@@ -51,30 +51,6 @@
       display: grid;
       grid-template-columns: repeat(12, minmax(0, 1fr));
       column-gap: var(--space-5);
-    }
-
-    .span1 {
-      grid-column: span 1;
-    }
-
-    .span2 {
-      grid-column: span 2;
-    }
-
-    .span3 {
-      grid-column: span 3;
-    }
-
-    .span4 {
-      grid-column: span 4;
-    }
-
-    .span6 {
-      grid-column: span 6;
-    }
-
-    .span10 {
-      grid-column: span 10;
     }
 
     .span12 {
