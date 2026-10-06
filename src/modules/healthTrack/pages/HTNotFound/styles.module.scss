@@ -1,0 +1,34 @@
+// ==========================================
+// modules/healthTrack/pages/HTNotFound/styles.module.scss
+// ==========================================
+
+.notFoundRoot {
+  // Вертикальный столбик, центрирование по горизонтали.
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  // Не 100dvh — шапка/подвал Никитки остаются на месте.
+  min-height: 60dvh;
+
+  gap: var(--space-5);
+
+  // Цифра «404»
+  h1 {
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-bold);
+    color: var(--text-default);
+    letter-spacing: 0.05em;
+    user-select: none;
+  }
+
+  // Подпись под цифрой
+  .subtitle {
+    max-width: 32rem;
+    text-align: center;
+    font-size: var(--fs-body1);
+    color: var(--text-secondary);
+    line-height: 1.4;
+  }
+}

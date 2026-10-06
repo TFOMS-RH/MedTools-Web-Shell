@@ -1,0 +1,25 @@
+// ==========================================
+// modules/healthTrack/ui/HTDocumentTypeBadge/styles.module.scss
+// ==========================================
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: var(--space-1) var(--space-4);
+
+  border-radius: var(--radius-l);
+
+  font-size: var(--fs-body2);
+  font-weight: var(--fw-semibold);
+  line-height: 1.4;
+
+  // Тип файла всегда в верхнем регистре и чуть разряжен —
+  // визуально отличает его от статуса.
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+
+  white-space: nowrap;
+  user-select: none;
+}

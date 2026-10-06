@@ -1,0 +1,263 @@
+// ==========================================
+// modules/healthTrack/ui/HTDocumentDetailsDrawer/styles.module.scss
+// ==========================================
+
+// ==========================================
+// Header.
+// ==========================================
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-5);
+
+  padding: var(--space-7) var(--space-8);
+
+  box-sizing: border-box;
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-semibold);
+  color: var(--text-default);
+}
+
+.fileName {
+  font-size: var(--fs-body2);
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// ==========================================
+// Контент.
+// ==========================================
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+
+  flex: 1;
+  overflow-y: auto;
+
+  padding: var(--space-8);
+
+  box-sizing: border-box;
+}
+
+// ==========================================
+// Загрузка / ошибка.
+// ==========================================
+.loadingBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-5);
+
+  padding: var(--space-10) 0;
+
+  font-size: var(--fs-body2);
+  color: var(--text-secondary);
+}
+
+.errorBlock {
+  padding: var(--space-5) var(--space-6);
+  border: 1px solid #f0c0c0;
+  border-radius: var(--radius-l);
+  background: var(--red-opacity);
+
+  font-size: var(--fs-body2);
+  color: #b91c1c;
+  text-align: center;
+}
+
+// ==========================================
+// Бейджи.
+// ==========================================
+.badgesRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+// ==========================================
+// Секция.
+// ==========================================
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.sectionTitle {
+  font-size: var(--fs-body2);
+  font-weight: var(--fw-semibold);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+// ==========================================
+// Definition List (Информация).
+// ==========================================
+.dl {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+
+  margin: 0;
+  padding: 0;
+}
+
+.dlRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-5);
+
+  padding: var(--space-3) 0;
+
+  border-bottom: 1px solid var(--border-default);
+
+  dt {
+    font-size: var(--fs-body2);
+    color: var(--text-secondary);
+    flex-shrink: 0;
+  }
+
+  dd {
+    margin: 0;
+    font-size: var(--fs-body2);
+    color: var(--text-default);
+    font-weight: var(--fw-semibold);
+    text-align: right;
+    word-break: break-word;
+    min-width: 0;
+  }
+}
+
+.dlRow:last-child {
+  border-bottom: none;
+}
+
+.validYes {
+  color: #1a7f37;
+}
+
+.validNo {
+  color: #b91c1c;
+}
+
+// ==========================================
+// Записи.
+// ==========================================
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  gap: var(--space-5);
+
+  box-sizing: border-box;
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+
+  padding: var(--space-5);
+
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-l);
+  background: var(--gray-50);
+
+  box-sizing: border-box;
+}
+
+.statLabel {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-semibold);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.statValue {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  color: var(--text-default);
+  font-variant-numeric: tabular-nums;
+}
+
+// ==========================================
+// Ошибки валидации.
+// ==========================================
+.validationErrors {
+  margin: 0;
+  padding: var(--space-5);
+
+  border: 1px solid #f0c0c0;
+  border-radius: var(--radius-l);
+  background: var(--red-opacity);
+
+  font-family: "Consolas", "Monaco", "Menlo", monospace;
+  font-size: var(--fs-caption);
+  color: #b91c1c;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+
+  box-sizing: border-box;
+  max-height: 20rem;
+  overflow-y: auto;
+}
+
+// ==========================================
+// Footer с действиями.
+// ==========================================
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+
+  padding: var(--space-6) var(--space-8);
+
+  border-top: 1px solid var(--border-default);
+  background: var(--card-background);
+
+  box-sizing: border-box;
+}
+
+.noActions {
+  font-size: var(--fs-body2);
+  color: var(--text-secondary);
+  text-align: center;
+  margin: 0;
+}
+
+// ==========================================
+// Вкладки — на мобильных уменьшаем паддинги.
+// ==========================================
+@media (max-width: 600px) {
+  .header {
+    padding: var(--space-5) var(--space-6);
+  }
+
+  .content {
+    padding: var(--space-6);
+    gap: var(--space-6);
+  }
+
+  .footer {
+    padding: var(--space-5) var(--space-6);
+  }
+}

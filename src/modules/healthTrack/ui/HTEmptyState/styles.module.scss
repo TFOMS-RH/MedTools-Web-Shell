@@ -1,0 +1,87 @@
+// ==========================================
+// modules/healthTrack/ui/HTEmptyState/styles.module.scss
+// ==========================================
+
+.emptyRoot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  gap: var(--space-5);
+
+  padding: var(--space-10) var(--space-8);
+
+  box-sizing: border-box;
+  width: 100%;
+
+  color: var(--text-secondary);
+}
+
+// ==========================================
+// Компактный режим (для встраивания в строку таблицы).
+// ==========================================
+.compact {
+  padding: var(--space-8) var(--space-5);
+  gap: var(--space-4);
+}
+
+// ==========================================
+// Иконка.
+// ==========================================
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 5rem;
+  height: 5rem;
+
+  border-radius: 50%;
+  background: var(--gray-100);
+  color: var(--text-secondary);
+
+  flex-shrink: 0;
+}
+
+.compact .iconWrapper {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+// ==========================================
+// Заголовок.
+// ==========================================
+.title {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-semibold);
+  color: var(--text-default);
+  margin: 0;
+}
+
+.compact .title {
+  font-size: var(--fs-body1);
+}
+
+// ==========================================
+// Описание.
+// ==========================================
+.description {
+  font-size: var(--fs-body2);
+  color: var(--text-secondary);
+  line-height: 1.4;
+  max-width: 32rem;
+  margin: 0;
+}
+
+// ==========================================
+// Кнопка действия.
+// ==========================================
+.actionWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: var(--space-3);
+}

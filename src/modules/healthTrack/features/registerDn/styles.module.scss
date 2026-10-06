@@ -1,0 +1,29 @@
+// ==========================================
+// modules/healthTrack/features/registerDn/styles.module.scss
+// ==========================================
+
+.tabRoot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+
+  .title {
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-semibold);
+    color: var(--text-default);
+  }
+
+  .subtitle {
+    font-size: var(--fs-body2);
+    color: var(--text-secondary);
+  }
+}

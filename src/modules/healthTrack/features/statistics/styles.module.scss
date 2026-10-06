@@ -1,0 +1,64 @@
+// ==========================================
+// modules/healthTrack/features/statistics/styles.module.scss
+// ==========================================
+
+.tabRoot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+
+  box-sizing: border-box;
+  width: 100%;
+}
+
+// ==========================================
+// Заголовок.
+// ==========================================
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.title {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-semibold);
+  color: var(--text-default);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: var(--fs-body2);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+// ==========================================
+// Загрузка (первый раз).
+// ==========================================
+.loadingBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: var(--space-10) 0;
+
+  font-size: var(--fs-body2);
+  color: var(--text-secondary);
+}
+
+// ==========================================
+// Ряд графиков (2 колонки).
+// ==========================================
+.chartsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+
+  box-sizing: border-box;
+  width: 100%;
+
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr;
+  }
+}

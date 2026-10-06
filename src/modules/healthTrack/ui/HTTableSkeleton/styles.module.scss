@@ -1,0 +1,70 @@
+// ==========================================
+// modules/healthTrack/ui/HTTableSkeleton/styles.module.scss
+// ==========================================
+
+.tableRoot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+
+  padding: var(--space-8) var(--space-10);
+
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  background: var(--card-background);
+
+  box-sizing: border-box;
+  width: 100%;
+}
+
+// ==========================================
+// Верхняя инфо-строка.
+// ==========================================
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+  width: 100%;
+}
+
+// ==========================================
+// Обёртка таблицы.
+// ==========================================
+.tableWrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-l);
+}
+
+// ==========================================
+// Таблица.
+// ==========================================
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-body2);
+
+  thead {
+    background: var(--gray-50);
+
+    th {
+      text-align: left;
+      padding: var(--space-4) var(--space-5);
+      border-bottom: 1px solid var(--border-default);
+    }
+  }
+
+  tbody {
+    tr {
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--border-default);
+      }
+    }
+
+    td {
+      padding: var(--space-4) var(--space-5);
+    }
+  }
+}

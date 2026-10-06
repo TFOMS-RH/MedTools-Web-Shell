@@ -1,0 +1,215 @@
+// ==========================================
+// modules/healthTrack/features/documents/HTDocumentsAggregation/styles.module.scss
+// ==========================================
+
+.aggregationRoot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+
+  padding: var(--space-7) var(--space-10);
+
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  background: var(--card-background);
+
+  box-sizing: border-box;
+  width: 100%;
+}
+
+// ==========================================
+// Заголовок.
+// ==========================================
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.headerTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+
+  .title {
+    font-size: var(--fs-h4);
+    font-weight: var(--fw-semibold);
+    color: var(--text-default);
+    margin: 0;
+  }
+}
+
+.subtitle {
+  font-size: var(--fs-body2);
+  color: var(--text-secondary);
+  margin: 0;
+  padding-left: calc(22px + var(--space-3)); // отступ как под иконку
+}
+
+// ==========================================
+// Строки форм.
+// ==========================================
+.gridRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--space-5);
+
+  box-sizing: border-box;
+  width: 100%;
+}
+
+// ==========================================
+// Карточка формы.
+// ==========================================
+.formCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+
+  padding: var(--space-5);
+
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-l);
+  background: var(--gray-50);
+
+  box-sizing: border-box;
+}
+
+// Заглушки — чуть приглушённые.
+.stubCard {
+  opacity: 0.75;
+}
+
+.formTitle {
+  font-size: var(--fs-body2);
+  font-weight: var(--fw-semibold);
+  color: var(--text-default);
+  margin: 0;
+
+  min-height: 1.25rem;
+}
+
+// ==========================================
+// Строка с полями.
+// ==========================================
+.inlineField {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-2);
+
+  box-sizing: border-box;
+  width: 100%;
+}
+
+// ==========================================
+// Компактный input.
+// ==========================================
+.compactInput {
+  box-sizing: border-box;
+
+  flex: 1 1 auto;
+  min-width: 0;
+
+  height: 2rem;
+
+  padding: 0 var(--space-4);
+
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-l);
+  background: var(--card-background);
+
+  font-family: var(--inter);
+  font-size: var(--fs-body2);
+  color: var(--text-default);
+
+  transition: border-color 0.15s ease;
+}
+
+.compactInput::placeholder {
+  color: var(--text-secondary);
+}
+
+.compactInput:hover:not(:disabled) {
+  border-color: var(--border-hover);
+}
+
+.compactInput:focus {
+  outline: none;
+  border-color: var(--border-focus);
+}
+
+.compactInput:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+// Поле «номер пакета» — уже остальных.
+.fileNumber {
+  flex: 0 0 4.5rem;
+}
+
+// ==========================================
+// Кнопка «Выгрузить».
+// ==========================================
+.exportBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+
+  flex: 0 0 auto;
+
+  height: 2rem;
+  padding: 0 var(--space-5);
+
+  border: none;
+  border-radius: var(--radius-l);
+  background: var(--black);
+  color: var(--white);
+
+  font-family: var(--inter);
+  font-size: var(--fs-body2);
+  font-weight: var(--fw-semibold);
+  white-space: nowrap;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition: background 0.15s ease;
+}
+
+.exportBtn:hover:not(:disabled) {
+  background: var(--gray-1400);
+}
+
+.exportBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.exportBtn:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+// ==========================================
+// На узких экранах — поля переносятся.
+// ==========================================
+@media (max-width: 900px) {
+  .inlineField {
+    flex-wrap: wrap;
+  }
+
+  .compactInput {
+    flex: 1 1 100%;
+  }
+
+  .exportBtn {
+    flex: 1 1 100%;
+  }
+
+  .fileNumber {
+    flex: 1 1 100%;
+  }
+}

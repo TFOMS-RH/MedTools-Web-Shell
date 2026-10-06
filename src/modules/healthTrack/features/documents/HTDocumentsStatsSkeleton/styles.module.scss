@@ -1,0 +1,41 @@
+// ==========================================
+// modules/healthTrack/features/documents/HTDocumentsStatsSkeleton/styles.module.scss
+// ==========================================
+
+.statsRoot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.tilesRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: var(--space-5);
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+
+  padding: var(--space-6) var(--space-7);
+
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-l);
+  background: var(--card-background);
+
+  box-sizing: border-box;
+}
+
+.tileSmall {
+  gap: var(--space-3);
+  padding: var(--space-5) var(--space-7);
+}
+
+.tileHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
