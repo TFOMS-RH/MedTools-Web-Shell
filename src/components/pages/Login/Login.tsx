@@ -1,46 +1,52 @@
+import { MedToolsButton } from "../../../shared/ui/medTools/buttons/MedToolsButton";
+import { MedToolsInput } from "../../../shared/ui/medTools/inputs/MedToolsInput";
 import { useAuthStore } from "../../../modules/auth/stores/authStore";
-import { AppButton } from "../../ui/AppButton/AppButton";
-import { AppInput } from "../../ui/AppInput/AppInput";
+import { authService } from "../../../modules/auth/api/authService";
 import { Divider } from "../../ui/Divider/Divider";
 import { useNavigate } from "react-router";
-import { authService } from "../../../modules/auth/api/authService";
-
 import React, { useState } from "react";
 import styles from "./styles.module.scss";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const { setSession } = useAuthStore();
   const navigator = useNavigate();
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    try {
+      e.preventDefault();
+      setIsLoading(true);
 
-    const response = await authService.login(email, password);
-    const result = response.data;
+      const response = await authService.login(email, password);
+      const result = response.data;
 
-    if (!result.isSuccess) {
-      return;
+      if (!result.isSuccess) {
+        return;
+      }
+
+      setSession(result.value.accessToken, {
+        email: result.value.email,
+        uid: result.value.uid,
+        role: result.value.role,
+        username: result.value.username,
+      });
+
+      sessionStorage.setItem("accessToken", result.value.accessToken);
+
+      setIsLoading(false);
+      navigator("/");
+    } catch {
+      setIsLoading(false);
     }
-
-    setSession(result.value.accessToken, {
-      email: result.value.email,
-      uid: result.value.uid,
-      role: result.value.role,
-      username: result.value.username,
-    });
-
-    sessionStorage.setItem("accessToken", result.value.accessToken);
-
-    navigator("/");
   };
 
   return (
     <section className={styles.loginRoot}>
       <header className={styles.loginHeader}>
-        <h1>Войти в MedTools Web</h1>
+        <h1>Вход в MedTools Web</h1>
       </header>
 
       <form onSubmit={handleLogin} className={styles.loginForm}>
@@ -48,35 +54,41 @@ export const Login = () => {
           <h2>Войдите в свой аккаунт</h2>
 
           <p className={styles.primaryText}>
-            Воспользуйтесь данными, полученными от информационно-аналитического
-            отдела
+            Получите данные у отдела информационно-аналитического обеспечения или введите их ниже
           </p>
         </header>
 
         <section className={styles.inputs}>
-          <AppInput
+          <MedToolsInput
             label="Почта"
-            variant="md"
             placeholder="nikitkadev@gmail.com"
             value={email}
-            onChange={(e) => setEmail(e.currentTarget.value)}
+            handleInputChange={setEmail}
+            fullWidth
+            size="small"
           />
 
-          <AppInput
+          <MedToolsInput
             label="Пароль"
-            variant="md"
-            type="password"
+            placeholder=""
             value={password}
-            onChange={(e) => setPassword(e.currentTarget.value)}
+            handleInputChange={setPassword}
+            fullWidth
+            size="small"
+            isPassword
           />
         </section>
 
         <Divider />
 
         <section className={styles.actions}>
-          <AppButton size="md" variant="primary" type="submit">
-            Войти
-          </AppButton>
+          <MedToolsButton
+            text="Войти"
+            variant="outlined"
+            fullWidth
+            isLoading={isLoading}
+            isSubmitButton
+          />
         </section>
       </form>
     </section>
