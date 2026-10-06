@@ -1,0 +1,54 @@
+.moduleCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 27.5rem;
+
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  background: var(--card-background);
+
+  .moduleCardHeader {
+    display: flex;
+    flex-direction: column;
+
+    padding: var(--space-10);
+    padding-bottom: 0;
+    gap: var(--space-8);
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      height: 5rem;
+      width: 5rem;
+
+      font-size: var(--fs-h2);
+
+      border-radius: var(--radius-l);
+      background-color: var(--gray-200);
+    }
+
+    .description {
+      display: flex;
+      flex-direction: column;
+
+      gap: var(--space-3);
+
+      .appCardDescriptionHeader {
+        display: flex;
+        align-items: center;
+
+        gap: var(--space-5);
+      }
+    }
+  }
+
+  .appCardActions {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-10);
+  }
+}

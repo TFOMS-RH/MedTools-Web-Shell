@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import { muiButtonSx } from "../../../sxConfigs/muiButtonSx";
 
-interface MedViewButtonProps {
+interface MedToolsButtonProps {
   text: string;
   variant: "text" | "contained" | "outlined";
   onClick: () => void;
@@ -10,14 +10,14 @@ interface MedViewButtonProps {
   size?: "small" | "medium" | "large";
 }
 
-export const MedViewButton = ({
+export const MedToolsButton = ({
   text,
   variant,
   onClick,
   disabled,
   fullWidth = true,
   size = "large",
-}: MedViewButtonProps) => {
+}: MedToolsButtonProps) => {
   return (
     <Button
       variant={variant}
