@@ -1,8 +1,8 @@
 import { Divider } from "../../../components/ui/Divider/Divider";
 import { CategoriesWorkspaceFilterPanel } from "../widgets/filters/ui/CategoriesWorkspaceFilterPanel/CategoriesWorkspaceFilterPanel";
 import { WorkspaceFilterPanel } from "../widgets/filters/ui/WorkspaceFilterPanel/WorkspaceFilterPanel";
-import { CategoriesWorkspace } from "../widgets/workspace/ui/categories/CategoriesWorkspace";
-import { Workspace } from "../widgets/workspace/ui/core/Workspace";
+import { RControlCategoryRender } from "../widgets/workspace/ui/categories/RControlCategoryRender";
+import { RControlWorkspace } from "../widgets/workspace/ui/core/RControlWorkspace";
 import styles from "./styles.module.scss";
 
 export const RControl = () => {
@@ -10,12 +10,12 @@ export const RControl = () => {
     <>
       <div className={styles.workspaceGroup}>
         <WorkspaceFilterPanel />
-        <Workspace />
+        <RControlWorkspace />
       </div>
       <Divider />
       <div className={styles.workspaceGroup}>
         <CategoriesWorkspaceFilterPanel />
-        <CategoriesWorkspace />
+        <RControlCategoryRender />
       </div>
     </>
   );

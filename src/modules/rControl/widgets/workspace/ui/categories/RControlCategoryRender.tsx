@@ -1,4 +1,5 @@
 import type { RControlCategoryId } from "../../model/types/categories/CategoryId";
+import { useWorkspaceStore } from "../../model/store/useWorkspaceStore";
 import CategoryFallback from "./components/default/CategoryFallback/CategoryFallback";
 import {
   lazy,
@@ -51,11 +52,8 @@ const categoryMap = {
   defects: DefectsCategoryComponent,
 } satisfies Record<RControlCategoryId, LazyExoticComponent<ComponentType>>;
 
-interface CategoryRenderProps {
-  targetCategory: RControlCategoryId;
-}
-
-export const CategoryRender = ({ targetCategory }: CategoryRenderProps) => {
+export const RControlCategoryRender = () => {
+  const { targetCategory } = useWorkspaceStore();
   const CategoryComponent = categoryMap[targetCategory];
 
   return (

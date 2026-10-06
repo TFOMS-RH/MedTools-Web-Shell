@@ -4,7 +4,7 @@ import { RControlInvoicesTableRoot } from "./invoices/table/RControlInvoicesTabl
 import { RControlMedicalCaseCardsGroupRoot } from "./medicalCases/cardsGroup/RControlMedicalCaseCardsGroupRoot";
 import styles from "./styles.module.scss";
 
-export const Workspace = () => {
+export const RControlWorkspace = () => {
   return (
     <section className={styles.workspaceRoot}>
       <div className={styles.invoicesGroup}>
