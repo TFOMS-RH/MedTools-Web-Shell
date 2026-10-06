@@ -3,7 +3,7 @@ import { Divider } from "../../../../../../../../components/ui/Divider/Divider";
 import { Skeleton } from "@mui/material";
 import styles from "./styles.module.scss";
 
-export const MedicalCasesCardsSkeleton = () => {
+export const RControlMedicalCaseCardSkeletons = () => {
   return (
     <section className={styles.medicalCasesCards}>
       {Array.from({ length: 4 }).map((_, index) => (

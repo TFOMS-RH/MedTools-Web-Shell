@@ -1,6 +1,6 @@
 import type { PaginationState } from "../../../../../../shared/types/PaginationState";
 import { create } from "zustand";
-import type { CategoryId } from "../types/categories/CategoryId";
+import type { RControlCategoryId } from "../types/categories/CategoryId";
 
 interface WorkspaceStore {
   selectedInvoiceUid: number | null;
@@ -16,7 +16,7 @@ interface WorkspaceStore {
   completedCasesTablePagination: PaginationState;
   defectsTablePagination: PaginationState;
 
-  targetCategory: CategoryId;
+  targetCategory: RControlCategoryId;
 
   selectOncologyService: (oncologyServiceUid: number | null) => void;
   selectMedication: (medicationUid: number | null) => void;
@@ -33,7 +33,7 @@ interface WorkspaceStore {
   setDefectsTablePagination: (
     newState: Partial<WorkspaceStore["defectsTablePagination"]>,
   ) => void;
-  setTargetCategory: (targetCategory: CategoryId) => void;
+  setTargetCategory: (targetCategory: RControlCategoryId) => void;
   setInvoicesSearch: (value: string) => void;
   setCompletedCasesSearch: (value: string) => void;
 }
@@ -186,7 +186,7 @@ export const useWorkspaceStore = create<WorkspaceStore>((set) => ({
       invoiceTableSearchString: value,
     })),
 
-    setCompletedCasesSearch: (value: string) =>
+  setCompletedCasesSearch: (value: string) =>
     set((state) => ({
       selectedCompletedCaseUid: null,
       selectedMedicalCaseUid: null,

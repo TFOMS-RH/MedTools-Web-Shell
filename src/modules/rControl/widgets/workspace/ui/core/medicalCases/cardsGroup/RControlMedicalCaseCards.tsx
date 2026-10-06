@@ -1,24 +1,24 @@
 import type { MedicalCaseDto } from "../../../../model/types/core/results/GetMedicalCaseListItemsResult";
+import { formatNullableValue } from "../../../../../../../../shared/helpers/formatNullableValue";
+import { formatCurrency } from "../../../../../../../../shared/helpers/formatCurrency";
 import { CardField } from "../../../../../../../../shared/ui/CardField/CardField";
 import { Divider } from "../../../../../../../../components/ui/Divider/Divider";
 import RadioButtonCheckedIcon from "@mui/icons-material/RadioButtonChecked";
 import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
 import styles from "./styles.module.scss";
 import dayjs from "dayjs";
-import { formatNullableValue } from "../../../../../../../../shared/helpers/formatNullableValue";
-import { formatCurrency } from "../../../../../../../../shared/helpers/formatCurrency";
 
-interface MedicalCasesCardsProps {
+interface RControlMedicalCaseCardsProps {
   medicalCases: MedicalCaseDto[];
   selectedMedicalCaseUid: number | null;
   selectMedicalCase: (medicalCaseUid: number | null) => void;
 }
 
-export const MedicalCasesCards = ({
+export const RControlMedicalCaseCards = ({
   medicalCases,
   selectedMedicalCaseUid,
   selectMedicalCase,
-}: MedicalCasesCardsProps) => {
+}: RControlMedicalCaseCardsProps) => {
   return (
     <section className={styles.medicalCasesCards}>
       {medicalCases.map((medicalCase) => (

@@ -7,7 +7,7 @@ import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
 import { useState } from "react";
 import styles from "./styles.module.scss";
 
-interface InvoicesTableHeaderProps {
+interface RControlInvoicesTableHeaderProps {
   totalCount: number;
   state: DataState;
   pagination: PaginationState;
@@ -22,7 +22,7 @@ interface InvoicesTableHeaderProps {
   disabled: boolean;
 }
 
-export const InvoicesTableHeader = ({
+export const RControlInvoicesTableHeader = ({
   totalCount,
   state,
   pagination,
@@ -30,7 +30,7 @@ export const InvoicesTableHeader = ({
   onPageChange,
   isLoading,
   disabled,
-}: InvoicesTableHeaderProps) => {
+}: RControlInvoicesTableHeaderProps) => {
   const [searchValue, setSearchValue] = useState("");
   const { setInvoicesSearch } = useWorkspaceStore();
 

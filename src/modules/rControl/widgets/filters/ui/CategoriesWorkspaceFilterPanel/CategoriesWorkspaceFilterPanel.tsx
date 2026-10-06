@@ -1,4 +1,4 @@
-import type { CategoryId } from "../../../workspace/model/types/categories/CategoryId";
+import type { RControlCategoryId } from "../../../workspace/model/types/categories/CategoryId";
 import styles from "./styles.module.scss";
 import { AppSelect } from "../../../../../../components/ui/Select/AppSelect";
 import { useWorkspaceStore } from "../../../workspace/model/store/useWorkspaceStore";
@@ -12,7 +12,9 @@ export const CategoriesWorkspaceFilterPanel = () => {
         label="Категория"
         value={targetCategory === "default" ? "" : targetCategory}
         disabled={false}
-        onChange={(value: string) => setTargetCategory(value as CategoryId)}
+        onChange={(value: string) =>
+          setTargetCategory(value as RControlCategoryId)
+        }
         options={[
           { label: "Пациент", value: "patient" },
           { label: "Детали случая", value: "case-details" },

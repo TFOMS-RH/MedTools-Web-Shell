@@ -1,9 +1,9 @@
+import type { InvoiceListItemDto } from "../../../../model/types/core/results/GetInvoiceListItemsResult";
 import { formatCurrency } from "../../../../../../../../shared/helpers/formatCurrency";
 import { TableSkeleton } from "../../../../../../../../shared/ui/TableSkeleton/TableSkeleton";
-import type { InvoiceListItemDto } from "../../../../model/types/core/results/GetInvoiceListItemsResult";
 import dayjs from "dayjs";
 
-interface InvoicesTableBodyProps {
+interface RControlInvoicesTableBodyProps {
   invoices: InvoiceListItemDto[];
   selectedInvoiceUid: number | null;
   isPending: boolean;
@@ -11,13 +11,13 @@ interface InvoicesTableBodyProps {
   selectInvoice: (invoiceUid: number | null) => void;
 }
 
-export const InvoicesTableBody = ({
+export const RControlInvoicesTableBody = ({
   invoices,
   selectedInvoiceUid,
   isPending,
   pageSize,
   selectInvoice,
-}: InvoicesTableBodyProps) => {
+}: RControlInvoicesTableBodyProps) => {
   return (
     <div className="tableContainer">
       <table>

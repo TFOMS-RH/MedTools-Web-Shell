@@ -1,14 +1,14 @@
-import { Divider } from "../../../../../../../../components/ui/Divider/Divider";
-import { resolveDataState } from "../../../../../../../../shared/helpers/resolveDataState";
-import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
-import { useFiltersStore } from "../../../../../filters/model/store/useFiltersStore";
 import { useCompletedCaseListItemsQuery } from "../../../../model/queries/core/useCompletedCaseListItemsQuery";
+import { RControlCompletedCasesTableBody } from "./RControlCompletedCasesTableBody";
+import { RControlCompletedCasesTableHeader } from "./RControlCompletedCasesTableHeader";
 import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
-import { CompletedCasesTableBody } from "../CompletedCasesTableBody/CompletedCasesTableBody";
-import { CompletedCasesTableHeader } from "../CompletedCasesTableHeader/CompletedCasesTableHeader";
+import { resolveDataState } from "../../../../../../../../shared/helpers/resolveDataState";
+import { useFiltersStore } from "../../../../../filters/model/store/useFiltersStore";
+import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
+import { Divider } from "../../../../../../../../components/ui/Divider/Divider";
 import styles from "./styles.module.scss";
 
-export const CompletedCasesTableRoot = () => {
+export const RControlCompletedCasesTableRoot = () => {
   const {
     selectedInvoiceUid,
     selectedCompletedCaseUid,
@@ -70,7 +70,7 @@ export const CompletedCasesTableRoot = () => {
 
   return (
     <section className={styles.CompletedCasesTableRoot}>
-      <CompletedCasesTableHeader
+      <RControlCompletedCasesTableHeader
         totalCount={getCompletedCasesResult?.totalCount ?? 0}
         state={dataState}
         pagination={completedCasesTablePagination}
@@ -100,7 +100,7 @@ export const CompletedCasesTableRoot = () => {
           description="Законченные случаи не найдены по выбранному счету"
         />
       ) : (
-        <CompletedCasesTableBody
+        <RControlCompletedCasesTableBody
           isPending={isPending}
           pageSize={completedCasesTablePagination.pageSize}
           completedCases={completedCases}

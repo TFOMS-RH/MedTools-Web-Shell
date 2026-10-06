@@ -1,13 +1,13 @@
 import { useMedicalCasesListItemsQuery } from "../../../../model/queries/core/useMedicalCasesListItemsQuery";
-import { resolveDataState } from "../../../../../../../../shared/helpers/resolveDataState";
-import { MedicalCasesCardsSkeleton } from "../MedicalCasesCards/MedicalCasesCardsSkeleton";
-import { useFiltersStore } from "../../../../../filters/model/store/useFiltersStore";
-import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
+import { RControlMedicalCaseCardSkeletons } from "./RControlMedicalCaseCardSkeletons";
 import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
-import { MedicalCasesCards } from "../MedicalCasesCards/MedicalCasesCards";
+import { resolveDataState } from "../../../../../../../../shared/helpers/resolveDataState";
+import { useFiltersStore } from "../../../../../filters/model/store/useFiltersStore";
+import { RControlMedicalCaseCards } from "./RControlMedicalCaseCards";
+import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
 import { useEffect } from "react";
 
-export const MedicalCasesSection = () => {
+export const RControlMedicalCaseCardsGroupRoot = () => {
   const { targetDb } = useFiltersStore();
   const {
     selectedCompletedCaseUid,
@@ -59,7 +59,7 @@ export const MedicalCasesSection = () => {
           variant="error"
         />
       ) : dataState === "loading" ? (
-        <MedicalCasesCardsSkeleton />
+        <RControlMedicalCaseCardSkeletons />
       ) : dataState === "empty" ? (
         <DataState
           title="Данных не найдено"
@@ -67,7 +67,7 @@ export const MedicalCasesSection = () => {
           variant="empty"
         />
       ) : (
-        <MedicalCasesCards
+        <RControlMedicalCaseCards
           medicalCases={medicalCases ?? []}
           selectedMedicalCaseUid={selectedMedicalCaseUid}
           selectMedicalCase={selectMedicalCase}

@@ -1,12 +1,12 @@
-import { resolveDataState } from "../../../../../../../shared/helpers/resolveDataState";
-import { DataState } from "../../../../../../../shared/ui/DataState/DataState";
-import { useFiltersStore } from "../../../../filters/model/store/useFiltersStore";
-import { useInvoiceSummaryQuery } from "../../../model/queries/core/useInvoiceSummaryQuery";
-import { useWorkspaceStore } from "../../../model/store/useWorkspaceStore";
-import { InvoiceSummaryBody } from "./InvoiceSummaryBody";
-import { InvoiceSummaryHeader } from "./InvoiceSummaryHeader";
+import { resolveDataState } from "../../../../../../../../shared/helpers/resolveDataState";
+import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
+import { useFiltersStore } from "../../../../../filters/model/store/useFiltersStore";
+import { useInvoiceSummaryQuery } from "../../../../model/queries/core/useInvoiceSummaryQuery";
+import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
+import { RControlInvoiceSummaryCardHeader } from "./RControlInvoiceSummaryCardHeader";
+import { RControlInvoiceSummaryCardBody } from "./RControlInvoiceSummaryCardBody";
 
-export const InvoiceSummaryRoot = () => {
+export const RControlInvoiceSummaryCardRoot = () => {
   const { targetDb } = useFiltersStore();
   const { selectedInvoiceUid } = useWorkspaceStore();
   const {
@@ -27,8 +27,11 @@ export const InvoiceSummaryRoot = () => {
   });
 
   return (
-    <article className="cardRoot" style={{flexDirection: 'column', alignSelf: 'flex-start'}}>
-      <InvoiceSummaryHeader />
+    <article
+      className="cardRoot"
+      style={{ flexDirection: "column", alignSelf: "flex-start" }}
+    >
+      <RControlInvoiceSummaryCardHeader />
       {dataState === "waiting" ? (
         <DataState
           title="Выберите счет"
@@ -48,7 +51,7 @@ export const InvoiceSummaryRoot = () => {
           variant="empty"
         />
       ) : (
-        <InvoiceSummaryBody
+        <RControlInvoiceSummaryCardBody
           invoiceSummary={invoiceSummary!}
           isPending={isPending}
         />

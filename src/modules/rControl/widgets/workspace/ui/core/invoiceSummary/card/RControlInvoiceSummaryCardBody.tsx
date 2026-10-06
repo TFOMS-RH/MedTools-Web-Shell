@@ -1,19 +1,19 @@
-import type { InvoiceSummaryDto } from "../../../model/types/core/results/GetInvoiceSummaryResult";
-import { formatCurrency } from "../../../../../../../shared/helpers/formatCurrency";
-import { formatDate } from "../../../../../../../shared/helpers/formatDate";
-import { CardField } from "../../../../../../../shared/ui/CardField/CardField";
-import { Divider } from "../../../../../../../components/ui/Divider/Divider";
+import type { InvoiceSummaryDto } from "../../../../model/types/core/results/GetInvoiceSummaryResult";
+import { formatCurrency } from "../../../../../../../../shared/helpers/formatCurrency";
+import { formatDate } from "../../../../../../../../shared/helpers/formatDate";
+import { CardField } from "../../../../../../../../shared/ui/CardField/CardField";
+import { Divider } from "../../../../../../../../components/ui/Divider/Divider";
 import { Skeleton } from "@mui/material";
 
-interface InvoiceSummaryBodyProps {
+interface RControlInvoiceSummaryCardBodyProps {
   invoiceSummary: InvoiceSummaryDto;
   isPending: boolean;
 }
 
-export const InvoiceSummaryBody = ({
+export const RControlInvoiceSummaryCardBody = ({
   invoiceSummary,
   isPending,
-}: InvoiceSummaryBodyProps) => {
+}: RControlInvoiceSummaryCardBodyProps) => {
   return (
     <div className="cardContent">
       {isPending ? (

@@ -1,4 +1,4 @@
-export const InvoiceSummaryHeader = () => {
+export const RControlInvoiceSummaryCardHeader = () => {
   return (
     <header className="cardHeader">
       <h2>Финансовая информация счета {}</h2>

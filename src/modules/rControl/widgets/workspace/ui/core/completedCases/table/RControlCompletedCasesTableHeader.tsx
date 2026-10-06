@@ -1,13 +1,13 @@
-import type { DataState } from "../../../../../../../../shared/types/DataState";
 import type { PaginationState } from "../../../../../../../../shared/types/PaginationState";
-import { useState } from "react";
+import type { DataState } from "../../../../../../../../shared/types/DataState";
 import { AppTablePagination } from "../../../../../../../../shared/ui/AppTablePagination/AppTablePagination";
+import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
 import { SearchInput } from "../../../../../../../../shared/ui/SearchInput/SearchInput";
 import { StatusBadge } from "../../../../../../../../shared/ui/StatusBadge/StatusBadge";
-import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
+import { useState } from "react";
 import styles from "./styles.module.scss";
 
-interface CompletedCasesTableHeaderProps {
+interface RControlCompletedCasesTableHeaderProps {
   totalCount: number;
   state: DataState;
   pagination: PaginationState;
@@ -22,7 +22,7 @@ interface CompletedCasesTableHeaderProps {
   disabled: boolean;
 }
 
-export const CompletedCasesTableHeader = ({
+export const RControlCompletedCasesTableHeader = ({
   totalCount,
   state,
   pagination,
@@ -30,7 +30,7 @@ export const CompletedCasesTableHeader = ({
   onPageChange,
   isLoading,
   disabled,
-}: CompletedCasesTableHeaderProps) => {
+}: RControlCompletedCasesTableHeaderProps) => {
   const [searchValue, setSearchValue] = useState("");
   const { setCompletedCasesSearch } = useWorkspaceStore();
 

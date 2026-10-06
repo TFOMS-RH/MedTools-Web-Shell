@@ -2,13 +2,13 @@ import { useInvoiceListItemsQuery } from "../../../../model/queries/core/useInvo
 import { resolveDataState } from "../../../../../../../../shared/helpers/resolveDataState";
 import { useFiltersStore } from "../../../../../filters/model/store/useFiltersStore";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
-import { InvoicesTableHeader } from "../InvoicesTableHeader/InvoicesTableHeader";
 import { Divider } from "../../../../../../../../components/ui/Divider/Divider";
 import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
-import { InvoicesTableBody } from "../InvoicesTableBody/InvoicesTableBody";
+import { RControlInvoicesTableHeader } from "./RControlInvoicesTableHeader";
+import { RControlInvoicesTableBody } from "./RControlInvoicesTableBody";
 import styles from "./styles.module.scss";
 
-export const InvoicesTableRoot = () => {
+export const RControlInvoicesTableRoot = () => {
   const {
     invoiceTableSearchString,
     invoicesTablePagination,
@@ -77,7 +77,7 @@ export const InvoicesTableRoot = () => {
 
   return (
     <section className={styles.invoicesTableRoot}>
-      <InvoicesTableHeader
+      <RControlInvoicesTableHeader
         totalCount={getInvoicesResult?.recordsCount ?? 0}
         state={dataState}
         pagination={invoicesTablePagination}
@@ -108,7 +108,7 @@ export const InvoicesTableRoot = () => {
           description="Нет найденных счетов за выбранный период"
         />
       ) : (
-        <InvoicesTableBody
+        <RControlInvoicesTableBody
           isPending={isPending}
           pageSize={invoicesTablePagination.pageSize}
           invoices={invoices}

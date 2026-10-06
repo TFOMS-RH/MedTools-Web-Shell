@@ -1,4 +1,13 @@
-.completedCasesTableHeader {
+.invoicesTableRoot {
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xxl);
+  background: var(--card-background);
+}
+
+.invoicesTableHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;

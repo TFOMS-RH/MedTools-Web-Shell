@@ -1,9 +1,9 @@
+import type { CompletedCaseListItemDto } from "../../../../model/types/core/results/GetCompletedCaseListItemsResult";
 import { formatCurrency } from "../../../../../../../../shared/helpers/formatCurrency";
 import { formatNullableValue } from "../../../../../../../../shared/helpers/formatNullableValue";
 import { TableSkeleton } from "../../../../../../../../shared/ui/TableSkeleton/TableSkeleton";
-import type { CompletedCaseListItemDto } from "../../../../model/types/core/results/GetCompletedCaseListItemsResult";
 
-interface CompletedCasesTableBodyProps {
+interface RControlCompletedCasesTableBodyProps {
   completedCases: CompletedCaseListItemDto[];
   isPending: boolean;
   pageSize: number;
@@ -11,13 +11,13 @@ interface CompletedCasesTableBodyProps {
   selectCompletedCase: (completedCaseUid: number | null) => void;
 }
 
-export const CompletedCasesTableBody = ({
+export const RControlCompletedCasesTableBody = ({
   completedCases,
   selectedCompletedCaseUid,
   isPending,
   pageSize,
   selectCompletedCase,
-}: CompletedCasesTableBodyProps) => {
+}: RControlCompletedCasesTableBodyProps) => {
   return (
     <div className="tableContainer">
       <table>

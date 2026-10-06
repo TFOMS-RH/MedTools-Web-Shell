@@ -49,7 +49,7 @@ const categoryMap = {
   patient: Patient,
   "case-details": MedicalCaseDetails,
   oncology: Oncology,
-  referrals: Referral,
+  prescriptions: Referral,
   "clinical-groups": ClinicalGroup,
   "provided-services": ProvidedService,
   defects: Defects,
