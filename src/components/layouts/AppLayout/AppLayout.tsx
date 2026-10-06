@@ -1,12 +1,16 @@
-import { Outlet } from "react-router";
+import { Outlet, useLocation } from "react-router";
 import { AppHeader } from "../../widgets/AppHeader/AppHeader";
 import { AppFooter } from "../../widgets/AppFooter/AppFooter";
 import styles from "./styles.module.scss";
+import { resolveCurrentModule } from "../../../shared/helpers/resolveCurrentModule";
 
 export const AppLayout = () => {
+  const location = useLocation();
+  console.log(location.pathname);
+
   return (
     <main className={styles.appRoot}>
-      <AppHeader />
+      <AppHeader currentModule={resolveCurrentModule(location.pathname)} />
 
       <div className={styles.contentRoot}>
         <Outlet />
