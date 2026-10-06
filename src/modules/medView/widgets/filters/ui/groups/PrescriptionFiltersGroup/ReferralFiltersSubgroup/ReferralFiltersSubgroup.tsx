@@ -52,8 +52,44 @@ export const ReferralFiltersSubgroup = ({
       <header className={styles.subgroupHeader}>
         <h3>Направления</h3>
       </header>
+
       <div className={styles.groupLineGrid}>
-        <div className={styles.span6}>
+        <div className={styles.span2}>
+          <MedViewDateInput
+            label="Дата направления"
+            value={referralsFiltersSubgroupDraft.referralDate}
+            handleDateInputChange={(newValue: Dayjs | null) =>
+              setReferralsFiltersSubgroupDraft({
+                ...referralsFiltersSubgroupDraft,
+                referralDate: newValue,
+              })
+            }
+          />
+        </div>
+        <div className={styles.span10}>
+          <MedViewMultipleSelectInput
+            label="МО направления"
+            values={
+              referralsFiltersSubgroupDraft.referredToMedicalOrganizations
+            }
+            onChange={(newValue: string[]) =>
+              setReferralsFiltersSubgroupDraft({
+                ...referralsFiltersSubgroupDraft,
+                referredToMedicalOrganizations: newValue,
+              })
+            }
+            options={
+              referralMedicalOrganizationFilterOptions?.map((option) => ({
+                label: option.label,
+                value: option.value,
+              })) ?? []
+            }
+          />
+        </div>
+      </div>
+
+      <div className={styles.groupLineGrid}>
+        <div className={styles.span12}>
           <MedViewMultipleSelectInput
             label="Вид направления"
             values={referralsFiltersSubgroupDraft.refferalTypes}
@@ -71,7 +107,10 @@ export const ReferralFiltersSubgroup = ({
             }
           />
         </div>
-        <div className={styles.span6}>
+      </div>
+
+      <div className={styles.groupLineGrid}>
+        <div className={styles.span12}>
           <MedViewMultipleSelectInput
             label="Метод  диагностического исследования"
             values={referralsFiltersSubgroupDraft.diagnosticMethods}
@@ -83,41 +122,6 @@ export const ReferralFiltersSubgroup = ({
             }
             options={
               diagnosticMethodFilterOptions?.map((option) => ({
-                label: option.label,
-                value: option.value,
-              })) ?? []
-            }
-          />
-        </div>
-      </div>
-
-      <div className={styles.groupLineGrid}>
-        <div className={styles.span3}>
-          <MedViewDateInput
-            label="Дата направления"
-            value={referralsFiltersSubgroupDraft.referralDate}
-            handleDateInputChange={(newValue: Dayjs | null) =>
-              setReferralsFiltersSubgroupDraft({
-                ...referralsFiltersSubgroupDraft,
-                referralDate: newValue,
-              })
-            }
-          />
-        </div>
-        <div className={styles.span9}>
-          <MedViewMultipleSelectInput
-            label="МО направления"
-            values={
-              referralsFiltersSubgroupDraft.referredToMedicalOrganizations
-            }
-            onChange={(newValue: string[]) =>
-              setReferralsFiltersSubgroupDraft({
-                ...referralsFiltersSubgroupDraft,
-                referredToMedicalOrganizations: newValue,
-              })
-            }
-            options={
-              referralMedicalOrganizationFilterOptions?.map((option) => ({
                 label: option.label,
                 value: option.value,
               })) ?? []

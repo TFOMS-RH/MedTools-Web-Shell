@@ -24,7 +24,7 @@ export const RepresentativeFiltersSubgroup = ({
       </header>
 
       <div className={styles.groupLineGrid}>
-        <div className={styles.span4}>
+        <div className={styles.span10}>
           <MedViewDefaultInput
             label="Фамилия"
             placeholder="Иванов"
@@ -37,7 +37,10 @@ export const RepresentativeFiltersSubgroup = ({
             }
           />
         </div>
-        <div className={styles.span4}>
+      </div>
+
+      <div className={styles.groupLineGrid}>
+        <div className={styles.span10}>
           <MedViewDefaultInput
             label="Имя"
             placeholder="Иван"
@@ -50,7 +53,10 @@ export const RepresentativeFiltersSubgroup = ({
             }
           />
         </div>
-        <div className={styles.span4}>
+      </div>
+
+      <div className={styles.groupLineGrid}>
+        <div className={styles.span10}>
           <MedViewDefaultInput
             label="Отчество"
             placeholder="Иванович"
@@ -66,7 +72,7 @@ export const RepresentativeFiltersSubgroup = ({
       </div>
 
       <div className={styles.groupLineGrid}>
-        <div className={styles.span2}>
+        <div className={styles.span5}>
           <MedViewDateInput
             label="Дата рождения"
             value={representativeFiltersSubgroupDraft.birthDate}
@@ -79,7 +85,7 @@ export const RepresentativeFiltersSubgroup = ({
           />
         </div>
 
-        <div className={styles.span2}>
+        <div className={styles.span5}>
           <MedViewSelectInput
             label="Пол"
             value={representativeFiltersSubgroupDraft.sex ?? ""}

@@ -46,7 +46,7 @@ export const HighTechMedicalCareFiltersSubgroup = ({
         <h3>ВМП</h3>
       </header>
       <div className={styles.groupLineGrid}>
-        <div className={styles.span12}>
+        <div className={styles.span2}>
           <MedViewAutocompleteInput
             label="Вид ВМП"
             values={highTechMedicalCareFiltersSubgroupDraft.highTechCareTypes}
@@ -62,10 +62,7 @@ export const HighTechMedicalCareFiltersSubgroup = ({
             loading={highTechCareTypePending}
           />
         </div>
-      </div>
-
-      <div className={styles.groupLineGrid}>
-        <div className={styles.span12}>
+        <div className={styles.span10}>
           <MedViewAutocompleteInput
             label="Метод ВМП"
             values={highTechMedicalCareFiltersSubgroupDraft.highTechCareMethods}
@@ -82,8 +79,9 @@ export const HighTechMedicalCareFiltersSubgroup = ({
           />
         </div>
       </div>
+
       <div className={styles.groupLineGrid}>
-        <div className={styles.span4}>
+        <div className={styles.span2}>
           <MedViewDateInput
             label="Дата выдачи талона"
             value={highTechMedicalCareFiltersSubgroupDraft.voucherIssueDate}
@@ -96,20 +94,6 @@ export const HighTechMedicalCareFiltersSubgroup = ({
           />
         </div>
         <div className={styles.span4}>
-          <MedViewDefaultInput
-            label="Номер талона на ВМП"
-            placeholder="00.0000.00000.000"
-            value={highTechMedicalCareFiltersSubgroupDraft.voucherNumber}
-            handleInputChange={(newValue: string) =>
-              setHighTechMedicalCareFiltersSubgroupDraft({
-                ...highTechMedicalCareFiltersSubgroupDraft,
-                voucherNumber: newValue,
-              })
-            }
-          />
-        </div>
-
-        <div className={styles.span4}>
           <MedViewDateInput
             label="Дата планируемой госпитализации"
             value={
@@ -119,6 +103,19 @@ export const HighTechMedicalCareFiltersSubgroup = ({
               setHighTechMedicalCareFiltersSubgroupDraft({
                 ...highTechMedicalCareFiltersSubgroupDraft,
                 plannedAdmissionDates: newValue,
+              })
+            }
+          />
+        </div>
+        <div className={styles.span6}>
+          <MedViewDefaultInput
+            label="Номер талона на ВМП"
+            placeholder="00.0000.00000.000"
+            value={highTechMedicalCareFiltersSubgroupDraft.voucherNumber}
+            handleInputChange={(newValue: string) =>
+              setHighTechMedicalCareFiltersSubgroupDraft({
+                ...highTechMedicalCareFiltersSubgroupDraft,
+                voucherNumber: newValue,
               })
             }
           />

@@ -39,24 +39,27 @@ const PersonFiltersGroup = ({
         </div>
       </header>
 
-      <PatientFiltersSubgroup
-        patientFiltersSubgroupDraft={personFiltersGroupDraft.patient}
-        setPatientFiltersSubgroupDraft={(patient) =>
-          setPersonFiltersGroupDraft({ ...personFiltersGroupDraft, patient })
-        }
-      />
+      <div className={styles.patientGroupLine}>
+        <PatientFiltersSubgroup
+          patientFiltersSubgroupDraft={personFiltersGroupDraft.patient}
+          setPatientFiltersSubgroupDraft={(patient) =>
+            setPersonFiltersGroupDraft({ ...personFiltersGroupDraft, patient })
+          }
+        />
 
-      <RepresentativeFiltersSubgroup
-        representativeFiltersSubgroupDraft={
-          personFiltersGroupDraft.representative
-        }
-        setRepresentativeFiltersSubgroupDraft={(representative) =>
-          setPersonFiltersGroupDraft({
-            ...personFiltersGroupDraft,
-            representative,
-          })
-        }
-      />
+        <RepresentativeFiltersSubgroup
+          representativeFiltersSubgroupDraft={
+            personFiltersGroupDraft.representative
+          }
+          setRepresentativeFiltersSubgroupDraft={(representative) =>
+            setPersonFiltersGroupDraft({
+              ...personFiltersGroupDraft,
+              representative,
+            })
+          }
+        />
+      </div>
+
       <InsuranceFiltersSubgroup
         insuranceFiltersSubgroupDraft={personFiltersGroupDraft.insurance}
         setInsuranceFiltersSubgroupDraft={(insurance) =>

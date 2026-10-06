@@ -54,7 +54,60 @@ export const MedicalCaseDetailsFiltersSubgroup = ({
       </header>
 
       <div className={styles.groupLineGrid}>
-        <div className={styles.span6}>
+        <div className={styles.span2}>
+          <MedViewDateInput
+            label="Начало лечения"
+            value={medicalCaseDetailsFiltersSubgroupDraft.treatmentStartDate}
+            handleDateInputChange={(newValue: Dayjs | null) =>
+              setMedicalCaseDetailsFiltersSubgroupDraft({
+                ...medicalCaseDetailsFiltersSubgroupDraft,
+                treatmentStartDate: newValue,
+              })
+            }
+          />
+        </div>
+        <div className={styles.span2}>
+          <MedViewDateInput
+            label="Окончание лечения"
+            value={medicalCaseDetailsFiltersSubgroupDraft.treatmentEndDate}
+            handleDateInputChange={(newValue: Dayjs | null) =>
+              setMedicalCaseDetailsFiltersSubgroupDraft({
+                ...medicalCaseDetailsFiltersSubgroupDraft,
+                treatmentEndDate: newValue,
+              })
+            }
+          />
+        </div>
+        <div className={styles.span4}>
+          <MedViewDefaultInput
+            label="Структурное подразделение"
+            placeholder="01202600100001005"
+            handleInputChange={(newValue: string) =>
+              setMedicalCaseDetailsFiltersSubgroupDraft({
+                ...medicalCaseDetailsFiltersSubgroupDraft,
+                division: newValue,
+              })
+            }
+            value={medicalCaseDetailsFiltersSubgroupDraft.division}
+          />
+        </div>
+        <div className={styles.span4}>
+          <MedViewDefaultInput
+            label="Номер истории"
+            placeholder="Номер истории"
+            value={medicalCaseDetailsFiltersSubgroupDraft.medicalRecordNumber}
+            handleInputChange={(newValue: string) =>
+              setMedicalCaseDetailsFiltersSubgroupDraft({
+                ...medicalCaseDetailsFiltersSubgroupDraft,
+                medicalRecordNumber: newValue,
+              })
+            }
+          />
+        </div>
+      </div>
+
+      <div className={styles.groupLineGrid}>
+        <div className={styles.span12}>
           <MedViewMultipleSelectInput
             label="Профиль медицинской помощи"
             values={medicalCaseDetailsFiltersSubgroupDraft.medicalProfiles}
@@ -72,8 +125,10 @@ export const MedicalCaseDetailsFiltersSubgroup = ({
             }
           />
         </div>
+      </div>
 
-        <div className={styles.span6}>
+      <div className={styles.groupLineGrid}>
+        <div className={styles.span12}>
           <MedViewMultipleSelectInput
             label="Профиль койки"
             values={medicalCaseDetailsFiltersSubgroupDraft.bedProfiles}
@@ -94,20 +149,7 @@ export const MedicalCaseDetailsFiltersSubgroup = ({
       </div>
 
       <div className={styles.groupLineGrid}>
-        <div className={styles.span6}>
-          <MedViewDefaultInput
-            label="Структурное подразделение"
-            placeholder="01202600100001005"
-            handleInputChange={(newValue: string) =>
-              setMedicalCaseDetailsFiltersSubgroupDraft({
-                ...medicalCaseDetailsFiltersSubgroupDraft,
-                division: newValue,
-              })
-            }
-            value={medicalCaseDetailsFiltersSubgroupDraft.division}
-          />
-        </div>
-        <div className={styles.span6}>
+        <div className={styles.span12}>
           <MedViewMultipleSelectInput
             label="Место обращения"
             values={
@@ -130,7 +172,7 @@ export const MedicalCaseDetailsFiltersSubgroup = ({
       </div>
 
       <div className={styles.groupLineGrid}>
-        <div className={styles.span6}>
+        <div className={styles.span12}>
           <MedViewMultipleSelectInput
             label="Цель посещения"
             values={medicalCaseDetailsFiltersSubgroupDraft.visitPurposes}
@@ -151,7 +193,7 @@ export const MedicalCaseDetailsFiltersSubgroup = ({
       </div>
 
       <div className={styles.groupLineGrid}>
-        <div className={styles.span12}>
+        <div className={styles.span6}>
           <MedViewMultipleSelectInput
             label="Место проведения профилактического мероприятия"
             values={medicalCaseDetailsFiltersSubgroupDraft.preventiveCarePlaces}
@@ -169,48 +211,6 @@ export const MedicalCaseDetailsFiltersSubgroup = ({
             }
           />
         </div>
-      </div>
-
-      <div className={styles.groupLineGrid}>
-        <div className={styles.span3}>
-          <MedViewDateInput
-            label="Начало лечения"
-            value={medicalCaseDetailsFiltersSubgroupDraft.treatmentStartDate}
-            handleDateInputChange={(newValue: Dayjs | null) =>
-              setMedicalCaseDetailsFiltersSubgroupDraft({
-                ...medicalCaseDetailsFiltersSubgroupDraft,
-                treatmentStartDate: newValue,
-              })
-            }
-          />
-        </div>
-        <div className={styles.span3}>
-          <MedViewDateInput
-            label="Окончание лечения"
-            value={medicalCaseDetailsFiltersSubgroupDraft.treatmentEndDate}
-            handleDateInputChange={(newValue: Dayjs | null) =>
-              setMedicalCaseDetailsFiltersSubgroupDraft({
-                ...medicalCaseDetailsFiltersSubgroupDraft,
-                treatmentEndDate: newValue,
-              })
-            }
-          />
-        </div>
-        <div className={styles.span6}>
-          <MedViewDefaultInput
-            label="Номер истории"
-            placeholder="Номер истории"
-            value={medicalCaseDetailsFiltersSubgroupDraft.medicalRecordNumber}
-            handleInputChange={(newValue: string) =>
-              setMedicalCaseDetailsFiltersSubgroupDraft({
-                ...medicalCaseDetailsFiltersSubgroupDraft,
-                medicalRecordNumber: newValue,
-              })
-            }
-          />
-        </div>
-      </div>
-      <div className={styles.groupLineGrid}>
         <div className={styles.span6}>
           <MedViewMultipleSelectInput
             label="Характер основного заболевания"
@@ -229,8 +229,10 @@ export const MedicalCaseDetailsFiltersSubgroup = ({
             }
           />
         </div>
+      </div>
 
-        <div className={styles.span6}>
+      <div className={styles.groupLineGrid}>
+        <div className={styles.span12}>
           <MedViewMultipleSelectInput
             label="Специальность лечащего врача"
             values={medicalCaseDetailsFiltersSubgroupDraft.physicianSpecialties}

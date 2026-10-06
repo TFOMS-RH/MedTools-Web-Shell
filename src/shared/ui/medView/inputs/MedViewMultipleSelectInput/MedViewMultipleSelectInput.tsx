@@ -1,4 +1,6 @@
 import MenuItem from "@mui/material/MenuItem";
+import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
+import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import {
   Box,
   FormControl,
@@ -7,6 +9,7 @@ import {
   type SelectChangeEvent,
 } from "@mui/material";
 import { medViewSelectInputSx } from "../../../../sxConfigs/medViewSelectInput";
+import { medViewSelectMenuSx } from "../../../../sxConfigs/medViewSelectMenuSx";
 
 interface Option {
   label: string;
@@ -50,6 +53,12 @@ export const MedViewMultipleSelectInput = ({
           value={values}
           onChange={handleChange}
           label={label}
+          renderValue={(selected) => {
+            return options
+              .filter((x) => selected.includes(x.value))
+              .map((x) => x.label)
+              .join(", ");
+          }}
           MenuProps={{
             slotProps: {
               paper: {
@@ -57,16 +66,27 @@ export const MedViewMultipleSelectInput = ({
                   maxHeight: 500,
                   width: 250,
                 },
+                sx: medViewSelectMenuSx,
               },
             },
           }}
         >
           {options.length > 0 ? (
-            options.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))
+            options.map((option) => {
+              const selected = values.includes(option.value);
+              const SelectionIcon = selected
+                ? CheckBoxIcon
+                : CheckBoxOutlineBlankIcon;
+              return (
+                <MenuItem key={option.value} value={option.value}>
+                  <SelectionIcon
+                    fontSize="small"
+                    style={{ boxSizing: "content-box", marginRight: 8 }}
+                  />
+                  {option.label}
+                </MenuItem>
+              );
+            })
           ) : (
             <MenuItem disabled>Нет доступных опций</MenuItem>
           )}

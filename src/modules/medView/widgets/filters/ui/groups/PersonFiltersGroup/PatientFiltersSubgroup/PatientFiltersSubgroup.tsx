@@ -24,7 +24,7 @@ export const PatientFiltersSubgroup = ({
       </header>
 
       <div className={styles.groupLineGrid}>
-        <div className={styles.span4}>
+        <div className={styles.span10}>
           <MedViewDefaultInput
             label="Фамилия"
             placeholder="Иванов"
@@ -37,8 +37,10 @@ export const PatientFiltersSubgroup = ({
             }
           />
         </div>
+      </div>
 
-        <div className={styles.span4}>
+      <div className={styles.groupLineGrid}>
+        <div className={styles.span10}>
           <MedViewDefaultInput
             label="Имя"
             placeholder="Иван"
@@ -51,8 +53,10 @@ export const PatientFiltersSubgroup = ({
             }
           />
         </div>
+      </div>
 
-        <div className={styles.span4}>
+      <div className={styles.groupLineGrid}>
+        <div className={styles.span10}>
           <MedViewDefaultInput
             label="Отчество"
             placeholder="Иванович"
@@ -68,7 +72,7 @@ export const PatientFiltersSubgroup = ({
       </div>
 
       <div className={styles.groupLineGrid}>
-        <div className={styles.span2}>
+        <div className={styles.span5}>
           <MedViewDateInput
             label="Дата рождения"
             value={patientFiltersSubgroupDraft.birthDate}
@@ -81,7 +85,7 @@ export const PatientFiltersSubgroup = ({
           />
         </div>
 
-        <div className={styles.span2}>
+        <div className={styles.span5}>
           <MedViewSelectInput
             label="Пол"
             value={patientFiltersSubgroupDraft.sex ?? ""}

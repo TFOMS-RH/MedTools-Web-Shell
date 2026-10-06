@@ -52,7 +52,7 @@ const SanctionFiltersGroup = ({
           <h3>Санкции</h3>
         </header>
         <div className={styles.groupLineGrid}>
-          <div className={styles.span6}>
+          <div className={styles.span12}>
             <MedViewMultipleSelectInput
               label="Код вида контроля"
               values={sanctionFiltersGroupDraft.controlTypeCodes}
@@ -70,23 +70,8 @@ const SanctionFiltersGroup = ({
               }
             />
           </div>
-          <div className={styles.span6}>
-            <MedViewAutocompleteInput
-              label="Код причины отказа"
-              values={sanctionFiltersGroupDraft.refusalReasons}
-              options={refusalReasonCodeFilterOptions ?? []}
-              inputValue={inputRefusalReasonCodeFilterOptions}
-              onInputChange={setInputRefusalReasonCodeFilterOptions}
-              onChange={(newValue: FilterOption[]) =>
-                setSanctionFiltersGroupDraft({
-                  ...sanctionFiltersGroupDraft,
-                  refusalReasons: newValue,
-                })
-              }
-              loading={isPending}
-            />
-          </div>
         </div>
+
         <div className={styles.groupLineGrid}>
           <div className={styles.span3}>
             <MedViewDefaultInput
@@ -111,6 +96,22 @@ const SanctionFiltersGroup = ({
                   expertiseActDate: newValue,
                 })
               }
+            />
+          </div>
+          <div className={styles.span6}>
+            <MedViewAutocompleteInput
+              label="Код причины отказа"
+              values={sanctionFiltersGroupDraft.refusalReasons}
+              options={refusalReasonCodeFilterOptions ?? []}
+              inputValue={inputRefusalReasonCodeFilterOptions}
+              onInputChange={setInputRefusalReasonCodeFilterOptions}
+              onChange={(newValue: FilterOption[]) =>
+                setSanctionFiltersGroupDraft({
+                  ...sanctionFiltersGroupDraft,
+                  refusalReasons: newValue,
+                })
+              }
+              loading={isPending}
             />
           </div>
         </div>

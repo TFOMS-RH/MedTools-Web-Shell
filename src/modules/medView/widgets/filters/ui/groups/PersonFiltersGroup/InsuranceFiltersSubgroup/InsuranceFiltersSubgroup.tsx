@@ -43,7 +43,7 @@ export const InsuranceFiltersSubgroup = ({
         </div>
       </div>
       <div className={styles.groupLineGrid}>
-        <div className={styles.span2}>
+        <div className={styles.span12}>
           <MedViewMultipleSelectInput
             label="Тип полиса"
             values={insuranceFiltersSubgroupDraft.insurancePolicyTypes}
@@ -59,6 +59,9 @@ export const InsuranceFiltersSubgroup = ({
             }))}
           />
         </div>
+      </div>
+
+      <div className={styles.groupLineGrid}>
         <div className={styles.span2}>
           <MedViewDefaultInput
             label="Серия полиса"
@@ -85,7 +88,7 @@ export const InsuranceFiltersSubgroup = ({
             }
           />
         </div>
-        <div className={styles.span4}>
+        <div className={styles.span6}>
           <MedViewDefaultInput
             label="ЕНП"
             placeholder="0000000000000000"

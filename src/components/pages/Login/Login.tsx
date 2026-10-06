@@ -32,6 +32,8 @@ export const Login = () => {
       username: result.value.username,
     });
 
+    sessionStorage.setItem("accessToken", result.value.accessToken);
+
     navigator("/");
   };
 
