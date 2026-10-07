@@ -38,7 +38,7 @@ const ProvidedServicesCategoryComponent = lazy(
 );
 
 const DefectsCategoryComponent = lazy(
-  () => import("./components/defects/DefectsCategoryRoot"),
+  () => import("./components/defects/RControlDefectsCategoryRoot"),
 );
 
 const categoryMap = {

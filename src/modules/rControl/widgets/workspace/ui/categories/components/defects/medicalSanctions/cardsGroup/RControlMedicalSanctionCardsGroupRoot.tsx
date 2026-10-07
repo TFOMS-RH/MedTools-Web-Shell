@@ -3,9 +3,10 @@ import { DataState } from "../../../../../../../../../../shared/ui/DataState/Dat
 import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
 import { useMedicalSanctionsQuery } from "../../../../../../model/queries/categories/defects/useMedicalSanctionsQuery";
 import { useWorkspaceStore } from "../../../../../../model/store/useWorkspaceStore";
-import { MedicalSanctionsCards } from "../MedicalSanctionsCards/MedicalSanctionsCards";
+import { RControlMedicalSanctionCards } from "./RControlMedicalSanctionCards";
+import { RControlMedicalSanctionCardSkeletons } from "./RControlMedicalSanctionCardSkeletons";
 
-export const MedicalSanctionsSection = () => {
+export const RControlMedicalSanctionCardsGroupRoot = () => {
   const { targetDb } = useFiltersStore();
   const { selectedMedicalCaseUid } = useWorkspaceStore();
   const {
@@ -33,6 +34,8 @@ export const MedicalSanctionsSection = () => {
           description={error?.message ?? "Неизвестная ошибка"}
           variant="error"
         />
+      ) : isLoading ? (
+        <RControlMedicalSanctionCardSkeletons />
       ) : dataState === "empty" ? (
         <DataState
           title="Данных не найдено"
@@ -40,7 +43,7 @@ export const MedicalSanctionsSection = () => {
           variant="empty"
         />
       ) : (
-        <MedicalSanctionsCards
+        <RControlMedicalSanctionCards
           isPending={isPending}
           medicalSanctions={medicalSanctions ?? []}
         />

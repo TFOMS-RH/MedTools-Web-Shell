@@ -2,17 +2,17 @@ import { formatNullableValue } from "../../../../../../../../../../shared/helper
 import { TableSkeleton } from "../../../../../../../../../../shared/ui/TableSkeleton/TableSkeleton";
 import type { DefectDto } from "../../../../../../model/types/categories/defects/GetDefectsResult";
 
-interface DefectsBodyProps {
+interface RControlDefectsTableBodyProps {
   defects: DefectDto[];
   pageSize: number;
   isPending: boolean;
 }
 
-export const DefectsBody = ({
+export const RControlDefectsTableBody = ({
   defects,
   pageSize,
   isPending,
-}: DefectsBodyProps) => {
+}: RControlDefectsTableBodyProps) => {
   return (
     <div className="cardContent">
       <div className="tableContainer">

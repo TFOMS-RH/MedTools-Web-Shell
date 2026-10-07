@@ -1,7 +1,7 @@
 import { AppTablePagination } from "../../../../../../../../../../shared/ui/AppTablePagination/AppTablePagination";
 import styles from "./styles.module.scss";
 
-interface DefectsHeaderProps {
+interface RControlDefectsTableHeaderProps {
   page: number;
   pageSize: number;
   totalCount: number;
@@ -15,14 +15,14 @@ interface DefectsHeaderProps {
   ) => void;
 }
 
-export const DefectsHeader = ({
+export const RControlDefectsTableHeader = ({
   page,
   pageSize,
   totalCount,
   isFetching,
   onPageChange,
   onRowsPerPageChange,
-}: DefectsHeaderProps) => {
+}: RControlDefectsTableHeaderProps) => {
   return (
     <header className={styles.defectsHeader}>
       <h2>Дефекты</h2>

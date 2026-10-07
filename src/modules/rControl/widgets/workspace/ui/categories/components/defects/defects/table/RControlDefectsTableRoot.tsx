@@ -4,10 +4,10 @@ import { DataState } from "../../../../../../../../../../shared/ui/DataState/Dat
 import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
 import { useDefectsQuery } from "../../../../../../model/queries/categories/defects/useDefectsQuery";
 import { useWorkspaceStore } from "../../../../../../model/store/useWorkspaceStore";
-import { DefectsBody } from "../DefectsBody/DefectsBody";
-import { DefectsHeader } from "../DefectsHeader/DefectsHeader";
+import { RControlDefectsTableBody } from "./RControlDefectsTableBody";
+import { RControlDefectsTableHeader } from "./RControlDefectsTableHeader";
 
-export const DefectsRoot = () => {
+export const RControlDefectsTableRoot = () => {
   const { targetDb } = useFiltersStore();
   const {
     selectedMedicalCaseUid,
@@ -61,7 +61,7 @@ export const DefectsRoot = () => {
 
   return (
     <article className="cardRoot">
-      <DefectsHeader
+      <RControlDefectsTableHeader
         page={defectsTablePagination.page}
         pageSize={defectsTablePagination.pageSize}
         totalCount={totalCount}
@@ -83,7 +83,7 @@ export const DefectsRoot = () => {
           variant="empty"
         />
       ) : (
-        <DefectsBody
+        <RControlDefectsTableBody
           defects={defects}
           isPending={isPending}
           pageSize={defectsTablePagination.pageSize}
