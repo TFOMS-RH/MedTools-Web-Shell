@@ -2,6 +2,7 @@ import { RControlReferralsTableRoot } from "./referrals/table/RControlReferralsT
 import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLineHeader/CategoryLineHeader";
 import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
+import { RControlPrescriptionCardsGroupRoot } from "./prescriptions/cardsGroup/RControlPrescriptionCardsGroupRoot";
 import styles from "./styles.module.scss";
 
 const RControlPrescriptionsCategoryRoot = () => {
@@ -23,7 +24,7 @@ const RControlPrescriptionsCategoryRoot = () => {
           />
         ) : (
           <div className={styles.prescriptionsGroup}>
-            <RControlPrescriptionsCategoryRoot />
+            <RControlPrescriptionCardsGroupRoot />
             <RControlReferralsTableRoot />
           </div>
         )}
