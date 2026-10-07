@@ -2,6 +2,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
   column-gap: var(--space-5);
+
+  user-select: none;
 }
 
 .optionCard {
@@ -11,9 +13,21 @@
   border-radius: var(--radius-xl);
   background: var(--card-background);
 
-  padding: var(--space-8) var(--space-10);
+  padding: var(--space-5);
+  gap: var(--space-5);
 
   transition: 0.2s ease;
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: var(--radius-xxl);
+    background: var(--gray-200);
+
+    padding: var(--space-4);
+  }
 
   .textField {
     display: flex;
@@ -42,6 +56,10 @@
 
 .selectedOption {
   border-color: var(--border-focus);
+
+  .icon {
+    background: var(--black);
+  }
 
   .textField {
     .label {

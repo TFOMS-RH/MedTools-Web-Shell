@@ -35,7 +35,7 @@ export const RControlInvoiceSummaryCardRoot = () => {
       {dataState === "waiting" ? (
         <DataState
           title="Выберите счет"
-          description="Нажмите на строку в таблице счетов для просмотра подробной информации по счету"
+          description="После выбора счета появится детальная информация"
           variant="waiting"
         />
       ) : dataState === "error" ? (
