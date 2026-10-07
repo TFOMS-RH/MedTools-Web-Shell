@@ -3,9 +3,10 @@ import { useWorkspaceStore } from "../../../../../../model/store/useWorkspaceSto
 import { useProvidedServicesQuery } from "../../../../../../model/queries/categories/providedServices/useProvidedServicesQuery";
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
-import { ProvidedServicesCards } from "../ProvidedServicesCards/ProvidedServicesCards";
+import { RControlProvidedServiceCards } from "./RControlProvidedServiceCards";
+import { RControlProvidedServiceCardSkeletons } from "./RControlProvidedServiceCardSkeletons";
 
-export const ProvidedServicesSection = () => {
+export const RControlProvidedServiceCardsGroupRoot = () => {
   const { targetDb } = useFiltersStore();
   const {
     selectedMedicalCaseUid,
@@ -36,6 +37,8 @@ export const ProvidedServicesSection = () => {
           description={error?.message ?? "Неизсвестная ошибка"}
           variant="error"
         />
+      ) : isLoading ? (
+        <RControlProvidedServiceCardSkeletons />
       ) : dataState === "empty" ? (
         <DataState
           title="Данных не найдено"
@@ -43,7 +46,7 @@ export const ProvidedServicesSection = () => {
           variant="empty"
         />
       ) : (
-        <ProvidedServicesCards
+        <RControlProvidedServiceCards
           isPending={isPending}
           providedSevices={providedServices ?? []}
           selectedProvidedServiceUid={selectedProvidedServiceUid}

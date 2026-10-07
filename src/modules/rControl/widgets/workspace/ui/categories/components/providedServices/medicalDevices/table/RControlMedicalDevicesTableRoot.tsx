@@ -1,12 +1,12 @@
-import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
-import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
-import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
+import { RControlMedicalDevicesTableHeader } from "./RControlMedicalDevicesTableHeader";
+import { RControlMedicalDevicesTableBody } from "./RControlMedicalDevicesTableBody";
 import { useMedicalDevicesQuery } from "../../../../../../model/queries/categories/providedServices/useMedicalDevicesQuery";
 import { useWorkspaceStore } from "../../../../../../model/store/useWorkspaceStore";
-import { MedicalDevicesBody } from "../MedicalDevicesBody/MedicalDevicesBody";
-import { MedicalDevicesHeader } from "../MedicalDevicesHeader/MedicalDevicesHeader";
+import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
+import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
+import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 
-export const MedicalDevicesRoot = () => {
+export const RControlMedicalDevicesTableRoot = () => {
   const { targetDb } = useFiltersStore();
   const { selectedProvidedServiceUid } = useWorkspaceStore();
   const {
@@ -27,7 +27,7 @@ export const MedicalDevicesRoot = () => {
 
   return (
     <div className="cardRoot">
-      <MedicalDevicesHeader />
+      <RControlMedicalDevicesTableHeader />
       {dataState === "error" ? (
         <DataState
           title="Ошибка данных"
@@ -41,7 +41,7 @@ export const MedicalDevicesRoot = () => {
           variant="empty"
         />
       ) : (
-        <MedicalDevicesBody
+        <RControlMedicalDevicesTableBody
           isPending={isPending}
           medicalDevices={medicalDevices ?? []}
         />

@@ -34,7 +34,7 @@ const ClinicalGroupsCategoryComponent = lazy(
 );
 
 const ProvidedServicesCategoryComponent = lazy(
-  () => import("./components/providedServices/ProvidedServicesCategoryRoot"),
+  () => import("./components/providedServices/RControlProvidedServicesCategoryRoot"),
 );
 
 const DefectsCategoryComponent = lazy(

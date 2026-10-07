@@ -1,12 +1,12 @@
 import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLineHeader/CategoryLineHeader";
-import { ProvidedServicesSection } from "./providedServices/ProvidedServicesSection/ProvidedServicesSection";
-import { MedicalDevicesRoot } from "./medicalDevices/MedicalDevicesRoot/MedicalDevicesRoot";
-import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
 import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
-import styles from "./styles.module.scss";
+import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
 import { Divider } from "../../../../../../../../components/ui/Divider/Divider";
+import { RControlProvidedServiceCardsGroupRoot } from "./providedServices/cardsGroup/RControlProvidedServiceCardsGroupRoot";
+import { RControlMedicalDevicesTableRoot } from "./medicalDevices/table/RControlMedicalDevicesTableRoot";
+import styles from "./styles.module.scss";
 
-const ProvidedServices = () => {
+const RControlProvidedServicesCategoryRoot = () => {
   const { selectedProvidedServiceUid, selectedMedicalCaseUid } =
     useWorkspaceStore();
 
@@ -25,7 +25,7 @@ const ProvidedServices = () => {
             variant="waiting"
           />
         ) : (
-          <ProvidedServicesSection />
+          <RControlProvidedServiceCardsGroupRoot />
         )}
       </div>
       <Divider />
@@ -42,11 +42,11 @@ const ProvidedServices = () => {
             variant="waiting"
           />
         ) : (
-          <MedicalDevicesRoot />
+          <RControlMedicalDevicesTableRoot />
         )}
       </div>
     </section>
   );
 };
 
-export default ProvidedServices;
+export default RControlProvidedServicesCategoryRoot;
