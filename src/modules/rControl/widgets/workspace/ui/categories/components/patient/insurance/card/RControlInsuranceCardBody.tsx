@@ -3,12 +3,15 @@ import { CardField } from "../../../../../../../../../../shared/ui/CardField/Car
 import type { InsuranceDto } from "../../../../../../model/types/categories/patient/GetInsuranceResult";
 import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";
 
-interface InsuranceBodyProps {
+interface RControlInsuranceCardBodyProps {
   insurance: InsuranceDto;
   isPending: boolean;
 }
 
-export const InsuranceBody = ({ insurance, isPending }: InsuranceBodyProps) => {
+export const RControlInsuranceCardBody = ({
+  insurance,
+  isPending,
+}: RControlInsuranceCardBodyProps) => {
   return (
     <div className="cardContent">
       {isPending ? (

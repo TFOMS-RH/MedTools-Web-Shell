@@ -1,11 +1,11 @@
 import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLineHeader/CategoryLineHeader";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
 import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
-import { InsuranceRoot } from "./insurance/InsuranceRoot/InsuranceRoot";
-import { PatientRoot } from "./patient/PatientRoot/PatientRoot";
+import { RControlInsuranceCardRoot } from "./insurance/card/RControlInsuranceCardRoot";
+import { RControlPatientCardRoot } from "./patient/card/RControlPatientCardRoot";
 import styles from "./styles.module.scss";
 
-const Patient = () => {
+const RControlPatientCategoryRoot = () => {
   const { selectedMedicalCaseUid } = useWorkspaceStore();
 
   return (
@@ -24,8 +24,8 @@ const Patient = () => {
           />
         ) : (
           <div className={styles.patientInsuranceGroup}>
-            <PatientRoot />
-            <InsuranceRoot />
+            <RControlPatientCardRoot />
+            <RControlInsuranceCardRoot />
           </div>
         )}
       </div>
@@ -33,4 +33,4 @@ const Patient = () => {
   );
 };
 
-export default Patient;
+export default RControlPatientCategoryRoot;

@@ -3,10 +3,10 @@ import { DataState } from "../../../../../../../../../../shared/ui/DataState/Dat
 import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
 import { useInsuranceQuery } from "../../../../../../model/queries/categories/patient/useInsuranceQuery";
 import { useWorkspaceStore } from "../../../../../../model/store/useWorkspaceStore";
-import { InsuranceBody } from "../InsuranceBody/InsuranceBody";
-import { InsuranceHeader } from "../InsuranceHeader/InsuranceHeader";
+import { RControlInsuranceCardBody } from "./RControlInsuranceCardBody";
+import { RControlInsuranceCardHeader } from "./RControlInsuranceCardHeader";
 
-export const InsuranceRoot = () => {
+export const RControlInsuranceCardRoot = () => {
   const { targetDb } = useFiltersStore();
   const { selectedMedicalCaseUid } = useWorkspaceStore();
   const {
@@ -28,7 +28,7 @@ export const InsuranceRoot = () => {
 
   return (
     <article className="cardRoot">
-      <InsuranceHeader />
+      <RControlInsuranceCardHeader />
       {dataState === "error" ? (
         <DataState
           title="Ошибка данных"
@@ -42,7 +42,10 @@ export const InsuranceRoot = () => {
           variant="empty"
         />
       ) : (
-        <InsuranceBody insurance={insurance!} isPending={isPending} />
+        <RControlInsuranceCardBody
+          insurance={insurance!}
+          isPending={isPending}
+        />
       )}
     </article>
   );

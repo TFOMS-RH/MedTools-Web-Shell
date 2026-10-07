@@ -13,7 +13,7 @@ const DefaultCategoryComponent = lazy(
 );
 
 const PatientCategoryComponent = lazy(
-  () => import("./components/patient/PatientCategoryRoot"),
+  () => import("./components/patient/RControlPatientCategoryRoot"),
 );
 
 const MedicalCaseDetailsCategoryComponent = lazy(

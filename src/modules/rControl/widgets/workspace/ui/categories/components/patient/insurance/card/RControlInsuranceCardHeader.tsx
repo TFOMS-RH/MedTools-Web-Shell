@@ -1,4 +1,4 @@
-export const InsuranceHeader = () => {
+export const RControlInsuranceCardHeader = () => {
   return (
     <header className="cardHeader">
       <h2>СМО</h2>

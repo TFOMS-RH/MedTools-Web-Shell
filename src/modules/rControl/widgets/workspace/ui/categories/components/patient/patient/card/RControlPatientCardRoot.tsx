@@ -3,10 +3,10 @@ import { DataState } from "../../../../../../../../../../shared/ui/DataState/Dat
 import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
 import { usePatientQuery } from "../../../../../../model/queries/categories/patient/usePatientQuery";
 import { useWorkspaceStore } from "../../../../../../model/store/useWorkspaceStore";
-import { PatientBody } from "../PatientBody/PatientBody";
-import { PatientHeader } from "../PatientHeader/PatientHeader";
+import { RControlPatientCardBody } from "./RControlPatientCardBody";
+import { RControlPatientCardHeader } from "./RControlPatientCardHeader";
 
-export const PatientRoot = () => {
+export const RControlPatientCardRoot = () => {
   const { targetDb } = useFiltersStore();
   const { selectedMedicalCaseUid } = useWorkspaceStore();
 
@@ -29,7 +29,7 @@ export const PatientRoot = () => {
 
   return (
     <article className="cardRoot">
-      <PatientHeader />
+      <RControlPatientCardHeader />
 
       {dataState === "error" ? (
         <DataState
@@ -44,7 +44,7 @@ export const PatientRoot = () => {
           variant="empty"
         />
       ) : (
-        <PatientBody patient={patient!} isPending={isPending} />
+        <RControlPatientCardBody patient={patient!} isPending={isPending} />
       )}
     </article>
   );

@@ -9,7 +9,7 @@ interface PatientBodyProps {
   isPending: boolean;
 }
 
-export const PatientBody = ({ patient, isPending }: PatientBodyProps) => {
+export const RControlPatientCardBody = ({ patient, isPending }: PatientBodyProps) => {
   return (
     <div className="cardContent">
       {isPending ? (
