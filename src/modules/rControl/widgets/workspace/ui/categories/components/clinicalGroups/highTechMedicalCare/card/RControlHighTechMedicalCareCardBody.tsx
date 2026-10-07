@@ -3,15 +3,15 @@ import { CardField } from "../../../../../../../../../../shared/ui/CardField/Car
 import { Skeleton } from "@mui/material";
 import dayjs from "dayjs";
 
-interface HighTechMedicalCareBodyProps {
+interface RControlHighTechMedicalCareCardBodyProps {
   highTechMedicalCare: HighTechMedicalCareDto;
   isPending: boolean;
 }
 
-export const HighTechMedicalCareBody = ({
+export const RControlHighTechMedicalCareCardBody = ({
   highTechMedicalCare,
   isPending,
-}: HighTechMedicalCareBodyProps) => {
+}: RControlHighTechMedicalCareCardBodyProps) => {
   return (
     <div className="cardContent">
       {isPending ? (

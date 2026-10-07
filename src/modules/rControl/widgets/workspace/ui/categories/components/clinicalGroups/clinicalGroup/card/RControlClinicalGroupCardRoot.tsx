@@ -1,12 +1,12 @@
 import { useClinicalGroupQuery } from "../../../../../../model/queries/categories/clinicalGroups/useClinicalGroupQuery";
 import { useWorkspaceStore } from "../../../../../../model/store/useWorkspaceStore";
-import { ClinicalGroupBody } from "../ClinicalGroupBody/ClinicalGroupBody";
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
-import { ClinicalGroupHeader } from "../ClinicalGroupHeader/ClinicalGroupHeader";
+import { RControlClinicalGroupCardHeader } from "./RControlClinicalGroupCardHeader";
+import { RControlClinicalGroupCardBody } from "./RControlClinicalGroupCardBody";
 
-export const ClinicalGroupRoot = () => {
+export const RControlClinicalGroupCardRoot = () => {
   const { targetDb } = useFiltersStore();
   const { selectedMedicalCaseUid } = useWorkspaceStore();
   const {
@@ -28,7 +28,7 @@ export const ClinicalGroupRoot = () => {
 
   return (
     <div className="cardRoot">
-      <ClinicalGroupHeader />
+      <RControlClinicalGroupCardHeader />
       {dataState === "error" ? (
         <DataState
           title="Ошибка данных"
@@ -42,7 +42,7 @@ export const ClinicalGroupRoot = () => {
           variant="empty"
         />
       ) : (
-        <ClinicalGroupBody
+        <RControlClinicalGroupCardBody
           clinicalGroup={clinicalGroup!}
           isPending={isPending}
         />

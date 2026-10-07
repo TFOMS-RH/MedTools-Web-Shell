@@ -2,16 +2,17 @@ import { resolveDataState } from "../../../../../../../../../../shared/helpers/r
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
 import { useClassificationCriteriaQuery } from "../../../../../../model/queries/categories/clinicalGroups/useClassificationCriteriaQuery";
-import { ClassificationCriteriaBody } from "../ClassificationCriteriaBody/ClassificationCriteriaBody";
-import { ClassificationCriteriaHeader } from "../ClassificationCriteriaHeader/ClassificationCriteriaHeader";
+import { RControlClassificationCriterionChips } from "./RControlClassificationCriterionChips";
+import { RControlClassificationCriterionChipsGroupHeader } from "./RControlClassificationCriterionChipsGroupHeader";
+import { RControlClassificationCriterionChipSkeletons } from "./RControlClassificationCriterionChipSkeletons";
 
-interface ClassificationCriteriaRootProps {
+interface RControlClassificationCriterionChipsGroupRootProps {
   clinicalGroupUid: number | null;
 }
 
-export const ClassificationCriteriaRoot = ({
+export const RControlClassificationCriterionChipsGroupRoot = ({
   clinicalGroupUid,
-}: ClassificationCriteriaRootProps) => {
+}: RControlClassificationCriterionChipsGroupRootProps) => {
   const { targetDb } = useFiltersStore();
   const {
     data: classificationCriteria,
@@ -32,13 +33,15 @@ export const ClassificationCriteriaRoot = ({
 
   return (
     <div className="cardRoot">
-      <ClassificationCriteriaHeader />
+      <RControlClassificationCriterionChipsGroupHeader />
       {dataState === "error" ? (
         <DataState
           title="Ошибка данных"
           description={error?.message ?? "Неизвестная ошибка"}
           variant="error"
         />
+      ) : isLoading ? (
+        <RControlClassificationCriterionChipSkeletons />
       ) : dataState === "empty" ? (
         <DataState
           title="Данных не найдено"
@@ -46,7 +49,7 @@ export const ClassificationCriteriaRoot = ({
           variant="empty"
         />
       ) : (
-        <ClassificationCriteriaBody
+        <RControlClassificationCriterionChips
           classificationCriteria={classificationCriteria ?? []}
           isPending={isPending}
         />

@@ -2,15 +2,15 @@ import type { ClinicalGroupDto } from "../../../../../../model/types/categories/
 import { CardField } from "../../../../../../../../../../shared/ui/CardField/CardField";
 import { Skeleton } from "@mui/material";
 
-interface ClinicalGroupBodyProps {
+interface RControlClinicalGroupCardBodyProps {
   clinicalGroup: ClinicalGroupDto;
   isPending: boolean;
 }
 
-export const ClinicalGroupBody = ({
+export const RControlClinicalGroupCardBody = ({
   clinicalGroup,
   isPending,
-}: ClinicalGroupBodyProps) => {
+}: RControlClinicalGroupCardBodyProps) => {
   return (
     <div className="cardContent">
       {isPending ? (

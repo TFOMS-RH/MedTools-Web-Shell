@@ -3,10 +3,10 @@ import { DataState } from "../../../../../../../../../../shared/ui/DataState/Dat
 import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
 import { useHighTechMedicalCareQuery } from "../../../../../../model/queries/categories/clinicalGroups/useHighTechMedicalCareQuery";
 import { useWorkspaceStore } from "../../../../../../model/store/useWorkspaceStore";
-import { HighTechMedicalCareBody } from "../HighTechMedicalCareBody/HighTechMedicalCareBody";
-import { HighTechMedicalCareHeader } from "../HighTechMedicalCareHeader/HighTechMedicalCareHeader";
+import { RControlHighTechMedicalCareCardBody } from "./RControlHighTechMedicalCareCardBody";
+import { RControlHighTechMedicalCareCardHeader } from "./RControlHighTechMedicalCareCardHeader";
 
-export const HighTechMedicalCareRoot = () => {
+export const RControlHighTechMedicalCareCardRoot = () => {
   const { targetDb } = useFiltersStore();
   const { selectedMedicalCaseUid } = useWorkspaceStore();
   const {
@@ -28,7 +28,7 @@ export const HighTechMedicalCareRoot = () => {
 
   return (
     <article className="cardRoot">
-      <HighTechMedicalCareHeader />
+      <RControlHighTechMedicalCareCardHeader />
       {dataState === "error" ? (
         <DataState
           title="Ошибка данных"
@@ -42,7 +42,7 @@ export const HighTechMedicalCareRoot = () => {
           variant="empty"
         />
       ) : (
-        <HighTechMedicalCareBody
+        <RControlHighTechMedicalCareCardBody
           highTechMedicalCare={highTechMedicalCare!}
           isPending={isPending}
         />

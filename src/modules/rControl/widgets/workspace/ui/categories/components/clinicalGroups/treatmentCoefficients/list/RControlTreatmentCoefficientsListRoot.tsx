@@ -2,16 +2,16 @@ import { resolveDataState } from "../../../../../../../../../../shared/helpers/r
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { useMedViewFiltersStore } from "../../../../../../../../../medView/widgets/filters/model/stores/useMedViewFiltersStore";
 import { useTreatmentComplexityCoefficientsQuery } from "../../../../../../model/queries/categories/clinicalGroups/useTreatmentComplexityCoefficientsQuery";
-import { TreatmentComplexityCoefficientsBody } from "../TreatmentComplexityCoefficientsBody/TreatmentComplexityCoefficientsBody";
-import { TreatmentComplexityCoefficientsHeader } from "../TreatmentComplexityCoefficientsHeader/TreatmentComplexityCoefficientsHeader";
+import { RControlTreatmentCoefficientsListBody } from "./RControlTreatmentCoefficientsListBody";
+import { RControlTreatmentCoefficientsListHeader } from "./RControlTreatmentCoefficientsListHeader";
 
-interface TreatmentComplexityCoefficientsRootProps {
+interface RControlTreatmentCoefficientsListRootProps {
   clinicalGroupUid: number | null;
 }
 
-export const TreatmentComplexityCoefficientsRoot = ({
+export const RControlTreatmentCoefficientsListRoot = ({
   clinicalGroupUid,
-}: TreatmentComplexityCoefficientsRootProps) => {
+}: RControlTreatmentCoefficientsListRootProps) => {
   const { targetDb } = useMedViewFiltersStore();
   const {
     data: treatmentComplexityCoefficients,
@@ -32,7 +32,7 @@ export const TreatmentComplexityCoefficientsRoot = ({
 
   return (
     <article className="cardRoot">
-      <TreatmentComplexityCoefficientsHeader />
+      <RControlTreatmentCoefficientsListHeader />
       {dataState === "error" ? (
         <DataState
           title="Ошибка данных"
@@ -46,7 +46,7 @@ export const TreatmentComplexityCoefficientsRoot = ({
           variant="empty"
         />
       ) : (
-        <TreatmentComplexityCoefficientsBody
+        <RControlTreatmentCoefficientsListBody
           treatmentComplexityCoefficients={
             treatmentComplexityCoefficients ?? []
           }

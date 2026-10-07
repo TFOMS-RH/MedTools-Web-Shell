@@ -2,15 +2,15 @@ import { Skeleton } from "@mui/material";
 import styles from "./styles.module.scss";
 import type { TreatmentComplexityCoefficientDto } from "../../../../../../model/types/categories/clinicalGroup/GetTreatmentComplexityCoefficientsResult";
 
-interface TreatmentComplexityCoefficientsBodyProps {
+interface RControlTreatmentCoefficientsListBodyProps {
   treatmentComplexityCoefficients: TreatmentComplexityCoefficientDto[];
   isPending: boolean;
 }
 
-export const TreatmentComplexityCoefficientsBody = ({
+export const RControlTreatmentCoefficientsListBody = ({
   treatmentComplexityCoefficients,
   isPending,
-}: TreatmentComplexityCoefficientsBodyProps) => {
+}: RControlTreatmentCoefficientsListBodyProps) => {
   return (
     <div className="cardContent">
       <div className="cardBlock">
