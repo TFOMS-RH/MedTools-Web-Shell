@@ -1,4 +1,4 @@
-import type { MedicalDeviceDto } from "../../../../../../../../../rControl/widgets/workspace/model/types/categories/providedServices/GetMedicalDevicesResult";
+import type { MedicalDeviceDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/providedServices/GetMedicalDevicesResult";
 import { CardField } from "../../../../../../../../../../shared/ui/CardField/CardField";
 import { Skeleton } from "@mui/material";
 import styles from "./styles.module.scss";

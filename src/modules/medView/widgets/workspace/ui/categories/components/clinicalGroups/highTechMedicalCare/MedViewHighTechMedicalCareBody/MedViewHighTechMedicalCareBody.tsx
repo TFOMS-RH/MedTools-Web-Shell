@@ -1,4 +1,4 @@
-import type { HighTechMedicalCareDto } from "../../../../../../../../../rControl/widgets/workspace/model/types/categories/clinicalGroup/GetHighTechMedicalCareResult";
+import type { HighTechMedicalCareDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/clinicalGroup/GetHighTechMedicalCareResult";
 import { CardField } from "../../../../../../../../../../shared/ui/CardField/CardField";
 import { Skeleton } from "@mui/material";
 import dayjs from "dayjs";

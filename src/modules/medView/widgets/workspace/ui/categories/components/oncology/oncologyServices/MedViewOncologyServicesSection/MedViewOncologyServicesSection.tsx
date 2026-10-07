@@ -1,6 +1,6 @@
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
-import { useOncologyServicesQuery } from "../../../../../../../../../rControl/widgets/workspace/model/queries/categories/oncology/useOncologyServicesQuery";
+import { useOncologyServicesQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/oncology/useOncologyServicesQuery";
 import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";
 import { MedViewOncologyServicesCards } from "../MedViewOncologyServicesCards/MedViewOncologyServicesCards";
 

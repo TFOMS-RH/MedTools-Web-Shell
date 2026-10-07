@@ -1,7 +1,7 @@
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
-import { useDiagnosticsQuery } from "../../../../../../model/queries/categories/oncology/useDiagnosticsQuery";
+import { useDiagnosticsQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/oncology/useDiagnosticsQuery";
 import { RControlDiagnosticsListBody } from "./RControlDiagnosticsListBody";
 import { RControlDiagnosticsListHeader } from "./RControlDiagnosticsListHeader";
 import styles from "./styles.module.scss";

@@ -1,4 +1,4 @@
-import type { InjectionDateDto } from "../../../../../../../model/types/categories/oncology/GetInjectionDatesResult";
+import type { InjectionDateDto } from "../../../../../../../../../../../shared/model/types/invoiceStructure/results/oncology/GetInjectionDatesResult";
 import { formatDate } from "../../../../../../../../../../../shared/helpers/formatDate";
 import { Chip } from "@mui/material";
 import styles from "./styles.module.scss";

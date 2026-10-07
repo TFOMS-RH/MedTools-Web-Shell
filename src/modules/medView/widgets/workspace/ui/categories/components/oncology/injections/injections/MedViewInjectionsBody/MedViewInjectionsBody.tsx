@@ -2,7 +2,7 @@ import { TableSkeleton } from "../../../../../../../../../../../shared/ui/TableS
 import { formatNullableValue } from "../../../../../../../../../../../shared/helpers/formatNullableValue";
 import { formatCurrency } from "../../../../../../../../../../../shared/helpers/formatCurrency";
 import { formatDate } from "../../../../../../../../../../../shared/helpers/formatDate";
-import type { InjectionDto } from "../../../../../../../../../../rControl/widgets/workspace/model/types/categories/oncology/GetInjectionsResult";
+import type { InjectionDto } from "../../../../../../../../../../../shared/model/types/invoiceStructure/results/oncology/GetInjectionsResult";
 
 interface InjectionsBodyProps {
   injections: InjectionDto[];

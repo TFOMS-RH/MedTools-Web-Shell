@@ -1,4 +1,4 @@
-import type { ConsultationDto } from "../../../../../../../../../rControl/widgets/workspace/model/types/categories/oncology/GetConsultationsResult";
+import type { ConsultationDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/oncology/GetConsultationsResult";
 import { Skeleton } from "@mui/material";
 import dayjs from "dayjs";
 import styles from "./styles.module.scss";

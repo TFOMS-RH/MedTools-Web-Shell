@@ -1,15 +1,15 @@
 import { resolveDataState } from "../../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../../shared/ui/DataState/DataState";
 import { useFiltersStore } from "../../../../../../../../filters/model/store/useFiltersStore";
-import { useInjectionDatesQuery } from "../../../../../../../model/queries/categories/oncology/useInjectionDatesQuery";
-import { useWorkspaceStore } from "../../../../../../../model/store/useWorkspaceStore";
+import { useInjectionDatesQuery } from "../../../../../../../../../../../shared/model/queries/invoiceStructure/oncology/useInjectionDatesQuery";
+import { useRControlWorkspaceStore } from "../../../../../../../model/store/useRControlWorkspaceStore";
 import { RControlInjectionDateChipsGroupHeader } from "./RControlInjectionDateChipsGroupHeader";
 import { RControlInjectionDateChips } from "./RControlInjectionDateChips";
 import { RControlInjectionDateChipSkeletons } from "./RControlInjectionDateChipSkeletons";
 
 export const RControlInjectionDateChipsGroupRoot = () => {
   const { targetDb } = useFiltersStore();
-  const { selectedMedicationUid } = useWorkspaceStore();
+  const { selectedMedicationUid } = useRControlWorkspaceStore();
   const {
     data: injectionDates,
     isLoading,

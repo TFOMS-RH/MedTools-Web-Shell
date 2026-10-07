@@ -1,7 +1,7 @@
 import type { PaginationState } from "../../../../../../../../shared/types/PaginationState";
 import type { DataState } from "../../../../../../../../shared/types/DataState";
 import { AppTablePagination } from "../../../../../../../../shared/ui/AppTablePagination/AppTablePagination";
-import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
+import { useRControlWorkspaceStore } from "../../../../model/store/useRControlWorkspaceStore";
 import { SearchInput } from "../../../../../../../../shared/ui/SearchInput/SearchInput";
 import { StatusBadge } from "../../../../../../../../shared/ui/StatusBadge/StatusBadge";
 import { useState } from "react";
@@ -32,7 +32,7 @@ export const RControlCompletedCasesTableHeader = ({
   disabled,
 }: RControlCompletedCasesTableHeaderProps) => {
   const [searchValue, setSearchValue] = useState("");
-  const { setCompletedCasesSearch } = useWorkspaceStore();
+  const { setCompletedCasesSearch } = useRControlWorkspaceStore();
 
   const onChangeSearchValue = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);

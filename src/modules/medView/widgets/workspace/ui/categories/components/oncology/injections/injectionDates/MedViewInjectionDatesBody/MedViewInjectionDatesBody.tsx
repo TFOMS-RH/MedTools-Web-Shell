@@ -1,6 +1,6 @@
 import { Chip, Skeleton } from "@mui/material";
 import { formatDate } from "../../../../../../../../../../../shared/helpers/formatDate";
-import type { InjectionDateDto } from "../../../../../../../../../../rControl/widgets/workspace/model/types/categories/oncology/GetInjectionDatesResult";
+import type { InjectionDateDto } from "../../../../../../../../../../../shared/model/types/invoiceStructure/results/oncology/GetInjectionDatesResult";
 import styles from "./styles.module.scss";
 
 interface InjectionDatesBodyProps {

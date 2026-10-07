@@ -1,12 +1,12 @@
 import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLineHeader/CategoryLineHeader";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
-import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
+import { useRControlWorkspaceStore } from "../../../../model/store/useRControlWorkspaceStore";
 import { RControlInsuranceCardRoot } from "./insurance/card/RControlInsuranceCardRoot";
 import { RControlPatientCardRoot } from "./patient/card/RControlPatientCardRoot";
 import styles from "./styles.module.scss";
 
 const RControlPatientCategoryRoot = () => {
-  const { selectedMedicalCaseUid } = useWorkspaceStore();
+  const { selectedMedicalCaseUid } = useRControlWorkspaceStore();
 
   return (
     <section className={styles.patientCategoryRoot}>

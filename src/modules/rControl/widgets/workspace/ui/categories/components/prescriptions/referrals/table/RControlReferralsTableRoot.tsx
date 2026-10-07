@@ -1,14 +1,14 @@
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
-import { useReferralsQuery } from "../../../../../../model/queries/categories/prescriptions/useReferralsQuery";
-import { useWorkspaceStore } from "../../../../../../model/store/useWorkspaceStore";
+import { useReferralsQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/prescriptions/useReferralsQuery";
+import { useRControlWorkspaceStore } from "../../../../../../model/store/useRControlWorkspaceStore";
 import { RControlReferralsTableBody } from "./RControlReferralsTableBody";
 import { RControlReferralsTableHeader } from "./RControlReferralsTableHeader";
 
 export const RControlReferralsTableRoot = () => {
   const { targetDb } = useFiltersStore();
-  const { selectedMedicalCaseUid } = useWorkspaceStore();
+  const { selectedMedicalCaseUid } = useRControlWorkspaceStore();
   const {
     data: referrals,
     isLoading,

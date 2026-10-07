@@ -1,4 +1,4 @@
-import type { ReferralDto } from "../../../../../../model/types/categories/prescriptions/GetReferralsResult";
+import type { ReferralDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/prescriptions/GetReferralsResult";
 import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";
 import { TableSkeleton } from "../../../../../../../../../../shared/ui/TableSkeleton/TableSkeleton";
 import dayjs from "dayjs";

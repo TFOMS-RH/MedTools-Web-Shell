@@ -1,4 +1,4 @@
-import type { DefectDto } from "../../../../../../../../../rControl/widgets/workspace/model/types/categories/defects/GetDefectsResult";
+import type { DefectDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/defects/GetDefectsResult";
 import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";
 import { TableSkeleton } from "../../../../../../../../../../shared/ui/TableSkeleton/TableSkeleton";
 

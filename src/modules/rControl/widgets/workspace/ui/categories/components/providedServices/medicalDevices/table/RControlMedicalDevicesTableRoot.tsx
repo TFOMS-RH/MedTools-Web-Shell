@@ -1,14 +1,14 @@
 import { RControlMedicalDevicesTableHeader } from "./RControlMedicalDevicesTableHeader";
 import { RControlMedicalDevicesTableBody } from "./RControlMedicalDevicesTableBody";
-import { useMedicalDevicesQuery } from "../../../../../../model/queries/categories/providedServices/useMedicalDevicesQuery";
-import { useWorkspaceStore } from "../../../../../../model/store/useWorkspaceStore";
+import { useMedicalDevicesQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/providedServices/useMedicalDevicesQuery";
+import { useRControlWorkspaceStore } from "../../../../../../model/store/useRControlWorkspaceStore";
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 
 export const RControlMedicalDevicesTableRoot = () => {
   const { targetDb } = useFiltersStore();
-  const { selectedProvidedServiceUid } = useWorkspaceStore();
+  const { selectedProvidedServiceUid } = useRControlWorkspaceStore();
   const {
     data: medicalDevices,
     isLoading,

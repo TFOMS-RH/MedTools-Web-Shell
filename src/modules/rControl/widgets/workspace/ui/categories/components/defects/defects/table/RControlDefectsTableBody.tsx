@@ -1,6 +1,6 @@
 import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";
 import { TableSkeleton } from "../../../../../../../../../../shared/ui/TableSkeleton/TableSkeleton";
-import type { DefectDto } from "../../../../../../model/types/categories/defects/GetDefectsResult";
+import type { DefectDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/defects/GetDefectsResult";
 
 interface RControlDefectsTableBodyProps {
   defects: DefectDto[];

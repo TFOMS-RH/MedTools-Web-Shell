@@ -1,6 +1,6 @@
-import { useMedicalCasesListItemsQuery } from "../../../../model/queries/core/useMedicalCasesListItemsQuery";
+import { useMedicalCasesListItemsQuery } from "../../../../../../../../shared/model/queries/invoiceStructure/medicalCases/useMedicalCasesListItemsQuery";
 import { RControlMedicalCaseCardSkeletons } from "./RControlMedicalCaseCardSkeletons";
-import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
+import { useRControlWorkspaceStore } from "../../../../model/store/useRControlWorkspaceStore";
 import { resolveDataState } from "../../../../../../../../shared/helpers/resolveDataState";
 import { useFiltersStore } from "../../../../../filters/model/store/useFiltersStore";
 import { RControlMedicalCaseCards } from "./RControlMedicalCaseCards";
@@ -13,7 +13,7 @@ export const RControlMedicalCaseCardsGroupRoot = () => {
     selectedCompletedCaseUid,
     selectedMedicalCaseUid,
     selectMedicalCase,
-  } = useWorkspaceStore();
+  } = useRControlWorkspaceStore();
   const {
     data: medicalCases,
     isLoading,

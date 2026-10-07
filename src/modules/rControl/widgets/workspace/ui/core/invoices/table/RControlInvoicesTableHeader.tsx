@@ -3,7 +3,7 @@ import type { PaginationState } from "../../../../../../../../shared/types/Pagin
 import { AppTablePagination } from "../../../../../../../../shared/ui/AppTablePagination/AppTablePagination";
 import { SearchInput } from "../../../../../../../../shared/ui/SearchInput/SearchInput";
 import { StatusBadge } from "../../../../../../../../shared/ui/StatusBadge/StatusBadge";
-import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
+import { useRControlWorkspaceStore } from "../../../../model/store/useRControlWorkspaceStore";
 import { useState } from "react";
 import styles from "./styles.module.scss";
 
@@ -32,7 +32,7 @@ export const RControlInvoicesTableHeader = ({
   disabled,
 }: RControlInvoicesTableHeaderProps) => {
   const [searchValue, setSearchValue] = useState("");
-  const { setInvoicesSearch } = useWorkspaceStore();
+  const { setInvoicesSearch } = useRControlWorkspaceStore();
 
   const onChangeSearchValue = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);

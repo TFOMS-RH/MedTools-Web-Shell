@@ -1,12 +1,12 @@
 import { RControlReferralsTableRoot } from "./referrals/table/RControlReferralsTableRoot";
 import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLineHeader/CategoryLineHeader";
-import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
+import { useRControlWorkspaceStore } from "../../../../model/store/useRControlWorkspaceStore";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
 import { RControlPrescriptionCardsGroupRoot } from "./prescriptions/cardsGroup/RControlPrescriptionCardsGroupRoot";
 import styles from "./styles.module.scss";
 
 const RControlPrescriptionsCategoryRoot = () => {
-  const { selectedMedicalCaseUid } = useWorkspaceStore();
+  const { selectedMedicalCaseUid } = useRControlWorkspaceStore();
 
   return (
     <section className={styles.prescriptionsRoot}>

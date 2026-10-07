@@ -1,4 +1,4 @@
-import type { CompletedCaseDetailsDto } from "../../../../../../model/types/categories/medicalCases/GetCompletedCaseDetailsResult";
+import type { CompletedCaseDetailsDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/medicalCases/GetCompletedCaseDetailsResult";
 import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";
 import { formatDate } from "../../../../../../../../../../shared/helpers/formatDate";
 import { CardField } from "../../../../../../../../../../shared/ui/CardField/CardField";

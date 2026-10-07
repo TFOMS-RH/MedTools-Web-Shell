@@ -1,4 +1,4 @@
-import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
+import { useRControlWorkspaceStore } from "../../../../model/store/useRControlWorkspaceStore";
 import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLineHeader/CategoryLineHeader";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
 import { RControlMedicalCaseDetailsCardRoot } from "./medicalCaseDetails/card/RControlMedicalCaseDetailsCardRoot";
@@ -6,7 +6,7 @@ import { CompletedCaseDetailsRoot } from "./completedCaseDetails/card/RControlCo
 import styles from "./styles.module.scss";
 
 const RControlMedicalCaseDetailsCategoryRoot = () => {
-  const { selectedMedicalCaseUid } = useWorkspaceStore();
+  const { selectedMedicalCaseUid } = useRControlWorkspaceStore();
 
   return (
     <section className={styles.medicalCaseDetailsRoot}>

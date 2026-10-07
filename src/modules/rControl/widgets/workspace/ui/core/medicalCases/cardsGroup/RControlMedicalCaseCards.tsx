@@ -1,4 +1,4 @@
-import type { MedicalCaseDto } from "../../../../model/types/core/results/GetMedicalCaseListItemsResult";
+import type { MedicalCaseDto } from "../../../../../../../../shared/model/types/invoiceStructure/results/medicalCases/GetMedicalCaseListItemsResult";
 import { formatNullableValue } from "../../../../../../../../shared/helpers/formatNullableValue";
 import { formatCurrency } from "../../../../../../../../shared/helpers/formatCurrency";
 import { CardField } from "../../../../../../../../shared/ui/CardField/CardField";

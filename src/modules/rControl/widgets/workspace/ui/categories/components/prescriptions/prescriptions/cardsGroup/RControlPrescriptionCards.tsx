@@ -1,4 +1,4 @@
-import type { PrescriptionDto } from "../../../../../../model/types/categories/prescriptions/GetPrescriptionsResult";
+import type { PrescriptionDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/prescriptions/GetPrescriptionsResult";
 import { CardField } from "../../../../../../../../../../shared/ui/CardField/CardField";
 import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";
 import styles from "./styles.module.scss";

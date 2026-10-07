@@ -3,7 +3,7 @@ import { DataState } from "../../../../../../../../shared/ui/DataState/DataState
 import { useEffect } from "react";
 import { useMedViewFiltersStore } from "../../../../../filters/model/stores/useMedViewFiltersStore";
 import { useMedViewStore } from "../../../../model/stores/useMedViewStore";
-import { useMedicalCasesListItemsQuery } from "../../../../../../../rControl/widgets/workspace/model/queries/core/useMedicalCasesListItemsQuery";
+import { useMedicalCasesListItemsQuery } from "../../../../../../../../shared/model/queries/invoiceStructure/medicalCases/useMedicalCasesListItemsQuery";
 import { MedViewMedicalCasesCardsSkeleton } from "../MedViewMedicalCasesCards/MedViewMedicalCasesCardsSkeleton";
 import { MedViewMedicalCasesCards } from "../MedViewMedicalCasesCards/MedViewMedicalCasesCards";
 

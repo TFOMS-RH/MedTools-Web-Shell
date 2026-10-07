@@ -1,14 +1,14 @@
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
-import { useOncologyCaseQuery } from "../../../../../../model/queries/categories/oncology/useOncologyCaseQuery";
-import { useWorkspaceStore } from "../../../../../../model/store/useWorkspaceStore";
+import { useOncologyCaseQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/oncology/useOncologyCaseQuery";
+import { useRControlWorkspaceStore } from "../../../../../../model/store/useRControlWorkspaceStore";
 import { RControlOncologyCaseCardBody } from "./RControlOncologyCaseCardBody";
 import { RControlOncologyCaseCardHeader } from "./RControlOncologyCaseCardHeader";
 
 export const RControlOncologyCaseCardRoot = () => {
   const { targetDb } = useFiltersStore();
-  const { selectedMedicalCaseUid } = useWorkspaceStore();
+  const { selectedMedicalCaseUid } = useRControlWorkspaceStore();
   const {
     data: oncologyCase,
     isLoading,

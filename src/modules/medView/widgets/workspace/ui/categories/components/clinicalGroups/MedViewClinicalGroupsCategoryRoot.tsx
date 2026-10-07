@@ -3,7 +3,7 @@ import { Divider } from "../../../../../../../../components/ui/Divider/Divider";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
 import { useMedViewFiltersStore } from "../../../../../filters/model/stores/useMedViewFiltersStore";
 import { useMedViewStore } from "../../../../model/stores/useMedViewStore";
-import { useClinicalGroupQuery } from "../../../../../../../rControl/widgets/workspace/model/queries/categories/clinicalGroups/useClinicalGroupQuery";
+import { useClinicalGroupQuery } from "../../../../../../../../shared/model/queries/invoiceStructure/clinicalGroups/useClinicalGroupQuery";
 import { MedViewClinicalGroupRoot } from "./clinicalGroup/MedViewClinicalGroupRoot/MedViewClinicalGroupRoot";
 import { MedViewHighTechMedicalCareRoot } from "./highTechMedicalCare/MedViewHighTechMedicalCareRoot/MedViewHighTechMedicalCareRoot";
 import { MedViewClassificationCriteriaRoot } from "./сlassificationCriteria/MedViewClassificationCriteriaRoot/MedViewClassificationCriteriaRoot";

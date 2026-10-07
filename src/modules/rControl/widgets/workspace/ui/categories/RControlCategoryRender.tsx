@@ -1,5 +1,5 @@
-import type { RControlCategoryId } from "../../model/types/categories/CategoryId";
-import { useWorkspaceStore } from "../../model/store/useWorkspaceStore";
+import type { RControlCategoryId } from "../../../../../../shared/model/types/CategoryId";
+import { useRControlWorkspaceStore } from "../../model/store/useRControlWorkspaceStore";
 import CategoryFallback from "./components/default/CategoryFallback/CategoryFallback";
 import {
   lazy,
@@ -34,7 +34,8 @@ const ClinicalGroupsCategoryComponent = lazy(
 );
 
 const ProvidedServicesCategoryComponent = lazy(
-  () => import("./components/providedServices/RControlProvidedServicesCategoryRoot"),
+  () =>
+    import("./components/providedServices/RControlProvidedServicesCategoryRoot"),
 );
 
 const DefectsCategoryComponent = lazy(
@@ -53,7 +54,7 @@ const categoryMap = {
 } satisfies Record<RControlCategoryId, LazyExoticComponent<ComponentType>>;
 
 export const RControlCategoryRender = () => {
-  const { targetCategory } = useWorkspaceStore();
+  const { targetCategory } = useRControlWorkspaceStore();
   const CategoryComponent = categoryMap[targetCategory];
 
   return (

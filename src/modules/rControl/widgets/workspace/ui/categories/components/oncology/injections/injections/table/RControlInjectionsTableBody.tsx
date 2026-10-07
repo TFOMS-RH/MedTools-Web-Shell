@@ -1,4 +1,4 @@
-import type { InjectionDto } from "../../../../../../../model/types/categories/oncology/GetInjectionsResult";
+import type { InjectionDto } from "../../../../../../../../../../../shared/model/types/invoiceStructure/results/oncology/GetInjectionsResult";
 import { TableSkeleton } from "../../../../../../../../../../../shared/ui/TableSkeleton/TableSkeleton";
 import { formatNullableValue } from "../../../../../../../../../../../shared/helpers/formatNullableValue";
 import { formatCurrency } from "../../../../../../../../../../../shared/helpers/formatCurrency";

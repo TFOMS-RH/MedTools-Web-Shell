@@ -1,14 +1,14 @@
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
-import { usePatientQuery } from "../../../../../../model/queries/categories/patient/usePatientQuery";
-import { useWorkspaceStore } from "../../../../../../model/store/useWorkspaceStore";
+import { usePatientQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/patient/usePatientQuery";
+import { useRControlWorkspaceStore } from "../../../../../../model/store/useRControlWorkspaceStore";
 import { RControlPatientCardBody } from "./RControlPatientCardBody";
 import { RControlPatientCardHeader } from "./RControlPatientCardHeader";
 
 export const RControlPatientCardRoot = () => {
   const { targetDb } = useFiltersStore();
-  const { selectedMedicalCaseUid } = useWorkspaceStore();
+  const { selectedMedicalCaseUid } = useRControlWorkspaceStore();
 
   const {
     data: patient,

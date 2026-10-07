@@ -1,6 +1,6 @@
 import { Skeleton } from "@mui/material";
 import styles from "./styles.module.scss";
-import type { TreatmentComplexityCoefficientDto } from "../../../../../../../../../rControl/widgets/workspace/model/types/categories/clinicalGroup/GetTreatmentComplexityCoefficientsResult";
+import type { TreatmentComplexityCoefficientDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/clinicalGroup/GetTreatmentComplexityCoefficientsResult";
 
 interface TreatmentComplexityCoefficientsBodyProps {
   treatmentComplexityCoefficients: TreatmentComplexityCoefficientDto[];

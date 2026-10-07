@@ -1,7 +1,7 @@
-import { useCompletedCaseListItemsQuery } from "../../../../model/queries/core/useCompletedCaseListItemsQuery";
+import { useCompletedCaseListItemsQuery } from "../../../../../../../../shared/model/queries/invoiceStructure/completedCases/useCompletedCaseListItemsQuery";
 import { RControlCompletedCasesTableBody } from "./RControlCompletedCasesTableBody";
 import { RControlCompletedCasesTableHeader } from "./RControlCompletedCasesTableHeader";
-import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
+import { useRControlWorkspaceStore } from "../../../../model/store/useRControlWorkspaceStore";
 import { resolveDataState } from "../../../../../../../../shared/helpers/resolveDataState";
 import { useFiltersStore } from "../../../../../filters/model/store/useFiltersStore";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
@@ -16,7 +16,7 @@ export const RControlCompletedCasesTableRoot = () => {
     completedCasesTableSearchString,
     selectCompletedCase,
     setCompletedCasesTablePagination,
-  } = useWorkspaceStore();
+  } = useRControlWorkspaceStore();
 
   const { targetDb } = useFiltersStore();
 

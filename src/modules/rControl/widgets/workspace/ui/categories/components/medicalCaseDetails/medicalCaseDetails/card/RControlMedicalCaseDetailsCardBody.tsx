@@ -1,4 +1,4 @@
-import type { MedicalCaseDetailsDto } from "../../../../../../model/types/categories/medicalCases/GetMedicalCaseDetailsResult";
+import type { MedicalCaseDetailsDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/medicalCases/GetMedicalCaseDetailsResult";
 import { CardField } from "../../../../../../../../../../shared/ui/CardField/CardField";
 import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";
 import { Skeleton } from "@mui/material";

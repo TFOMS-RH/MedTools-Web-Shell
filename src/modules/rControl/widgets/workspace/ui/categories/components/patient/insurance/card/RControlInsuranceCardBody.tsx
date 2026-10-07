@@ -1,6 +1,6 @@
 import { Skeleton } from "@mui/material";
 import { CardField } from "../../../../../../../../../../shared/ui/CardField/CardField";
-import type { InsuranceDto } from "../../../../../../model/types/categories/patient/GetInsuranceResult";
+import type { InsuranceDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/patient/GetInsuranceResult";
 import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";
 
 interface RControlInsuranceCardBodyProps {

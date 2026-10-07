@@ -1,4 +1,4 @@
-import type { ProvidedServiceDto } from "../../../../../../model/types/categories/providedServices/GetProvidedServicesResult";
+import type { ProvidedServiceDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/providedServices/GetProvidedServicesResult";
 import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";
 import { formatCurrency } from "../../../../../../../../../../shared/helpers/formatCurrency";
 import { CardField } from "../../../../../../../../../../shared/ui/CardField/CardField";

@@ -1,4 +1,4 @@
-import type { ClassificationCriterionDto } from "../../../../../../model/types/categories/clinicalGroup/GetClassificationCriteriaResult";
+import type { ClassificationCriterionDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/clinicalGroup/GetClassificationCriteriaResult";
 import { Chip } from "@mui/material";
 import styles from "./styles.module.scss";
 

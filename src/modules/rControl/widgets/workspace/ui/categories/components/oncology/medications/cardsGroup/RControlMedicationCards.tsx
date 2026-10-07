@@ -1,4 +1,4 @@
-import type { MedicationDto } from "../../../../../../model/types/categories/oncology/GetMedicationsResult";
+import type { MedicationDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/oncology/GetMedicationsResult";
 import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";
 import { CardField } from "../../../../../../../../../../shared/ui/CardField/CardField";
 import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";

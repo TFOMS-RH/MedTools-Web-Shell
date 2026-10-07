@@ -1,5 +1,5 @@
-import { useClinicalGroupQuery } from "../../../../../../model/queries/categories/clinicalGroups/useClinicalGroupQuery";
-import { useWorkspaceStore } from "../../../../../../model/store/useWorkspaceStore";
+import { useClinicalGroupQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/clinicalGroups/useClinicalGroupQuery";
+import { useRControlWorkspaceStore } from "../../../../../../model/store/useRControlWorkspaceStore";
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
@@ -8,7 +8,7 @@ import { RControlClinicalGroupCardBody } from "./RControlClinicalGroupCardBody";
 
 export const RControlClinicalGroupCardRoot = () => {
   const { targetDb } = useFiltersStore();
-  const { selectedMedicalCaseUid } = useWorkspaceStore();
+  const { selectedMedicalCaseUid } = useRControlWorkspaceStore();
   const {
     data: clinicalGroup,
     isLoading,

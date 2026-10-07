@@ -1,4 +1,4 @@
-import type { OncologyCaseDto } from "../../../../../../model/types/categories/oncology/GetOncologyCaseResult";
+import type { OncologyCaseDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/oncology/GetOncologyCaseResult";
 import { CardField } from "../../../../../../../../../../shared/ui/CardField/CardField";
 import { Skeleton } from "@mui/material";
 import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";

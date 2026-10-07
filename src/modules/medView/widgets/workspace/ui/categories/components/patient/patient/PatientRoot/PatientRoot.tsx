@@ -1,6 +1,6 @@
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
-import { usePatientQuery } from "../../../../../../../../../rControl/widgets/workspace/model/queries/categories/patient/usePatientQuery";
+import { usePatientQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/patient/usePatientQuery";
 import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";
 import { useMedViewStore } from "../../../../../../model/stores/useMedViewStore";
 

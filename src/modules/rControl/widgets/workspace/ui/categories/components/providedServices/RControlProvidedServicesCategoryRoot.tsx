@@ -1,5 +1,5 @@
 import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLineHeader/CategoryLineHeader";
-import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
+import { useRControlWorkspaceStore } from "../../../../model/store/useRControlWorkspaceStore";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
 import { Divider } from "../../../../../../../../components/ui/Divider/Divider";
 import { RControlProvidedServiceCardsGroupRoot } from "./providedServices/cardsGroup/RControlProvidedServiceCardsGroupRoot";
@@ -8,7 +8,7 @@ import styles from "./styles.module.scss";
 
 const RControlProvidedServicesCategoryRoot = () => {
   const { selectedProvidedServiceUid, selectedMedicalCaseUid } =
-    useWorkspaceStore();
+    useRControlWorkspaceStore();
 
   return (
     <section className={styles.providedServicesRoot}>

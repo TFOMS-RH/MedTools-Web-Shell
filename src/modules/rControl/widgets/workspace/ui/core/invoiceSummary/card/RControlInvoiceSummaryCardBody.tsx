@@ -1,4 +1,4 @@
-import type { InvoiceSummaryDto } from "../../../../model/types/core/results/GetInvoiceSummaryResult";
+import type { InvoiceSummaryDto } from "../../../../../../../../shared/model/types/invoiceStructure/results/invoices/GetInvoiceSummaryResult";
 import { formatCurrency } from "../../../../../../../../shared/helpers/formatCurrency";
 import { formatDate } from "../../../../../../../../shared/helpers/formatDate";
 import { CardField } from "../../../../../../../../shared/ui/CardField/CardField";

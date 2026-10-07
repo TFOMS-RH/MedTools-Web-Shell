@@ -2,7 +2,7 @@ import { resolveDataState } from "../../../../../../../../../../shared/helpers/r
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";
 import { useMedViewStore } from "../../../../../../model/stores/useMedViewStore";
-import { useClinicalGroupQuery } from "../../../../../../../../../rControl/widgets/workspace/model/queries/categories/clinicalGroups/useClinicalGroupQuery";
+import { useClinicalGroupQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/clinicalGroups/useClinicalGroupQuery";
 import { MedViewClinicalGroupHeader } from "../MedViewClinicalGroupHeader/MedViewClinicalGroupHeader";
 import { MedViewClinicalGroupBody } from "../MedViewClinicalGroupBody/MedViewClinicalGroupBody";
 

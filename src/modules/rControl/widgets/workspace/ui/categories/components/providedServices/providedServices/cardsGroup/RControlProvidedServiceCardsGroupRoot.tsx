@@ -1,6 +1,6 @@
 import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
-import { useWorkspaceStore } from "../../../../../../model/store/useWorkspaceStore";
-import { useProvidedServicesQuery } from "../../../../../../model/queries/categories/providedServices/useProvidedServicesQuery";
+import { useRControlWorkspaceStore } from "../../../../../../model/store/useRControlWorkspaceStore";
+import { useProvidedServicesQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/providedServices/useProvidedServicesQuery";
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { RControlProvidedServiceCards } from "./RControlProvidedServiceCards";
@@ -12,7 +12,7 @@ export const RControlProvidedServiceCardsGroupRoot = () => {
     selectedMedicalCaseUid,
     selectedProvidedServiceUid,
     selectProvidedService,
-  } = useWorkspaceStore();
+  } = useRControlWorkspaceStore();
   const {
     data: providedServices,
     isLoading,

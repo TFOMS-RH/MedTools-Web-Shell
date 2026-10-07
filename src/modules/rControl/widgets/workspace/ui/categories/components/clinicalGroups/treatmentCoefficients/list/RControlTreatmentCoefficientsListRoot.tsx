@@ -1,7 +1,7 @@
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { useMedViewFiltersStore } from "../../../../../../../../../medView/widgets/filters/model/stores/useMedViewFiltersStore";
-import { useTreatmentComplexityCoefficientsQuery } from "../../../../../../model/queries/categories/clinicalGroups/useTreatmentComplexityCoefficientsQuery";
+import { useTreatmentComplexityCoefficientsQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/clinicalGroups/useTreatmentComplexityCoefficientsQuery";
 import { RControlTreatmentCoefficientsListBody } from "./RControlTreatmentCoefficientsListBody";
 import { RControlTreatmentCoefficientsListHeader } from "./RControlTreatmentCoefficientsListHeader";
 

@@ -1,14 +1,14 @@
 import { resolveDataState } from "../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
 import { useFiltersStore } from "../../../../../filters/model/store/useFiltersStore";
-import { useInvoiceSummaryQuery } from "../../../../model/queries/core/useInvoiceSummaryQuery";
-import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
+import { useInvoiceSummaryQuery } from "../../../../../../../../shared/model/queries/invoiceStructure/invoices/useInvoiceSummaryQuery";
+import { useRControlWorkspaceStore } from "../../../../model/store/useRControlWorkspaceStore";
 import { RControlInvoiceSummaryCardHeader } from "./RControlInvoiceSummaryCardHeader";
 import { RControlInvoiceSummaryCardBody } from "./RControlInvoiceSummaryCardBody";
 
 export const RControlInvoiceSummaryCardRoot = () => {
   const { targetDb } = useFiltersStore();
-  const { selectedInvoiceUid } = useWorkspaceStore();
+  const { selectedInvoiceUid } = useRControlWorkspaceStore();
   const {
     data: invoiceSummary,
     isLoading,

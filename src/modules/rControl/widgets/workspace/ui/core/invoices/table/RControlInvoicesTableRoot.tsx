@@ -1,9 +1,9 @@
-import { useInvoiceListItemsQuery } from "../../../../model/queries/core/useInvoiceListItemsQuery";
+import { useInvoiceListItemsQuery } from "../../../../../../../../shared/model/queries/invoiceStructure/invoices/useInvoiceListItemsQuery";
 import { resolveDataState } from "../../../../../../../../shared/helpers/resolveDataState";
 import { useFiltersStore } from "../../../../../filters/model/store/useFiltersStore";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
 import { Divider } from "../../../../../../../../components/ui/Divider/Divider";
-import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
+import { useRControlWorkspaceStore } from "../../../../model/store/useRControlWorkspaceStore";
 import { RControlInvoicesTableHeader } from "./RControlInvoicesTableHeader";
 import { RControlInvoicesTableBody } from "./RControlInvoicesTableBody";
 import styles from "./styles.module.scss";
@@ -15,7 +15,7 @@ export const RControlInvoicesTableRoot = () => {
     selectedInvoiceUid,
     setInvoicesTablePagination,
     selectInvoice,
-  } = useWorkspaceStore();
+  } = useRControlWorkspaceStore();
   const {
     targetDb,
     selectedMedicalOrganization,

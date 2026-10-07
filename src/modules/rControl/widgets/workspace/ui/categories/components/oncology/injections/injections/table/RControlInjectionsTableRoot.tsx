@@ -1,14 +1,14 @@
 import { resolveDataState } from "../../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../../shared/ui/DataState/DataState";
 import { useFiltersStore } from "../../../../../../../../filters/model/store/useFiltersStore";
-import { useInjectionsQuery } from "../../../../../../../model/queries/categories/oncology/useInjectionsQuery";
-import { useWorkspaceStore } from "../../../../../../../model/store/useWorkspaceStore";
+import { useInjectionsQuery } from "../../../../../../../../../../../shared/model/queries/invoiceStructure/oncology/useInjectionsQuery";
+import { useRControlWorkspaceStore } from "../../../../../../../model/store/useRControlWorkspaceStore";
 import { RControlInjectionsTableBody } from "./RControlInjectionsTableBody";
 import { RControlInjectionsTableHeader } from "./RControlInjectionsTableHeader";
 
 export const RControlInjectionsTableRoot = () => {
   const { targetDb } = useFiltersStore();
-  const { selectedMedicationUid } = useWorkspaceStore();
+  const { selectedMedicationUid } = useRControlWorkspaceStore();
   const {
     data: injections,
     isLoading,

@@ -8,7 +8,7 @@ import { MedViewInjectionDatesRoot } from "./injections/injectionDates/MedViewIn
 import { MedViewInjectionsRoot } from "./injections/injections/MedViewInjectionsRoot/MedViewInjectionsRoot";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
 import { useMedViewFiltersStore } from "../../../../../filters/model/stores/useMedViewFiltersStore";
-import { useOncologyCaseQuery } from "../../../../../../../rControl/widgets/workspace/model/queries/categories/oncology/useOncologyCaseQuery";
+import { useOncologyCaseQuery } from "../../../../../../../../shared/model/queries/invoiceStructure/oncology/useOncologyCaseQuery";
 import { useMedViewStore } from "../../../../model/stores/useMedViewStore";
 import { MedViewOncologyCaseRoot } from "./oncologyCase/MedViewOncologyCaseRoot/MedViewOncologyCaseRoot";
 import { MedViewConsultationsListRoot } from "./сonsultations/MedViewConsultationsListRoot/MedViewConsultationsListRoot";

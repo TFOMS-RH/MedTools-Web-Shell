@@ -1,4 +1,4 @@
-import type { OncologyServiceDto } from "../../../../../../model/types/categories/oncology/GetOncologyServicesResult";
+import type { OncologyServiceDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/oncology/GetOncologyServicesResult";
 import { CardField } from "../../../../../../../../../../shared/ui/CardField/CardField";
 import RadioButtonCheckedIcon from "@mui/icons-material/RadioButtonChecked";
 import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";

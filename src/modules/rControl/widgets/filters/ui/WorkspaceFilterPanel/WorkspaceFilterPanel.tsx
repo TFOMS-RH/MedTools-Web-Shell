@@ -4,7 +4,7 @@ import { useFiltersStore } from "../../model/store/useFiltersStore";
 import { TargetDbToggle } from "../../../../../../shared/ui/TargetDbToggle/TargetDbToggle";
 import { useMedicalOrganizationsQuery } from "../../model/queries/useMedicalOrganizationsQuery";
 import { useBillingPeriodsQuery } from "../../model/queries/useBillingPeriodsQuery";
-import { useWorkspaceStore } from "../../../workspace/model/store/useWorkspaceStore";
+import { useRControlWorkspaceStore } from "../../../workspace/model/store/useRControlWorkspaceStore";
 import { MedToolsSelect } from "../../../../../../shared/ui/medTools/inputs/MedToolsSelect";
 
 export const WorkspaceFilterPanel = () => {
@@ -27,7 +27,8 @@ export const WorkspaceFilterPanel = () => {
   const { data: billingPeriods = [], isFetching: isBillingPeriodsFetching } =
     useBillingPeriodsQuery(selectedMedicalOrganization, targetDb);
 
-  const { setInvoicesTablePagination, selectInvoice } = useWorkspaceStore();
+  const { setInvoicesTablePagination, selectInvoice } =
+    useRControlWorkspaceStore();
 
   return (
     <section className={styles.filtersPanelRoot}>

@@ -1,9 +1,9 @@
 import { RControlOncologyServiceCardsGroupRoot } from "./oncologyServices/cardsGroup/RControlOncologyServiceCardsGroupRoot";
 import { RControlConsultationsListRoot } from "./сonsultations/list/RControlConsultationsListRoot";
 import { RControlOncologyCaseCardRoot } from "./oncologyCase/card/RControlOncologyCaseCardRoot";
-import { useOncologyCaseQuery } from "../../../../model/queries/categories/oncology/useOncologyCaseQuery";
+import { useOncologyCaseQuery } from "../../../../../../../../shared/model/queries/invoiceStructure/oncology/useOncologyCaseQuery";
 import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLineHeader/CategoryLineHeader";
-import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
+import { useRControlWorkspaceStore } from "../../../../model/store/useRControlWorkspaceStore";
 import { useFiltersStore } from "../../../../../filters/model/store/useFiltersStore";
 import { RControlInjectionsTableRoot } from "./injections/injections/table/RControlInjectionsTableRoot";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
@@ -21,7 +21,7 @@ const RControlOncologyCategoryRoot = () => {
     selectedOncologyServiceUid,
     selectedMedicationUid,
     selectOncologyService,
-  } = useWorkspaceStore();
+  } = useRControlWorkspaceStore();
   const { data: oncologyCase } = useOncologyCaseQuery(
     selectedMedicalCaseUid,
     targetDb,

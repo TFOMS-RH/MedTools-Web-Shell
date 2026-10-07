@@ -1,8 +1,8 @@
 import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLineHeader/CategoryLineHeader";
-import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
+import { useRControlWorkspaceStore } from "../../../../model/store/useRControlWorkspaceStore";
 import { useFiltersStore } from "../../../../../filters/model/store/useFiltersStore";
 import { Divider } from "../../../../../../../../components/ui/Divider/Divider";
-import { useClinicalGroupQuery } from "../../../../model/queries/categories/clinicalGroups/useClinicalGroupQuery";
+import { useClinicalGroupQuery } from "../../../../../../../../shared/model/queries/invoiceStructure/clinicalGroups/useClinicalGroupQuery";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
 import { RControlClassificationCriterionChipsGroupRoot } from "./сlassificationCriteria/chipsGroup/RControlClassificationCriterionChipsGroupRoot";
 import { RControlTreatmentCoefficientsListRoot } from "./treatmentCoefficients/list/RControlTreatmentCoefficientsListRoot";
@@ -12,7 +12,7 @@ import styles from "./styles.module.scss";
 
 const ClinicalGroupsCategoryRoot = () => {
   const { targetDb } = useFiltersStore();
-  const { selectedMedicalCaseUid } = useWorkspaceStore();
+  const { selectedMedicalCaseUid } = useRControlWorkspaceStore();
   const { data: clinicalGroup } = useClinicalGroupQuery(
     selectedMedicalCaseUid,
     targetDb,

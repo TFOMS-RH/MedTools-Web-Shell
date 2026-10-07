@@ -1,4 +1,4 @@
-import type { MedViewCategoryId } from "../../../../../rControl/widgets/workspace/model/types/categories/CategoryId";
+import type { MedViewCategoryId } from "../../../../../../shared/model/types/CategoryId";
 import { AppSelect } from "../../../../../../components/ui/Select/AppSelect";
 import { useMedViewStore } from "../../../workspace/model/stores/useMedViewStore";
 

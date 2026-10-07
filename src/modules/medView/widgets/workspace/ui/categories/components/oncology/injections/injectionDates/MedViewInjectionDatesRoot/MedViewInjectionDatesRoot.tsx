@@ -1,6 +1,6 @@
 import { resolveDataState } from "../../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../../shared/ui/DataState/DataState";
-import { useInjectionDatesQuery } from "../../../../../../../../../../rControl/widgets/workspace/model/queries/categories/oncology/useInjectionDatesQuery";
+import { useInjectionDatesQuery } from "../../../../../../../../../../../shared/model/queries/invoiceStructure/oncology/useInjectionDatesQuery";
 import { useMedViewFiltersStore } from "../../../../../../../../filters/model/stores/useMedViewFiltersStore";
 import { useMedViewStore } from "../../../../../../../model/stores/useMedViewStore";
 import { MedViewInjectionDatesBody } from "../MedViewInjectionDatesBody/MedViewInjectionDatesBody";

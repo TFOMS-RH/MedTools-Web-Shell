@@ -1,14 +1,14 @@
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
-import { useCompletedCaseDetailsQuery } from "../../../../../../model/queries/categories/medicalCaseDetails/useCompletedCaseDetailsQuery";
-import { useWorkspaceStore } from "../../../../../../model/store/useWorkspaceStore";
+import { useCompletedCaseDetailsQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/medicalCaseDetails/useCompletedCaseDetailsQuery";
+import { useRControlWorkspaceStore } from "../../../../../../model/store/useRControlWorkspaceStore";
 import { RControlCompletedCaseDetailsCardBody } from "./RControlCompletedCaseDetailsCardBody";
 import { RControlCompletedCaseDetailsCardHeader } from "./RControlCompletedCaseDetailsCardHeader";
 
 export const CompletedCaseDetailsRoot = () => {
   const { targetDb } = useFiltersStore();
-  const { selectedCompletedCaseUid } = useWorkspaceStore();
+  const { selectedCompletedCaseUid } = useRControlWorkspaceStore();
   const {
     data: completedCaseDetails,
     isLoading,

@@ -1,4 +1,4 @@
-import type { ClinicalGroupDto } from "../../../../../../model/types/categories/clinicalGroup/GetClinicalGroupResult";
+import type { ClinicalGroupDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/clinicalGroup/GetClinicalGroupResult";
 import { CardField } from "../../../../../../../../../../shared/ui/CardField/CardField";
 import { Skeleton } from "@mui/material";
 

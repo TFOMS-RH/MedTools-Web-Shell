@@ -1,10 +1,10 @@
-import type { RControlCategoryId } from "../../../workspace/model/types/categories/CategoryId";
-import styles from "./styles.module.scss";
+import type { RControlCategoryId } from "../../../../../../shared/model/types/CategoryId";
 import { AppSelect } from "../../../../../../components/ui/Select/AppSelect";
-import { useWorkspaceStore } from "../../../workspace/model/store/useWorkspaceStore";
+import { useRControlWorkspaceStore } from "../../../workspace/model/store/useRControlWorkspaceStore";
+import styles from "./styles.module.scss";
 
 export const CategoriesWorkspaceFilterPanel = () => {
-  const { setTargetCategory, targetCategory } = useWorkspaceStore();
+  const { setTargetCategory, targetCategory } = useRControlWorkspaceStore();
   return (
     <section className={styles.categoryPanelRoot}>
       <p className={styles.title}>Категории данных</p>

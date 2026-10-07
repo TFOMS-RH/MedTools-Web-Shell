@@ -1,4 +1,4 @@
-import type { ContraindicationDto } from "../../../../../../model/types/categories/oncology/GetContraindicationsResult";
+import type { ContraindicationDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/oncology/GetContraindicationsResult";
 import { Skeleton } from "@mui/material";
 import styles from "./styles.module.scss";
 import dayjs from "dayjs";

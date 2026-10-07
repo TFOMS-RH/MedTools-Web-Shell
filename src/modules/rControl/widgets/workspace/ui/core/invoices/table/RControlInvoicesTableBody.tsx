@@ -1,4 +1,4 @@
-import type { InvoiceListItemDto } from "../../../../model/types/core/results/GetInvoiceListItemsResult";
+import type { InvoiceListItemDto } from "../../../../../../../../shared/model/types/invoiceStructure/results/invoices/GetInvoiceListItemsResult";
 import { formatCurrency } from "../../../../../../../../shared/helpers/formatCurrency";
 import { TableSkeleton } from "../../../../../../../../shared/ui/TableSkeleton/TableSkeleton";
 import dayjs from "dayjs";

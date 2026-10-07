@@ -1,6 +1,6 @@
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
-import { useContraindicationsQuery } from "../../../../../../../../../rControl/widgets/workspace/model/queries/categories/oncology/useContraindicationsQuery";
+import { useContraindicationsQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/oncology/useContraindicationsQuery";
 import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";
 import { MedViewContraindicationsListBody } from "../MedViewContraindicationsListBody/MedViewContraindicationsListBody";
 import { MedViewContraindicationsListHeader } from "../MedViewContraindicationsListHeader/MedViewContraindicationsListHeader";

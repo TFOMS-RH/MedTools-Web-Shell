@@ -1,14 +1,14 @@
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
-import { useHighTechMedicalCareQuery } from "../../../../../../model/queries/categories/clinicalGroups/useHighTechMedicalCareQuery";
-import { useWorkspaceStore } from "../../../../../../model/store/useWorkspaceStore";
+import { useHighTechMedicalCareQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/clinicalGroups/useHighTechMedicalCareQuery";
+import { useRControlWorkspaceStore } from "../../../../../../model/store/useRControlWorkspaceStore";
 import { RControlHighTechMedicalCareCardBody } from "./RControlHighTechMedicalCareCardBody";
 import { RControlHighTechMedicalCareCardHeader } from "./RControlHighTechMedicalCareCardHeader";
 
 export const RControlHighTechMedicalCareCardRoot = () => {
   const { targetDb } = useFiltersStore();
-  const { selectedMedicalCaseUid } = useWorkspaceStore();
+  const { selectedMedicalCaseUid } = useRControlWorkspaceStore();
   const {
     data: highTechMedicalCare,
     isLoading,

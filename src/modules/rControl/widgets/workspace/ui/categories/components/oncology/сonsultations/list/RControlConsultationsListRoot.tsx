@@ -1,6 +1,6 @@
-import { useConsultationsQuery } from "../../../../../../model/queries/categories/oncology/useConsultationsQuery";
+import { useConsultationsQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/oncology/useConsultationsQuery";
 import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
-import { useWorkspaceStore } from "../../../../../../model/store/useWorkspaceStore";
+import { useRControlWorkspaceStore } from "../../../../../../model/store/useRControlWorkspaceStore";
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { RControlConsultationsListHeader } from "./RControlConsultationsListHeader";
@@ -8,7 +8,7 @@ import { RControlConsultationsListBody } from "./RControlConsultationsListBody";
 import styles from "./styles.module.scss";
 
 export const RControlConsultationsListRoot = () => {
-  const { selectedMedicalCaseUid } = useWorkspaceStore();
+  const { selectedMedicalCaseUid } = useRControlWorkspaceStore();
   const { targetDb } = useFiltersStore();
   const {
     data: consultations,

@@ -1,4 +1,4 @@
-import type { MedicalSanctionDto } from "../../../../../../model/types/categories/defects/GetMedicalSanctionsResult";
+import type { MedicalSanctionDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/defects/GetMedicalSanctionsResult";
 import { CardField } from "../../../../../../../../../../shared/ui/CardField/CardField";
 import { formatCurrency } from "../../../../../../../../../../shared/helpers/formatCurrency";
 import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";
