@@ -1,34 +1,33 @@
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
-import { useCompletedCaseDetailsQuery } from "../../../../../../model/queries/categories/medicalCaseDetails/useCompletedCaseDetailsQuery";
+import { useMedicalCaseDetailsQuery } from "../../../../../../model/queries/categories/medicalCaseDetails/useMedicalCaseDetailsQuery";
 import { useWorkspaceStore } from "../../../../../../model/store/useWorkspaceStore";
-import { CompletedCaseDetailsBody } from "../CompletedCaseDetailsBody/CompletedCaseDetailsBody";
-import { CompletedCaseDetailsHeader } from "../CompletedCaseDetailsHeader/CompletedCaseDetailsHeader";
+import { RControlMedicalCaseDetailsCardBody } from "./RControlMedicalCaseDetailsCardBody";
+import { RControlMedicalCaseDetailsCardHeader } from "./RControlMedicalCaseDetailsCardHeader";
 
-export const CompletedCaseDetailsRoot = () => {
+export const RControlMedicalCaseDetailsCardRoot = () => {
   const { targetDb } = useFiltersStore();
-  const { selectedCompletedCaseUid } = useWorkspaceStore();
+  const { selectedMedicalCaseUid } = useWorkspaceStore();
   const {
-    data: completedCaseDetails,
+    data: medicalCaseDetails,
     isLoading,
     isPending,
     isError,
     isSuccess,
     error,
-  } = useCompletedCaseDetailsQuery(selectedCompletedCaseUid, targetDb);
-
+  } = useMedicalCaseDetailsQuery(selectedMedicalCaseUid, targetDb);
   const dataState = resolveDataState({
-    isEnabled: selectedCompletedCaseUid !== null && targetDb !== null,
+    isEnabled: selectedMedicalCaseUid !== null && targetDb !== null,
     isLoading: isLoading,
     isError: isError,
     isSuccess: isSuccess,
-    isEmpty: completedCaseDetails === null && isSuccess,
+    isEmpty: medicalCaseDetails === null && isSuccess,
   });
 
   return (
     <article className="cardRoot">
-      <CompletedCaseDetailsHeader />
+      <RControlMedicalCaseDetailsCardHeader />
       {dataState === "error" ? (
         <DataState
           title="Ошибка данных"
@@ -38,12 +37,12 @@ export const CompletedCaseDetailsRoot = () => {
       ) : dataState === "empty" ? (
         <DataState
           title="Данных не найдено"
-          description="Медицинский случай не содержит информации о деталях законченного случая"
+          description="Медицинский случай не содержит информации о деталях медицинского случая"
           variant="empty"
         />
       ) : (
-        <CompletedCaseDetailsBody
-          completedCaseDetails={completedCaseDetails!}
+        <RControlMedicalCaseDetailsCardBody
+          medicalCaseDetails={medicalCaseDetails!}
           isPending={isPending}
         />
       )}

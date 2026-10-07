@@ -1,18 +1,18 @@
-import { Skeleton } from "@mui/material";
-import { CardField } from "../../../../../../../../../../shared/ui/CardField/CardField";
 import type { MedicalCaseDetailsDto } from "../../../../../../model/types/categories/medicalCases/GetMedicalCaseDetailsResult";
-import dayjs from "dayjs";
+import { CardField } from "../../../../../../../../../../shared/ui/CardField/CardField";
 import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";
+import { Skeleton } from "@mui/material";
+import dayjs from "dayjs";
 
-interface MedicalCaseDetailsBodyProps {
+interface RControlMedicalCaseDetailsCardBodyProps {
   medicalCaseDetails: MedicalCaseDetailsDto;
   isPending: boolean;
 }
 
-export const MedicalCaseDetailsBody = ({
+export const RControlMedicalCaseDetailsCardBody = ({
   medicalCaseDetails,
   isPending,
-}: MedicalCaseDetailsBodyProps) => {
+}: RControlMedicalCaseDetailsCardBodyProps) => {
   return (
     <div className="cardContent">
       {isPending ? (

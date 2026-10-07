@@ -1,19 +1,19 @@
 import type { CompletedCaseDetailsDto } from "../../../../../../model/types/categories/medicalCases/GetCompletedCaseDetailsResult";
+import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";
+import { formatDate } from "../../../../../../../../../../shared/helpers/formatDate";
 import { CardField } from "../../../../../../../../../../shared/ui/CardField/CardField";
 import { Skeleton } from "@mui/material";
 import dayjs from "dayjs";
-import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";
-import { formatDate } from "../../../../../../../../../../shared/helpers/formatDate";
 
-interface CompletedCaseDetailsBodyProps {
+interface RControlCompletedCaseDetailsCardBodyProps {
   completedCaseDetails: CompletedCaseDetailsDto;
   isPending: boolean;
 }
 
-export const CompletedCaseDetailsBody = ({
+export const RControlCompletedCaseDetailsCardBody = ({
   completedCaseDetails,
   isPending,
-}: CompletedCaseDetailsBodyProps) => {
+}: RControlCompletedCaseDetailsCardBodyProps) => {
   return (
     <div className="cardContent">
       {isPending ? (

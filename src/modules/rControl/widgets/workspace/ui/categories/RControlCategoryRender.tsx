@@ -18,7 +18,7 @@ const PatientCategoryComponent = lazy(
 
 const MedicalCaseDetailsCategoryComponent = lazy(
   () =>
-    import("./components/medicalCaseDetails/MedicalCaseDetailsCategoryRoot"),
+    import("./components/medicalCaseDetails/RControlMedicalCaseDetailsCategoryRoot"),
 );
 
 const OncologyCategoryComponent = lazy(

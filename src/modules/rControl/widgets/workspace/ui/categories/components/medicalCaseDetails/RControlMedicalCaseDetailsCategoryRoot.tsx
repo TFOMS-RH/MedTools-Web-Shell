@@ -1,11 +1,11 @@
 import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
 import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLineHeader/CategoryLineHeader";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
-import { MedicalCaseDetailsRoot } from "./medicalCaseDetails/MedicalCaseDetailsRoot/MedicalCaseDetailsRoot";
-import { CompletedCaseDetailsRoot } from "./completedCaseDetails/CompletedCaseDetailsRoot/CompletedCaseDetailsRoot";
+import { RControlMedicalCaseDetailsCardRoot } from "./medicalCaseDetails/card/RControlMedicalCaseDetailsCardRoot";
+import { CompletedCaseDetailsRoot } from "./completedCaseDetails/card/RControlCompletedCaseDetailsCardRoot";
 import styles from "./styles.module.scss";
 
-const MedicalCaseDetailsCategoryRoot = () => {
+const RControlMedicalCaseDetailsCategoryRoot = () => {
   const { selectedMedicalCaseUid } = useWorkspaceStore();
 
   return (
@@ -24,7 +24,7 @@ const MedicalCaseDetailsCategoryRoot = () => {
           />
         ) : (
           <div className={styles.medicalCaseDetailsGroup}>
-            <MedicalCaseDetailsRoot />
+            <RControlMedicalCaseDetailsCardRoot />
             <CompletedCaseDetailsRoot />
           </div>
         )}
@@ -33,4 +33,4 @@ const MedicalCaseDetailsCategoryRoot = () => {
   );
 };
 
-export default MedicalCaseDetailsCategoryRoot;
+export default RControlMedicalCaseDetailsCategoryRoot;

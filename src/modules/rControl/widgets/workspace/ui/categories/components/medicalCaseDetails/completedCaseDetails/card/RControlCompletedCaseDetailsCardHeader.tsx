@@ -1,4 +1,4 @@
-export const CompletedCaseDetailsHeader = () => {
+export const RControlCompletedCaseDetailsCardHeader = () => {
   return (
     <header className="cardHeader">
       <h2>Детали законченного случая</h2>
