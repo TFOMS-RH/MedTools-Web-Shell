@@ -1,14 +1,17 @@
 import type { ReferralDto } from "../../../../../../model/types/categories/prescriptions/GetReferralsResult";
-import { TableSkeleton } from "../../../../../../../../../../shared/ui/TableSkeleton/TableSkeleton";
 import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";
+import { TableSkeleton } from "../../../../../../../../../../shared/ui/TableSkeleton/TableSkeleton";
 import dayjs from "dayjs";
 
-interface ReferralsBodyProps {
+interface RControlReferralsTableBodyProps {
   referrals: ReferralDto[];
   isPending: boolean;
 }
 
-export const ReferralsBody = ({ referrals, isPending }: ReferralsBodyProps) => {
+export const RControlReferralsTableBody = ({
+  referrals,
+  isPending,
+}: RControlReferralsTableBodyProps) => {
   return (
     <div className="tableContainer">
       <table>

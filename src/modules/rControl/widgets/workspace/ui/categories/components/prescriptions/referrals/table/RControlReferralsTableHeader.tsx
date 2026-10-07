@@ -1,4 +1,4 @@
-export const ReferralsHeader = () => {
+export const RControlReferralsTableHeader = () => {
   return (
     <section className="cardHeader">
       <h2>Направления</h2>

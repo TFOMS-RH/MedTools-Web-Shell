@@ -3,10 +3,10 @@ import { DataState } from "../../../../../../../../../../shared/ui/DataState/Dat
 import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
 import { useReferralsQuery } from "../../../../../../model/queries/categories/prescriptions/useReferralsQuery";
 import { useWorkspaceStore } from "../../../../../../model/store/useWorkspaceStore";
-import { ReferralsBody } from "../ReferralsBody/ReferralsBody";
-import { ReferralsHeader } from "../ReferralsHeader/ReferralsHeader";
+import { RControlReferralsTableBody } from "./RControlReferralsTableBody";
+import { RControlReferralsTableHeader } from "./RControlReferralsTableHeader";
 
-export const ReferralsRoot = () => {
+export const RControlReferralsTableRoot = () => {
   const { targetDb } = useFiltersStore();
   const { selectedMedicalCaseUid } = useWorkspaceStore();
   const {
@@ -28,7 +28,7 @@ export const ReferralsRoot = () => {
 
   return (
     <section className="cardRoot">
-      <ReferralsHeader />
+      <RControlReferralsTableHeader />
       {dataState === "error" ? (
         <DataState
           title="Ошибка данных"
@@ -42,7 +42,10 @@ export const ReferralsRoot = () => {
           variant="empty"
         />
       ) : (
-        <ReferralsBody referrals={referrals ?? []} isPending={isPending} />
+        <RControlReferralsTableBody
+          referrals={referrals ?? []}
+          isPending={isPending}
+        />
       )}
     </section>
   );

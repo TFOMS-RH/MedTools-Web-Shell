@@ -26,7 +26,7 @@ const OncologyCategoryComponent = lazy(
 );
 
 const PrescriptionsCategoryComponent = lazy(
-  () => import("./components/prescriptions/PrescriptionsCategoryRoot"),
+  () => import("./components/prescriptions/RControlPrescriptionsCategoryRoot"),
 );
 
 const ClinicalGroupsCategoryComponent = lazy(

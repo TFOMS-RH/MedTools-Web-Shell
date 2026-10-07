@@ -16,7 +16,6 @@ export const RControlProvidedServiceCardsGroupRoot = () => {
   const {
     data: providedServices,
     isLoading,
-    isPending,
     isError,
     isSuccess,
     error,
@@ -47,7 +46,6 @@ export const RControlProvidedServiceCardsGroupRoot = () => {
         />
       ) : (
         <RControlProvidedServiceCards
-          isPending={isPending}
           providedSevices={providedServices ?? []}
           selectedProvidedServiceUid={selectedProvidedServiceUid}
           selectProvidedService={selectProvidedService}

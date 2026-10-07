@@ -1,11 +1,10 @@
+import { RControlReferralsTableRoot } from "./referrals/table/RControlReferralsTableRoot";
 import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLineHeader/CategoryLineHeader";
-import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
 import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
-import { PrescriptionsSection } from "./prescriptions/PrescriptionsSection/PrescriptionsSection";
-import { ReferralsRoot } from "./referrals/ReferralsRoot/ReferralsRoot";
+import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
 import styles from "./styles.module.scss";
 
-const PrescriptionsCategoryRoot = () => {
+const RControlPrescriptionsCategoryRoot = () => {
   const { selectedMedicalCaseUid } = useWorkspaceStore();
 
   return (
@@ -24,8 +23,8 @@ const PrescriptionsCategoryRoot = () => {
           />
         ) : (
           <div className={styles.prescriptionsGroup}>
-            <PrescriptionsSection />
-            <ReferralsRoot />
+            <RControlPrescriptionsCategoryRoot />
+            <RControlReferralsTableRoot />
           </div>
         )}
       </div>
@@ -33,4 +32,4 @@ const PrescriptionsCategoryRoot = () => {
   );
 };
 
-export default PrescriptionsCategoryRoot;
+export default RControlPrescriptionsCategoryRoot;

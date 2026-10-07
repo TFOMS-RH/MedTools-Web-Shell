@@ -12,7 +12,6 @@ interface RControlProvidedServiceCardsProps {
   providedSevices: ProvidedServiceDto[];
   selectedProvidedServiceUid: number | null;
   selectProvidedService: (providedServiceUid: number | null) => void;
-  isPending: boolean;
 }
 
 export const RControlProvidedServiceCards = ({

@@ -1,17 +1,17 @@
-import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
-import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
-import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
+import { RControlPrescriptionCards } from "./RControlPrescriptionCards";
 import { usePrescriptionsQuery } from "../../../../../../model/queries/categories/prescriptions/usePrescriptionsQuery";
 import { useWorkspaceStore } from "../../../../../../model/store/useWorkspaceStore";
-import { PrescriptionsCards } from "../PrescriptionsCards/PrescriptionsCards";
+import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
+import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
+import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
+import { RControlPrescriptionCardSkeletons } from "./RControlPrescriptionCardSkeletons";
 
-export const PrescriptionsSection = () => {
+export const RControlPrescriptionCardsGroupRoot = () => {
   const { targetDb } = useFiltersStore();
   const { selectedMedicalCaseUid } = useWorkspaceStore();
   const {
     data: prescriptions,
     isLoading,
-    isPending,
     isError,
     isSuccess,
     error,
@@ -33,6 +33,8 @@ export const PrescriptionsSection = () => {
           description={error?.message ?? "Неизвестная ошибка"}
           variant="error"
         />
+      ) : isLoading ? (
+        <RControlPrescriptionCardSkeletons />
       ) : dataState === "empty" ? (
         <DataState
           title="Данных не найдено"
@@ -40,10 +42,7 @@ export const PrescriptionsSection = () => {
           variant="empty"
         />
       ) : (
-        <PrescriptionsCards
-          prescriptions={prescriptions ?? []}
-          isPending={isPending}
-        />
+        <RControlPrescriptionCards prescriptions={prescriptions ?? []} />
       )}
     </>
   );

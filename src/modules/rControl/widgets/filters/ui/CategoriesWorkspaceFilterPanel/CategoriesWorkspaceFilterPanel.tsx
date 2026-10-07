@@ -19,7 +19,7 @@ export const CategoriesWorkspaceFilterPanel = () => {
           { label: "Пациент", value: "patient" },
           { label: "Детали случая", value: "case-details" },
           { label: "Онкология", value: "oncology" },
-          { label: "Назначения / направления", value: "referrals" },
+          { label: "Назначения / направления", value: "prescriptions" },
           { label: "КСГ / ВМП", value: "clinical-groups" },
           { label: "Оказанные услуги", value: "provided-services" },
           { label: "Дефекты / Санкции", value: "defects" },
