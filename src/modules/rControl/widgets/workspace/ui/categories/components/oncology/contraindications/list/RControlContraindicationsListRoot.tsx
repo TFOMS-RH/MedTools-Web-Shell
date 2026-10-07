@@ -1,6 +1,6 @@
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
-import { useFiltersStore } from "../../../../../../model/store/useRControlWorkspacePanelStore";
+import { useRControlWorkspacePanelStore } from "../../../../../../model/store/useRControlWorkspacePanelStore";
 import { useContraindicationsQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/oncology/useContraindicationsQuery";
 import { RControlContraindicationsListBody } from "./RControlContraindicationsListBody";
 import { RControlContraindicationsListHeader } from "./RControlContraindicationsListHeader";
@@ -13,7 +13,7 @@ interface RControlContraindicationsListRootProps {
 export const RControlContraindicationsListRoot = ({
   oncologyCaseUid,
 }: RControlContraindicationsListRootProps) => {
-  const { targetDb } = useFiltersStore();
+  const { targetDb } = useRControlWorkspacePanelStore();
   const {
     data: contraindications,
     isLoading,

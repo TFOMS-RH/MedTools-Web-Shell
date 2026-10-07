@@ -1,13 +1,13 @@
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
-import { useFiltersStore } from "../../../../../../model/store/useRControlWorkspacePanelStore";
+import { useRControlWorkspacePanelStore } from "../../../../../../model/store/useRControlWorkspacePanelStore";
 import { useMedicalSanctionsQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/defects/useMedicalSanctionsQuery";
 import { useRControlWorkspaceStore } from "../../../../../../model/store/useRControlWorkspaceStore";
 import { RControlMedicalSanctionCards } from "./RControlMedicalSanctionCards";
 import { RControlMedicalSanctionCardSkeletons } from "./RControlMedicalSanctionCardSkeletons";
 
 export const RControlMedicalSanctionCardsGroupRoot = () => {
-  const { targetDb } = useFiltersStore();
+  const { targetDb } = useRControlWorkspacePanelStore();
   const { selectedMedicalCaseUid } = useRControlWorkspaceStore();
   const {
     data: medicalSanctions,

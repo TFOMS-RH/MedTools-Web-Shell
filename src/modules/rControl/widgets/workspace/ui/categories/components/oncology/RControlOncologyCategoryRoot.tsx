@@ -4,7 +4,7 @@ import { RControlOncologyCaseCardRoot } from "./oncologyCase/card/RControlOncolo
 import { useOncologyCaseQuery } from "../../../../../../../../shared/model/queries/invoiceStructure/oncology/useOncologyCaseQuery";
 import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLineHeader/CategoryLineHeader";
 import { useRControlWorkspaceStore } from "../../../../model/store/useRControlWorkspaceStore";
-import { useFiltersStore } from "../../../../model/store/useRControlWorkspacePanelStore";
+import { useRControlWorkspacePanelStore } from "../../../../model/store/useRControlWorkspacePanelStore";
 import { RControlInjectionsTableRoot } from "./injections/injections/table/RControlInjectionsTableRoot";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
 import { Divider } from "../../../../../../../../components/ui/Divider/Divider";
@@ -15,7 +15,7 @@ import { RControlContraindicationsListRoot } from "./contraindications/list/RCon
 import styles from "./styles.module.scss";
 
 const RControlOncologyCategoryRoot = () => {
-  const { targetDb } = useFiltersStore();
+  const { targetDb } = useRControlWorkspacePanelStore();
   const {
     selectedMedicalCaseUid,
     selectedOncologyServiceUid,

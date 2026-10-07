@@ -2,12 +2,12 @@ import { RControlPrescriptionCards } from "./RControlPrescriptionCards";
 import { usePrescriptionsQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/prescriptions/usePrescriptionsQuery";
 import { useRControlWorkspaceStore } from "../../../../../../model/store/useRControlWorkspaceStore";
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
-import { useFiltersStore } from "../../../../../../model/store/useRControlWorkspacePanelStore";
+import { useRControlWorkspacePanelStore } from "../../../../../../model/store/useRControlWorkspacePanelStore";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { RControlPrescriptionCardSkeletons } from "./RControlPrescriptionCardSkeletons";
 
 export const RControlPrescriptionCardsGroupRoot = () => {
-  const { targetDb } = useFiltersStore();
+  const { targetDb } = useRControlWorkspacePanelStore();
   const { selectedMedicalCaseUid } = useRControlWorkspaceStore();
   const {
     data: prescriptions,

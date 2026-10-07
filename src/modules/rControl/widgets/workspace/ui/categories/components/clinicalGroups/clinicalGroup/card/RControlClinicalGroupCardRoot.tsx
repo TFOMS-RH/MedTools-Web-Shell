@@ -1,13 +1,13 @@
 import { useClinicalGroupQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/clinicalGroups/useClinicalGroupQuery";
 import { useRControlWorkspaceStore } from "../../../../../../model/store/useRControlWorkspaceStore";
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
-import { useFiltersStore } from "../../../../../../model/store/useRControlWorkspacePanelStore";
+import { useRControlWorkspacePanelStore } from "../../../../../../model/store/useRControlWorkspacePanelStore";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { RControlClinicalGroupCardHeader } from "./RControlClinicalGroupCardHeader";
 import { RControlClinicalGroupCardBody } from "./RControlClinicalGroupCardBody";
 
 export const RControlClinicalGroupCardRoot = () => {
-  const { targetDb } = useFiltersStore();
+  const { targetDb } = useRControlWorkspacePanelStore();
   const { selectedMedicalCaseUid } = useRControlWorkspaceStore();
   const {
     data: clinicalGroup,

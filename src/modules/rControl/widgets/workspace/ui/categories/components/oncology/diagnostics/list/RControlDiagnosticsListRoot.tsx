@@ -1,6 +1,6 @@
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
-import { useFiltersStore } from "../../../../../../model/store/useRControlWorkspacePanelStore";
+import { useRControlWorkspacePanelStore } from "../../../../../../model/store/useRControlWorkspacePanelStore";
 import { useDiagnosticsQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/oncology/useDiagnosticsQuery";
 import { RControlDiagnosticsListBody } from "./RControlDiagnosticsListBody";
 import { RControlDiagnosticsListHeader } from "./RControlDiagnosticsListHeader";
@@ -13,7 +13,7 @@ interface RControlDiagnosticsListRootProps {
 export const RControlDiagnosticsListRoot = ({
   oncologyCaseUid,
 }: RControlDiagnosticsListRootProps) => {
-  const { targetDb } = useFiltersStore();
+  const { targetDb } = useRControlWorkspacePanelStore();
   const {
     data: diagnosticRecords,
     isLoading,

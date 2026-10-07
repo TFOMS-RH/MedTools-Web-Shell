@@ -1,6 +1,6 @@
 import styles from "./styles.module.scss";
 
-import { useFiltersStore } from "../../../model/store/useRControlWorkspacePanelStore";
+import { useRControlWorkspacePanelStore } from "../../../model/store/useRControlWorkspacePanelStore";
 import { TargetDbToggle } from "../../../../../../../shared/ui/TargetDbToggle/TargetDbToggle";
 import { useBillingPeriodsQuery } from "../../../model/queries/useBillingPeriodsQuery";
 import { useRControlWorkspaceStore } from "../../../model/store/useRControlWorkspaceStore";
@@ -17,7 +17,7 @@ export const RControlWorkspacePanel = () => {
     selectMedicalOrganization,
     selectBillingYear,
     selectBillingMonth,
-  } = useFiltersStore();
+  } = useRControlWorkspacePanelStore();
 
   const {
     data: medicalOrganizations = [],

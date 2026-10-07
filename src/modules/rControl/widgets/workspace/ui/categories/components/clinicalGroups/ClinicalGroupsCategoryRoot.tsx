@@ -1,6 +1,6 @@
 import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLineHeader/CategoryLineHeader";
 import { useRControlWorkspaceStore } from "../../../../model/store/useRControlWorkspaceStore";
-import { useFiltersStore } from "../../../../model/store/useRControlWorkspacePanelStore";
+import { useRControlWorkspacePanelStore } from "../../../../model/store/useRControlWorkspacePanelStore";
 import { Divider } from "../../../../../../../../components/ui/Divider/Divider";
 import { useClinicalGroupQuery } from "../../../../../../../../shared/model/queries/invoiceStructure/clinicalGroups/useClinicalGroupQuery";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
@@ -11,7 +11,7 @@ import { RControlClinicalGroupCardRoot } from "./clinicalGroup/card/RControlClin
 import styles from "./styles.module.scss";
 
 const ClinicalGroupsCategoryRoot = () => {
-  const { targetDb } = useFiltersStore();
+  const { targetDb } = useRControlWorkspacePanelStore();
   const { selectedMedicalCaseUid } = useRControlWorkspaceStore();
   const { data: clinicalGroup } = useClinicalGroupQuery(
     selectedMedicalCaseUid,

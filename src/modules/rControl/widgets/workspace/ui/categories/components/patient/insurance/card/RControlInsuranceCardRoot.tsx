@@ -1,13 +1,13 @@
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
-import { useFiltersStore } from "../../../../../../model/store/useRControlWorkspacePanelStore";
+import { useRControlWorkspacePanelStore } from "../../../../../../model/store/useRControlWorkspacePanelStore";
 import { useInsuranceQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/patient/useInsuranceQuery";
 import { useRControlWorkspaceStore } from "../../../../../../model/store/useRControlWorkspaceStore";
 import { RControlInsuranceCardBody } from "./RControlInsuranceCardBody";
 import { RControlInsuranceCardHeader } from "./RControlInsuranceCardHeader";
 
 export const RControlInsuranceCardRoot = () => {
-  const { targetDb } = useFiltersStore();
+  const { targetDb } = useRControlWorkspacePanelStore();
   const { selectedMedicalCaseUid } = useRControlWorkspaceStore();
   const {
     data: insurance,

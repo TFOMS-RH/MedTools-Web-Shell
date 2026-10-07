@@ -1,14 +1,14 @@
 import { Divider } from "../../../../../../../../../../components/ui/Divider/Divider";
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
-import { useFiltersStore } from "../../../../../../model/store/useRControlWorkspacePanelStore";
+import { useRControlWorkspacePanelStore } from "../../../../../../model/store/useRControlWorkspacePanelStore";
 import { useDefectsQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/defects/useDefectsQuery";
 import { useRControlWorkspaceStore } from "../../../../../../model/store/useRControlWorkspaceStore";
 import { RControlDefectsTableBody } from "./RControlDefectsTableBody";
 import { RControlDefectsTableHeader } from "./RControlDefectsTableHeader";
 
 export const RControlDefectsTableRoot = () => {
-  const { targetDb } = useFiltersStore();
+  const { targetDb } = useRControlWorkspacePanelStore();
   const {
     selectedMedicalCaseUid,
     defectsTablePagination,

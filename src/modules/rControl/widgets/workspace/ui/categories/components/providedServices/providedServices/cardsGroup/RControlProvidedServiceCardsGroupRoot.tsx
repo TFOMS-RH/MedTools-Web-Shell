@@ -1,4 +1,4 @@
-import { useFiltersStore } from "../../../../../../model/store/useRControlWorkspacePanelStore";
+import { useRControlWorkspacePanelStore } from "../../../../../../model/store/useRControlWorkspacePanelStore";
 import { useRControlWorkspaceStore } from "../../../../../../model/store/useRControlWorkspaceStore";
 import { useProvidedServicesQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/providedServices/useProvidedServicesQuery";
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
@@ -7,7 +7,7 @@ import { RControlProvidedServiceCards } from "./RControlProvidedServiceCards";
 import { RControlProvidedServiceCardSkeletons } from "./RControlProvidedServiceCardSkeletons";
 
 export const RControlProvidedServiceCardsGroupRoot = () => {
-  const { targetDb } = useFiltersStore();
+  const { targetDb } = useRControlWorkspacePanelStore();
   const {
     selectedMedicalCaseUid,
     selectedProvidedServiceUid,
