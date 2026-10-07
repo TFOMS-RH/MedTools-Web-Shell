@@ -2,7 +2,7 @@ import { useMedicalCasesListItemsQuery } from "../../../../../../../../shared/mo
 import { RControlMedicalCaseCardSkeletons } from "./RControlMedicalCaseCardSkeletons";
 import { useRControlWorkspaceStore } from "../../../../model/store/useRControlWorkspaceStore";
 import { resolveDataState } from "../../../../../../../../shared/helpers/resolveDataState";
-import { useFiltersStore } from "../../../../../filters/model/store/useFiltersStore";
+import { useFiltersStore } from "../../../../model/store/useRControlWorkspacePanelStore";
 import { RControlMedicalCaseCards } from "./RControlMedicalCaseCards";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
 import { useEffect } from "react";

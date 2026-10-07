@@ -1,13 +1,13 @@
 import styles from "./styles.module.scss";
 
-import { useFiltersStore } from "../../model/store/useFiltersStore";
-import { TargetDbToggle } from "../../../../../../shared/ui/TargetDbToggle/TargetDbToggle";
-import { useMedicalOrganizationsQuery } from "../../model/queries/useMedicalOrganizationsQuery";
-import { useBillingPeriodsQuery } from "../../model/queries/useBillingPeriodsQuery";
-import { useRControlWorkspaceStore } from "../../../workspace/model/store/useRControlWorkspaceStore";
-import { MedToolsSelect } from "../../../../../../shared/ui/medTools/inputs/MedToolsSelect";
+import { useFiltersStore } from "../../../model/store/useRControlWorkspacePanelStore";
+import { TargetDbToggle } from "../../../../../../../shared/ui/TargetDbToggle/TargetDbToggle";
+import { useBillingPeriodsQuery } from "../../../model/queries/useBillingPeriodsQuery";
+import { useRControlWorkspaceStore } from "../../../model/store/useRControlWorkspaceStore";
+import { MedToolsSelect } from "../../../../../../../shared/ui/medTools/inputs/MedToolsSelect";
+import { useMedicalOrganizationsQuery } from "../../../model/queries/useMedicalOrganizationsQuery";
 
-export const WorkspaceFilterPanel = () => {
+export const RControlWorkspacePanel = () => {
   const {
     targetDb,
     selectedMedicalOrganization,

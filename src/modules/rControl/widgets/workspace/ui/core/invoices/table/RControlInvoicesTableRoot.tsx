@@ -1,6 +1,6 @@
 import { useInvoiceListItemsQuery } from "../../../../../../../../shared/model/queries/invoiceStructure/invoices/useInvoiceListItemsQuery";
 import { resolveDataState } from "../../../../../../../../shared/helpers/resolveDataState";
-import { useFiltersStore } from "../../../../../filters/model/store/useFiltersStore";
+import { useFiltersStore } from "../../../../model/store/useRControlWorkspacePanelStore";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
 import { Divider } from "../../../../../../../../components/ui/Divider/Divider";
 import { useRControlWorkspaceStore } from "../../../../model/store/useRControlWorkspaceStore";

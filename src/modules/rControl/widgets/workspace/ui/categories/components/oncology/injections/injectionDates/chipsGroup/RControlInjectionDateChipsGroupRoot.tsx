@@ -1,6 +1,6 @@
 import { resolveDataState } from "../../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../../shared/ui/DataState/DataState";
-import { useFiltersStore } from "../../../../../../../../filters/model/store/useFiltersStore";
+import { useFiltersStore } from "../../../../../../../model/store/useRControlWorkspacePanelStore";
 import { useInjectionDatesQuery } from "../../../../../../../../../../../shared/model/queries/invoiceStructure/oncology/useInjectionDatesQuery";
 import { useRControlWorkspaceStore } from "../../../../../../../model/store/useRControlWorkspaceStore";
 import { RControlInjectionDateChipsGroupHeader } from "./RControlInjectionDateChipsGroupHeader";

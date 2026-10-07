@@ -1,7 +1,7 @@
 import { useClinicalGroupQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/clinicalGroups/useClinicalGroupQuery";
 import { useRControlWorkspaceStore } from "../../../../../../model/store/useRControlWorkspaceStore";
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
-import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
+import { useFiltersStore } from "../../../../../../model/store/useRControlWorkspacePanelStore";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { RControlClinicalGroupCardHeader } from "./RControlClinicalGroupCardHeader";
 import { RControlClinicalGroupCardBody } from "./RControlClinicalGroupCardBody";

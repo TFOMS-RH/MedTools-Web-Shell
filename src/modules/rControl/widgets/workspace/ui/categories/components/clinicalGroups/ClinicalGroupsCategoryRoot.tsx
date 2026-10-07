@@ -1,6 +1,6 @@
 import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLineHeader/CategoryLineHeader";
 import { useRControlWorkspaceStore } from "../../../../model/store/useRControlWorkspaceStore";
-import { useFiltersStore } from "../../../../../filters/model/store/useFiltersStore";
+import { useFiltersStore } from "../../../../model/store/useRControlWorkspacePanelStore";
 import { Divider } from "../../../../../../../../components/ui/Divider/Divider";
 import { useClinicalGroupQuery } from "../../../../../../../../shared/model/queries/invoiceStructure/clinicalGroups/useClinicalGroupQuery";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";

@@ -4,7 +4,7 @@ import { RControlOncologyCaseCardRoot } from "./oncologyCase/card/RControlOncolo
 import { useOncologyCaseQuery } from "../../../../../../../../shared/model/queries/invoiceStructure/oncology/useOncologyCaseQuery";
 import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLineHeader/CategoryLineHeader";
 import { useRControlWorkspaceStore } from "../../../../model/store/useRControlWorkspaceStore";
-import { useFiltersStore } from "../../../../../filters/model/store/useFiltersStore";
+import { useFiltersStore } from "../../../../model/store/useRControlWorkspacePanelStore";
 import { RControlInjectionsTableRoot } from "./injections/injections/table/RControlInjectionsTableRoot";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
 import { Divider } from "../../../../../../../../components/ui/Divider/Divider";

@@ -1,6 +1,6 @@
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
-import { useFiltersStore } from "../../../../../../../filters/model/store/useFiltersStore";
+import { useFiltersStore } from "../../../../../../model/store/useRControlWorkspacePanelStore";
 import { useClassificationCriteriaQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/clinicalGroups/useClassificationCriteriaQuery";
 import { RControlClassificationCriterionChips } from "./RControlClassificationCriterionChips";
 import { RControlClassificationCriterionChipsGroupHeader } from "./RControlClassificationCriterionChipsGroupHeader";
