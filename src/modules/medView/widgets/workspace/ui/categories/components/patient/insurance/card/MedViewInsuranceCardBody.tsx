@@ -3,12 +3,15 @@ import { Skeleton } from "@mui/material";
 import { CardField } from "../../../../../../../../../../shared/ui/CardField/CardField";
 import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";
 
-interface InsuranceBodyProps {
+interface MedViewInsuranceCardBodyProps {
   insurance: InsuranceDto;
   isPending: boolean;
 }
 
-export const InsuranceBody = ({ insurance, isPending }: InsuranceBodyProps) => {
+export const MedViewInsuranceCardBody = ({
+  insurance,
+  isPending,
+}: MedViewInsuranceCardBodyProps) => {
   return (
     <div className="cardContent">
       {isPending ? (

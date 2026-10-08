@@ -1,4 +1,4 @@
-export const PatientHeader = () => {
+export const MedViewPatientCardHeader = () => {
   return (
     <div className="cardHeader">
       <h2>Пациент</h2>

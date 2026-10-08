@@ -4,12 +4,15 @@ import { Skeleton } from "@mui/material";
 import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";
 import { formatDate } from "../../../../../../../../../../shared/helpers/formatDate";
 
-interface PatientBodyProps {
+interface MedViewPatientCardBodyProps {
   patient: PatientDto;
   isPending: boolean;
 }
 
-export const PatientBody = ({ patient, isPending }: PatientBodyProps) => {
+export const MedViewPatientCardBody = ({
+  patient,
+  isPending,
+}: MedViewPatientCardBodyProps) => {
   return (
     <div className="cardContent">
       {isPending ? (

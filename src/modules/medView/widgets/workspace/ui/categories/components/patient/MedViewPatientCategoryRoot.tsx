@@ -1,12 +1,12 @@
 import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLineHeader/CategoryLineHeader";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
-import { useMedViewStore } from "../../../../model/stores/useMedViewWorkspaceStore";
-import { InsuranceRoot } from "./insurance/InsuranceRoot/InsuranceRoot";
-import { PatientRoot } from "./patient/PatientRoot/PatientRoot";
+import { useMedViewWorkspaceStore } from "../../../../model/stores/useMedViewWorkspaceStore";
+import { MedViewInsuranceCardRoot } from "./insurance/card/MedViewInsuranceCardRoot";
+import { MedViewPatientCardRoot } from "./patient/card/MedViewPatientCardRoot";
 import styles from "./styles.module.scss";
 
 const Patient = () => {
-  const { selectedMedicalCaseUid } = useMedViewStore();
+  const { selectedMedicalCaseUid } = useMedViewWorkspaceStore();
 
   return (
     <section className={styles.patientCategoryRoot}>
@@ -24,8 +24,8 @@ const Patient = () => {
           />
         ) : (
           <div className={styles.patientInsuranceGroup}>
-            <PatientRoot />
-            <InsuranceRoot />
+            <MedViewPatientCardRoot />
+            <MedViewInsuranceCardRoot />
           </div>
         )}
       </div>

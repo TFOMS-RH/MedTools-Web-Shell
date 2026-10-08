@@ -1,35 +1,36 @@
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
-import { useInsuranceQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/patient/useInsuranceQuery";
+import { usePatientQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/patient/usePatientQuery";
 import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";
-import { useMedViewStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
+import { useMedViewWorkspaceStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
+import { MedViewPatientCardHeader } from "./MedViewPatientCardHeader";
+import { MedViewPatientCardBody } from "./MedViewPatientCardBody";
 
-import { InsuranceBody } from "../InsuranceBody/InsuranceBody";
-import { InsuranceHeader } from "../InsuranceHeader/InsuranceHeader";
-
-export const InsuranceRoot = () => {
+export const MedViewPatientCardRoot = () => {
   const { targetDb } = useMedViewFiltersStore();
-  const { selectedMedicalCaseUid } = useMedViewStore();
+  const { selectedMedicalCaseUid } = useMedViewWorkspaceStore();
+
   const {
-    data: insurance,
+    data: patient,
     isLoading,
     isPending,
     isError,
     isSuccess,
     error,
-  } = useInsuranceQuery(selectedMedicalCaseUid, targetDb);
+  } = usePatientQuery(selectedMedicalCaseUid, targetDb);
 
   const dataState = resolveDataState({
     isEnabled: selectedMedicalCaseUid !== null && targetDb !== null,
     isLoading: isLoading,
     isError: isError,
     isSuccess: isSuccess,
-    isEmpty: insurance === null && isSuccess,
+    isEmpty: patient === null && isSuccess,
   });
 
   return (
     <article className="cardRoot">
-      <InsuranceHeader />
+      <MedViewPatientCardHeader />
+
       {dataState === "error" ? (
         <DataState
           title="Ошибка данных"
@@ -39,11 +40,11 @@ export const InsuranceRoot = () => {
       ) : dataState === "empty" ? (
         <DataState
           title="Данных не найдено"
-          description="Медицинский случай не содержит информации о СМО"
+          description="Медицинский случай не содержит информации о пациенте"
           variant="empty"
         />
       ) : (
-        <InsuranceBody insurance={insurance!} isPending={isPending} />
+        <MedViewPatientCardBody patient={patient!} isPending={isPending} />
       )}
     </article>
   );
