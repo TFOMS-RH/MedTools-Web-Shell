@@ -1,14 +1,14 @@
-import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
+import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { useMedicalDevicesQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/providedServices/useMedicalDevicesQuery";
 import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";
-import { useMedViewStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
-import { MedViewMedicalDevicesBody } from "../MedViewMedicalDevicesBody/MedViewMedicalDevicesBody";
-import { MedViewMedicalDevicesHeader } from "../MedViewMedicalDevicesHeader/MedViewMedicalDevicesHeader";
+import { MedViewMedicalDevicesTableHeader } from "./MedViewMedicalDevicesTableHeader";
+import { useMedViewWorkspaceStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
+import { MedViewMedicalDevicesTableBody } from "./MedViewMedicalDevicesTableBody";
 
-export const MedViewMedicalDevicesRoot = () => {
+export const MedViewMedicalDevicesTableRoot = () => {
   const { targetDb } = useMedViewFiltersStore();
-  const { selectedProvidedServiceUid } = useMedViewStore();
+  const { selectedProvidedServiceUid } = useMedViewWorkspaceStore();
   const {
     data: medicalDevices,
     isLoading,
@@ -27,7 +27,7 @@ export const MedViewMedicalDevicesRoot = () => {
 
   return (
     <div className="cardRoot">
-      <MedViewMedicalDevicesHeader />
+      <MedViewMedicalDevicesTableHeader />
       {dataState === "error" ? (
         <DataState
           title="Ошибка данных"
@@ -41,7 +41,7 @@ export const MedViewMedicalDevicesRoot = () => {
           variant="empty"
         />
       ) : (
-        <MedViewMedicalDevicesBody
+        <MedViewMedicalDevicesTableBody
           isPending={isPending}
           medicalDevices={medicalDevices ?? []}
         />

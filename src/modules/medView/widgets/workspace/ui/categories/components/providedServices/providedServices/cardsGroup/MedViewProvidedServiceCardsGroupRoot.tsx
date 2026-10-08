@@ -2,20 +2,20 @@ import { resolveDataState } from "../../../../../../../../../../shared/helpers/r
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { useProvidedServicesQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/providedServices/useProvidedServicesQuery";
 import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";
-import { useMedViewStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
-import { MedViewProvidedServicesCards } from "../MedViewProvidedServicesCards/MedViewProvidedServicesCards";
+import { useMedViewWorkspaceStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
+import { MedViewProvidedServiceCards } from "./MedViewProvidedServiceCards";
+import { MedViewProvidedServiceCardSkeletons } from "./MedViewProvidedServiceCardSkeletons";
 
-export const MedViewProvidedServicesSection = () => {
+export const MedViewProvidedServiceCardsGroupRoot = () => {
   const { targetDb } = useMedViewFiltersStore();
   const {
     selectedMedicalCaseUid,
     selectedProvidedServiceUid,
     selectProvidedService,
-  } = useMedViewStore();
+  } = useMedViewWorkspaceStore();
   const {
     data: providedServices,
     isLoading,
-    isPending,
     isError,
     isSuccess,
     error,
@@ -36,6 +36,8 @@ export const MedViewProvidedServicesSection = () => {
           description={error?.message ?? "Неизсвестная ошибка"}
           variant="error"
         />
+      ) : isLoading ? (
+        <MedViewProvidedServiceCardSkeletons />
       ) : dataState === "empty" ? (
         <DataState
           title="Данных не найдено"
@@ -43,8 +45,7 @@ export const MedViewProvidedServicesSection = () => {
           variant="empty"
         />
       ) : (
-        <MedViewProvidedServicesCards
-          isPending={isPending}
+        <MedViewProvidedServiceCards
           providedSevices={providedServices ?? []}
           selectedProvidedServiceUid={selectedProvidedServiceUid}
           selectProvidedService={selectProvidedService}

@@ -4,15 +4,15 @@ import { Skeleton } from "@mui/material";
 import styles from "./styles.module.scss";
 import dayjs from "dayjs";
 
-interface MedicalDevicesBodyProps {
+interface MedViewMedicalDevicesTableBodyProps {
   medicalDevices: MedicalDeviceDto[];
   isPending: boolean;
 }
 
-export const MedViewMedicalDevicesBody = ({
+export const MedViewMedicalDevicesTableBody = ({
   medicalDevices,
   isPending,
-}: MedicalDevicesBodyProps) => {
+}: MedViewMedicalDevicesTableBodyProps) => {
   return (
     <div className="cardContent">
       <div className={styles.listContainer}>

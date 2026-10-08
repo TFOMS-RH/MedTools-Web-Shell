@@ -1,14 +1,14 @@
 import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLineHeader/CategoryLineHeader";
-import { MedViewProvidedServicesSection } from "./providedServices/MedViewProvidedServicesSection/MedViewProvidedServicesSection";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
 import { Divider } from "../../../../../../../../components/ui/Divider/Divider";
-import { useMedViewStore } from "../../../../model/stores/useMedViewWorkspaceStore";
-import { MedViewMedicalDevicesRoot } from "./medicalDevices/MedViewMedicalDevicesRoot/MedViewMedicalDevicesRoot";
+import { useMedViewWorkspaceStore } from "../../../../model/stores/useMedViewWorkspaceStore";
+import { MedViewMedicalDevicesTableRoot } from "./medicalDevices/table/MedViewMedicalDevicesTableRoot";
+import { MedViewProvidedServiceCardsGroupRoot } from "./providedServices/cardsGroup/MedViewProvidedServiceCardsGroupRoot";
 import styles from "./styles.module.scss";
 
 const MedViewProvidedServicesCategoryRoot = () => {
   const { selectedProvidedServiceUid, selectedMedicalCaseUid } =
-    useMedViewStore();
+    useMedViewWorkspaceStore();
 
   return (
     <section className={styles.providedServicesRoot}>
@@ -25,7 +25,7 @@ const MedViewProvidedServicesCategoryRoot = () => {
             variant="waiting"
           />
         ) : (
-          <MedViewProvidedServicesSection />
+          <MedViewProvidedServiceCardsGroupRoot />
         )}
       </div>
       <Divider />
@@ -42,7 +42,7 @@ const MedViewProvidedServicesCategoryRoot = () => {
             variant="waiting"
           />
         ) : (
-          <MedViewMedicalDevicesRoot />
+          <MedViewMedicalDevicesTableRoot />
         )}
       </div>
     </section>
