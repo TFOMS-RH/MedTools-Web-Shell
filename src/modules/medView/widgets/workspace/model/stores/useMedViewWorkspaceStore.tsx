@@ -1,6 +1,6 @@
-import { create } from "zustand";
 import type { PaginationState } from "../../../../../../shared/types/PaginationState";
 import type { MedViewCategoryId } from "../../../../../../shared/model/types/CategoryId";
+import { create } from "zustand";
 
 interface MedViewWorkspaceStore {
   selectedCompletedCaseUid: number | null;

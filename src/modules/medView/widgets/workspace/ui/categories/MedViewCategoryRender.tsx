@@ -54,6 +54,7 @@ const categoryMap = {
   "clinical-groups": ClinicalGroupsCategoryComponent,
   "provided-services": ProvidedServicesCategoryComponent,
   defects: DefectsCategoryComponent,
+  export: DefaultCategoryComponent,
 } satisfies Record<MedViewCategoryId, LazyExoticComponent<ComponentType>>;
 
 export const MedViewCategoryRender = ({}) => {
