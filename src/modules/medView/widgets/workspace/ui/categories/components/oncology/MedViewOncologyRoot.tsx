@@ -9,7 +9,7 @@ import { MedViewInjectionsRoot } from "./injections/injections/MedViewInjections
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
 import { useMedViewFiltersStore } from "../../../../../filters/model/stores/useMedViewFiltersStore";
 import { useOncologyCaseQuery } from "../../../../../../../../shared/model/queries/invoiceStructure/oncology/useOncologyCaseQuery";
-import { useMedViewStore } from "../../../../model/stores/useMedViewStore";
+import { useMedViewStore } from "../../../../model/stores/useMedViewWorkspaceStore";
 import { MedViewOncologyCaseRoot } from "./oncologyCase/MedViewOncologyCaseRoot/MedViewOncologyCaseRoot";
 import { MedViewConsultationsListRoot } from "./сonsultations/MedViewConsultationsListRoot/MedViewConsultationsListRoot";
 import styles from "./styles.module.scss";

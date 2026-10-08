@@ -2,7 +2,7 @@ import { resolveDataState } from "../../../../../../../../../../shared/helpers/r
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { useInsuranceQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/patient/useInsuranceQuery";
 import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";
-import { useMedViewStore } from "../../../../../../model/stores/useMedViewStore";
+import { useMedViewStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
 
 import { InsuranceBody } from "../InsuranceBody/InsuranceBody";
 import { InsuranceHeader } from "../InsuranceHeader/InsuranceHeader";

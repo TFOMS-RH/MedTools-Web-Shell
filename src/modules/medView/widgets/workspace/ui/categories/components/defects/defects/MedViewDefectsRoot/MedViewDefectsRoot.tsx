@@ -3,7 +3,7 @@ import { resolveDataState } from "../../../../../../../../../../shared/helpers/r
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { useDefectsQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/defects/useDefectsQuery";
 import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";
-import { useMedViewStore } from "../../../../../../model/stores/useMedViewStore";
+import { useMedViewStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
 import { MedViewDefectsBody } from "../MedViewDefectsBody/MedViewDefectsBody";
 import { MedViewDefectsHeader } from "../MedViewDefectsHeader/MedViewDefectsHeader";
 

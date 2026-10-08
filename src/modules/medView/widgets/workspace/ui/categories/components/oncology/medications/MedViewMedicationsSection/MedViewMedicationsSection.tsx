@@ -2,7 +2,7 @@ import { resolveDataState } from "../../../../../../../../../../shared/helpers/r
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { useMedicationsQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/oncology/useMedicationsQuery";
 import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";
-import { useMedViewStore } from "../../../../../../model/stores/useMedViewStore";
+import { useMedViewStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
 import { MedicationsCards } from "../MedViewMedicationsCards/MedViewMedicationsCards";
 
 export const MedViewMedicationsSection = () => {

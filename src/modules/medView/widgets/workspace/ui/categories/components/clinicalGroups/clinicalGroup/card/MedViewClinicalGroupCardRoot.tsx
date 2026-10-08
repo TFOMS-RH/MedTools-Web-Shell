@@ -1,34 +1,34 @@
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
-import { useOncologyCaseQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/oncology/useOncologyCaseQuery";
 import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";
-import { useMedViewStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
-import { MedViewOncologyCaseBody } from "../MedViewOncologyCaseBody/MedViewOncologyCaseBody";
-import { MedViewOncologyCaseHeader } from "../MedViewOncologyCaseHeader/MedViewOncologyCaseHeader";
+import { useClinicalGroupQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/clinicalGroups/useClinicalGroupQuery";
+import { useMedViewWorkspaceStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
+import { MedViewClinicalGroupCardHeader } from "./MedViewClinicalGroupCardHeader";
+import { MedViewClinicalGroupCardBody } from "./MedViewClinicalGroupCardBody";
 
-export const MedViewOncologyCaseRoot = () => {
+export const MedViewClinicalGroupCardRoot = () => {
   const { targetDb } = useMedViewFiltersStore();
-  const { selectedMedicalCaseUid } = useMedViewStore();
+  const { selectedMedicalCaseUid } = useMedViewWorkspaceStore();
   const {
-    data: oncologyCase,
+    data: clinicalGroup,
     isLoading,
     isPending,
     isError,
     isSuccess,
     error,
-  } = useOncologyCaseQuery(selectedMedicalCaseUid, targetDb);
+  } = useClinicalGroupQuery(selectedMedicalCaseUid, targetDb);
 
   const dataState = resolveDataState({
     isEnabled: selectedMedicalCaseUid !== null && targetDb !== null,
     isLoading: isLoading,
     isError: isError,
     isSuccess: isSuccess,
-    isEmpty: oncologyCase === null && isSuccess,
+    isEmpty: clinicalGroup === null && isSuccess,
   });
 
   return (
-    <section className="cardRoot">
-      <MedViewOncologyCaseHeader />
+    <div className="cardRoot">
+      <MedViewClinicalGroupCardHeader />
       {dataState === "error" ? (
         <DataState
           title="Ошибка данных"
@@ -38,15 +38,15 @@ export const MedViewOncologyCaseRoot = () => {
       ) : dataState === "empty" ? (
         <DataState
           title="Данных не найдено"
-          description="Медицинский случай не содержит информации об онкологическом случае"
+          description="Медицинский случай не содержит информации о КСГ/КПГ"
           variant="empty"
         />
       ) : (
-        <MedViewOncologyCaseBody
-          oncologyCase={oncologyCase!}
+        <MedViewClinicalGroupCardBody
+          clinicalGroup={clinicalGroup!}
           isPending={isPending}
         />
       )}
-    </section>
+    </div>
   );
 };

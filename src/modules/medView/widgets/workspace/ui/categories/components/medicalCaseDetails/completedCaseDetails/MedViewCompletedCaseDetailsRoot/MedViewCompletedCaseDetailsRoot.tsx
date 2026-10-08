@@ -2,7 +2,7 @@ import { resolveDataState } from "../../../../../../../../../../shared/helpers/r
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { useCompletedCaseDetailsQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/medicalCaseDetails/useCompletedCaseDetailsQuery";
 import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";
-import { useMedViewStore } from "../../../../../../model/stores/useMedViewStore";
+import { useMedViewStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
 import { CompletedCaseDetailsBody } from "../MedViewCompletedCaseDetailsBody/MedViewCompletedCaseDetailsBody";
 import { CompletedCaseDetailsHeader } from "../MedViewCompletedCaseDetailsHeader/MedViewCompletedCaseDetailsHeader";
 

@@ -2,7 +2,7 @@ import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLi
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
 import { MedicalCaseDetailsRoot } from "./medicalCaseDetails/MedViewMedicalCaseDetailsRoot/MedViewMedicalCaseDetailsRoot";
 import { CompletedCaseDetailsRoot } from "./completedCaseDetails/MedViewCompletedCaseDetailsRoot/MedViewCompletedCaseDetailsRoot";
-import { useMedViewStore } from "../../../../model/stores/useMedViewStore";
+import { useMedViewStore } from "../../../../model/stores/useMedViewWorkspaceStore";
 import styles from "./styles.module.scss";
 
 const MedViewMedicalCaseDetailsCategoryRoot = () => {

@@ -2,7 +2,7 @@ import { useConsultationsQuery } from "../../../../../../../../../../shared/mode
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";
-import { useMedViewStore } from "../../../../../../model/stores/useMedViewStore";
+import { useMedViewStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
 import { MedViewConsultationsListHeader } from "../MedViewConsultationsListHeader/MedViewConsultationsListHeader";
 import { MedViewConsultationsListBody } from "../MedViewConsultationsListBody/MedViewConsultationsListBody";
 import styles from "./styles.module.scss";

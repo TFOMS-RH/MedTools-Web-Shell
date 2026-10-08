@@ -1,6 +1,6 @@
 import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLineHeader/CategoryLineHeader";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
-import { useMedViewStore } from "../../../../model/stores/useMedViewStore";
+import { useMedViewStore } from "../../../../model/stores/useMedViewWorkspaceStore";
 import { InsuranceRoot } from "./insurance/InsuranceRoot/InsuranceRoot";
 import { PatientRoot } from "./patient/PatientRoot/PatientRoot";
 import styles from "./styles.module.scss";

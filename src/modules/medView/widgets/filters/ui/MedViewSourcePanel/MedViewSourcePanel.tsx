@@ -1,5 +1,5 @@
 import { TargetDbToggle } from "../../../../../../shared/ui/TargetDbToggle/TargetDbToggle";
-import { useMedViewStore } from "../../../workspace/model/stores/useMedViewStore";
+import { useMedViewStore } from "../../../workspace/model/stores/useMedViewWorkspaceStore";
 import { useMedViewFiltersStore } from "../../model/stores/useMedViewFiltersStore";
 import styles from "./styles.module.scss";
 

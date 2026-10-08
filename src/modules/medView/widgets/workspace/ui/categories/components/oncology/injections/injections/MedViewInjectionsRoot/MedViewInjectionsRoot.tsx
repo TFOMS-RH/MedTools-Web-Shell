@@ -2,7 +2,7 @@ import { resolveDataState } from "../../../../../../../../../../../shared/helper
 import { DataState } from "../../../../../../../../../../../shared/ui/DataState/DataState";
 import { useInjectionsQuery } from "../../../../../../../../../../../shared/model/queries/invoiceStructure/oncology/useInjectionsQuery";
 import { useMedViewFiltersStore } from "../../../../../../../../filters/model/stores/useMedViewFiltersStore";
-import { useMedViewStore } from "../../../../../../../model/stores/useMedViewStore";
+import { useMedViewStore } from "../../../../../../../model/stores/useMedViewWorkspaceStore";
 import { MedViewInjectionsBody } from "../MedViewInjectionsBody/MedViewInjectionsBody";
 import { MedViewInjectionsHeader } from "../MedViewInjectionsHeader/MedViewInjectionsHeader";
 

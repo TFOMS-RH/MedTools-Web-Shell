@@ -2,7 +2,7 @@ import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLi
 import { MedViewProvidedServicesSection } from "./providedServices/MedViewProvidedServicesSection/MedViewProvidedServicesSection";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
 import { Divider } from "../../../../../../../../components/ui/Divider/Divider";
-import { useMedViewStore } from "../../../../model/stores/useMedViewStore";
+import { useMedViewStore } from "../../../../model/stores/useMedViewWorkspaceStore";
 import { MedViewMedicalDevicesRoot } from "./medicalDevices/MedViewMedicalDevicesRoot/MedViewMedicalDevicesRoot";
 import styles from "./styles.module.scss";
 
