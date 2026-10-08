@@ -1,0 +1,21 @@
+.categoryDefaultRoot {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: var(--space-10);
+
+  .title {
+    font-size: var(--fs-h3);
+    font-weight: 500;
+    user-select: none;
+  }
+
+  .description {
+    font-size: var(--fs-body2);
+    font-weight: 400;
+    color: var(--text-secondary);
+    user-select: none;
+  }
+}

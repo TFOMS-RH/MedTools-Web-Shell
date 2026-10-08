@@ -10,7 +10,7 @@ import { useMedViewWorkspaceStore } from "../../model/stores/useMedViewWorkspace
 
 const DefaultCategoryComponent = lazy(
   () =>
-    import("../../../../../rControl/widgets/workspace/ui/categories/components/default/DefaultCategory/DefaultCategory"),
+    import("../categories/components/default/DefaultCategory/DefaultCategory"),
 );
 
 const PatientCategoryComponent = lazy(
