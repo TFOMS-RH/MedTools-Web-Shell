@@ -1,11 +1,10 @@
-import styles from "./styles.module.scss";
-
 import { useRControlWorkspacePanelStore } from "../../../model/store/useRControlWorkspacePanelStore";
 import { TargetDbToggle } from "../../../../../../../shared/ui/TargetDbToggle/TargetDbToggle";
 import { useBillingPeriodsQuery } from "../../../model/queries/useBillingPeriodsQuery";
 import { useRControlWorkspaceStore } from "../../../model/store/useRControlWorkspaceStore";
 import { MedToolsSelect } from "../../../../../../../shared/ui/medTools/inputs/MedToolsSelect";
 import { useMedicalOrganizationsQuery } from "../../../model/queries/useMedicalOrganizationsQuery";
+import styles from "./styles.module.scss";
 
 export const RControlWorkspacePanel = () => {
   const {
@@ -57,7 +56,11 @@ export const RControlWorkspacePanel = () => {
               label: entity.medicalOrganizationCode,
               value: entity.medicalOrganizationCode,
             }))}
-            onChange={(newValue: string) => selectMedicalOrganization(newValue)}
+            onChange={(newValue: string) => {
+              selectMedicalOrganization(newValue);
+              setInvoicesTablePagination({ page: 0 });
+              selectInvoice(null);
+            }}
             isLoading={isMedicalOrganizationsFetching}
           />
 
