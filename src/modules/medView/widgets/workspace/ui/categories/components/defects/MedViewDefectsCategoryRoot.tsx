@@ -1,12 +1,12 @@
 import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLineHeader/CategoryLineHeader";
+import { useMedViewWorkspaceStore } from "../../../../model/stores/useMedViewWorkspaceStore";
+import { MedViewMedicalSanctionCardsGroupRoot } from "./medicalSanctions/cardsGroup/MedViewMedicalSanctionCardsGroupRoot";
+import { MedViewDefectsTableRoot } from "./defects/table/MedViewDefectsTableRoot";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
-import { useMedViewStore } from "../../../../model/stores/useMedViewWorkspaceStore";
-import { MedViewDefectsRoot } from "./defects/MedViewDefectsRoot/MedViewDefectsRoot";
-import { MedViewMedicalSanctionsSection } from "./medicalSanctions/MedViewMedicalSanctionsSection/MedViewMedicalSanctionsSection";
 import styles from "./styles.module.scss";
 
 const MedViewDefectsCategoryRoot = () => {
-  const { selectedMedicalCaseUid } = useMedViewStore();
+  const { selectedMedicalCaseUid } = useMedViewWorkspaceStore();
 
   return (
     <section className={styles.defectsRoot}>
@@ -24,8 +24,8 @@ const MedViewDefectsCategoryRoot = () => {
           />
         ) : (
           <div className={styles.defectsGroup}>
-            <MedViewDefectsRoot />
-            <MedViewMedicalSanctionsSection />
+            <MedViewDefectsTableRoot />
+            <MedViewMedicalSanctionCardsGroupRoot />
           </div>
         )}
       </div>

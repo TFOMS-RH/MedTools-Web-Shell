@@ -2,12 +2,13 @@ import { resolveDataState } from "../../../../../../../../../../shared/helpers/r
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { useMedicalSanctionsQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/defects/useMedicalSanctionsQuery";
 import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";
-import { useMedViewStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
-import { MedViewMedicalSanctionsCards } from "../MedViewMedicalSanctionsCards/MedViewMedicalSanctionsCards";
+import { useMedViewWorkspaceStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
+import { MedViewMedicalSanctionCards } from "./MedViewMedicalSanctionCards";
+import { MedViewMedicalSanctionCardSkeletons } from "./MedViewMedicalSanctionCardSkeletons";
 
-export const MedViewMedicalSanctionsSection = () => {
+export const MedViewMedicalSanctionCardsGroupRoot = () => {
   const { targetDb } = useMedViewFiltersStore();
-  const { selectedMedicalCaseUid } = useMedViewStore();
+  const { selectedMedicalCaseUid } = useMedViewWorkspaceStore();
   const {
     data: medicalSanctions,
     isLoading,
@@ -33,6 +34,8 @@ export const MedViewMedicalSanctionsSection = () => {
           description={error?.message ?? "Неизвестная ошибка"}
           variant="error"
         />
+      ) : isLoading ? (
+        <MedViewMedicalSanctionCardSkeletons />
       ) : dataState === "empty" ? (
         <DataState
           title="Данных не найдено"
@@ -40,7 +43,7 @@ export const MedViewMedicalSanctionsSection = () => {
           variant="empty"
         />
       ) : (
-        <MedViewMedicalSanctionsCards
+        <MedViewMedicalSanctionCards
           isPending={isPending}
           medicalSanctions={medicalSanctions ?? []}
         />

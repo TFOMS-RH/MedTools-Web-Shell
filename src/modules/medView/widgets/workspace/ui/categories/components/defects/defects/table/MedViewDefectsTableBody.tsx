@@ -2,17 +2,17 @@ import type { DefectDto } from "../../../../../../../../../../shared/model/types
 import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";
 import { TableSkeleton } from "../../../../../../../../../../shared/ui/TableSkeleton/TableSkeleton";
 
-interface DefectsBodyProps {
+interface MedViewDefectsTableBodyProps {
   defects: DefectDto[];
   pageSize: number;
   isPending: boolean;
 }
 
-export const MedViewDefectsBody = ({
+export const MedViewDefectsTableBody = ({
   defects,
   pageSize,
   isPending,
-}: DefectsBodyProps) => {
+}: MedViewDefectsTableBodyProps) => {
   return (
     <div className="cardContent">
       <div className="tableContainer">

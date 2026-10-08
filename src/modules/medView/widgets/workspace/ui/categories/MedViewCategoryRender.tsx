@@ -5,8 +5,8 @@ import {
   type ComponentType,
   type LazyExoticComponent,
 } from "react";
-import CategoryFallback from "../../../../../rControl/widgets/workspace/ui/categories/components/default/CategoryFallback/CategoryFallback";
 import { useMedViewWorkspaceStore } from "../../model/stores/useMedViewWorkspaceStore";
+import CategoryFallback from "./components/default/CategoryFallback/CategoryFallback";
 
 const DefaultCategoryComponent = lazy(
   () =>

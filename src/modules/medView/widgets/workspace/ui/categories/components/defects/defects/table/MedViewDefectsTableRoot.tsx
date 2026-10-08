@@ -3,17 +3,17 @@ import { resolveDataState } from "../../../../../../../../../../shared/helpers/r
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { useDefectsQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/defects/useDefectsQuery";
 import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";
-import { useMedViewStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
-import { MedViewDefectsBody } from "../MedViewDefectsBody/MedViewDefectsBody";
-import { MedViewDefectsHeader } from "../MedViewDefectsHeader/MedViewDefectsHeader";
+import { useMedViewWorkspaceStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
+import { MedViewDefectsTableHeader } from "./MedViewDefectsTableHeader";
+import { MedViewDefectsTableBody } from "./MedViewDefectsTableBody";
 
-export const MedViewDefectsRoot = () => {
+export const MedViewDefectsTableRoot = () => {
   const { targetDb } = useMedViewFiltersStore();
   const {
     selectedMedicalCaseUid,
     defectsTablePagination,
     setDefectsTablePagination,
-  } = useMedViewStore();
+  } = useMedViewWorkspaceStore();
   const {
     data: getDefectsResult,
     isLoading,
@@ -61,7 +61,7 @@ export const MedViewDefectsRoot = () => {
 
   return (
     <article className="cardRoot">
-      <MedViewDefectsHeader
+      <MedViewDefectsTableHeader
         page={defectsTablePagination.page}
         pageSize={defectsTablePagination.pageSize}
         totalCount={totalCount}
@@ -83,7 +83,7 @@ export const MedViewDefectsRoot = () => {
           variant="empty"
         />
       ) : (
-        <MedViewDefectsBody
+        <MedViewDefectsTableBody
           defects={defects}
           isPending={isPending}
           pageSize={defectsTablePagination.pageSize}
