@@ -1,6 +1,6 @@
 import apiClient from "../../../../../app/providers/apiClient";
 import type { ResultResponse } from "../../../../../shared/types/ResultResponse";
-import type { GetCompletedCaseListItemsResult } from "../../../../rControl/widgets/workspace/model/types/core/results/GetCompletedCaseListItemsResult";
+import type { GetCompletedCaseListItemsResult } from "../../../../../shared/model/types/invoiceStructure/results/medicalCases/GetCompletedCaseListItemsResult";
 import type { GetCompletedCasesRequest } from "../model/types/GetCompletedCasesRequest";
 
 export const getCompletedCases = async (

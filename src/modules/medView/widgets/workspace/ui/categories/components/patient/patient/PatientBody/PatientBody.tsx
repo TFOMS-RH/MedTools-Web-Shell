@@ -1,4 +1,4 @@
-import type { PatientDto } from "../../../../../../../../../rControl/widgets/workspace/model/types/categories/patient/GetPatientResult";
+import type { PatientDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/patient/GetPatientResult";
 import { CardField } from "../../../../../../../../../../shared/ui/CardField/CardField";
 import { Skeleton } from "@mui/material";
 import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";

@@ -1,4 +1,4 @@
-import type { MedicalCaseDto } from "../../../../../../../rControl/widgets/workspace/model/types/core/results/GetMedicalCaseListItemsResult";
+import type { MedicalCaseDto } from "../../../../../../../../shared/model/types/invoiceStructure/results/medicalCases/GetMedicalCaseListItemsResult";
 import { CardField } from "../../../../../../../../shared/ui/CardField/CardField";
 import { Divider } from "../../../../../../../../components/ui/Divider/Divider";
 import { formatNullableValue } from "../../../../../../../../shared/helpers/formatNullableValue";

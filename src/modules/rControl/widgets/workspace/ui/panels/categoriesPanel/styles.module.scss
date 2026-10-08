@@ -1,0 +1,69 @@
+.categoriesPanelRoot {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+  column-gap: var(--space-5);
+
+  user-select: none;
+}
+
+.optionCard {
+  display: flex;
+
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  background: var(--card-background);
+
+  padding: var(--space-5);
+  gap: var(--space-5);
+
+  transition: 0.2s ease;
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: var(--radius-xxl);
+    background: var(--gray-200);
+
+    padding: var(--space-4);
+  }
+
+  .textField {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .label {
+      color: var(--text-secondary);
+      font-size: var(--fs-body);
+      font-weight: var(--fw-default);
+
+      transition: 0.2s ease;
+    }
+  }
+}
+
+.optionCard:hover {
+  cursor: pointer;
+
+  .label {
+    color: var(--gray-1000);
+  }
+
+  border-color: var(--border-hover);
+}
+
+.selectedOption {
+  border-color: var(--border-focus);
+
+  .icon {
+    background: var(--black);
+  }
+
+  .textField {
+    .label {
+      color: var(--text-primary);
+    }
+  }
+}

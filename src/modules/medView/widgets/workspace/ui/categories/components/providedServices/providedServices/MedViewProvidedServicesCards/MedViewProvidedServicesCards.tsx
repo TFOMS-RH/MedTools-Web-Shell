@@ -7,7 +7,7 @@ import styles from "./styles.module.scss";
 import dayjs from "dayjs";
 import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";
 import { formatCurrency } from "../../../../../../../../../../shared/helpers/formatCurrency";
-import type { ProvidedServiceDto } from "../../../../../../../../../rControl/widgets/workspace/model/types/categories/providedServices/GetProvidedServicesResult";
+import type { ProvidedServiceDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/providedServices/GetProvidedServicesResult";
 
 interface ProvidedServicesCardsProps {
   providedSevices: ProvidedServiceDto[];

@@ -1,4 +1,4 @@
-import type { OncologyServiceDto } from "../../../../../../../../../rControl/widgets/workspace/model/types/categories/oncology/GetOncologyServicesResult";
+import type { OncologyServiceDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/oncology/GetOncologyServicesResult";
 import { CardField } from "../../../../../../../../../../shared/ui/CardField/CardField";
 import { Skeleton } from "@mui/material";
 import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";

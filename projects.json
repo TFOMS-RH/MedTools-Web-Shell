@@ -1,22 +1,22 @@
 {
-    "HealthInvoiceHub": {
-        "DisplayName": "HealthInvoice Hub",
-        "Version": "1.2.0",
-        "Description": "Веб-сервис для приёма, контроля и отправки реестров медицинских счетов в ТФОМС РХ."
-    },
-    "RControl": {
-        "DisplayName": "RControl Web",
-        "Version": "0.1.0",
-        "Description": "Внутренний инструмент, упрощяющий администрирование процесса приема счетов"
-    },
-    "MedView": {
-        "DisplayName": "MedView Web",
-        "Version": "0.1.0",
-        "Description": "Веб-оболочка к внутренней БД ТФОМС РХ для просмотра и фильтрации данных"
-    },
-    "RegsterDN": {
-        "DisplayName": "RegisterDN",
-        "Version": "0.1.0",
-        "Description": "Невероятная программа, которую навайбкодил шеф. Хз что она делает, пусть пока такое описание будет"
-    }
+  "HealthInvoiceHub": {
+    "DisplayName": "HealthInvoice Hub",
+    "Version": "1.2.0",
+    "Description": "Веб-сервис для приёма, контроля и отправки реестров медицинских счетов в ТФОМС РХ."
+  },
+  "RControl": {
+    "DisplayName": "RControl Web",
+    "Version": "0.1.0",
+    "Description": "Веб-версия RControl с современным интерфейсом и переработанным дизайном"
+  },
+  "MedView": {
+    "DisplayName": "MedView Web",
+    "Version": "0.1.0",
+    "Description": "Веб-версия MedView с современным интерфейсом и переработанным дизайном"
+  },
+  "HealthTrack": {
+    "DisplayName": "HealthTrack Web",
+    "Version": "0.1.0",
+    "Description": "Сервис, который разработал Шеферонске для выполнения задач мне непонятных"
+  }
 }

@@ -1,6 +1,6 @@
-import MenuItem from "@mui/material/MenuItem";
 import { Box, FormControl, InputLabel, Select } from "@mui/material";
 import { medViewSelectInputSx } from "../../../../sxConfigs/medViewSelectInput";
+import MenuItem from "@mui/material/MenuItem";
 
 type Option<T extends string> = {
   label: string;

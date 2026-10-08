@@ -1,7 +1,7 @@
 import { Divider } from "../../../../../../../../../../components/ui/Divider/Divider";
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
-import { useDefectsQuery } from "../../../../../../../../../rControl/widgets/workspace/model/queries/categories/defects/useDefectsQuery";
+import { useDefectsQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/defects/useDefectsQuery";
 import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";
 import { useMedViewStore } from "../../../../../../model/stores/useMedViewStore";
 import { MedViewDefectsBody } from "../MedViewDefectsBody/MedViewDefectsBody";

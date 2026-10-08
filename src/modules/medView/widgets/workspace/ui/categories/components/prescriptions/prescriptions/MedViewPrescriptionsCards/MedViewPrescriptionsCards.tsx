@@ -1,4 +1,4 @@
-import type { PrescriptionDto } from "../../../../../../../../../rControl/widgets/workspace/model/types/categories/prescriptions/GetPrescriptionsResult";
+import type { PrescriptionDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/prescriptions/GetPrescriptionsResult";
 import { CardField } from "../../../../../../../../../../shared/ui/CardField/CardField";
 import { Skeleton } from "@mui/material";
 import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";

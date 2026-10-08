@@ -1,4 +1,4 @@
-import type { MedicalSanctionDto } from "../../../../../../../../../rControl/widgets/workspace/model/types/categories/defects/GetMedicalSanctionsResult";
+import type { MedicalSanctionDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/defects/GetMedicalSanctionsResult";
 import { CardField } from "../../../../../../../../../../shared/ui/CardField/CardField";
 import { Skeleton } from "@mui/material";
 import { formatCurrency } from "../../../../../../../../../../shared/helpers/formatCurrency";

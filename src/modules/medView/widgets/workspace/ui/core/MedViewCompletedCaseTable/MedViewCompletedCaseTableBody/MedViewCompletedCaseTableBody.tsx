@@ -1,4 +1,4 @@
-import type { CompletedCaseListItemDto } from "../../../../../../../rControl/widgets/workspace/model/types/core/results/GetCompletedCaseListItemsResult";
+import type { CompletedCaseListItemDto } from "../../../../../../../../shared/model/types/invoiceStructure/results/medicalCases/GetCompletedCaseListItemsResult";
 import { formatCurrency } from "../../../../../../../../shared/helpers/formatCurrency";
 import { formatNullableValue } from "../../../../../../../../shared/helpers/formatNullableValue";
 import { TableSkeleton } from "../../../../../../../../shared/ui/TableSkeleton/TableSkeleton";

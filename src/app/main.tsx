@@ -9,9 +9,7 @@ import { AppLayout } from "../components/layouts/AppLayout/AppLayout";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./providers/queryClient";
 
-
 import { HealthTrackApp } from "../modules/healthTrack/HealthTrackApp";
-
 
 import "./styles/global.scss";
 
@@ -22,9 +20,6 @@ createRoot(document.getElementById("root")!).render(
         <Route element={<WithoutHeaderLayout />}>
           <Route path="/login" element={<Login />} />
         </Route>
-        {/* HealthTrack — полностью автономный модуль */}
-        {/* Внутри HealthTrackApp сам подключает AppLayout для защищённых страниц, */}
-        {/* и рендерит HTLogin без шапки. */}
         <Route path="/health-track/*" element={<HealthTrackApp />} />
         <Route element={<AppLayout />}>
           <Route path="/" element={<Home />} />

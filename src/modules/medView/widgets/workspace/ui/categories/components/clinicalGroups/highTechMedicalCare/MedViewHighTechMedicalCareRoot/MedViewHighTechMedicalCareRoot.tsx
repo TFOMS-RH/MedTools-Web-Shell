@@ -1,6 +1,6 @@
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
-import { useHighTechMedicalCareQuery } from "../../../../../../../../../rControl/widgets/workspace/model/queries/categories/clinicalGroups/useHighTechMedicalCareQuery";
+import { useHighTechMedicalCareQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/clinicalGroups/useHighTechMedicalCareQuery";
 import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";
 import { useMedViewStore } from "../../../../../../model/stores/useMedViewStore";
 import { MedViewHighTechMedicalCareBody } from "../MedViewHighTechMedicalCareBody/MedViewHighTechMedicalCareBody";

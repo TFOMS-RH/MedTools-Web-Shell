@@ -1,6 +1,6 @@
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
-import { useMedicalSanctionsQuery } from "../../../../../../../../../rControl/widgets/workspace/model/queries/categories/defects/useMedicalSanctionsQuery";
+import { useMedicalSanctionsQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/defects/useMedicalSanctionsQuery";
 import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";
 import { useMedViewStore } from "../../../../../../model/stores/useMedViewStore";
 import { MedViewMedicalSanctionsCards } from "../MedViewMedicalSanctionsCards/MedViewMedicalSanctionsCards";

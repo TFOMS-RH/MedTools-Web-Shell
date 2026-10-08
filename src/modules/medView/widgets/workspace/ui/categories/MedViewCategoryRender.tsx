@@ -1,4 +1,4 @@
-import type { MedViewCategoryId } from "../../../../../rControl/widgets/workspace/model/types/categories/CategoryId";
+import type { MedViewCategoryId } from "../../../../../../shared/model/types/CategoryId";
 import {
   lazy,
   Suspense,
@@ -9,7 +9,7 @@ import CategoryFallback from "../../../../../rControl/widgets/workspace/ui/categ
 
 const DefaultCategory = lazy(
   () =>
-    import("../../../../../rControl/widgets/workspace/ui/categories/components/default/CategoryDefault/CategoryDefault"),
+    import("../../../../../rControl/widgets/workspace/ui/categories/components/default/DefaultCategory/DefaultCategory"),
 );
 
 const Patient = lazy(
@@ -49,7 +49,7 @@ const categoryMap = {
   patient: Patient,
   "case-details": MedicalCaseDetails,
   oncology: Oncology,
-  referrals: Referral,
+  prescriptions: Referral,
   "clinical-groups": ClinicalGroup,
   "provided-services": ProvidedService,
   defects: Defects,

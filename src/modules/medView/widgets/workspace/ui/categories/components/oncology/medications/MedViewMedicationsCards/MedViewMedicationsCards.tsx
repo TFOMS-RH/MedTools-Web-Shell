@@ -1,4 +1,4 @@
-import type { MedicationDto } from "../../../../../../../../../rControl/widgets/workspace/model/types/categories/oncology/GetMedicationsResult";
+import type { MedicationDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/oncology/GetMedicationsResult";
 import { Skeleton } from "@mui/material";
 import styles from "./styles.module.scss";
 import RadioButtonCheckedIcon from "@mui/icons-material/RadioButtonChecked";

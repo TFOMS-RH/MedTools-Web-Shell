@@ -1,6 +1,6 @@
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
-import { useClassificationCriteriaQuery } from "../../../../../../../../../rControl/widgets/workspace/model/queries/categories/clinicalGroups/useClassificationCriteriaQuery";
+import { useClassificationCriteriaQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/clinicalGroups/useClassificationCriteriaQuery";
 import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";
 import { MedViewClassificationCriteriaBody } from "../MedViewClassificationCriteriaBody/MedViewClassificationCriteriaBody";
 import { MedViewClassificationCriteriaHeader } from "../MedViewClassificationCriteriaHeader/MedViewClassificationCriteriaHeader";

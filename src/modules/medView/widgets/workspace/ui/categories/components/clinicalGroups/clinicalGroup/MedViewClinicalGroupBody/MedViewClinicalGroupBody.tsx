@@ -1,6 +1,6 @@
 import { CardField } from "../../../../../../../../../../shared/ui/CardField/CardField";
 import { Skeleton } from "@mui/material";
-import type { ClinicalGroupDto } from "../../../../../../../../../rControl/widgets/workspace/model/types/categories/clinicalGroup/GetClinicalGroupResult";
+import type { ClinicalGroupDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/clinicalGroup/GetClinicalGroupResult";
 
 interface ClinicalGroupBodyProps {
   clinicalGroup: ClinicalGroupDto;

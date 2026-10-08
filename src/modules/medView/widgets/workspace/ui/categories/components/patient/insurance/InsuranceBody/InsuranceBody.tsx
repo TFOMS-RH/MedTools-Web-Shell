@@ -1,4 +1,4 @@
-import type { InsuranceDto } from "../../../../../../../../../rControl/widgets/workspace/model/types/categories/patient/GetInsuranceResult";
+import type { InsuranceDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/patient/GetInsuranceResult";
 import { Skeleton } from "@mui/material";
 import { CardField } from "../../../../../../../../../../shared/ui/CardField/CardField";
 import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";

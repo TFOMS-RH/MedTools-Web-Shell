@@ -1,0 +1,109 @@
+import { useRControlWorkspacePanelStore } from "../../../model/store/useRControlWorkspacePanelStore";
+import { TargetDbToggle } from "../../../../../../../shared/ui/TargetDbToggle/TargetDbToggle";
+import { useBillingPeriodsQuery } from "../../../model/queries/useBillingPeriodsQuery";
+import { useRControlWorkspaceStore } from "../../../model/store/useRControlWorkspaceStore";
+import { MedToolsSelect } from "../../../../../../../shared/ui/medTools/inputs/MedToolsSelect";
+import { useMedicalOrganizationsQuery } from "../../../model/queries/useMedicalOrganizationsQuery";
+import styles from "./styles.module.scss";
+
+export const RControlWorkspacePanel = () => {
+  const {
+    targetDb,
+    selectedMedicalOrganization,
+    selectedBillingYear,
+    selectedBillingMonth,
+    selectTargetDb,
+    selectMedicalOrganization,
+    selectBillingYear,
+    selectBillingMonth,
+  } = useRControlWorkspacePanelStore();
+
+  const {
+    data: medicalOrganizations = [],
+    isFetching: isMedicalOrganizationsFetching,
+  } = useMedicalOrganizationsQuery(targetDb);
+
+  const { data: billingPeriods = [], isFetching: isBillingPeriodsFetching } =
+    useBillingPeriodsQuery(selectedMedicalOrganization, targetDb);
+
+  const { setInvoicesTablePagination, selectInvoice } =
+    useRControlWorkspaceStore();
+
+  return (
+    <section className={styles.filtersPanelRoot}>
+      <div className={styles.sourceGroup}>
+        <p className={styles.title}>Источник данных</p>
+        <TargetDbToggle
+          value={targetDb ?? ""}
+          onChange={(
+            _event: React.MouseEvent<HTMLElement>,
+            newValue: string,
+          ) => {
+            if (newValue === "SMODB18" || newValue === "INOGOROD18") {
+              selectTargetDb(newValue);
+              setInvoicesTablePagination({ page: 0 });
+              selectInvoice(null);
+            }
+          }}
+        />
+      </div>
+      <div className={styles.actions}>
+        <div className={styles.selectsGroup}>
+          <MedToolsSelect
+            label="Организация"
+            value={selectedMedicalOrganization ?? ""}
+            options={medicalOrganizations.map((entity) => ({
+              label: entity.medicalOrganizationCode,
+              value: entity.medicalOrganizationCode,
+            }))}
+            onChange={(newValue: string) => {
+              selectMedicalOrganization(newValue);
+              setInvoicesTablePagination({ page: 0 });
+              selectInvoice(null);
+            }}
+            isLoading={isMedicalOrganizationsFetching}
+          />
+
+          <MedToolsSelect
+            label="Год"
+            value={selectedBillingYear?.toString() ?? ""}
+            options={billingPeriods.map((period) => ({
+              label: period.billingYear.toString(),
+              value: period.billingYear.toString(),
+            }))}
+            onChange={(value: string) => {
+              if (value !== null) {
+                selectBillingYear(parseInt(value));
+                setInvoicesTablePagination({ page: 0 });
+                selectInvoice(null);
+              }
+            }}
+            isLoading={isBillingPeriodsFetching}
+          />
+
+          <MedToolsSelect
+            label="Месяц"
+            value={selectedBillingMonth?.toString() ?? ""}
+            options={(() => {
+              const found = billingPeriods.find(
+                (period) => period.billingYear === selectedBillingYear,
+              );
+              return (found?.billingMonths ?? []).map((month) => ({
+                label: month.toString(),
+                value: month.toString(),
+              }));
+            })()}
+            onChange={(value: string) => {
+              if (value !== null) {
+                selectBillingMonth(parseInt(value));
+                setInvoicesTablePagination({ page: 0 });
+                selectInvoice(null);
+              }
+            }}
+            isLoading={isBillingPeriodsFetching}
+          />
+        </div>
+      </div>
+    </section>
+  );
+};

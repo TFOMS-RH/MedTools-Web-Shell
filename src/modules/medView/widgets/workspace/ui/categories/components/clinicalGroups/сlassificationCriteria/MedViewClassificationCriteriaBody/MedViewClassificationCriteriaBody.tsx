@@ -1,6 +1,6 @@
 import { Chip, Skeleton } from "@mui/material";
 import styles from "./styles.module.scss";
-import type { ClassificationCriterionDto } from "../../../../../../../../../rControl/widgets/workspace/model/types/categories/clinicalGroup/GetClassificationCriteriaResult";
+import type { ClassificationCriterionDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/clinicalGroup/GetClassificationCriteriaResult";
 
 interface ClassificationCriteriaBodyProps {
   classificationCriteria: ClassificationCriterionDto[];

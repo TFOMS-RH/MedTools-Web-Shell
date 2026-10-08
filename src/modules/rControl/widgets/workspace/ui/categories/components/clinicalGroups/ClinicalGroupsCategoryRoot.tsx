@@ -1,18 +1,18 @@
 import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLineHeader/CategoryLineHeader";
-import { useWorkspaceStore } from "../../../../model/store/useWorkspaceStore";
-import { useFiltersStore } from "../../../../../filters/model/store/useFiltersStore";
+import { useRControlWorkspaceStore } from "../../../../model/store/useRControlWorkspaceStore";
+import { useRControlWorkspacePanelStore } from "../../../../model/store/useRControlWorkspacePanelStore";
 import { Divider } from "../../../../../../../../components/ui/Divider/Divider";
-import { ClinicalGroupRoot } from "./clinicalGroup/ClinicalGroupRoot/ClinicalGroupRoot";
-import { useClinicalGroupQuery } from "../../../../model/queries/categories/clinicalGroups/useClinicalGroupQuery";
-import { HighTechMedicalCareRoot } from "./highTechMedicalCare/HighTechMedicalCareRoot/HighTechMedicalCareRoot";
-import { ClassificationCriteriaRoot } from "./сlassificationCriteria/ClassificationCriteriaRoot/ClassificationCriteriaRoot";
-import { TreatmentComplexityCoefficientsRoot } from "./treatmentComplexityCoefficients/TreatmentComplexityCoefficientsRoot/TreatmentComplexityCoefficientsRoot";
+import { useClinicalGroupQuery } from "../../../../../../../../shared/model/queries/invoiceStructure/clinicalGroups/useClinicalGroupQuery";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
+import { RControlClassificationCriterionChipsGroupRoot } from "./сlassificationCriteria/chipsGroup/RControlClassificationCriterionChipsGroupRoot";
+import { RControlTreatmentCoefficientsListRoot } from "./treatmentCoefficients/list/RControlTreatmentCoefficientsListRoot";
+import { RControlHighTechMedicalCareCardRoot } from "./highTechMedicalCare/card/RControlHighTechMedicalCareCardRoot";
+import { RControlClinicalGroupCardRoot } from "./clinicalGroup/card/RControlClinicalGroupCardRoot";
 import styles from "./styles.module.scss";
 
 const ClinicalGroupsCategoryRoot = () => {
-  const { targetDb } = useFiltersStore();
-  const { selectedMedicalCaseUid } = useWorkspaceStore();
+  const { targetDb } = useRControlWorkspacePanelStore();
+  const { selectedMedicalCaseUid } = useRControlWorkspaceStore();
   const { data: clinicalGroup } = useClinicalGroupQuery(
     selectedMedicalCaseUid,
     targetDb,
@@ -36,8 +36,8 @@ const ClinicalGroupsCategoryRoot = () => {
           />
         ) : (
           <div className={styles.twoGridLine}>
-            <ClinicalGroupRoot />
-            <HighTechMedicalCareRoot />
+            <RControlClinicalGroupCardRoot />
+            <RControlHighTechMedicalCareCardRoot />
           </div>
         )}
       </div>
@@ -56,8 +56,10 @@ const ClinicalGroupsCategoryRoot = () => {
           />
         ) : (
           <div className={styles.classificationCriteriaGroup}>
-            <ClassificationCriteriaRoot clinicalGroupUid={clinicalGroupUid} />
-            <TreatmentComplexityCoefficientsRoot
+            <RControlClassificationCriterionChipsGroupRoot
+              clinicalGroupUid={clinicalGroupUid}
+            />
+            <RControlTreatmentCoefficientsListRoot
               clinicalGroupUid={clinicalGroupUid}
             />
           </div>

@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import styles from "./styles.module.scss";
 import { Skeleton } from "@mui/material";
-import type { ContraindicationDto } from "../../../../../../../../../rControl/widgets/workspace/model/types/categories/oncology/GetContraindicationsResult";
+import type { ContraindicationDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/oncology/GetContraindicationsResult";
 
 interface ContraindicationsListBody {
   contraindications: ContraindicationDto[];

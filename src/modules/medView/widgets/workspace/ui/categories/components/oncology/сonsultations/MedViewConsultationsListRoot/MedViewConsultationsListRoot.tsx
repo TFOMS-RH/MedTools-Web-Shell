@@ -1,4 +1,4 @@
-import { useConsultationsQuery } from "../../../../../../../../../rControl/widgets/workspace/model/queries/categories/oncology/useConsultationsQuery";
+import { useConsultationsQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/oncology/useConsultationsQuery";
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";

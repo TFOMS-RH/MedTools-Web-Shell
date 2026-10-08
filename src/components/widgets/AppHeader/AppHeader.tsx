@@ -1,11 +1,20 @@
+import { Link } from "react-router";
 import styles from "./styles.module.scss";
 
-export const AppHeader = () => {
+interface AppHeaderProps {
+  currentModule: string;
+}
+
+export const AppHeader = ({ currentModule }: AppHeaderProps) => {
+  const title = currentModule
+    ? `MedTools Web / ${currentModule}`
+    : "MedTools Web";
+
   return (
     <header className={styles.appHeaderRoot}>
-      <article className={styles.logo}>
-        <h1>MedTools Web</h1>
-      </article>
+      <Link to="/" className={styles.logo}>
+        <h1>{title}</h1>
+      </Link>
     </header>
   );
 };
