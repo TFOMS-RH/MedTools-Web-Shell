@@ -2,12 +2,12 @@ import { resolveDataState } from "../../../../../../../../../../shared/helpers/r
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { usePrescriptionsQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/prescriptions/usePrescriptionsQuery";
 import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";
-import { useMedViewStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
-import { MedViewPrescriptionsCards } from "../MedViewPrescriptionsCards/MedViewPrescriptionsCards";
+import { useMedViewWorkspaceStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
+import { MedViewPrescriptionCards } from "./MedViewPrescriptionCards";
 
-export const MedViewPrescriptionsSection = () => {
+export const MedViewPrescriptionCardsGroupRoot = () => {
   const { targetDb } = useMedViewFiltersStore();
-  const { selectedMedicalCaseUid } = useMedViewStore();
+  const { selectedMedicalCaseUid } = useMedViewWorkspaceStore();
   const {
     data: prescriptions,
     isLoading,
@@ -40,7 +40,7 @@ export const MedViewPrescriptionsSection = () => {
           variant="empty"
         />
       ) : (
-        <MedViewPrescriptionsCards
+        <MedViewPrescriptionCards
           prescriptions={prescriptions ?? []}
           isPending={isPending}
         />

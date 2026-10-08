@@ -3,12 +3,15 @@ import { TableSkeleton } from "../../../../../../../../../../shared/ui/TableSkel
 import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";
 import dayjs from "dayjs";
 
-interface ReferralsBodyProps {
+interface MedViewReferralsTableBodyProps {
   referrals: ReferralDto[];
   isPending: boolean;
 }
 
-export const ReferralsBody = ({ referrals, isPending }: ReferralsBodyProps) => {
+export const MedViewReferralsTableBody = ({
+  referrals,
+  isPending,
+}: MedViewReferralsTableBodyProps) => {
   return (
     <div className="tableContainer">
       <table>

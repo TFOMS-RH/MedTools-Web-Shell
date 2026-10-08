@@ -2,13 +2,13 @@ import { resolveDataState } from "../../../../../../../../../../shared/helpers/r
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { useReferralsQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/prescriptions/useReferralsQuery";
 import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";
-import { useMedViewStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
-import { MedViewReferralsHeader } from "../MedViewReferralsHeader/MedViewReferralsHeader";
-import { ReferralsBody } from "../MedViewReferralsBody/MedViewReferralsBody";
+import { useMedViewWorkspaceStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
+import { MedViewReferralsTableHeader } from "./MedViewReferralsTableHeader";
+import { MedViewReferralsTableBody } from "./MedViewReferralsTableBody";
 
-export const MedViewReferralsRoot = () => {
+export const MedViewReferralsTableRoot = () => {
   const { targetDb } = useMedViewFiltersStore();
-  const { selectedMedicalCaseUid } = useMedViewStore();
+  const { selectedMedicalCaseUid } = useMedViewWorkspaceStore();
   const {
     data: referrals,
     isLoading,
@@ -28,7 +28,7 @@ export const MedViewReferralsRoot = () => {
 
   return (
     <section className="cardRoot">
-      <MedViewReferralsHeader />
+      <MedViewReferralsTableHeader />
       {dataState === "error" ? (
         <DataState
           title="Ошибка данных"
@@ -42,7 +42,10 @@ export const MedViewReferralsRoot = () => {
           variant="empty"
         />
       ) : (
-        <ReferralsBody referrals={referrals ?? []} isPending={isPending} />
+        <MedViewReferralsTableBody
+          referrals={referrals ?? []}
+          isPending={isPending}
+        />
       )}
     </section>
   );
