@@ -1,17 +1,17 @@
-import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLineHeader/CategoryLineHeader";
 import { Divider } from "../../../../../../../../components/ui/Divider/Divider";
-import { MedViewDiagnosticsListRoot } from "./diagnostics/MedViewDiagnosticsListRoot/MedViewDiagnosticsListRoot";
-import { MedViewContraindicationsListRoot } from "./contraindications/MedViewContraindicationsListRoot/MedViewContraindicationsListRoot";
-import { MedViewOncologyServicesSection } from "./oncologyServices/MedViewOncologyServicesSection/MedViewOncologyServicesSection";
-import { MedViewMedicationsSection } from "./medications/MedViewMedicationsSection/MedViewMedicationsSection";
-import { MedViewInjectionDatesRoot } from "./injections/injectionDates/MedViewInjectionDatesRoot/MedViewInjectionDatesRoot";
-import { MedViewInjectionsRoot } from "./injections/injections/MedViewInjectionsRoot/MedViewInjectionsRoot";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
+import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLineHeader/CategoryLineHeader";
 import { useMedViewFiltersStore } from "../../../../../filters/model/stores/useMedViewFiltersStore";
 import { useOncologyCaseQuery } from "../../../../../../../../shared/model/queries/invoiceStructure/oncology/useOncologyCaseQuery";
-import { useMedViewStore } from "../../../../model/stores/useMedViewWorkspaceStore";
-import { MedViewOncologyCaseRoot } from "./oncologyCase/MedViewOncologyCaseRoot/MedViewOncologyCaseRoot";
-import { MedViewConsultationsListRoot } from "./сonsultations/MedViewConsultationsListRoot/MedViewConsultationsListRoot";
+import { useMedViewWorkspaceStore } from "../../../../model/stores/useMedViewWorkspaceStore";
+import { MedViewDiagnosticsListRoot } from "./diagnostics/list/MedViewDiagnosticsListRoot";
+import { MedViewContraindicationsListRoot } from "./contraindications/list/MedViewContraindicationsListRoot";
+import { MedViewConsultationsListRoot } from "./сonsultations/list/MedViewConsultationsListRoot";
+import { MedViewInjectionDateChipsGroupRoot } from "./injections/injectionDates/chipsGroup/MedViewInjectionDateChipsGroupRoot";
+import { MedViewInjectionsTableRoot } from "./injections/injections/table/MedViewInjectionsTableRoot";
+import { MedViewMedicationCardsGroupRoot } from "./medications/cardsGroup/MedViewMedicationCardsGroupRoot";
+import { MedViewOncologyCaseCardRoot } from "./oncologyCase/card/MedViewOncologyCaseCardRoot";
+import { MedViewOncologyServiceCardsGroupRoot } from "./oncologyServices/cardsGroup/MedViewOncologyServiceCardsGroupRoot";
 import styles from "./styles.module.scss";
 
 const MedViewOncologyRoot = () => {
@@ -21,7 +21,7 @@ const MedViewOncologyRoot = () => {
     selectedOncologyServiceUid,
     selectedMedicationUid,
     selectOncologyService,
-  } = useMedViewStore();
+  } = useMedViewWorkspaceStore();
   const { data: oncologyCase } = useOncologyCaseQuery(
     selectedMedicalCaseUid,
     targetDb,
@@ -45,7 +45,7 @@ const MedViewOncologyRoot = () => {
           />
         ) : (
           <div className={styles.medicalCaseOncologyDetailsLine}>
-            <MedViewOncologyCaseRoot />
+            <MedViewOncologyCaseCardRoot />
             <MedViewConsultationsListRoot />
           </div>
         )}
@@ -77,7 +77,7 @@ const MedViewOncologyRoot = () => {
 
             <Divider />
 
-            <MedViewOncologyServicesSection
+            <MedViewOncologyServiceCardsGroupRoot
               oncologyCaseUid={oncologyCaseUid}
               selectOncologyService={selectOncologyService}
               selectedOncologyServiceUid={selectedOncologyServiceUid}
@@ -101,7 +101,7 @@ const MedViewOncologyRoot = () => {
             variant="waiting"
           />
         ) : (
-          <MedViewMedicationsSection />
+          <MedViewMedicationCardsGroupRoot />
         )}
       </div>
 
@@ -122,8 +122,8 @@ const MedViewOncologyRoot = () => {
           />
         ) : (
           <div className={styles.injectionsGroup}>
-            <MedViewInjectionDatesRoot />
-            <MedViewInjectionsRoot />
+            <MedViewInjectionDateChipsGroupRoot />
+            <MedViewInjectionsTableRoot />
           </div>
         )}
       </div>

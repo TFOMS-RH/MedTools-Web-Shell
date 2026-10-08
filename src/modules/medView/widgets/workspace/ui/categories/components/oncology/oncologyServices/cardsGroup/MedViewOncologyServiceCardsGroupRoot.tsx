@@ -1,22 +1,22 @@
 import { resolveDataState } from "../../../../../../../../../../shared/helpers/resolveDataState";
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
-import { useRControlWorkspacePanelStore } from "../../../../../../model/store/useRControlWorkspacePanelStore";
 import { useOncologyServicesQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/oncology/useOncologyServicesQuery";
-import { RControlOncologyServiceCards } from "./RControlOncologyServiceCards";
-import { RControlOncologyServiceCardSkeletons } from "./RControlOncologyServiceCardSkeletons";
+import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";
+import { MedViewOncologyServiceCards } from "./MedViewOncologyServiceCards";
+import { MedViewOncologyServiceCardSkeletons } from "./MedViewOncologyServiceCardSkeletons";
 
-interface RControlOncologyServiceCardsGroupRootProps {
+interface MedViewOncologyServiceCardsGroupRootProps {
   oncologyCaseUid: number | null;
   selectedOncologyServiceUid: number | null;
   selectOncologyService: (oncologyServiceUid: number | null) => void;
 }
 
-export const RControlOncologyServiceCardsGroupRoot = ({
+export const MedViewOncologyServiceCardsGroupRoot = ({
   oncologyCaseUid,
   selectedOncologyServiceUid,
   selectOncologyService,
-}: RControlOncologyServiceCardsGroupRootProps) => {
-  const { targetDb } = useRControlWorkspacePanelStore();
+}: MedViewOncologyServiceCardsGroupRootProps) => {
+  const { targetDb } = useMedViewFiltersStore();
   const {
     data: oncologyServices,
     isLoading,
@@ -42,7 +42,7 @@ export const RControlOncologyServiceCardsGroupRoot = ({
           variant="error"
         />
       ) : isLoading ? (
-        <RControlOncologyServiceCardSkeletons />
+        <MedViewOncologyServiceCardSkeletons />
       ) : dataState === "empty" ? (
         <DataState
           title="Данных не найдено"
@@ -50,7 +50,7 @@ export const RControlOncologyServiceCardsGroupRoot = ({
           variant="empty"
         />
       ) : (
-        <RControlOncologyServiceCards
+        <MedViewOncologyServiceCards
           oncologyServices={oncologyServices ?? []}
           selectOncologyService={selectOncologyService}
           selectedOncologyServiceUid={selectedOncologyServiceUid}
