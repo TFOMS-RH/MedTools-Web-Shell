@@ -2,13 +2,13 @@ import { resolveDataState } from "../../../../../../../../../../shared/helpers/r
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { useCompletedCaseDetailsQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/medicalCaseDetails/useCompletedCaseDetailsQuery";
 import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";
-import { useMedViewStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
-import { CompletedCaseDetailsBody } from "../MedViewCompletedCaseDetailsBody/MedViewCompletedCaseDetailsBody";
-import { CompletedCaseDetailsHeader } from "../MedViewCompletedCaseDetailsHeader/MedViewCompletedCaseDetailsHeader";
+import { useMedViewWorkspaceStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
+import { MedViewCompletedCaseDetailsCardHeader } from "./MedViewCompletedCaseDetailsCardHeader";
+import { MedViewCompletedCaseDetailsCardBody } from "./MedViewCompletedCaseDetailsCardBody";
 
-export const CompletedCaseDetailsRoot = () => {
+export const MedViewCompletedCaseDetailsCardRoot = () => {
   const { targetDb } = useMedViewFiltersStore();
-  const { selectedCompletedCaseUid } = useMedViewStore();
+  const { selectedCompletedCaseUid } = useMedViewWorkspaceStore();
   const {
     data: completedCaseDetails,
     isLoading,
@@ -28,7 +28,7 @@ export const CompletedCaseDetailsRoot = () => {
 
   return (
     <article className="cardRoot">
-      <CompletedCaseDetailsHeader />
+      <MedViewCompletedCaseDetailsCardHeader />
       {dataState === "error" ? (
         <DataState
           title="Ошибка данных"
@@ -42,7 +42,7 @@ export const CompletedCaseDetailsRoot = () => {
           variant="empty"
         />
       ) : (
-        <CompletedCaseDetailsBody
+        <MedViewCompletedCaseDetailsCardBody
           completedCaseDetails={completedCaseDetails!}
           isPending={isPending}
         />

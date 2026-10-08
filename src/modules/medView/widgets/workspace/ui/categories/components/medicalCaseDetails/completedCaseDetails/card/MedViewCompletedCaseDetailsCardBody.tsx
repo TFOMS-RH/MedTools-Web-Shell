@@ -5,15 +5,15 @@ import { formatNullableValue } from "../../../../../../../../../../shared/helper
 import { formatDate } from "../../../../../../../../../../shared/helpers/formatDate";
 import dayjs from "dayjs";
 
-interface CompletedCaseDetailsBodyProps {
+interface MedViewCompletedCaseDetailsCardBodyProps {
   completedCaseDetails: CompletedCaseDetailsDto;
   isPending: boolean;
 }
 
-export const CompletedCaseDetailsBody = ({
+export const MedViewCompletedCaseDetailsCardBody = ({
   completedCaseDetails,
   isPending,
-}: CompletedCaseDetailsBodyProps) => {
+}: MedViewCompletedCaseDetailsCardBodyProps) => {
   return (
     <div className="cardContent">
       {isPending ? (

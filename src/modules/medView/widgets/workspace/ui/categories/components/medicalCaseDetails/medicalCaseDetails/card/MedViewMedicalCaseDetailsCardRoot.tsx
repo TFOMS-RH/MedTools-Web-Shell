@@ -2,13 +2,13 @@ import { resolveDataState } from "../../../../../../../../../../shared/helpers/r
 import { DataState } from "../../../../../../../../../../shared/ui/DataState/DataState";
 import { useMedicalCaseDetailsQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/medicalCaseDetails/useMedicalCaseDetailsQuery";
 import { useMedViewFiltersStore } from "../../../../../../../filters/model/stores/useMedViewFiltersStore";
-import { useMedViewStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
-import { MedicalCaseDetailsBody } from "../MedViewMedicalCaseDetailsBody/MedViewMedicalCaseDetailsBody";
-import { MedicalCaseDetailsHeader } from "../MedViewMedicalCaseDetailsHeader/MedViewMedicalCaseDetailsHeader";
+import { MedViewMedicalCaseDetailsCardBody } from "./MedViewMedicalCaseDetailsCardBody";
+import { useMedViewWorkspaceStore } from "../../../../../../model/stores/useMedViewWorkspaceStore";
+import { MedViewMedicalCaseDetailsCardHeader } from "./MedViewMedicalCaseDetailsCardHeader";
 
-export const MedicalCaseDetailsRoot = () => {
+export const MedViewMedicalCaseDetailsCardRoot = () => {
   const { targetDb } = useMedViewFiltersStore();
-  const { selectedMedicalCaseUid } = useMedViewStore();
+  const { selectedMedicalCaseUid } = useMedViewWorkspaceStore();
   const {
     data: medicalCaseDetails,
     isLoading,
@@ -27,7 +27,7 @@ export const MedicalCaseDetailsRoot = () => {
 
   return (
     <article className="cardRoot">
-      <MedicalCaseDetailsHeader />
+      <MedViewMedicalCaseDetailsCardHeader />
       {dataState === "error" ? (
         <DataState
           title="Ошибка данных"
@@ -41,7 +41,7 @@ export const MedicalCaseDetailsRoot = () => {
           variant="empty"
         />
       ) : (
-        <MedicalCaseDetailsBody
+        <MedViewMedicalCaseDetailsCardBody
           medicalCaseDetails={medicalCaseDetails!}
           isPending={isPending}
         />

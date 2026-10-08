@@ -4,15 +4,15 @@ import dayjs from "dayjs";
 import { formatNullableValue } from "../../../../../../../../../../shared/helpers/formatNullableValue";
 import type { MedicalCaseDetailsDto } from "../../../../../../../../../../shared/model/types/invoiceStructure/results/medicalCases/GetMedicalCaseDetailsResult";
 
-interface MedicalCaseDetailsBodyProps {
+interface MedViewMedicalCaseDetailsCardBodyProps {
   medicalCaseDetails: MedicalCaseDetailsDto;
   isPending: boolean;
 }
 
-export const MedicalCaseDetailsBody = ({
+export const MedViewMedicalCaseDetailsCardBody = ({
   medicalCaseDetails,
   isPending,
-}: MedicalCaseDetailsBodyProps) => {
+}: MedViewMedicalCaseDetailsCardBodyProps) => {
   return (
     <div className="cardContent">
       {isPending ? (
