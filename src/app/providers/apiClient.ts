@@ -2,9 +2,7 @@ import axios from "axios";
 import { useAuthStore } from "../../modules/auth/stores/authStore";
 
 const apiClient = axios.create({
-  baseURL: import.meta.env.DEV
-    ? "http://localhost:5256/api"
-    : "http://localhost:5256/api", //Заглушка до релиза
+  baseURL: import.meta.env.DEV ? "/api" : "/api", //Заглушка до релиза
 
   timeout: 300000,
   headers: {
