@@ -1,12 +1,12 @@
 import { TargetDbToggle } from "../../../../../../shared/ui/TargetDbToggle/TargetDbToggle";
-import { useMedViewStore } from "../../../workspace/model/stores/useMedViewWorkspaceStore";
+import { useMedViewWorkspaceStore } from "../../../workspace/model/stores/useMedViewWorkspaceStore";
 import { useMedViewFiltersStore } from "../../model/stores/useMedViewFiltersStore";
 import styles from "./styles.module.scss";
 
 export const MedViewSourcePanel = () => {
   const { selectTargetDb, targetDb } = useMedViewFiltersStore();
 
-  const { resetWorkspace } = useMedViewStore();
+  const { resetWorkspace } = useMedViewWorkspaceStore();
 
   return (
     <section className={styles.sourcePanel}>

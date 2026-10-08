@@ -1,11 +1,11 @@
 import type { MedViewCategoryId } from "../../../../../../shared/model/types/CategoryId";
+import { useMedViewWorkspaceStore } from "../../../workspace/model/stores/useMedViewWorkspaceStore";
 import { AppSelect } from "../../../../../../components/ui/Select/AppSelect";
-import { useMedViewStore } from "../../../workspace/model/stores/useMedViewWorkspaceStore";
 
 import styles from "./styles.module.scss";
 
 export const MedViewWorkspaceCategoriesFiltersPanel = () => {
-  const { setTargetCategory, targetCategory } = useMedViewStore();
+  const { setTargetCategory, targetCategory } = useMedViewWorkspaceStore();
   return (
     <section className={styles.categoryPanelRoot}>
       <p className={styles.title}>Категории данных</p>

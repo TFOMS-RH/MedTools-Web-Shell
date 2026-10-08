@@ -1,6 +1,6 @@
 import { resolveDataState } from "../../../../../../../../shared/helpers/resolveDataState";
 import { useMedViewFiltersStore } from "../../../../../filters/model/stores/useMedViewFiltersStore";
-import { useMedViewStore } from "../../../../model/stores/useMedViewWorkspaceStore";
+import { useMedViewWorkspaceStore } from "../../../../model/stores/useMedViewWorkspaceStore";
 import { useMedicalCasesListItemsQuery } from "../../../../../../../../shared/model/queries/invoiceStructure/medicalCases/useMedicalCasesListItemsQuery";
 import { MedViewMedicalCaseCardSkeletons } from "./MedViewMedicalCaseCardSkeletons";
 import { MedViewMedicalCaseCards } from "./MedViewMedicalCaseCards";
@@ -13,7 +13,7 @@ export const MedViewMedicalCaseCardsGroupRoot = () => {
     selectedCompletedCaseUid,
     selectedMedicalCaseUid,
     selectMedicalCase,
-  } = useMedViewStore();
+  } = useMedViewWorkspaceStore();
   const {
     data: medicalCases,
     isLoading,

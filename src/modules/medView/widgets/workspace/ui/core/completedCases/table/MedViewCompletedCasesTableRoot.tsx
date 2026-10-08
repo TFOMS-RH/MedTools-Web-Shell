@@ -1,6 +1,6 @@
 import styles from "./styles.module.scss";
 import { MedViewCompletedCasesTableBody } from "./MedViewCompletedCasesTableBody";
-import { useMedViewStore } from "../../../../model/stores/useMedViewWorkspaceStore";
+import { useMedViewWorkspaceStore } from "../../../../model/stores/useMedViewWorkspaceStore";
 import { useMedViewFiltersStore } from "../../../../../filters/model/stores/useMedViewFiltersStore";
 import { useCompletedCasesQuery } from "../../../../model/queries/useCompletedCasesQuery";
 import { resolveDataState } from "../../../../../../../../shared/helpers/resolveDataState";
@@ -14,7 +14,7 @@ export const MedViewCompletedCasesTableRoot = () => {
     setCompletedCasesTablePagination,
     selectedCompletedCaseUid,
     selectCompletedCase,
-  } = useMedViewStore();
+  } = useMedViewWorkspaceStore();
 
   const { appliedFilters, targetDb } = useMedViewFiltersStore();
   const {
