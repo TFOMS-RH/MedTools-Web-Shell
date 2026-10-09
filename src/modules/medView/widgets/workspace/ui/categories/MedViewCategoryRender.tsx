@@ -5,63 +5,60 @@ import {
   type ComponentType,
   type LazyExoticComponent,
 } from "react";
-import CategoryFallback from "../../../../../rControl/widgets/workspace/ui/categories/components/default/CategoryFallback/CategoryFallback";
+import { useMedViewWorkspaceStore } from "../../model/stores/useMedViewWorkspaceStore";
+import CategoryFallback from "./components/default/CategoryFallback/CategoryFallback";
 
-const DefaultCategory = lazy(
+const DefaultCategoryComponent = lazy(
   () =>
-    import("../../../../../rControl/widgets/workspace/ui/categories/components/default/DefaultCategory/DefaultCategory"),
+    import("../categories/components/default/DefaultCategory/DefaultCategory"),
 );
 
-const Patient = lazy(
+const PatientCategoryComponent = lazy(
   () => import("../categories/components/patient/MedViewPatientCategoryRoot"),
 );
 
-const MedicalCaseDetails = lazy(
+const MedicalCaseDetailsCategoryComponent = lazy(
   () =>
     import("../categories/components/medicalCaseDetails/MedViewMedicalCaseDetailsCategoryRoot"),
 );
 
-const Oncology = lazy(
+const OncologyCategoryComponent = lazy(
   () => import("../categories/components/oncology/MedViewOncologyRoot"),
 );
 
-const Referral = lazy(
+const PrescriptionsCategoryComponent = lazy(
   () =>
     import("../categories/components/prescriptions/MedViewPrescriptionsCategoryRoot"),
 );
 
-const ClinicalGroup = lazy(
+const ClinicalGroupsCategoryComponent = lazy(
   () =>
     import("../categories/components/clinicalGroups/MedViewClinicalGroupsCategoryRoot"),
 );
 
-const ProvidedService = lazy(
+const ProvidedServicesCategoryComponent = lazy(
   () =>
     import("../categories/components/providedServices/MedViewProvidedServicesCategoryRoot"),
 );
 
-const Defects = lazy(
+const DefectsCategoryComponent = lazy(
   () => import("../categories/components/defects/MedViewDefectsCategoryRoot"),
 );
 
 const categoryMap = {
-  default: DefaultCategory,
-  patient: Patient,
-  "case-details": MedicalCaseDetails,
-  oncology: Oncology,
-  prescriptions: Referral,
-  "clinical-groups": ClinicalGroup,
-  "provided-services": ProvidedService,
-  defects: Defects,
+  default: DefaultCategoryComponent,
+  patient: PatientCategoryComponent,
+  "case-details": MedicalCaseDetailsCategoryComponent,
+  oncology: OncologyCategoryComponent,
+  prescriptions: PrescriptionsCategoryComponent,
+  "clinical-groups": ClinicalGroupsCategoryComponent,
+  "provided-services": ProvidedServicesCategoryComponent,
+  defects: DefectsCategoryComponent,
+  export: DefaultCategoryComponent,
 } satisfies Record<MedViewCategoryId, LazyExoticComponent<ComponentType>>;
 
-interface CategoryRenderProps {
-  targetCategory: MedViewCategoryId;
-}
-
-export const MedViewCategoryRender = ({
-  targetCategory,
-}: CategoryRenderProps) => {
+export const MedViewCategoryRender = ({}) => {
+  const { targetCategory } = useMedViewWorkspaceStore();
   const CategoryComponent = categoryMap[targetCategory];
 
   return (

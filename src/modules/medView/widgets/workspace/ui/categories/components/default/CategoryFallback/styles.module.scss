@@ -1,0 +1,16 @@
+.fallback {
+  display: flex;
+  flex-direction: column;
+
+  height: 25rem;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: var(--space-5);
+
+  .loaderText {
+    color: var(--text-primary);
+    font-weight: var(--fw-bold);
+  }
+}

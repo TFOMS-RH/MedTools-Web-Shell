@@ -24,18 +24,18 @@ export const ReferralFiltersSubgroup = ({
   const [inputServiceValue, setInputServiceValue] = useState("");
 
   const { data: referralTypeFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/referral-types",
+    "med-tools/med-view/filter-options/referral-types",
     "referral-type",
   );
 
   const { data: diagnosticMethodFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/diagnostic-methods",
+    "med-tools/med-view/filter-options/diagnostic-methods",
     "diagnostic-method",
   );
 
   const { data: referralMedicalOrganizationFilterOptions } =
     useMedicalOrganizationFilterOptionsQuery(
-      "/med-view/filter-options/medical-organizations",
+      "med-tools/med-view/filter-options/medical-organizations",
       "medical-organization",
       "SMODB18",
       "ReferralMedicalOrgs",
@@ -43,7 +43,7 @@ export const ReferralFiltersSubgroup = ({
 
   const { data: medicalServiceFilterOptions, isPending } =
     useAutocompleteFilterOptionsQuery(
-      "/med-view/filter-options/medical-services",
+      "med-tools/med-view/filter-options/medical-services",
       inputServiceValue,
     );
 

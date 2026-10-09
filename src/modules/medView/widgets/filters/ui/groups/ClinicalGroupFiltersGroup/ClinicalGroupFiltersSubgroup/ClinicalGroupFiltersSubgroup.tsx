@@ -24,18 +24,18 @@ export const ClinicalGroupFiltersSubgroup = ({
   ] = useState("");
 
   const { data: complexityCoefficientFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/complexity-coefficients",
+    "med-tools/med-view/filter-options/complexity-coefficients",
     "complexity-coefficient",
   );
 
   const { data: interruptedCasePaymentReason } = useFilterOptionsQuery(
-    "/med-view/filter-options/interrupted-case-payment-reasons",
+    "med-tools/med-view/filter-options/interrupted-case-payment-reasons",
     "interrupted-case-payment-reason",
   );
 
   const { data: clinicalStatisticGroupFilterOptions, isPending } =
     useAutocompleteFilterOptionsQuery(
-      "/med-view/filter-options/clinical-groups",
+      "med-tools/med-view/filter-options/clinical-groups",
       inputCLinicalStatisticGroupValue,
     );
 

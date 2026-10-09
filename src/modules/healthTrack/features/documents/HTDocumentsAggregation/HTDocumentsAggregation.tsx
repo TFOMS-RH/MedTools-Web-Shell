@@ -1,58 +1,30 @@
-// ==========================================
-// modules/healthTrack/features/documents/HTDocumentsAggregation/HTDocumentsAggregation.tsx
-// ==========================================
 import { useState } from "react";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import LayersOutlinedIcon from "@mui/icons-material/LayersOutlined";
 
-import { useHasRole } from "../../../hooks/useHasRole";
 import { useHTNotify } from "../../../hooks/useHTNotify";
-import { useHealthTrackAuthStore } from "../../../stores/healthTrackAuthStore";
 import { downloadBlob } from "../../../utils/downloadBlob";
 
 import styles from "./styles.module.scss";
 
-/**
- * Секция «Агрегация данных».
- *
- * Верхняя строка — 4 работающие плитки: GST, GPT, GF, PF.
- * Нижняя строка — 2 плитки-заглушки: DSPN → СМО, PROF → СМО.
- *
- * Доступна только Admin и MO.
- */
 export const HTDocumentsAggregation = () => {
-  // --- Роли ---
-  const canExport = useHasRole("Admin", "MO");
-  const user = useHealthTrackAuthStore((s) => s.user);
-
-  // --- Уведомления ---
   const notify = useHTNotify();
 
-  // --- Состояние GST ---
   const [gstPeriod, setGstPeriod] = useState("");
   const [gstMoCode, setGstMoCode] = useState("");
 
-  // --- Состояние GPT ---
   const [gptPeriod, setGptPeriod] = useState("");
   const [gptMoCode, setGptMoCode] = useState("");
 
-  // --- Состояние GF ---
   const [gfPeriod, setGfPeriod] = useState("");
   const [gfMoCode, setGfMoCode] = useState("");
   const [gfFileNumber, setGfFileNumber] = useState("1");
 
-  // --- Состояние PF ---
   const [pfPeriod, setPfPeriod] = useState("");
   const [pfMoCode, setPfMoCode] = useState("");
 
-  // --- Загрузка ---
   const [loadingKey, setLoadingKey] = useState<string | null>(null);
 
-  if (!canExport) return null;
-
-  // ==========================================
-  // Универсальный обработчик скачивания.
-  // ==========================================
   const downloadFile = async (
     formKey: string,
     url: string,
@@ -60,7 +32,10 @@ export const HTDocumentsAggregation = () => {
   ) => {
     setLoadingKey(formKey);
     try {
-      const result = await downloadBlob({ url, fallbackFileName: fallbackName });
+      const result = await downloadBlob({
+        url,
+        fallbackFileName: fallbackName,
+      });
 
       if (result.success) {
         notify.success(`Файл ${result.fileName ?? fallbackName} скачан`);
@@ -72,9 +47,6 @@ export const HTDocumentsAggregation = () => {
     }
   };
 
-  // ==========================================
-  // Обработчики кнопок.
-  // ==========================================
   const handleExportGst = () => {
     if (!gstPeriod) return;
     const params = new URLSearchParams({ period: gstPeriod });
@@ -99,7 +71,7 @@ export const HTDocumentsAggregation = () => {
 
   const handleExportGf = () => {
     if (!gfPeriod) return;
-    const moCode = gfMoCode.trim() || user?.hospitalCode || "";
+    const moCode = gfMoCode.trim() || "";
     if (!moCode) {
       notify.warning("Укажите код МО — он обязателен для экспорта GF");
       return;
@@ -128,9 +100,6 @@ export const HTDocumentsAggregation = () => {
     );
   };
 
-  // ==========================================
-  // Заглушки.
-  // ==========================================
   const handleNotImplemented = (name: string) => {
     notify.info(`${name}: функция в разработке`);
   };

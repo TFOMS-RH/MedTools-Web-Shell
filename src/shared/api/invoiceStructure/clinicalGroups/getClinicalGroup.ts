@@ -4,14 +4,14 @@ import type {
 } from "../../../model/types/invoiceStructure/results/clinicalGroup/GetClinicalGroupResult";
 import type { ResultResponse } from "../../../types/ResultResponse";
 import type { TargetDbType } from "../../../types/TargetDbType";
-import apiClient from "../../../../app/providers/apiClient";
+import apiClient from "../../client/apiClient";
 
 export const getClinicalGroup = async (
   medicalCaseUid: number,
   targetDb: TargetDbType,
 ): Promise<ClinicalGroupDto | null> => {
   const response = await apiClient.get<ResultResponse<GetClinicalGroupResult>>(
-    `/rcontrol/medical-cases/${medicalCaseUid}/clinical-group`,
+    `med-tools/rcontrol/medical-cases/${medicalCaseUid}/clinical-group`,
     {
       params: {
         targetDb: targetDb,

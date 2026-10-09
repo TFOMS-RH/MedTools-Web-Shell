@@ -4,14 +4,14 @@ import type {
   GetPrescriptionsResult,
   PrescriptionDto,
 } from "../../../model/types/invoiceStructure/results/prescriptions/GetPrescriptionsResult";
-import apiClient from "../../../../app/providers/apiClient";
+import apiClient from "../../client/apiClient";
 
 export const getPrescriptions = async (
   medicalCaseUid: number,
   targetDb: TargetDbType,
 ): Promise<PrescriptionDto[]> => {
   const response = await apiClient.get<ResultResponse<GetPrescriptionsResult>>(
-    `/rcontrol/medical-cases/${medicalCaseUid}/prescriptions`,
+    `med-tools/rcontrol/medical-cases/${medicalCaseUid}/prescriptions`,
     {
       params: {
         targetDb: targetDb,

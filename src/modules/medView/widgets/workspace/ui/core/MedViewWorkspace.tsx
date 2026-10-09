@@ -1,12 +1,12 @@
-import { MedViewCompletedCaseTableRoot } from "./MedViewCompletedCaseTable/MedViewCompletedCaseTableRoot/MedViewCompletedCaseTableRoot";
-import { MedViewMedicalCasesSection } from "./MedViewMedicalCases/MedViewMedicalCasesSection/MedViewMedicalCasesSection";
+import { MedViewCompletedCasesTableRoot } from "./completedCases/table/MedViewCompletedCasesTableRoot";
+import { MedViewMedicalCaseCardsGroupRoot } from "./medicalCases/cardsGroup/MedViewMedicalCaseCardsGroupRoot";
 import styles from "./styles.module.scss";
 
 export const MedViewWorkspace = () => {
   return (
     <section className={styles.workspaceRoot}>
-      <MedViewCompletedCaseTableRoot />
-      <MedViewMedicalCasesSection />
+      <MedViewCompletedCasesTableRoot />
+      <MedViewMedicalCaseCardsGroupRoot />
     </section>
   );
 };

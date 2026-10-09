@@ -3,7 +3,7 @@ import { DataState } from "../../../../../../../../../../shared/ui/DataState/Dat
 import { useRControlWorkspacePanelStore } from "../../../../../../model/store/useRControlWorkspacePanelStore";
 import { useOncologyServicesQuery } from "../../../../../../../../../../shared/model/queries/invoiceStructure/oncology/useOncologyServicesQuery";
 import { RControlOncologyServiceCards } from "./RControlOncologyServiceCards";
-import { RControlOncologyServiceCardSkelentons } from "./RControlOncologyServiceCardSkelentons";
+import { RControlOncologyServiceCardSkeletons } from "./RControlOncologyServiceCardSkeletons";
 
 interface RControlOncologyServiceCardsGroupRootProps {
   oncologyCaseUid: number | null;
@@ -42,7 +42,7 @@ export const RControlOncologyServiceCardsGroupRoot = ({
           variant="error"
         />
       ) : isLoading ? (
-        <RControlOncologyServiceCardSkelentons />
+        <RControlOncologyServiceCardSkeletons />
       ) : dataState === "empty" ? (
         <DataState
           title="Данных не найдено"

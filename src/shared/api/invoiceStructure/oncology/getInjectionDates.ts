@@ -1,17 +1,17 @@
-import apiClient from "../../../../app/providers/apiClient";
 import type { ResultResponse } from "../../../types/ResultResponse";
 import type { TargetDbType } from "../../../types/TargetDbType";
 import type {
   GetInjectionDatesResult,
   InjectionDateDto,
 } from "../../../model/types/invoiceStructure/results/oncology/GetInjectionDatesResult";
+import apiClient from "../../client/apiClient";
 
 export const getInjectionDates = async (
   medicationUid: number | null,
   targetDb: TargetDbType,
 ): Promise<InjectionDateDto[]> => {
   const response = await apiClient.get<ResultResponse<GetInjectionDatesResult>>(
-    `/rcontrol/medications/${medicationUid}/injection-dates`,
+    `med-tools/rcontrol/medications/${medicationUid}/injection-dates`,
     {
       params: {
         targetDb: targetDb,

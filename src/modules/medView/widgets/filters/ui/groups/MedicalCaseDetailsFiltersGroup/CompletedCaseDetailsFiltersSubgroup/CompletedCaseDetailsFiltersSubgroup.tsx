@@ -18,23 +18,23 @@ export const CompletedCaseDetailsFiltersSubgroup = ({
   setCompletedCaseDetailsFiltersSubgroupDraft,
 }: CompletedCaseDetailsFiltersSubgroupProps) => {
   const { data: careConditionFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/care-conditions",
+    "med-tools/med-view/filter-options/care-conditions",
     "care-condition",
   );
 
   const { data: medicalCareTypeFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/medical-care-types",
+    "med-tools/med-view/filter-options/medical-care-types",
     "medical-care-type",
   );
 
   const { data: medicalCareFormFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/medical-care-forms",
+    "med-tools/med-view/filter-options/medical-care-forms",
     "medical-care-form",
   );
 
   const { data: medicalOrgsInCompletedCaseFilterOptions } =
     useMedicalOrganizationFilterOptionsQuery(
-      "/med-view/filter-options/medical-organizations",
+      "med-tools/med-view/filter-options/medical-organizations",
       "medical-organization",
       "SMODB18",
       "CompletedCaseMedicalOrgs",
@@ -42,29 +42,29 @@ export const CompletedCaseDetailsFiltersSubgroup = ({
 
   const { data: referringMedicalOrgsInCompletedCaseFilterOptions } =
     useMedicalOrganizationFilterOptionsQuery(
-      "/med-view/filter-options/medical-organizations",
+      "med-tools/med-view/filter-options/medical-organizations",
       "medical-organization",
       "SMODB18",
       "ReferralMedicalOrgs",
     );
 
   const { data: diseaseOutcomeFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/disease-outcomes",
+    "med-tools/med-view/filter-options/disease-outcomes",
     "disease-outcome",
   );
 
   const { data: screeningResultFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/screening-results",
+    "med-tools/med-view/filter-options/screening-results",
     "screening-result",
   );
 
   const { data: hospitalizationOutcomeFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/hospitalization-outcomes",
+    "med-tools/med-view/filter-options/hospitalization-outcomes",
     "hospitalization-outcome",
   );
 
   const { data: paymentMethodFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/payment-methods",
+    "med-tools/med-view/filter-options/payment-methods",
     "payment-method",
   );
 

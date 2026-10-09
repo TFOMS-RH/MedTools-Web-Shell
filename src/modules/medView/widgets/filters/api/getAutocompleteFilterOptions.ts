@@ -1,4 +1,4 @@
-import apiClient from "../../../../../app/providers/apiClient";
+import apiClient from "../../../../../shared/api/client/apiClient";
 import type { ResultResponse } from "../../../../../shared/types/ResultResponse";
 import type {
   FilterOption,

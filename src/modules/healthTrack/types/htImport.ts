@@ -84,14 +84,14 @@ export interface HTImportDisplayResult {
 // Все роуты — на бэке, начинаются с /api/import/.
 // ==========================================
 export const HT_IMPORT_ENDPOINTS: Record<HTImportFileType, string> = {
-  GST:  "/import/gst",
-  GPT:  "/import/gpt",
-  GSM:  "/import/gsm",
-  GPM:  "/import/gpm",
-  GF:   "/import/gf",
-  PF:   "/import/pf",
-  DSPN: "/import/dspn",
-  PROF: "/import/prof",
+  GST:  "health-track/import/gst",
+  GPT:  "health-track/import/gpt",
+  GSM:  "health-track/import/gsm",
+  GPM:  "health-track/import/gpm",
+  GF:   "health-track/import/gf",
+  PF:   "health-track/import/pf",
+  DSPN: "health-track/import/dspn",
+  PROF: "health-track/import/prof",
 };
 
 // ==========================================

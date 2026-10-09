@@ -4,14 +4,14 @@ import type {
 } from "../../../model/types/invoiceStructure/results/oncology/GetOncologyCaseResult";
 import type { ResultResponse } from "../../../types/ResultResponse";
 import type { TargetDbType } from "../../../types/TargetDbType";
-import apiClient from "../../../../app/providers/apiClient";
+import apiClient from "../../client/apiClient";
 
 export const getOncologyCase = async (
   medicalCaseUid: number,
   targetDb: TargetDbType,
 ): Promise<OncologyCaseDto | null> => {
   const response = await apiClient.get<ResultResponse<GetOncologyCaseResult>>(
-    `/rcontrol/medical-cases/${medicalCaseUid}/oncology-case`,
+    `med-tools/rcontrol/medical-cases/${medicalCaseUid}/oncology-case`,
     {
       params: {
         targetDb: targetDb,

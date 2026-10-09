@@ -24,31 +24,31 @@ export const PrescriptionFiltersSubgroup = ({
   const [inputServiceValue, setInputServiceValue] = useState("");
 
   const { data: diagnosticMethodFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/diagnostic-methods",
+    "med-tools/med-view/filter-options/diagnostic-methods",
     "diagnostic-method",
   );
 
   const { data: referredToMedicalOrganizationFilterOptions } =
     useMedicalOrganizationFilterOptionsQuery(
-      "/med-view/filter-options/medical-organizations",
+      "med-tools/med-view/filter-options/medical-organizations",
       "medical-organization",
       "SMODB18",
       "PrescriptionReferredToMedicalOrgs",
     );
 
   const { data: medicalCareFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/medical-care-profiles",
+    "med-tools/med-view/filter-options/medical-care-profiles",
     "medical-care-profile",
   );
 
   const { data: bedProfileFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/bed-profiles",
+    "med-tools/med-view/filter-options/bed-profiles",
     "bed-profile",
   );
 
   const { data: medicalServiceFilterOptions, isPending } =
     useAutocompleteFilterOptionsQuery(
-      "/med-view/filter-options/medical-services",
+      "med-tools/med-view/filter-options/medical-services",
       inputServiceValue,
     );
 

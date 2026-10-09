@@ -18,6 +18,7 @@ const medViewCategoryId = [
   "clinical-groups",
   "provided-services",
   "defects",
+  "export",
 ] as const;
 
 export type RControlCategoryId = (typeof rControlCategoryIds)[number];

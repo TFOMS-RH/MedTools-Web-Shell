@@ -22,7 +22,7 @@ const SanctionFiltersGroup = ({
   setSanctionFiltersGroupDraft,
 }: SanctionFiltersGroupProps) => {
   const { data: controlTypeFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/control-type-codes",
+    "med-tools/med-view/filter-options/control-type-codes",
     "control-type-code",
   );
 
@@ -33,7 +33,7 @@ const SanctionFiltersGroup = ({
 
   const { data: refusalReasonCodeFilterOptions, isPending } =
     useAutocompleteFilterOptionsQuery(
-      "/med-view/filter-options/refusal-reason-codes",
+      "med-tools/med-view/filter-options/refusal-reason-codes",
       inputRefusalReasonCodeFilterOptions,
     );
 

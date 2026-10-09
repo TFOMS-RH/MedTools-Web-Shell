@@ -4,7 +4,7 @@ import type {
 } from "../../../model/types/invoiceStructure/results/medicalCases/GetMedicalCaseListItemsResult";
 import type { ResultResponse } from "../../../types/ResultResponse";
 import type { TargetDbType } from "../../../types/TargetDbType";
-import apiClient from "../../../../app/providers/apiClient";
+import apiClient from "../../client/apiClient";
 
 export const getMedicalCaseListItems = async (
   completedCaseUid: number,
@@ -12,7 +12,7 @@ export const getMedicalCaseListItems = async (
 ): Promise<MedicalCaseDto[]> => {
   const response = await apiClient.get<
     ResultResponse<GetMedicalCaseListItemsResult>
-  >(`/rcontrol/completed-cases/${completedCaseUid}/medical-cases`, {
+  >(`med-tools/rcontrol/completed-cases/${completedCaseUid}/medical-cases`, {
     params: {
       targetDb: targetDb,
     },

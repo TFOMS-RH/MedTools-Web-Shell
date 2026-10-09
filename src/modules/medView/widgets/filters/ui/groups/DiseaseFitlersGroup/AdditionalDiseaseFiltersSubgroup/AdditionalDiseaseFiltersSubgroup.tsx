@@ -24,19 +24,19 @@ export const AdditionalDiseaseFiltersSubgroup = ({
     useState("");
 
   const { data: initialDiagnosesOptions } = useAutocompleteFilterOptionsQuery(
-    "/med-view/filter-options/diseases",
+    "med-tools/med-view/filter-options/diseases",
     initialDiagnosesInputValue,
   );
 
   const { data: concomitantDiagnosesOptions } =
     useAutocompleteFilterOptionsQuery(
-      "/med-view/filter-options/diseases",
+      "med-tools/med-view/filter-options/diseases",
       concomitantDiagnosesInputValue,
     );
 
   const { data: complicationDiagnosesOptions } =
     useAutocompleteFilterOptionsQuery(
-      "/med-view/filter-options/diseases",
+      "med-tools/med-view/filter-options/diseases",
       complicationDiagnosesInputValue,
     );
 

@@ -3,7 +3,7 @@ import { countActiveFilters } from "../../../../../../shared/helpers/isFilterAct
 import { Divider } from "../../../../../../components/ui/Divider/Divider";
 import { MedViewButton } from "../../../../../../shared/ui/medView/buttons/MedViewButton";
 import { useMedViewFiltersStore } from "../../model/stores/useMedViewFiltersStore";
-import { useMedViewStore } from "../../../workspace/model/stores/useMedViewStore";
+import { useMedViewWorkspaceStore } from "../../../workspace/model/stores/useMedViewWorkspaceStore";
 import { TargetDbToggle } from "../../../../../../shared/ui/TargetDbToggle/TargetDbToggle";
 import AddIcon from "@mui/icons-material/Add";
 import styles from "./styles.module.scss";
@@ -13,7 +13,7 @@ interface FiltersPanelProps {
 }
 
 export const MedViewFiltersPanel = ({ filtersDraft }: FiltersPanelProps) => {
-  const { resetWorkspace } = useMedViewStore();
+  const { resetWorkspace } = useMedViewWorkspaceStore();
   const {
     applyFilters,
     selectFilterGroup,

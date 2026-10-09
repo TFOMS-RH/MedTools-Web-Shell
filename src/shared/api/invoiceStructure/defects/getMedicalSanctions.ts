@@ -1,10 +1,10 @@
-import apiClient from "../../../../app/providers/apiClient";
 import type { ResultResponse } from "../../../types/ResultResponse";
 import type { TargetDbType } from "../../../types/TargetDbType";
 import type {
   GetMedicalSanctionsResult,
   MedicalSanctionDto,
 } from "../../../model/types/invoiceStructure/results/defects/GetMedicalSanctionsResult";
+import apiClient from "../../client/apiClient";
 
 export const getMedicalSanctions = async (
   medicalCaseUid: number,
@@ -12,7 +12,7 @@ export const getMedicalSanctions = async (
 ): Promise<MedicalSanctionDto[]> => {
   const response = await apiClient.get<
     ResultResponse<GetMedicalSanctionsResult>
-  >(`/rcontrol/medical-cases/${medicalCaseUid}/medical-sanctions`, {
+  >(`med-tools/rcontrol/medical-cases/${medicalCaseUid}/medical-sanctions`, {
     params: {
       targetDb: targetDb,
     },

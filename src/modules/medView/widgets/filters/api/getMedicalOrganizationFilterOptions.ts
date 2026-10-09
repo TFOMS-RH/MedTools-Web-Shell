@@ -1,4 +1,3 @@
-import apiClient from "../../../../../app/providers/apiClient";
 import type { ResultResponse } from "../../../../../shared/types/ResultResponse";
 import type { TargetDbType } from "../../../../../shared/types/TargetDbType";
 import type {
@@ -6,6 +5,7 @@ import type {
   FilterOptionsResponse,
 } from "../../workspace/model/types/FilterOptions";
 import type { MedicalOrgsTargetSource } from "../../workspace/model/types/MedicalOrgsTargetSource";
+import apiClient from "../../../../../shared/api/client/apiClient";
 
 export const getMedicalOrganizationFilterOptions = async (
   endpoint: string,

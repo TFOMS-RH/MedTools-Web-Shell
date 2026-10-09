@@ -1,7 +1,7 @@
+import apiClient from "../../../../../shared/api/client/apiClient";
 import type { ResultResponse } from "../../../../../shared/types/ResultResponse";
 import type { TargetDbType } from "../../../../../shared/types/TargetDbType";
 import type { GetBillingPeriodsResult } from "../model/types/BillingPeriodsResult";
-import apiClient from "../../../../../app/providers/apiClient";
 
 export const getBillingPeriods = async (
   medicalOrganizationCode: string | null,
@@ -9,7 +9,7 @@ export const getBillingPeriods = async (
 ) => {
   
   const response = await apiClient.get<ResultResponse<GetBillingPeriodsResult>>(
-    "/rcontrol/lookups/billing-periods",
+    "med-tools/rcontrol/lookups/billing-periods",
     {
       params: {
         medicalOrganizationCode: medicalOrganizationCode,

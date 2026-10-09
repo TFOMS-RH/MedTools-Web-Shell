@@ -2,17 +2,17 @@ import { CategoryLineHeader } from "../../../../../../../../shared/ui/CategoryLi
 import { Divider } from "../../../../../../../../components/ui/Divider/Divider";
 import { DataState } from "../../../../../../../../shared/ui/DataState/DataState";
 import { useMedViewFiltersStore } from "../../../../../filters/model/stores/useMedViewFiltersStore";
-import { useMedViewStore } from "../../../../model/stores/useMedViewStore";
 import { useClinicalGroupQuery } from "../../../../../../../../shared/model/queries/invoiceStructure/clinicalGroups/useClinicalGroupQuery";
-import { MedViewClinicalGroupRoot } from "./clinicalGroup/MedViewClinicalGroupRoot/MedViewClinicalGroupRoot";
-import { MedViewHighTechMedicalCareRoot } from "./highTechMedicalCare/MedViewHighTechMedicalCareRoot/MedViewHighTechMedicalCareRoot";
-import { MedViewClassificationCriteriaRoot } from "./сlassificationCriteria/MedViewClassificationCriteriaRoot/MedViewClassificationCriteriaRoot";
+import { useMedViewWorkspaceStore } from "../../../../model/stores/useMedViewWorkspaceStore";
+import { MedViewClinicalGroupCardRoot } from "./clinicalGroup/card/MedViewClinicalGroupCardRoot";
+import { MedViewHighTechMedicalCareCardRoot } from "./highTechMedicalCare/card/MedViewHighTechMedicalCareCardRoot";
+import { MedViewTreatmentCoefficientsListRoot } from "./treatmentCoefficients/list/MedViewTreatmentCoefficientsListRoot";
 import styles from "./styles.module.scss";
-import { MedViewTreatmentComplexityCoefficientsRoot } from "./treatmentComplexityCoefficients/MedViewTreatmentComplexityCoefficientsRoot/MedViewTreatmentComplexityCoefficientsRoot";
+import { MedViewClassificationCriterionChipsGroupRoot } from "./сlassificationCriteria/chipsGroup/MedViewClassificationCriterionChipsGroupRoot";
 
 const MedViewClinicalGroupsCategoryRoot = () => {
   const { targetDb } = useMedViewFiltersStore();
-  const { selectedMedicalCaseUid } = useMedViewStore();
+  const { selectedMedicalCaseUid } = useMedViewWorkspaceStore();
   const { data: clinicalGroup } = useClinicalGroupQuery(
     selectedMedicalCaseUid,
     targetDb,
@@ -36,8 +36,8 @@ const MedViewClinicalGroupsCategoryRoot = () => {
           />
         ) : (
           <div className={styles.twoGridLine}>
-            <MedViewClinicalGroupRoot />
-            <MedViewHighTechMedicalCareRoot />
+            <MedViewClinicalGroupCardRoot />
+            <MedViewHighTechMedicalCareCardRoot />
           </div>
         )}
       </div>
@@ -56,10 +56,10 @@ const MedViewClinicalGroupsCategoryRoot = () => {
           />
         ) : (
           <div className={styles.classificationCriteriaGroup}>
-            <MedViewClassificationCriteriaRoot
+            <MedViewClassificationCriterionChipsGroupRoot
               clinicalGroupUid={clinicalGroupUid}
             />
-            <MedViewTreatmentComplexityCoefficientsRoot
+            <MedViewTreatmentCoefficientsListRoot
               clinicalGroupUid={clinicalGroupUid}
             />
           </div>

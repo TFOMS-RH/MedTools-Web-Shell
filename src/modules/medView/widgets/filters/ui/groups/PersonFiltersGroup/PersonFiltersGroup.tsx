@@ -17,14 +17,14 @@ const PersonFiltersGroup = ({
 }: PersonFiltersGroupRootProps) => {
   const { data: insuranceFilterOptions } =
     useMedicalOrganizationFilterOptionsQuery(
-      "/med-view/filter-options/available-insurance",
+      "med-tools/med-view/filter-options/available-insurance",
       "insurance",
       "SMODB18",
       "Insurances",
     );
 
   const { data: insurancePolicyTypeFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/policy-types",
+    "med-tools/med-view/filter-options/policy-types",
     "insurance-policy-type",
   );
 

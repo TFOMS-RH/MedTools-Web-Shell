@@ -7,26 +7,28 @@ import { RControl } from "../modules/rControl/pages/RControl";
 import { MedView } from "../modules/medView/pages/MedView";
 import { AppLayout } from "../components/layouts/AppLayout/AppLayout";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClient } from "./providers/queryClient";
-
-import { HealthTrackApp } from "../modules/healthTrack/HealthTrackApp";
+import { queryClient } from "../shared/api/client/queryClient";
+import { HTMain } from "../modules/healthTrack/pages/HTMain/HTMain";
+import { HTNotistackProvider } from "../modules/healthTrack/ui/HTNotistackProvider/HTNotistackProvider";
 
 import "./styles/global.scss";
 
 createRoot(document.getElementById("root")!).render(
   <QueryClientProvider client={queryClient}>
-    <BrowserRouter>
-      <Routes>
-        <Route element={<WithoutHeaderLayout />}>
-          <Route path="/login" element={<Login />} />
-        </Route>
-        <Route path="/health-track/*" element={<HealthTrackApp />} />
-        <Route element={<AppLayout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/rcontrol" element={<RControl />} />
-          <Route path="/med-view" element={<MedView />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <HTNotistackProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<WithoutHeaderLayout />}>
+            <Route path="/login" element={<Login />} />
+          </Route>
+          <Route element={<AppLayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/rcontrol" element={<RControl />} />
+            <Route path="/med-view" element={<MedView />} />
+            <Route path="/health-track" element={<HTMain />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </HTNotistackProvider>
   </QueryClientProvider>,
 );
