@@ -9,12 +9,12 @@ export default defineConfig({
   server: {
     proxy: {
       "/api/med-tools": {
-        target: "http://localhost:5256",
+        target: "http://localhost:8005",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api\/med-tools/, "/api"),
       },
       "/api/health-track": {
-        target: "http://localhost:5000",
+        target: "http://localhost:8006",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api\/health-track/, "/api"),
       },
