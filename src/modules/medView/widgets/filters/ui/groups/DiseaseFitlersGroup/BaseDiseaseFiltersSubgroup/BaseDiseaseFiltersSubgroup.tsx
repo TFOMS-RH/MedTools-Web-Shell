@@ -22,18 +22,18 @@ export const BaseDiseaseFiltersSubgroup = ({
     useState("");
 
   const { data: icdClassesFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/disease-classes",
+    "med-tools/med-view/filter-options/disease-classes",
     "icd-class",
   );
 
   const { data: icdSubClassesFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/disease-sub-classes",
+    "med-tools/med-view/filter-options/disease-sub-classes",
     "icd-sub-class",
   );
 
   const { data: primaryDiagnosisFilterOptions } =
     useAutocompleteFilterOptionsQuery(
-      "/med-view/filter-options/diseases",
+      "med-tools/med-view/filter-options/diseases",
       primaryDiagnosisInputValue,
     );
 

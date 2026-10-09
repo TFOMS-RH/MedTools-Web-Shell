@@ -20,8 +20,7 @@ export const HT_REGISTER_DN_QUERY_KEYS = {
   list: (params: HTRegisterDnQueryParams) =>
     ["ht", "register-dn", "list", params] as const,
 
-  details: (enp: string) =>
-    ["ht", "register-dn", "details", enp] as const,
+  details: (enp: string) => ["ht", "register-dn", "details", enp] as const,
 };
 
 // ==========================================

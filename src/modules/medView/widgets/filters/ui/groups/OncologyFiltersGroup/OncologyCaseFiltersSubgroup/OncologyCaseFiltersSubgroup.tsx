@@ -21,13 +21,13 @@ export const OncologyCaseFiltersSubgroup = ({
   const [inputStageValue, setInputStageValue] = useState("");
 
   const { data: referralReasonFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/referral-reasons",
+    "med-tools/med-view/filter-options/referral-reasons",
     "referral-reason",
   );
 
   const { data: diseaseStageFilterOptions, isPending } =
     useAutocompleteFilterOptionsQuery(
-      "/med-view/filter-options/disease-stages",
+      "med-tools/med-view/filter-options/disease-stages",
       inputStageValue,
     );
 

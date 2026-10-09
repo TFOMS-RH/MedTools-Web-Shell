@@ -15,27 +15,27 @@ export const OncologyServiceFiltersSubgroup = ({
   setOncologyServiceFiltersSubgroupDraft,
 }: OncologyServiceFiltersSubgroupProps) => {
   const { data: oncologyServiceTypeFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/oncology-service-types",
+    "med-tools/med-view/filter-options/oncology-service-types",
     "oncology-service-type",
   );
 
   const { data: surgicalTreatmentTypeFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/surgical-treatment-types",
+    "med-tools/med-view/filter-options/surgical-treatment-types",
     "surgical-treatment-type",
   );
 
   const { data: radioTherapyTypeFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/radio-therapy-types",
+    "med-tools/med-view/filter-options/radio-therapy-types",
     "radio-therapy-type",
   );
 
   const { data: drugTherapyLineFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/drug-therapy-lines",
+    "med-tools/med-view/filter-options/drug-therapy-lines",
     "drug-therapy-line",
   );
 
   const { data: drugTherapyCycleFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/drug-therapy-cycles",
+    "med-tools/med-view/filter-options/drug-therapy-cycles",
     "drug-therapy-cycle",
   );
 

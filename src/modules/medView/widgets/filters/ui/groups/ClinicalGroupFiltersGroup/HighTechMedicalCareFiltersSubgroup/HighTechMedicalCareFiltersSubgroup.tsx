@@ -28,7 +28,7 @@ export const HighTechMedicalCareFiltersSubgroup = ({
     data: highTechCareTypeFilterOptions,
     isPending: highTechCareTypePending,
   } = useAutocompleteFilterOptionsQuery(
-    "/med-view/filter-options/high-tech-care-types",
+    "med-tools/med-view/filter-options/high-tech-care-types",
     inputHighTechCareTypeValue,
   );
 
@@ -36,7 +36,7 @@ export const HighTechMedicalCareFiltersSubgroup = ({
     data: highTechCareMethodFilterOptions,
     isPending: highTechCareMethodPending,
   } = useAutocompleteFilterOptionsQuery(
-    "/med-view/filter-options/high-tech-care-methods",
+    "med-tools/med-view/filter-options/high-tech-care-methods",
     inputHighTechCareMethodValue,
   );
 

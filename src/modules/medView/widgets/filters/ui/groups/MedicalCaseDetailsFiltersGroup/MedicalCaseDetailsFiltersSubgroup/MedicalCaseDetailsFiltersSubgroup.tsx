@@ -18,32 +18,32 @@ export const MedicalCaseDetailsFiltersSubgroup = ({
   setMedicalCaseDetailsFiltersSubgroupDraft,
 }: MedicalCaseDetailsFiltersSubgroupProps) => {
   const { data: medicalCareFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/medical-care-profiles",
+    "med-tools/med-view/filter-options/medical-care-profiles",
     "medical-care-profile",
   );
 
   const { data: bedProfileFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/bed-profiles",
+    "med-tools/med-view/filter-options/bed-profiles",
     "bed-profile",
   );
 
   const { data: visitPlaceFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/visit-places",
+    "med-tools/med-view/filter-options/visit-places",
     "visit-place",
   );
 
   const { data: visitPurposeFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/visit-purposes",
+    "med-tools/med-view/filter-options/visit-purposes",
     "visit-purpose",
   );
 
   const { data: diseaseCharacterFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/disease-characters",
+    "med-tools/med-view/filter-options/disease-characters",
     "disease-character",
   );
 
   const { data: physicianSpecialitiesFilterOptions } = useFilterOptionsQuery(
-    "/med-view/filter-options/physician-specialities",
+    "med-tools/med-view/filter-options/physician-specialities",
     "physician-speciality",
   );
 

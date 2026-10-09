@@ -13,6 +13,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api\/med-tools/, "/api"),
       },
+      "/api/health-track": {
+        target: "http://localhost:5000",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/health-track/, "/api"),
+      },
     },
   },
 });

@@ -21,7 +21,7 @@ const ProvidedServiceFiltersGroup = ({
 
   const { data: providedServiceFilterOptions, isPending } =
     useAutocompleteFilterOptionsQuery(
-      "/med-view/filter-options/provided-services",
+      "med-tools/med-view/filter-options/provided-services",
       inputProvidedServiceValue,
     );
 

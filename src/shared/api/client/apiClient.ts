@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useAuthStore } from "../../modules/auth/stores/authStore";
+import { useAuthStore } from "../../../modules/auth/stores/authStore";
 
 const apiClient = axios.create({
   baseURL: import.meta.env.DEV ? "/api" : "/api", //Заглушка до релиза

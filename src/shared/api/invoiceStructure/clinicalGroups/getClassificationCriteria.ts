@@ -4,7 +4,7 @@ import type {
 } from "../../../model/types/invoiceStructure/results/clinicalGroup/GetClassificationCriteriaResult";
 import type { ResultResponse } from "../../../types/ResultResponse";
 import type { TargetDbType } from "../../../types/TargetDbType";
-import apiClient from "../../../../app/providers/apiClient";
+import apiClient from "../../client/apiClient";
 
 export const getClassificationCriteria = async (
   clinicalGroupUid: number,
@@ -12,11 +12,14 @@ export const getClassificationCriteria = async (
 ): Promise<ClassificationCriterionDto[]> => {
   const response = await apiClient.get<
     ResultResponse<GetClassificationCriteriaResult>
-  >(`/rcontrol/clinical-groups/${clinicalGroupUid}/classification-criteria`, {
-    params: {
-      targetDb: targetDb,
+  >(
+    `med-tools/rcontrol/clinical-groups/${clinicalGroupUid}/classification-criteria`,
+    {
+      params: {
+        targetDb: targetDb,
+      },
     },
-  });
+  );
 
   if (response.data.isFailure) {
     throw new Error(response.data.error);

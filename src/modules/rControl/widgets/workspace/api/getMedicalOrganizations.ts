@@ -1,14 +1,15 @@
 import type { MedicalOrganizationDto, MedicalOrganizationResult } from "../model/types/MedicalOrganizationResult";
 import type { ResultResponse } from "../../../../../shared/types/ResultResponse";
 import type { TargetDbType } from "../../../../../shared/types/TargetDbType";
-import apiClient from "../../../../../app/providers/apiClient";
+import apiClient from "../../../../../shared/api/client/apiClient";
+
 
 export const getMedicalOrganizations = async (
   targetDb: TargetDbType,
 ): Promise<MedicalOrganizationDto[]> => {
   const response = await apiClient.get<
     ResultResponse<MedicalOrganizationResult>
-  >("/rcontrol/lookups/medical-organizations", {
+  >("med-tools/rcontrol/lookups/medical-organizations", {
     params: {
       targetDb: targetDb,
     },

@@ -11,7 +11,6 @@ import {
 } from "../../hooks/useDocumentsQueries";
 import { useHealthTrackAuthStore } from "../../stores/healthTrackAuthStore";
 import { useHTNotify } from "../../hooks/useHTNotify";
-import { useHasRole } from "../../hooks/useHasRole";
 
 import { HTDocumentsHeader } from "./HTDocumentsHeader/HTDocumentsHeader";
 import { HTDocumentsAggregation } from "./HTDocumentsAggregation/HTDocumentsAggregation";
@@ -65,19 +64,8 @@ export const HTDocumentsTab = ({
   // Роли.
   // ==========================================
   const user = useHealthTrackAuthStore((s) => s.user);
-  const isMo = user?.roles.includes("MO") ?? false;
-  const isSmo = user?.roles.includes("SMO") ?? false;
-
-  const canDelete = useHasRole("Admin", "MO", "SMO");
-
-  // ==========================================
-  // Уведомления.
-  // ==========================================
   const notify = useHTNotify();
 
-  // ==========================================
-  // Состояние UI.
-  // ==========================================
   const [filters, setFilters] =
     useState<HTDocumentsFiltersValue>(DEFAULT_FILTERS);
 
@@ -91,8 +79,9 @@ export const HTDocumentsTab = ({
 
   const [openDocumentId, setOpenDocumentId] = useState<number | null>(null);
 
-  const [deleteTarget, setDeleteTarget] =
-    useState<HTDocumentListItem | null>(null);
+  const [deleteTarget, setDeleteTarget] = useState<HTDocumentListItem | null>(
+    null,
+  );
 
   // ==========================================
   // Автооткрытие drawer по initialDocumentId.
@@ -108,15 +97,11 @@ export const HTDocumentsTab = ({
   // Параметры запроса.
   // ==========================================
   const queryParams: HTDocumentsQueryParams = useMemo(() => {
-    const effectiveHospitalCode =
-      isMo || isSmo
-        ? user?.hospitalCode ?? undefined
-        : appliedFilters.hospitalCode.trim() || undefined;
+    const effectiveHospitalCode = undefined;
 
     return {
       searchQuery: appliedFilters.searchQuery.trim() || undefined,
-      fileType:
-        (appliedFilters.fileType as HTDocumentFileType) || undefined,
+      fileType: (appliedFilters.fileType as HTDocumentFileType) || undefined,
       status: (appliedFilters.status as HTDocumentStatus) || undefined,
       hospitalCode: effectiveHospitalCode,
       period: appliedFilters.period || undefined,
@@ -125,7 +110,7 @@ export const HTDocumentsTab = ({
       sortBy: "uploadDate",
       sortDirection: "desc",
     };
-  }, [appliedFilters, page, pageSize, isMo, isSmo, user?.hospitalCode]);
+  }, [appliedFilters, page, pageSize, user?.hospitalCode]);
 
   // ==========================================
   // React Query — запросы и мутации.
@@ -273,7 +258,7 @@ export const HTDocumentsTab = ({
         const baseUrl = import.meta.env.DEV
           ? "http://localhost:5000/api"
           : "/api";
-        const token = useHealthTrackAuthStore.getState().accessToken;
+        const token = sessionStorage.getItem("accessToken");
 
         const response = await fetch(`${baseUrl}${endpoint}`, {
           method: "GET",
@@ -408,7 +393,7 @@ export const HTDocumentsTab = ({
         onDownloadResponse={handleDownloadResponse}
         onOpenDetails={handleOpenDetails}
         onDelete={handleDeleteClick}
-        canDelete={canDelete}
+        canDelete
         onResetFilters={handleResetFilters}
         isLoading={isLoadingAny}
       />

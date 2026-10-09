@@ -4,14 +4,14 @@ import type {
 } from "../../../model/types/invoiceStructure/results/invoices/GetInvoiceSummaryResult";
 import type { ResultResponse } from "../../../types/ResultResponse";
 import type { TargetDbType } from "../../../types/TargetDbType";
-import apiClient from "../../../../app/providers/apiClient";
+import apiClient from "../../client/apiClient";
 
 export const getInvoiceSummary = async (
   invoiceUid: number,
   targetDb: TargetDbType,
 ): Promise<InvoiceSummaryDto> => {
   const response = await apiClient.get<ResultResponse<GetInvoiceSummaryResult>>(
-    `/rcontrol/invoices/${invoiceUid}/summary`,
+    `med-tools/rcontrol/invoices/${invoiceUid}/summary`,
     {
       params: {
         targetDb: targetDb,

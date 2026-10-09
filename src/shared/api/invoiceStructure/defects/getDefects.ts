@@ -1,9 +1,7 @@
-import apiClient from "../../../../app/providers/apiClient";
 import type { ResultResponse } from "../../../types/ResultResponse";
 import type { TargetDbType } from "../../../types/TargetDbType";
-import type {
-  GetDefectsResult,
-} from "../../../model/types/invoiceStructure/results/defects/GetDefectsResult";
+import type { GetDefectsResult } from "../../../model/types/invoiceStructure/results/defects/GetDefectsResult";
+import apiClient from "../../client/apiClient";
 
 export const getDefects = async (
   medicalCaseUid: number,
@@ -12,7 +10,7 @@ export const getDefects = async (
   pageSize: number,
 ): Promise<GetDefectsResult> => {
   const response = await apiClient.get<ResultResponse<GetDefectsResult>>(
-    `/rcontrol/medical-cases/${medicalCaseUid}/defects`,
+    `med-tools/rcontrol/medical-cases/${medicalCaseUid}/defects`,
     {
       params: {
         targetDb: targetDb,

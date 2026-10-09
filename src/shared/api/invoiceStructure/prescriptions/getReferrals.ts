@@ -4,14 +4,14 @@ import type {
   GetReferralsResult,
   ReferralDto,
 } from "../../../model/types/invoiceStructure/results/prescriptions/GetReferralsResult";
-import apiClient from "../../../../app/providers/apiClient";
+import apiClient from "../../client/apiClient";
 
 export const getReferrals = async (
   medicalCaseUid: number,
   targetDb: TargetDbType,
 ): Promise<ReferralDto[]> => {
   const response = await apiClient.get<ResultResponse<GetReferralsResult>>(
-    `/rcontrol/medical-cases/${medicalCaseUid}/referrals`,
+    `med-tools/rcontrol/medical-cases/${medicalCaseUid}/referrals`,
     {
       params: {
         targetDb: targetDb,

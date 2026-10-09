@@ -1,11 +1,3 @@
-// ==========================================
-// modules/healthTrack/utils/downloadBlob.ts
-// ==========================================
-import { useHealthTrackAuthStore } from "../stores/healthTrackAuthStore";
-
-// ==========================================
-// Результат скачивания.
-// ==========================================
 export interface DownloadBlobResult {
   /** Успешно ли скачали файл. */
   success: boolean;
@@ -38,9 +30,7 @@ interface DownloadBlobOptions {
 // Базовый URL API.
 // ==========================================
 const getBaseUrl = (): string => {
-  return import.meta.env.DEV
-    ? "http://localhost:5000/api"
-    : "/api";
+  return import.meta.env.DEV ? "http://localhost:5000/api" : "/api";
 };
 
 // ==========================================
@@ -102,7 +92,7 @@ export const downloadBlob = async (
 
   try {
     const baseUrl = getBaseUrl();
-    const token = useHealthTrackAuthStore.getState().accessToken;
+    const token = sessionStorage.getItem("accessToken");
 
     // ==========================================
     // 1. Запрос.
@@ -144,9 +134,7 @@ export const downloadBlob = async (
 
     const disposition = response.headers.get("Content-Disposition");
     if (disposition) {
-      const match = /filename\*?=(?:UTF-8'')?["']?([^"';]+)/i.exec(
-        disposition,
-      );
+      const match = /filename\*?=(?:UTF-8'')?["']?([^"';]+)/i.exec(disposition);
       if (match && match[1]) {
         try {
           fileName = decodeURIComponent(match[1]);

@@ -4,7 +4,7 @@ import type {
 } from "../../../model/types/invoiceStructure/results/clinicalGroup/GetHighTechMedicalCareResult";
 import type { ResultResponse } from "../../../types/ResultResponse";
 import type { TargetDbType } from "../../../types/TargetDbType";
-import apiClient from "../../../../app/providers/apiClient";
+import apiClient from "../../client/apiClient";
 
 export const getHighTechMedicalCare = async (
   medicalCaseUid: number,
@@ -12,11 +12,14 @@ export const getHighTechMedicalCare = async (
 ): Promise<HighTechMedicalCareDto> => {
   const response = await apiClient.get<
     ResultResponse<GetHighTechMedicalCareResult>
-  >(`/rcontrol/medical-cases/${medicalCaseUid}/high-tech-medical-care`, {
-    params: {
-      targetDb: targetDb,
+  >(
+    `med-tools/rcontrol/medical-cases/${medicalCaseUid}/high-tech-medical-care`,
+    {
+      params: {
+        targetDb: targetDb,
+      },
     },
-  });
+  );
 
   if (response.data.isFailure) {
     throw new Error(response.data.error);

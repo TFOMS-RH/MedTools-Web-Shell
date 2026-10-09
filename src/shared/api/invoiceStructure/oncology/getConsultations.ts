@@ -4,14 +4,14 @@ import type {
   ConsultationDto,
   GetConsultationsResult,
 } from "../../../model/types/invoiceStructure/results/oncology/GetConsultationsResult";
-import apiClient from "../../../../app/providers/apiClient";
+import apiClient from "../../client/apiClient";
 
 export const getConsultations = async (
   medicalCaseUid: number,
   targetDb: TargetDbType,
 ): Promise<ConsultationDto[]> => {
   const response = await apiClient.get<ResultResponse<GetConsultationsResult>>(
-    `/rcontrol/medical-cases/${medicalCaseUid}/consultations`,
+    `med-tools/rcontrol/medical-cases/${medicalCaseUid}/consultations`,
     {
       params: {
         targetDb: targetDb,

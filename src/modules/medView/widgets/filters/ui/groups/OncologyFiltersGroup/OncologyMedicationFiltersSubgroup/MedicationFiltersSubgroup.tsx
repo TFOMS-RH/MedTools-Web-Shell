@@ -21,13 +21,13 @@ export const MedicationFiltersSubgroup = ({
 
   const { data: drugIdentifierFilterOptions, isPending } =
     useAutocompleteFilterOptionsQuery(
-      "/med-view/filter-options/drug-identifiers",
+      "med-tools/med-view/filter-options/drug-identifiers",
       inputIdenitifierValue,
     );
 
   const { data: therapyRegimenFilterOptions } =
     useAutocompleteFilterOptionsQuery(
-      "/med-view/filter-options/therapy-regimens",
+      "med-tools/med-view/filter-options/therapy-regimens",
       inputRegimenValue,
     );
 

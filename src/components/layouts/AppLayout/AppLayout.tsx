@@ -6,7 +6,6 @@ import { resolveCurrentModule } from "../../../shared/helpers/resolveCurrentModu
 
 export const AppLayout = () => {
   const location = useLocation();
-  console.log(location.pathname);
 
   return (
     <main className={styles.appRoot}>

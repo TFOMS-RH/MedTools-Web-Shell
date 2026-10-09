@@ -1,10 +1,10 @@
-import apiClient from "../../../../app/providers/apiClient";
 import type { ResultResponse } from "../../../types/ResultResponse";
 import type { TargetDbType } from "../../../types/TargetDbType";
 import type {
   ContraindicationDto,
   GetContraindicationsResult,
 } from "../../../model/types/invoiceStructure/results/oncology/GetContraindicationsResult";
+import apiClient from "../../client/apiClient";
 
 export const getContraindications = async (
   oncologyCaseUid: number,
@@ -12,7 +12,7 @@ export const getContraindications = async (
 ): Promise<ContraindicationDto[]> => {
   const response = await apiClient.get<
     ResultResponse<GetContraindicationsResult>
-  >(`/rcontrol/oncology-cases/${oncologyCaseUid}/contraindications`, {
+  >(`med-tools/rcontrol/oncology-cases/${oncologyCaseUid}/contraindications`, {
     params: {
       targetDb: targetDb,
     },

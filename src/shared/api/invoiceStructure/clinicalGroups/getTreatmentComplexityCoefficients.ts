@@ -4,7 +4,7 @@ import type {
 } from "../../../model/types/invoiceStructure/results/clinicalGroup/GetTreatmentComplexityCoefficientsResult";
 import type { ResultResponse } from "../../../types/ResultResponse";
 import type { TargetDbType } from "../../../types/TargetDbType";
-import apiClient from "../../../../app/providers/apiClient";
+import apiClient from "../../client/apiClient";
 
 export const getTreatmentComplexityCoefficients = async (
   clinicalGroupUid: number,
@@ -13,7 +13,7 @@ export const getTreatmentComplexityCoefficients = async (
   const response = await apiClient.get<
     ResultResponse<GetTreatmentComplexityCoefficientsResult>
   >(
-    `/rcontrol/clinical-groups/${clinicalGroupUid}/treatment-complexity-coefficients`,
+    `med-tools/rcontrol/clinical-groups/${clinicalGroupUid}/treatment-complexity-coefficients`,
     {
       params: {
         targetDb: targetDb,

@@ -1,10 +1,10 @@
-import apiClient from "../../../../app/providers/apiClient";
 import type { ResultResponse } from "../../../types/ResultResponse";
 import type { TargetDbType } from "../../../types/TargetDbType";
 import type {
   GetOncologyServicesResult,
   OncologyServiceDto,
 } from "../../../model/types/invoiceStructure/results/oncology/GetOncologyServicesResult";
+import apiClient from "../../client/apiClient";
 
 export const getOncologyServices = async (
   oncologyCaseUid: number,
@@ -12,7 +12,7 @@ export const getOncologyServices = async (
 ): Promise<OncologyServiceDto[]> => {
   const response = await apiClient.get<
     ResultResponse<GetOncologyServicesResult>
-  >(`/rcontrol/oncology-cases/${oncologyCaseUid}/oncology-services`, {
+  >(`med-tools/rcontrol/oncology-cases/${oncologyCaseUid}/oncology-services`, {
     params: {
       targetDb: targetDb,
     },
